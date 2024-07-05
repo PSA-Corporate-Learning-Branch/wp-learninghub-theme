@@ -1,0 +1,89 @@
+/**
+ * Theme Name:        LearningHUB
+ * Theme URI:         https://learningcentre.gwww.gov.bc.ca/learninghub/
+ * Description:       A simple classic custom theme for LearningHUB. 
+ * Version:           1.0.0
+ * Author:            Allan Haggett
+ * Author URI:        https://learningcentre.gwww.gov.bc.ca/
+ * Text Domain:       learninghubg
+ * Tested up to:      6.4
+ * Requires at least: 6.2
+ * Requires PHP:      7.4
+ * License:           GNU General Public License v2.0 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+ :root {
+    --gov-primary-yellow: #E3A82B;
+    --gov-secondary-orange: #E87722;
+    --gov-secondary-green: #007864;
+    --gov-secondary-red: #971B2F;
+    --gov-secondary-blue: #4698CB;
+    --gov-secondary-brown: #866D48;
+    --gov-secondary-purple: #5F2167;
+    --cover--height: calc(12 * var(--global--spacing-vertical));
+}
+img,
+iframe {
+    height: auto;
+    max-width: 100%;
+}
+.icon {
+    width: 2rem;
+    height: 100%;
+    margin: 0;
+}
+
+.icon-square {
+    width: 2.75rem;
+    height: 3rem;
+}
+
+.bg-gov-blue {
+    background-color: var(--gov-secondary-blue);
+    color: white;
+}
+
+.bg-gov-green {
+    background-color: var(--gov-secondary-green);
+    color: white;
+}
+
+.gov-green {
+    color: var(--gov-secondary-green);
+}
+
+.topic-card {
+    background-color: #fcf6ea;
+    /* gov primary yellow 90% tint*/
+}
+
+a:hover .topic-card {
+    background-color: #f1d495;
+    /* gov primary yellow 50% tint*/
+}
+
+.icon-svg {
+    display: inline-flex;
+    align-self: center;
+}
+
+.icon-svg.baseline-svg svg {
+    top: .125em;
+    position: relative;
+    overflow: visible;
+}
+
+.icon-svg svg {
+    height: 1em;
+    width: 1em;
+    margin-right: .25rem;
+}
+
+.gov-yellow {
+    color: var(--gov-primary-yellow);
+}
+
+.bg-gov-yellow {
+    background-color: var(--gov-primary-yellow);
+}
