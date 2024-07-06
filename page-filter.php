@@ -33,7 +33,6 @@ if(!empty($_GET['group'])) {
 	}
 }
 
-
 if(!empty($_GET['topic'])) {
 	$topicterm = $_GET['topic'];
 	$t = array (
@@ -123,11 +122,6 @@ $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
 ?>
 <style>
-input[type="checkbox"], input[type="radio"] {
-	border: 1px solid #333;
-	height: 20px;
-	width: 20px;
-}
 /* We hide the form submit button for taxonomy filters by default, 
 	but the noscript below will show it if there's no JS. 
 	#gracefuldegradation 
@@ -152,10 +146,10 @@ input[type="checkbox"], input[type="radio"] {
 </div>
 <div class="container">
 <div class="row">
-<div class="col-3" id="filters">
+<div class="col-4" id="filters">
 
 	<div><strong>Groups</strong></div>
-	<form action="/learninghub/filter" method="GET">
+	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<?php if(!empty($_GET['topic'])): ?>
 	<?php foreach($_GET['topic'] as $tid): ?>
 	<input type="hidden" name="topic[]" value="<?= $tid ?>">
@@ -195,7 +189,7 @@ input[type="checkbox"], input[type="radio"] {
 	</form>
 
 	<div><strong>Topics</strong></div>
-	<form action="/learninghub/filter" method="GET">
+	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<?php if(!empty($_GET['group'])): ?>
 	<?php foreach($_GET['group'] as $gid): ?>
 	<input type="hidden" name="group[]" value="<?= $gid ?>">
@@ -232,12 +226,11 @@ input[type="checkbox"], input[type="radio"] {
 			</div>
 	<?php endforeach ?>
 
-
 	<button class="btn btn-sm bg-success mt-2 applybutton">Apply</button>
 	</form>
 
 	<div><strong>Audience</strong></div>
-	<form action="/learninghub/filter" method="GET">
+	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<?php if(!empty($_GET['group'])): ?>
 	<?php foreach($_GET['group'] as $gid): ?>
 	<input type="hidden" name="group[]" value="<?= $gid ?>">
@@ -279,7 +272,7 @@ input[type="checkbox"], input[type="radio"] {
 
 
 	<div><strong>Delivery Method</strong></div>
-	<form action="/learninghub/filter" method="GET">
+	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<?php if(!empty($_GET['group'])): ?>
 	<?php foreach($_GET['group'] as $gid): ?>
 	<input type="hidden" name="group[]" value="<?= $gid ?>">
@@ -320,7 +313,7 @@ input[type="checkbox"], input[type="radio"] {
 
 
 	</div>
-	<div class="col-9">
+	<div class="col-8">
 	<div id="courselist">
 	<?php 
 	if(!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])): 
@@ -328,15 +321,14 @@ input[type="checkbox"], input[type="radio"] {
 	$url = $_SERVER['REQUEST_URI'];
 	$currenturl = urldecode($url);
 	?>
-	<div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
 	<div>
-		<strong>Filters:</strong> 
-		<a class="btn btn-sm bg-dark-subtle text-dark-emphasis" href="/learninghub/filter/">Clear All</a>
+		<strong>Filters</strong> 
 	</div>
+	<div class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<div class="row">
 		
 		<?php if(!empty($gterms)): ?>
-		<div class="col-md-auto bg-light-subtle">
+		<div class="col-md-auto">
 		<div>Group</div>
 		<?php foreach($gterms as $g): ?>
 		<?php
@@ -347,7 +339,7 @@ input[type="checkbox"], input[type="radio"] {
 		?>
 		<div>
 		<span class="badge bg-dark-subtle text-dark-emphasis">
-			<a href="<?= $gurl ?>" class="link-dark text-decoration-none">x</a> <?= $g->name ?>
+			<a href="<?= $gurl ?>" class="text-secondary-emphasis text-decoration-none">x</a> <?= $g->name ?>
 		</span>
 		</div>
 		<?php endforeach ?>
@@ -355,7 +347,7 @@ input[type="checkbox"], input[type="radio"] {
 		<?php endif ?>
 	
 		<?php if(!empty($tterms)): ?>
-		<div class="col-md-auto bg-light-subtle">
+		<div class="col-md-auto">
 		<div>Topic</div>
 		<?php foreach($tterms as $t): ?>
 		<?php
@@ -366,7 +358,7 @@ input[type="checkbox"], input[type="radio"] {
 		?>
 		<div>
 		<span class="badge bg-dark-subtle text-dark-emphasis">
-			<a href="<?= $turl ?>" class="link-dark text-decoration-none">x</a> <?= $t->name ?>
+			<a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none">x</a> <?= $t->name ?>
 		</span>
 		</div>
 		<?php endforeach ?>
@@ -374,7 +366,7 @@ input[type="checkbox"], input[type="radio"] {
 		<?php endif ?>
 
 		<?php if(!empty($aterms)): ?>
-		<div class="col-md-auto bg-light-subtle">
+		<div class="col-md-auto">
 		<div>Audience</div>
 		<?php foreach($aterms as $a): ?>
 		<?php
@@ -385,7 +377,7 @@ input[type="checkbox"], input[type="radio"] {
 		?>
 		<div>
 		<span class="badge bg-dark-subtle text-dark-emphasis">
-			<a href="<?= $aurl ?>" class="link-dark text-decoration-none">x</a> <?= $a->name ?>
+			<a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none">x</a> <?= $a->name ?>
 		</span>
 		</div>
 		<?php endforeach ?>
@@ -393,7 +385,7 @@ input[type="checkbox"], input[type="radio"] {
 		<?php endif ?>
 
 		<?php if(!empty($dterms)): ?>
-		<div class="col-md-auto bg-light-subtle">
+		<div class="col-md-auto">
 		<div>Delivery Method</div>
 		<?php foreach($dterms as $d): ?>
 		<?php
@@ -404,7 +396,7 @@ input[type="checkbox"], input[type="radio"] {
 		?>
 		<div>
 		<span class="badge bg-dark-subtle text-dark-emphasis">
-			<a href="<?= $durl ?>" class="link-dark text-decoration-none">x</a> <?= $d->name ?>
+			<a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none">x</a> <?= $d->name ?>
 		</span>
 		</div>
 		<?php endforeach ?>
@@ -412,11 +404,14 @@ input[type="checkbox"], input[type="radio"] {
 		<?php endif ?>
 
 		</div>
+		<div class="mt-3">
+		<a class="btn btn-sm bg-dark-subtle text-dark-emphasis" href="/learninghub/filter/">Clear All</a>
+		</div>
 	</div>
 	<?php endif ?>
-	<div class="my-3 d-flex p-3 bg-white rounded-3">
-    <div class="mr-3 pt-1 fw-bold" id="coursecount"><?= $post_my_query->found_posts ?> courses</div>
-    <div class="dropdown px-2">
+    <div class="pt-1 fw-bold" id="coursecount"><?= $post_my_query->found_posts ?> courses</div>
+	<div class="mb-3 d-flex p-3 bg-body-tertiary rounded-3">
+    <div class="dropdown">
         <button class="btn btn-sm bg-dark-subtle text-dark-emphasis dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sort by
         </button>
@@ -429,12 +424,12 @@ input[type="checkbox"], input[type="radio"] {
             <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
         </div>
     </div>
-	<div class="ml-4">
+	<div class="mx-2">
     	<button id="expall" class="btn btn-sm bg-dark-subtle text-dark-emphasis px-2 d-inline-block">Expand All</button>
     	<button id="collapseall" class="btn btn-sm bg-dark-subtle text-dark-emphasis px-2 d-inline-block">Collapse All</button>
 	</div>
 </div>
-<div class="my-3 d-flex p-3 bg-white rounded-3">
+<div class="my-3 d-flex p-3 bg-body-tertiary rounded-3">
 	<input class="form-control search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
 </div>
 	<div class="list">
