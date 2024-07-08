@@ -2,7 +2,7 @@
 <div class="container-fluid">
 <div class="row p-5 mb-3" style="background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
 <div class="col-12">
-	<h1 class="">Welcome to the LearningHUB</h1>
+	<h1 class="text-white">Welcome to the LearningHUB</h1>
 </div>
 </div>
 </div>

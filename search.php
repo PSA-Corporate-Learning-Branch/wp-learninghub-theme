@@ -12,9 +12,51 @@
 
 get_header();
 ?>
-<div class="wp-block-columns alignwide" style="padding-top: 2em;">
-    <div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
+<div class="bg-gov-green">
+<div class="container">
+<div class="row py-5 mb-3">
+<div class="col-12">
+	<h1 class="">Keyword Search</h1>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+
+    <div class="col-md-8">
+        <?php if (have_posts()) : ?>
+            <div class="p-3 mb-3 bg-body-tertiary rounded-3">
+                <?php
+                $resultcount = (int) $wp_query->found_posts;
+                $plural = 'course';
+                if ($resultcount > 0) $plural = 'courses';
+                ?>
+                We found
+                <span class="badge bg-body-secondary text-body-emphasis">
+                    <?= $resultcount ?>
+                </span>
+                <?= $plural ?> which match your search for
+                <?php
+                printf(
+                    /* translators: %s: Search term. */
+                    esc_html__('"%s"', 'twentytwentyone'),
+                    '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
+                );
+                ?>
+            </div>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/course/single-course') ?>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <p>Oh no! There are no courses that match your filters.</p>
+        <?php endif; ?>
+
+    </div>
+    <div class="col-md-4" id="filters">
+    
         <div><strong>Groups</strong></div>
+        <div class="p-3 mb-3 bg-body-tertiary rounded-3">
         <?php
         $groups = get_categories(
             array(
@@ -35,8 +77,9 @@ get_header();
                 (<?= $g->count ?>)
             </div>
         <?php endforeach ?>
-
+        </div>
         <div><strong>Topics</strong></div>
+        <div class="p-3 mb-3 bg-body-tertiary rounded-3">
         <?php
         $topics = get_categories(
             array(
@@ -57,8 +100,9 @@ get_header();
                 (<?= $t->count ?>)
             </div>
         <?php endforeach ?>
-
+        </div>
         <div><strong>Audience</strong></div>
+        <div class="p-3 mb-3 bg-body-tertiary rounded-3">
         <?php
         $audiences = get_categories(
             array(
@@ -79,7 +123,9 @@ get_header();
                 (<?= $a->count ?>)
             </div>
         <?php endforeach ?>
+        </div>
         <div><strong>Delivery Method</strong></div>
+        <div class="p-3 mb-3 bg-body-tertiary rounded-3">
         <?php
         $dms = get_categories(
             array(
@@ -87,7 +133,7 @@ get_header();
                 'orderby' => 'id',
                 'order' => 'ASC',
                 'hide_empty' => '0',
-                'include'   => array(65, 83, 119, 163, 567)
+                // 'include'   => array(65, 83, 119, 163, 567)
             )
         );
         ?>
@@ -101,36 +147,7 @@ get_header();
                 (<?= $d->count ?>)
             </div>
         <?php endforeach ?>
-
-
-    </div>
-    <div class="wp-block-column" style="flex: 66%;">
-        <?php if (have_posts()) : ?>
-            <div style="background-color: #FFF; border-radius: .5em; margin: 1em 0; padding: 1em;">
-                <?php
-                $resultcount = (int) $wp_query->found_posts;
-                $plural = 'course';
-                if ($resultcount > 0) $plural = 'courses';
-                ?>
-                We found
-                <span style="background-color: #F1F1F1; border-radius: 10px; display: inline-block; font-weight: bold; padding: 0 .5em;">
-                    <?= $resultcount ?>
-                </span>
-                <?= $plural ?> which match your search for
-                <?php
-                printf(
-                    /* translators: %s: Search term. */
-                    esc_html__('"%s"', 'twentytwentyone'),
-                    '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
-                );
-                ?>
-            </div>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/course/single-course') ?>
-            <?php endwhile; ?>
-        <?php else : ?>
-            <p>Oh no! There are no courses that match your filters.</p>
-        <?php endif; ?>
+        </div>
 
     </div>
 </div>

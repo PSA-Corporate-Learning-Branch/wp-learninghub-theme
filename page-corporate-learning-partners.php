@@ -13,10 +13,12 @@ get_header();
 
 ?>
 
-<div class="container-fluid">
-<div class="row bg-gov-green p-5 mb-3">
+<div class="bg-gov-green">
+<div class="container">
+<div class="row py-5 mb-3">
 <div class="col-12">
 	<h1 class="">Our Corporate Learning Partners</h1>
+</div>
 </div>
 </div>
 </div>

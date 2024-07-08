@@ -11,37 +11,43 @@
  */
 get_header();
 ?>
-<div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
-    <div class="wp-block-cover__inner-container">
-        <h1 class="wp-block-heading alignwide has-white-color has-text-color">Foundational Corporate Learning</h1>
-        <!-- /wp:heading -->
+<div class="bg-gov-green">
+<div class="container">
+<div class="row py-5">
+<div class="col-12">
+	<h1 class="">Foundational Corporate Learning</h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-body-tertiary">
+<div class="container">
+    <div class="row">
+    <div class="col-lg-7 mb-4 mb-lg-0 py-5">
+        <h2 class="fs-1">Introduction</h2>
+        <p>Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that 
+            all employees should have regardless of role.  It includes mandatory courses.  
+            All BCPS employees at all levels take the mandatory courses for all employees. 
+            If you have direct reports, you’ll also take the courses that are mandatory for People Leaders.</p>
+    </div>
+    <div class="col-lg-5">
+        <!-- <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
+            <h3 class="gov-green h4">Which mandatory courses do I take?</h3>
+            <ul class="mb-2">
+                <li><strong>Mandatory for All Employees:</strong> All BCPS employees at all levels take the mandatory courses for All Employees</li>
+                <li><strong>Mandatory for People Leaders:</strong> If you have direct reports, you'll also take the courses that are mandatory for People Leaders</li>
+            </ul>
+        </div> -->
     </div>
 </div>
-<!-- /wp:cover -->
-<div class="bg-white mt-0 py-5">
-    <div class="alignwide">
-        <div class="row">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <h2 class="fs-1">Introduction</h2>
-                <p>Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that 
-                    all employees should have regardless of role.  It includes mandatory courses.  
-                    All BCPS employees at all levels take the mandatory courses for all employees. 
-                    If you have direct reports, you’ll also take the courses that are mandatory for People Leaders.</p>
-            </div>
-            <div class="col-lg-5">
-                <!-- <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
-                    <h3 class="gov-green h4">Which mandatory courses do I take?</h3>
-                    <ul class="mb-2">
-                        <li><strong>Mandatory for All Employees:</strong> All BCPS employees at all levels take the mandatory courses for All Employees</li>
-                        <li><strong>Mandatory for People Leaders:</strong> If you have direct reports, you'll also take the courses that are mandatory for People Leaders</li>
-                    </ul>
-                </div> -->
-            </div>
-        </div>
-    </div>
 </div>
-<div class="alignwide mt-4 mb-0">
-    <div class="p-4 bg-white">
+</div>
+</div>
+<div class="container mt-5">
+<div class="row ">
+    <div class="col-12">
+    <div class="bg-body-tertiary p-3 rounded-3">
 
         <h3 id="all-employees">All Employees</h3>
         <p>
@@ -52,7 +58,7 @@ get_header();
         </div>Choose the list that applies to you. Click the heading to show or hide the content.</p>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
-                <h4 class="d-inline text-black">In Your First Year of Employment</h4>
+                <h4 class="d-inline text-body-emphasis">In Your First Year of Employment</h4>
             </summary>
             <div class="mt-2">
                 <p>This is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
@@ -80,7 +86,7 @@ get_header();
         </details>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
-                <h4 class="d-inline text-black" id="existing-employees">Existing Employees</h4>
+                <h4 class="d-inline text-body-emphasis" id="existing-employees">Existing Employees</h4>
             </summary>
             <div class="mt-2">
                 <p>After your first year, this is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
@@ -108,7 +114,7 @@ get_header();
                 
             </div>
         </details>
-        <h3 id="people-leaders">People Leaders</h3>
+        <h3 class="mt-4" id="people-leaders">People Leaders</h3>
         <p>
         <div class="icon-svg baseline-svg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -117,7 +123,7 @@ get_header();
         </div>Choose the list that applies to you. Click the heading to show or hide the content.</p>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
-                <h4 class="d-inline text-black">In Your First Year as a People Leader</h4>
+                <h4 class="d-inline text-body-emphasis">In Your First Year as a People Leader</h4>
             </summary>
             <div class="mt-2">
                 <p>This is the <strong>suggested time frame</strong> for completing your foundational learning, in addition to the All Employees learning above. </p>
@@ -142,7 +148,7 @@ get_header();
         </details>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
-                <h4 class="d-inline text-black" id="existing-people-leaders">Existing People Leaders</h4>
+                <h4 class="d-inline text-body-emphasis" id="existing-people-leaders">Existing People Leaders</h4>
             </summary>
             <div class="mt-2">
                 <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning. </p>
@@ -158,6 +164,7 @@ get_header();
                 </ul>
             </div>
         </details>
+    </div>
     </div>
 </div>
 <?php get_footer() ?>

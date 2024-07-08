@@ -1,10 +1,12 @@
 <!doctype html>
 <html <?php language_attributes(); ?> data-bs-theme="auto">
 <head>
+<title><?= the_title() ?> | LearningHUB</title>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- <script src="https://unpkg.com/htmx.org@2.0.0"></script> -->
 <script>
 /*!
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
@@ -118,6 +120,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/learninghub/about/">About the LearningHUB</a></li>
                             <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
+                            <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning//">Foundational Corporate Learning</a></li>
                             <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                         </ul>
                     </li>
@@ -162,7 +165,7 @@
             <form method="get" action="/learninghub/" class="collapse navbar-collapse mt-1 mt-lg-0" role="search" id="navbarSearch">
                 <label for="s" class="visually-hidden">Search</label>
                 <input type="search" id="s" class="s bg-body-tertiary flex-grow-1 flex-shrink-1 me-1 form-control" name="s" placeholder="Keyword search" required value="<?= esc_html(get_search_query()) ?>">
-                <button type="submit" class="searchsubmit btn btn-sm bg-success text-white" aria-label="Submit Search">
+                <button type="submit" class="searchsubmit btn btn-sm bg-dark text-white" aria-label="Submit Search">
                     Search
                 </button>
             </form>

@@ -137,10 +137,12 @@ $post_my_query = new WP_Query($post_args);
 }
 </style>
 </noscript>
-<div class="container-fluid">
-<div class="row bg-gov-green p-5 mb-3">
+<div class="bg-gov-green">
+<div class="container">
+<div class="row py-5 mb-3">
 <div class="col-12">
 	<h1 class="">Course Catalogue</h1>
+</div>
 </div>
 </div>
 </div>
@@ -179,7 +181,7 @@ $post_my_query = new WP_Query($post_args);
 		<?php if(!empty($_GET['group']) && in_array($g->slug,$_GET['group'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
-					<input onChange="this.form.submit()" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->id ?>" <?= $active ?>>
+					<input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->id ?>" <?= $active ?>>
 					<?= $g->name ?>
 					(<?= $g->count ?>)
 				</label>
@@ -219,7 +221,7 @@ $post_my_query = new WP_Query($post_args);
 		<?php if(!empty($_GET['topic']) && in_array($t->slug,$_GET['topic'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
-					<input onChange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->id ?>" <?= $active ?>>
+					<input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->id ?>" <?= $active ?>>
 					<?= $t->name ?>
 					(<?= $t->count ?>)
 				</label>
@@ -261,7 +263,7 @@ $post_my_query = new WP_Query($post_args);
 		<?php if(!empty($_GET['audience']) && in_array($a->slug,$_GET['audience'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
-					<input onChange="this.form.submit()" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->id ?>" <?= $active ?>>
+					<input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->id ?>" <?= $active ?>>
 					<?= $a->name ?>
 					(<?= $a->count ?>)
 				</label>
@@ -302,7 +304,7 @@ $post_my_query = new WP_Query($post_args);
 		<?php if(!empty($_GET['delivery_method']) && in_array($d->slug,$_GET['delivery_method'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
-					<input onChange="this.form.submit()" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->id ?>" <?= $active ?>>
+					<input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->id ?>" <?= $active ?>>
 					<?= $d->name ?>
 					(<?= $d->count ?>)
 				</label>
