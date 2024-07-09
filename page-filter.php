@@ -194,7 +194,7 @@ $post_my_query = new WP_Query($post_args);
 	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
 	<?php if(!empty($_GET['group'])): ?>
 	<?php foreach($_GET['group'] as $gid): ?>
-	<input type="hidden" name="group[]" value="<?= $gid ?>">
+	<input type="hidden" name="group[]" value="<?= sanitize_text_field($gid) ?>">
 	<?php endforeach ?>
 	<?php endif ?>
 	<?php if(!empty($_GET['audience'])): ?>

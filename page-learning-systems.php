@@ -25,12 +25,12 @@ get_header();
 <div class="container">
 <div class="row">
 <div class="col-md-6">
- 
+
 <p class="lead p-3 bg-body-tertiary rounded-3">The LearningHUB is a directory of courses available to all BC Public Service employees. It includes courses from more than a dozen platforms.</p>
 
 
 
-<h3>Featured Systems</h3>
+<h3>Featured Platforms</h3>
 
 <div class="mb-3 p-3 bg-body-tertiary rounded-3">
 <h4 class="wp-block-heading">PSA Learning System</h4>
@@ -60,7 +60,7 @@ get_header();
                 'taxonomy' => 'external_system',
                 'orderby' => 'name',
                 'order' => 'ASC',
-                'hide_empty' => '0'
+                'hide_empty' => '1'
             )
         );
         ?>
