@@ -16,6 +16,18 @@ while ( have_posts() ) :
 	the_post();
 
 ?>
+<div class="bg-gov-green">
+<div class="container">
+<div class="row py-5 mb-3">
+<div class="col-md-12">
+	<h1><?php the_title() ?></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row justify-content-md-center">
+<div class="col-md-8">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
@@ -23,6 +35,9 @@ while ( have_posts() ) :
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
+</div>
+</div>
+</div>
 <?php 	
 endwhile; // End of the loop.
 

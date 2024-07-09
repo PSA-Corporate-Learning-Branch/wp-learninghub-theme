@@ -1,12 +1,12 @@
 <?php get_header() ?>
-
-<div class="" style="background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
-<div class="container">
-    
-    <h1 class="text-white p-5" id="">Welcome to the LearningHUB</h1>
-
+<div class="container-fluid">
+<div class="row p-5 mb-3" style="background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
+<div class="col-12">
+	<h1 class="text-white">Welcome to the LearningHUB</h1>
 </div>
 </div>
+</div>
+
 <div class="container">
 <div class="row">
     <div class="col-lg-8 mb-4 mb-lg-0">
