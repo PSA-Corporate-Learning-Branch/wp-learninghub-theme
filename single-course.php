@@ -1,14 +1,8 @@
 <?php
 /**
- * The template for displaying all pages of the Course content type. This is primarily
- * a copy of Twenty_Twenty_One's single.php but with added stuff in there and a lot of
- * theme-specific stuff deleted.
+ * The template for displaying all pages of the Course content type. 
+ * 
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
  */
 
 get_header();
