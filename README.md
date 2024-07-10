@@ -1,5 +1,8 @@
-# wp-learninghub
+# WP LearningHUB
+
 A Wordpress theme for the PSA LearningHUB course catalogue.
+
+https://learningcentre.gww.gov.bc.ca/learninghub/ (BC Gov IDIR restricted)
 
 This theme depends on an accompanying plugin: 
 

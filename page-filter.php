@@ -148,7 +148,7 @@ $post_my_query = new WP_Query($post_args);
 </div>
 <div class="container">
 <div class="row">
-<div class="col-4" id="filters">
+<div class="col-md-4" id="filters">
 
 	<div><strong>Groups</strong></div>
 	<form action="/learninghub/filter" method="GET" class="p-3 mb-3 bg-body-tertiary rounded-3">
@@ -315,7 +315,7 @@ $post_my_query = new WP_Query($post_args);
 
 
 	</div>
-	<div class="col-8">
+	<div class="col-md-8">
 	<div id="courselist">
 	<?php 
 	if(!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])): 

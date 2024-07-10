@@ -1,14 +1,8 @@
 <?php
 /**
- * The template for displaying all pages of the Course content type. This is primarily
- * a copy of Twenty_Twenty_One's single.php but with added stuff in there and a lot of
- * theme-specific stuff deleted.
+ * The template for displaying all pages of the Course content type. 
+ * 
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
  */
 
 get_header();
@@ -88,90 +82,8 @@ while ( have_posts() ) :
 
 </div>
 <div class="col-md-4" id="filters">
-<details>
-	<summary>Groups</summary>
-	<?php 
-	$groups = get_categories(
-							array(
-								'taxonomy' => 'groups',
-								'orderby' => 'id',
-								'order' => 'DESC',
-								'hide_empty' => '0'
-							));
-	?>
-	<?php foreach($groups as $g): ?>
-		<?php $active = ''; if($g->slug == $groupterm) $active = 'active'; ?>
-		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/?group[]=<?= $g->slug ?>">
-				<?= $g->name ?>
-			</a>
-			(<?= $g->count ?>)
-		</div>
-	<?php endforeach ?>
-	</details>
-	<details>
-		<summary>Topics</summary>
-	<?php 
-	$topics = get_categories(
-							array(
-								'taxonomy' => 'topics',
-								'orderby' => 'name',
-								'order' => 'ASC',
-								'hide_empty' => '0'
-							));
-	?>
-	<?php foreach($topics as $t): ?>
-		<?php $active = ''; if($t->slug == $topicterm) $active = 'active'; ?>
-		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/?topic[]=<?= $t->slug ?>">
-				<?= $t->name ?>
-			</a>
-			(<?= $t->count ?>)
-		</div>
-	<?php endforeach ?>
-	</details>
-	<details><summary>Audiences</summary>
-	<?php 
-	$audiences = get_categories(
-							array(
-								'taxonomy' => 'audience',
-								'orderby' => 'id',
-								'order' => 'DESC',
-								'hide_empty' => '0'
-							));
-	?>
-	<?php foreach($audiences as $a): ?>
-		<?php $active = ''; if($a->slug == $audienceterm) $active = 'active'; ?>
-		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/?audience[]=<?= $a->slug ?>">
-				<?= $a->name ?>
-			</a>
-			(<?= $a->count ?>)
-		</div>
-	<?php endforeach ?>
-	</details>
-	<details>
-		<summary>Delivery Methods</summary>
-	<?php 
-	$dms = get_categories(
-							array(
-								'taxonomy' => 'delivery_method',
-								'orderby' => 'id',
-								'order' => 'DESC',
-								'hide_empty' => '0',
-								'include' => array(3,37,82,236,410)
-							));
-	?>
-	<?php foreach($dms as $d): ?>
-		<?php $active = ''; if($d->slug == $dmterm) $active = 'active'; ?>
-		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/?delivery_method[]=<?= $d->slug ?>">
-				<?= $d->name ?>
-			</a>
-			(<?= $d->count ?>)
-		</div>
-	<?php endforeach ?>
-	</details>
+
+<?php get_template_part('template-parts/sidebar/taxonomies') ?>
 
 	</div>
 
