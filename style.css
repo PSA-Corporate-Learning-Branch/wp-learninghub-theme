@@ -14,6 +14,7 @@
  */
 
  :root {
+    --gov-primary-blue: #234075;
     --gov-primary-yellow: #E3A82B;
     --gov-secondary-orange: #E87722;
     --gov-secondary-green: #007864;
@@ -40,7 +41,7 @@ iframe {
 }
 
 .bg-gov-blue {
-    background-color: var(--gov-secondary-blue);
+    background-color: var(--gov-primary-blue);
     color: white;
 }
 
