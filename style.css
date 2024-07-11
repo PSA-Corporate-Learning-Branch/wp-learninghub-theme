@@ -23,57 +23,57 @@
     --gov-secondary-brown: #866D48;
     --gov-secondary-purple: #5F2167;
     /* --cover--height: calc(12 * var(--global--spacing-vertical)); */
-    
+
     /* Customized bootstrap root variables */
     --bs-font-sans-serif: "BCSans", "Noto Sans", Verdana, Arial, sans-serif;
     --bs-body-font-size: 1.25rem;
     /* font-size base is now 20px instead of 16px/1rem */
-    
+
     --bs-primary: var(--gov-primary-blue);
     /* changed primary colours to gov-primary blue */
     --bs-primary-rgb: 35, 64, 117;
-    
+
     --bs-primary-text-emphasis: #0e1a2f;
     /* text emphasis is 60% shade */
-    
+
     --bs-primary-bg-subtle: #cfe2ff;
     /* subtle bg is 80% tint */
-    
+
     --bs-primary-border-subtle: #d3d9e3;
     /* subtle border is 60% tint */
-    
+
     --bs-link-color: #234075;
     --bs-link-color-rgb: 35, 64, 117;
     --bs-link-decoration: underline;
-    
-    --bs-link-hover-color: #1c335e;
-    /* link hover is 20% shade */
-    --bs-link-hover-color-rgb: 28, 51, 94;
+
+    --bs-link-hover-color: #4f6691;
+    /* link hover is 20% tint (original was 20% shade) */
+    --bs-link-hover-color-rgb: 79, 102, 145;
 }
 
 @font-face {
-    src: url(/fonts/bc-sans/BCSans-Regular.woff?0079ea8e42d4e81a13d2b04d4e3a95a3) format("woff");
+    src: url(fonts/bc-sans/BCSans-Regular.woff?0079ea8e42d4e81a13d2b04d4e3a95a3) format("woff");
     font-weight: 400;
     font-style: normal;
     font-family: "BCSans";
 }
 
 @font-face {
-    src: url(/fonts/bc-sans/BCSans-BoldItalic.woff?73ed5137b2c4a42b754f9463bfef3c8c) format("woff");
+    src: url(fonts/bc-sans/BCSans-BoldItalic.woff?73ed5137b2c4a42b754f9463bfef3c8c) format("woff");
     font-weight: 700;
     font-style: italic;
     font-family: "BCSans";
 }
 
 @font-face {
-    src: url(/fonts/bc-sans/BCSans-Italic.woff?9c3be03a06d30a6ecff0405eabbc92a1) format("woff");
+    src: url(fonts/bc-sans/BCSans-Italic.woff?9c3be03a06d30a6ecff0405eabbc92a1) format("woff");
     font-weight: 400;
     font-style: italic;
     font-family: "BCSans";
 }
 
 @font-face {
-    src: url(/fonts/bc-sans/BCSans-Bold.woff?252ecf87ea37c93b293c23b9e2f052aa) format("woff");
+    src: url(fonts/bc-sans/BCSans-Bold.woff?252ecf87ea37c93b293c23b9e2f052aa) format("woff");
     font-weight: 700;
     font-style: normal;
     font-family: "BCSans";
@@ -139,6 +139,50 @@ iframe {
     margin-right: .25rem;
 }
 
+.search-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 0.9)" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.navbar {
+    font-size: 1.125rem;
+}
+
+.navbar[data-bs-theme=dark] {
+    --bs-navbar-color: rgba(255, 255, 255, 0.9);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+    --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme=dark] .navbar-toggler-icon {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.wordmark {
+    color: #FFF;
+    display: block;
+    font-size: 1.5em;
+    padding: .5em 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.wordmark span {
+    display: inline-block;
+    letter-spacing: -.1em;
+}
+
 /* Cards */
 
 .topic-card {
@@ -149,4 +193,52 @@ iframe {
 a:hover .topic-card {
     background-color: #f1d495;
     /* gov primary yellow 50% tint*/
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    word-break: normal;
+}
+
+.skip-link:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    -webkit-clip-path: none;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+.s {
+    border-radius: 5px !important;
+    border: 0 !important;
+    border-radius: 5px;
+    font-size: 16px;
 }

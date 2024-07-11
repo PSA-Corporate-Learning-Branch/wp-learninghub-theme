@@ -29,7 +29,7 @@
 
             <?php if (!empty($post->course_link)) : ?>
                 <div class="mb-1">
-                    <a class="bg-gov-blue btn btn-primary" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
+                    <a class="btn btn-primary" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
                         Launch
                         <div class="icon-svg baseline-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
