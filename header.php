@@ -92,7 +92,7 @@
 </script>
 <?php wp_head(); ?>
 </head>
-<body class="bg-body-secondary">
+<body class="bg-body-light">
 <?php wp_body_open(); ?>
 
 <header id="mainheader" role="banner" class="sticky-top">
