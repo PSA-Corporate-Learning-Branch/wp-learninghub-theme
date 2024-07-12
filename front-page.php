@@ -1,11 +1,13 @@
 <?php get_header() ?>
-<div class="container-fluid" id="content">
-    <div class="d-flex p-5 mb-3 justify-content-center" style="height: 18vh; background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
-        <h1 class="text-white">Welcome to the LearningHUB</h1>
+<div id="content">
+    <div class="d-flex p-4 p-md-5align-items-center" style="height: 18vh; min-height: 100px; background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
+        <div class="container-lg p-4 p-md-5">
+            <h1 class="text-white title">Welcome to the LearningHUB</h1>
+        </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-lg p-4 p-md-5">
     <div class="row">
         <div class="col-lg-8 mb-4 mb-lg-0">
             <h2 class="fs-1">What is corporate learning?</h2>

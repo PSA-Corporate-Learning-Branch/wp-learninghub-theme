@@ -165,12 +165,14 @@
                         </li>
                     </ul>
                 </div>
-                <form method="get" action="/learninghub/" data-bs-theme="light" class="collapse navbar-collapse mt-1 mt-lg-0 d-flex" role="search" id="navbarSearch">
+                <form method="get" action="/learninghub/" data-bs-theme="light" class="collapse navbar-collapse row g-1" role="search" id="navbarSearch">
                     <label for="s" class="visually-hidden">Search</label>
-                    <input type="search" id="s" class="s flex-grow-1 flex-shrink-1 me-1 form-control" name="s" placeholder="Search catalogue" required value="<?= esc_html(get_search_query()) ?>">
-                    <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
-                        Search
-                    </button>
+                    <div class="col-auto flex-grow-1"><input type="search" id="s" class="s w-100 form-control" name="s" placeholder="Search catalogue" required value="<?= esc_html(get_search_query()) ?>"></div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
+                            Search
+                        </button>
+                    </div>
                 </form>
             </div>
         </nav>
