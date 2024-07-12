@@ -15,7 +15,7 @@
 
 :root {
     --gov-primary-blue: #234075;
-    --gov-primary-yellow: #E3A82B;
+    --gov-primary-yellow: rgb(227, 168, 43);
     --gov-secondary-orange: #E87722;
     --gov-secondary-green: #007864;
     --gov-secondary-red: #971B2F;
@@ -42,13 +42,39 @@
     --bs-primary-border-subtle: #d3d9e3;
     /* subtle border is 60% tint */
 
-    --bs-link-color: #234075;
+    --bs-link-color: var(--gov-primary-blue);
     --bs-link-color-rgb: 35, 64, 117;
     --bs-link-decoration: underline;
 
     --bs-link-hover-color: #4f6691;
     /* link hover is 20% tint (original was 20% shade) */
     --bs-link-hover-color-rgb: 79, 102, 145;
+    
+}
+
+[data-bs-theme=dark] {
+    --bs-primary: var(--gov-primary-yellow);
+    /* changed primary colours to gov-primary yellow for dark mode */
+    --bs-primary-rgb: 227, 168, 43;
+
+    --bs-primary-text-emphasis: #f4dcaa;
+    /* text emphasis is 60% tint */
+
+    --bs-primary-bg-subtle: #f9eed5;
+    /* subtle bg is 80% tint */
+
+    --bs-primary-border-subtle: #f4dcaa;
+    /* subtle border is 60% tint */
+
+    --bs-link-color: var(--gov-primary-yellow);
+    --bs-link-color-rgb: 227, 168, 43;
+    --bs-link-decoration: underline;
+
+    --bs-link-hover-color: #b68622;
+    /* link hover is  20% shade */
+    --bs-link-hover-color-rgb: 182, 134, 34;
+    --gov-secondary-green-50: #80bcb2;
+    /* 50% tint for dark mode version */
 }
 
 @font-face {
@@ -92,8 +118,9 @@
     color: white;
 }
 
-.gov-green {
-    color: var(--gov-secondary-green);
+
+[data-bs-theme=dark] .gov-green {
+    color: var(--gov-secondary-green-50);
 }
 
 .gov-yellow {
@@ -137,6 +164,13 @@ iframe {
     height: 1em;
     width: 1em;
     margin-right: .25rem;
+}
+
+.green-flag {
+    fill: var(--gov-secondary-green);
+}
+[data-bs-theme=dark] .green-flag {
+    fill: var(--gov-secondary-green-50);
 }
 
 .search-toggler-icon {
@@ -195,6 +229,18 @@ a:hover .topic-card {
     /* gov primary yellow 50% tint*/
 }
 
+[data-bs-theme=dark] .topic-card {
+    background-color: unset;
+    /* gov primary yellow 50% tint*/
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme=dark] a:hover .topic-card {
+    background-color: var(--gov-primary-blue);
+    /* gov primary yellow 90% tint*/
+    color: var(--bs-body-color);
+}
+
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -245,4 +291,47 @@ a:hover .topic-card {
 
 h1.title {
     font-size: 2.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--bs-primary);
+}
+
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-link-hover-color);
+    --bs-btn-hover-border-color: #1c335e;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-link-hover-color);
+    --bs-btn-active-border-color: #1c335e;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-primary);
+    --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+[data-bs-theme=dark] .btn-primary {
+    --bs-btn-color: #000000;
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: var(--bs-link-hover-color);
+    --bs-btn-hover-border-color: #b68622;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: var(--bs-link-hover-color);
+    --bs-btn-active-border-color: #b68622;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: var(--bs-primary);
+    --bs-btn-disabled-border-color: var(--bs-primary);
 }
