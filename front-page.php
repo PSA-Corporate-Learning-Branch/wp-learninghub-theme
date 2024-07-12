@@ -5,7 +5,7 @@
             <h1 class="text-white title">Welcome to the LearningHUB</h1>
         </div>
     </div>
-</div>
+
 
 <div class="container-lg pt-4 pt-md-5 px-4 px-md-5">
     <div class="row">
@@ -72,7 +72,7 @@
 </div>
 
 
-<div class="container-lg pt-4 pt-md-5 px-4 px-md-5 bg-light">
+<div class="container-lg pt-4 pt-md-5 px-4 px-md-5">
     <div class="row">
         <div style="padding: 1em;">
             <h3>How is learning organized?</h3>

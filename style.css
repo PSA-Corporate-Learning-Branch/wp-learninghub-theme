@@ -19,7 +19,7 @@
     --gov-secondary-orange: #E87722;
     --gov-secondary-green: #007864;
     --gov-secondary-red: #971B2F;
-    --gov-secondary-blue: #4698CB;
+    --gov-secondary-blue: #4698cb;
     --gov-secondary-brown: #866D48;
     --gov-secondary-purple: #5F2167;
     /* --cover--height: calc(12 * var(--global--spacing-vertical)); */
@@ -66,8 +66,8 @@
     --bs-primary-border-subtle: #f4dcaa;
     /* subtle border is 60% tint */
 
-    --bs-link-color: var(--gov-primary-yellow);
-    --bs-link-color-rgb: 227, 168, 43;
+    --bs-link-color: var(--gov-secondary-blue);
+    --bs-link-color-rgb: 70, 152, 203;
     --bs-link-decoration: underline;
 
     --bs-link-hover-color: #b68622;
