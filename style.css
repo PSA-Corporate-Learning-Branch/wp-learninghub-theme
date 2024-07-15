@@ -234,6 +234,7 @@ a:hover .topic-card {
     background-color: unset;
     /* gov primary yellow 50% tint*/
     color: var(--bs-body-color);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important; 
 }
 
 [data-bs-theme=dark] a:hover .topic-card {

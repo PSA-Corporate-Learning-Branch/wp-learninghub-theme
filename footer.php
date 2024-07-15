@@ -1,19 +1,20 @@
-<details id="feedback" class="text-primary pb-3 px-4">
+<details id="feedback" class="text-primary px-4">
     <summary>Need help? </summary>
     <div class="ms-3 text-body">
         <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
         <!-- <p><a href="https://survey.alchemer-ca.com/s3/50120510/8f3f4d590f25" target="_blank" rel="noopener">Give general feedback about the Learning Hub</a>.</p> -->
     </div>
 </details>
+
 </div>
 <!-- close row on main page -->
 </div>
 <!-- close page content container -->
+</div>
+<!-- close page background -->
 
 <div id="bcgovfoot" class="bg-gov-blue">
-    <footer class="site-footer container-lg py-4 py-md-5 px-4 px-md-5" role="contentinfo">
-
-
+    <footer class="site-footer container-lg py-4 py-md-5" role="contentinfo">
         <div class="site-info d-block">
             <div class="d-flex flex-column flex-lg-row justify-content-between">
                 <div class="my-3 flex-grow-1">
@@ -22,8 +23,8 @@
 
                 <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100px" width="380px" alt="Where Ideas Work logo">
             </div>
-            <div class="powered-by fs-6 d-block text-end border-top border-warning pt-1">
-                Proudly powered by <a href="https://wordpress.org/" class="customize-unpreviewable">WordPress</a>. </div>
+            <div class="fs-6 d-block text-end border-top border-warning pt-1">
+                Proudly powered by <a href="https://wordpress.org/" class="text-white">WordPress</a>. </div>
         </div><!-- .site-info -->
     </footer>
 </div>
