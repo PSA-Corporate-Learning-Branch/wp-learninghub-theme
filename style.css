@@ -15,7 +15,7 @@
 
 :root {
     --gov-primary-blue: #234075;
-    --gov-primary-yellow: rgb(227, 168, 43);
+    --gov-primary-yellow: #e3a82b;
     --gov-secondary-orange: #E87722;
     --gov-secondary-green: #007864;
     --gov-secondary-red: #971B2F;
@@ -49,7 +49,7 @@
     --bs-link-hover-color: #4f6691;
     /* link hover is 20% tint (original was 20% shade) */
     --bs-link-hover-color-rgb: 79, 102, 145;
-    
+
 }
 
 [data-bs-theme=dark] {
@@ -169,6 +169,7 @@ iframe {
 .green-flag {
     fill: var(--gov-secondary-green);
 }
+
 [data-bs-theme=dark] .green-flag {
     fill: var(--gov-secondary-green-50);
 }
@@ -334,4 +335,10 @@ h5 {
     --bs-btn-disabled-color: #000;
     --bs-btn-disabled-bg: var(--bs-primary);
     --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+
+.site-footer>.site-info,
+.site-footer>.site-info a {
+    font-size: 1.125rem;
 }
