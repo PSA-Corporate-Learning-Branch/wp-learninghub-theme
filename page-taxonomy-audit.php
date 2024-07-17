@@ -24,7 +24,7 @@ $notops = [];
 $nomethods = [];
 if( $post_my_query->have_posts() ) : 
 while ($post_my_query->have_posts()) : $post_my_query->the_post(); 
-    $courseid = $post_my_query->ID;
+    $courseid = get_the_ID();
     $name = get_the_title();
     $slug = basename(get_permalink());
     $grp = get_the_terms($post_my_query->ID, 'groups', '', ', ', ' ');
@@ -33,8 +33,20 @@ while ($post_my_query->have_posts()) : $post_my_query->the_post();
     $dm = get_the_terms($post_my_query->ID, 'delivery_method', '', ', ', ' ');
     $ext = get_the_terms($post_my_query->ID, 'external_system', '', ', ', ' ');
     $part = get_the_terms($post_my_query->ID, 'learning_partner', '', ', ', ' ');
-    $taxs = [$grp[0]->name,$top[0]->name,$aud[0]->name,$dm[0]->name,$ext[0]->name,$part[0]->name,$courseid];
-    $c = [$slug,$name,$taxs];
+    $taxs = [
+                $grp[0]->name,
+                $top[0]->name,
+                $aud[0]->name,
+                $dm[0]->name,
+                $ext[0]->name,
+                $part[0]->name
+            ];
+    $c = [
+            $slug,
+            $name,
+            $taxs,
+            $courseid
+        ];
      if(empty($grp[0]->name)) array_push($nogroups, $c);
      if(empty($top[0]->name)) array_push($notops, $c);
      if(empty($aud[0]->name)) array_push($noauds, $c);
@@ -61,7 +73,10 @@ endif;
 <summary>Topic <span class="badge bg-warning text-black"><?= count($notops) ?></span></summary>
 <?php foreach($notops as $nt): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
-<div><a href="/learninghub/course/<?= $nt[0] ?>"><?= $nt[1] ?></a></div>
+<div>
+    <a href="/learninghub/course/<?= $nt[0] ?>"><?= $nt[1] ?></a>
+    <a href="/learninghub/wp-admin/post.php?post=<?= $nt[3] ?>&action=edit">Edit</a>
+</div>
 <div>Partner: <?= $nt[2][5] ?></div>
 <?php if($nt[2][4] == 'PSA Learning System'): ?>
 <div>Platform: <span class="badge bg-primary text-white"><?= $nt[2][4] ?></span></div>
@@ -80,7 +95,10 @@ endif;
 <summary>Group <span class="badge bg-warning text-black"><?= count($nogroups) ?></span></summary>
 <?php foreach($nogroups as $ng): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
-<div><a href="/learninghub/course/<?= $ng[0] ?>"><?= $ng[1] ?></a></div>
+<div>
+    <a href="/learninghub/course/<?= $ng[0] ?>"><?= $ng[1] ?></a>
+    <a href="/learninghub/wp-admin/post.php?post=<?= $ng[3] ?>&action=edit">Edit</a>
+</div>
 <div>Partner: <?= $ng[2][5] ?></div>
 <?php if($ng[2][4] == 'PSA Learning System'): ?>
 <div>Platform: <span class="badge bg-primary text-white"><?= $ng[2][4] ?></span></div>
@@ -99,7 +117,10 @@ endif;
 <summary>Audience <span class="badge bg-warning text-black"><?= count($noauds) ?></span></summary>
 <?php foreach($noauds as $a): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
-<div><a href="/learninghub/course/<?= $a[0] ?>"><?= $a[1] ?></a></div>
+<div>
+    <a href="/learninghub/course/<?= $a[0] ?>"><?= $a[1] ?></a>
+    <a href="/learninghub/wp-admin/post.php?post=<?= $a[3] ?>&action=edit">Edit</a>
+</div>
 <div>Partner: <?= $a[2][5] ?></div>
 <?php if($a[2][4] == 'PSA Learning System'): ?>
 <div>Platform: <span class="badge bg-primary text-white"><?= $a[2][4] ?></span></div>
