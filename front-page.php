@@ -21,24 +21,24 @@
                                 </svg></div>
                             <div class="ms-3">
                                 <h3 class="gov-green">Start here</h3>
-                                <p>Wondering where to start? These learning journeys will guide you.</p>
-                                <p class="mb-1"><strong>Learning journeys</strong></p>
+                                <p>Wondering where to start? These <a href="/learninghub/foundational-corporate-learning/">learning journeys</a> will guide you.</p>
+                                <!-- <p class="mb-1"><strong>Learning journeys</strong></p>
                                 <ul class="mb-2">
                                     <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
                                     <li><a href="/learninghub/foundational-corporate-learning/">People Leaders</a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="mt-4 card shadow-sm rounded">
-                        <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top" alt="" style="height:18vh; ">
-                        <div class="card-body">
-                            <h3 class="mb-3 text-reset">What's new?</h3>
-                            <h4>Improved search</h4>
-                            <p class="card-text">Explore new features including course search filters and learning journeys.</p>
-                            <a href="/learninghub/about/">About the LearningHUB</a>
+                    <div class="mt-4 mt-lg-0 card shadow-sm rounded">
+                        <div class="bg-gov-green rounded-top"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:14vh;"></div>
+                        <div class="card-body fs-6">
+                            <h3 class="mb-2 text-reset fs-4">What's new?</h3>
+                            <h4 class="fs-4">Using Race and Ethnicity Data Webinar</h4>
+                            <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
+                            <a href="/learninghub/news">Read the latest news</a>
                         </div>
                     </div>
                 </div>
@@ -61,13 +61,14 @@
                         <?php the_post() ?>
                         <?php if (has_post_thumbnail($post->ID)) : ?>
                             <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
-                            <img class="mt-4 border border-2 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
-                        <?php endif; ?>
-                        <div class="bg-primary px-3 py-2 rounded-bottom">
-                            <h3><a href="<?= the_permalink() ?>"><?php the_title() ?></a></h3>
-                        </div>
-                    <?php endwhile ?>
-                <?php endif ?>
+                            <a href="<?= the_permalink() ?>" class="text-decoration-none"><img class="mt-4 border border-2 border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
+                            <?php endif; ?>
+                            <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
+                                <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
+                            </div>
+                            </a>
+                        <?php endwhile ?>
+                    <?php endif ?>
 
             </div>
         </div>

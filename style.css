@@ -78,34 +78,13 @@
 }
 
 @font-face {
-    src: url(fonts/bc-sans/BCSans-Regular.woff?0079ea8e42d4e81a13d2b04d4e3a95a3) format("woff");
+    src: url(fonts/bc-sans/BCSans-Regular.woff2) format("woff2"),
+        url(fonts/bc-sans/BCSans-Regular.woff) format("woff");
     font-weight: 400;
     font-style: normal;
     font-family: "BCSans";
     font-display: swap;
 }
-/* 
-@font-face {
-    src: url(fonts/bc-sans/BCSans-BoldItalic.woff?73ed5137b2c4a42b754f9463bfef3c8c) format("woff");
-    font-weight: 700;
-    font-style: italic;
-    font-family: "BCSans";
-}
-
-@font-face {
-    src: url(fonts/bc-sans/BCSans-Italic.woff?9c3be03a06d30a6ecff0405eabbc92a1) format("woff");
-    font-weight: 400;
-    font-style: italic;
-    font-family: "BCSans";
-}
-
-@font-face {
-    src: url(fonts/bc-sans/BCSans-Bold.woff?252ecf87ea37c93b293c23b9e2f052aa) format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-family: "BCSans";
-} */
-
 
 
 /* Custom colours */
@@ -235,17 +214,23 @@ a:hover .topic-card {
     background-color: unset;
     /* gov primary yellow 50% tint*/
     color: var(--bs-body-color);
-    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important; 
-    
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+
 }
 
 [data-bs-theme=dark] a:hover .topic-card {
     background-color: var(--gov-primary-blue);
     color: var(--bs-body-color);
 }
-[data-bs-theme=dark] .topic-card a:hover, [data-bs-theme=dark] .topic-card a  {
+
+[data-bs-theme=dark] .topic-card a:hover {
+    color: var(--bs-primary);
+}
+
+[data-bs-theme=dark] .topic-card a {
     color: var(--bs-body-color);
 }
+
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -345,4 +330,12 @@ h5 {
 .site-footer>.site-info,
 .site-footer>.site-info a {
     font-size: 1.125rem;
+}
+
+[data-bs-theme=dark] #feedback a:hover {
+    color: var(--bs-primary);
+}
+
+[data-bs-theme=dark] #feedback a {
+    color: var(--bs-body-color);
 }
