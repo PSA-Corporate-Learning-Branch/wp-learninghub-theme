@@ -82,8 +82,9 @@
     font-weight: 400;
     font-style: normal;
     font-family: "BCSans";
+    font-display: swap;
 }
-
+/* 
 @font-face {
     src: url(fonts/bc-sans/BCSans-BoldItalic.woff?73ed5137b2c4a42b754f9463bfef3c8c) format("woff");
     font-weight: 700;
@@ -103,7 +104,7 @@
     font-weight: 700;
     font-style: normal;
     font-family: "BCSans";
-}
+} */
 
 
 
