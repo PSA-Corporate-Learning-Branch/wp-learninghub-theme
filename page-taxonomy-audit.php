@@ -24,6 +24,7 @@ $notops = [];
 $nomethods = [];
 if( $post_my_query->have_posts() ) : 
 while ($post_my_query->have_posts()) : $post_my_query->the_post(); 
+    $courseid = $post_my_query->ID;
     $name = get_the_title();
     $slug = basename(get_permalink());
     $grp = get_the_terms($post_my_query->ID, 'groups', '', ', ', ' ');
@@ -31,7 +32,8 @@ while ($post_my_query->have_posts()) : $post_my_query->the_post();
     $aud = get_the_terms($post_my_query->ID, 'audience', '', ', ', ' ');
     $dm = get_the_terms($post_my_query->ID, 'delivery_method', '', ', ', ' ');
     $ext = get_the_terms($post_my_query->ID, 'external_system', '', ', ', ' ');
-    $taxs = [$grp[0]->name,$top[0]->name,$aud[0]->name,$dm[0]->name,$ext[0]->name];
+    $part = get_the_terms($post_my_query->ID, 'learning_partner', '', ', ', ' ');
+    $taxs = [$grp[0]->name,$top[0]->name,$aud[0]->name,$dm[0]->name,$ext[0]->name,$part[0]->name,$courseid];
     $c = [$slug,$name,$taxs];
      if(empty($grp[0]->name)) array_push($nogroups, $c);
      if(empty($top[0]->name)) array_push($notops, $c);
@@ -60,7 +62,12 @@ endif;
 <?php foreach($notops as $nt): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
 <div><a href="/learninghub/course/<?= $nt[0] ?>"><?= $nt[1] ?></a></div>
+<div>Partner: <?= $nt[2][5] ?></div>
+<?php if($nt[2][4] == 'PSA Learning System'): ?>
+<div>Platform: <span class="badge bg-primary text-white"><?= $nt[2][4] ?></span></div>
+<?php else: ?>
 <div>Platform: <?= $nt[2][4] ?></div>
+<?php endif ?>
 <div>Group: <?= $nt[2][0] ?></div>
 <div>Topic: <?= $nt[2][1] ?></div>
 <div>Audience: <?= $nt[2][2] ?></div>
@@ -74,7 +81,12 @@ endif;
 <?php foreach($nogroups as $ng): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
 <div><a href="/learninghub/course/<?= $ng[0] ?>"><?= $ng[1] ?></a></div>
+<div>Partner: <?= $ng[2][5] ?></div>
+<?php if($ng[2][4] == 'PSA Learning System'): ?>
+<div>Platform: <span class="badge bg-primary text-white"><?= $ng[2][4] ?></span></div>
+<?php else: ?>
 <div>Platform: <?= $ng[2][4] ?></div>
+<?php endif ?>
 <div>Group: <?= $ng[2][0] ?></div>
 <div>Topic: <?= $ng[2][1] ?></div>
 <div>Audience: <?= $ng[2][2] ?></div>
@@ -88,7 +100,12 @@ endif;
 <?php foreach($noauds as $a): ?>
 <div class="p-3 mb-3 bg-light-subtle rounded-3">
 <div><a href="/learninghub/course/<?= $a[0] ?>"><?= $a[1] ?></a></div>
+<div>Partner: <?= $a[2][5] ?></div>
+<?php if($a[2][4] == 'PSA Learning System'): ?>
+<div>Platform: <span class="badge bg-primary text-white"><?= $a[2][4] ?></span></div>
+<?php else: ?>
 <div>Platform: <?= $a[2][4] ?></div>
+<?php endif ?>
 <div>Group: <?= $a[2][0] ?></div>
 <div>Topic: <?= $a[2][1] ?></div>
 <div>Audience: <?= $a[2][2] ?></div>
