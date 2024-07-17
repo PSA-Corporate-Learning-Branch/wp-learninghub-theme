@@ -82,8 +82,9 @@
     font-weight: 400;
     font-style: normal;
     font-family: "BCSans";
+    font-display: swap;
 }
-
+/* 
 @font-face {
     src: url(fonts/bc-sans/BCSans-BoldItalic.woff?73ed5137b2c4a42b754f9463bfef3c8c) format("woff");
     font-weight: 700;
@@ -103,7 +104,7 @@
     font-weight: 700;
     font-style: normal;
     font-family: "BCSans";
-}
+} */
 
 
 
@@ -235,14 +236,16 @@ a:hover .topic-card {
     /* gov primary yellow 50% tint*/
     color: var(--bs-body-color);
     border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important; 
+    
 }
 
 [data-bs-theme=dark] a:hover .topic-card {
     background-color: var(--gov-primary-blue);
-    /* gov primary yellow 90% tint*/
     color: var(--bs-body-color);
 }
-
+[data-bs-theme=dark] .topic-card a:hover, [data-bs-theme=dark] .topic-card a  {
+    color: var(--bs-body-color);
+}
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -292,7 +295,7 @@ a:hover .topic-card {
 }
 
 h1.title {
-    font-size: 2.25em;
+    font-size: calc(2rem + 1.5vw);
 }
 
 h1,
