@@ -123,17 +123,23 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/about/">About the LearningHUB</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
-                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning//">Foundational Corporate Learning</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/intake/">Intake for Corporate Learning</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/learninghub/learning-systems/">
-                                Learning Platforms</a>
+                                Platforms</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/learninghub/filter/">All Courses</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Courses</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/learninghub/filter/">All Courses</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning//">Foundational Corporate Learning</a></li>
+                            </ul>
                         </li>
+
                         <li class="nav-item dropdown">
                             <button class="btn btn-link nav-link ml-3 py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
                                 <span class="theme-icon-active"><i class="me-2"></i></span>

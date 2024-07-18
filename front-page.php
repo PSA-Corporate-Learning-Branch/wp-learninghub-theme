@@ -13,7 +13,7 @@
                 <div class="col-lg-8 mb-4 mb-lg-0">
                     <h2 class="fs-1">What is corporate learning?</h2>
                     <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
-                    <a href="/learninghub/filter/" class="btn btn-lg btn-primary">Catalogue of courses</a>
+                    <a href="/learninghub/filter/" class="btn btn-lg btn-primary">Course catalogue</a>
                     <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
                         <div class="d-flex">
                             <div class="icon-square flex-shrink-0 mt-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="green-flag"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -21,7 +21,7 @@
                                 </svg></div>
                             <div class="ms-3">
                                 <h3 class="gov-green">Start here</h3>
-                                <p>Wondering where to start? These <a href="/learninghub/foundational-corporate-learning/">learning journeys</a> will guide you.</p>
+                                <p>Wondering where to start? These <a href="/learninghub/foundational-corporate-learning/" class="stretched-link">learning journeys</a> will guide you.</p>
                                 <!-- <p class="mb-1"><strong>Learning journeys</strong></p>
                                 <ul class="mb-2">
                                     <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
@@ -35,15 +35,13 @@
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
                         <div class="bg-gov-green rounded-top"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:14vh;"></div>
                         <div class="card-body fs-6">
-                            <h3 class="mb-2 text-reset fs-4">What's new?</h3>
-                            <h4 class="fs-4">Using Race and Ethnicity Data Webinar</h4>
+                            <h3 class=" card-title fs-4">What's new?</h3>
+                            <h4 class="fs-4"><a href="/learninghub/2024/06/13/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
                             <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
-                            <a href="/learninghub/news">Read the latest news</a>
+                            <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
                         </div>
                     </div>
                 </div>
-
-
                 <?php
                 $sticky = get_option('sticky_posts');
                 // check if there are any
@@ -99,8 +97,8 @@
                                             <p class="lh-sm fs-6  mb-1">What type of learning is it?</p>
                                         </div>
                                     </div>
-                                    <div class="pe-3 pb-3">
-                                        <ul>
+                                    <div class="card-body">
+                                        <ul class="card-text">
                                             <?php
                                             $groups = get_terms(array(
                                                 'taxonomy' => 'groups',
@@ -130,8 +128,8 @@
                                             <p class="lh-sm fs-6  mb-1  mb-1">Who is the learning for?</p>
                                         </div>
                                     </div>
-                                    <div class="pe-3 pb-3">
-                                        <ul>
+                                    <div class="card-body">
+                                        <ul class="card-text">
                                             <?php
                                             $audiences = get_terms(array(
                                                 'taxonomy' => 'audience',
@@ -195,8 +193,8 @@
                                             <p class="lh-sm fs-6  mb-1">How is the learning offered?</p>
                                         </div>
                                     </div>
-                                    <div class="pe-3 pb-3">
-                                        <ul>
+                                    <div class="card-body">
+                                        <ul class="card-text">
                                             <?php
                                             $delivery = get_terms(array(
                                                 'taxonomy' => 'delivery_method',
@@ -220,9 +218,9 @@
                             <div class="col-lg-5">
                                 <div class="card shadow-sm bg-secondary-subtle">
                                     <div class="card-body">
-                                        <h3 class="fs-3">Accommodations</h3>
+                                        <h3 class="card-title">Accommodations</h3>
                                         <p class="card-text">Please let us know if you require course materials in alternate formats or if you require other accommodation to successfully attend a course.</p>
-                                        <p><a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre". The Learning Centre will endeavour to accommodate your request.</p>
+                                        <p class="card-text"><a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre". The Learning Centre will work to accommodate your request.</p>
                                     </div>
                                 </div>
                             </div>
