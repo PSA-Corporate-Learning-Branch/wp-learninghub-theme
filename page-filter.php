@@ -146,31 +146,10 @@ $post_my_query = new WP_Query($post_args);
 
     <div class="bg-light-subtle">
         <div class="container-lg py-4 py-md-5">
-            <div class="row">
-                <div class="col-lg-8 mb-4 mb-lg-0">
-                    <h2 class="fs-1">Filter the course catalogue</h2>
-                    <p>Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery.</p>
-
-                </div>
-                <div class="col-lg-4">
-                    <div class="mt-4 card shadow-sm rounded">
-                        <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top" alt="" style="height:18vh; ">
-                        <div class="card-body">
-                            <h3 class="mb-3 text-reset">What's new?</h3>
-                            <h4>Improved search</h4>
-                            <p class="card-text">Explore new features including course search filters and learning journeys.</p>
-                            <a href="/learninghub/about/">About the LearningHUB</a>
-                        </div>
-                    </div>
-                </div>
+            <h2>Find learning with filters</h2>
+            <p>Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
 
 
-
-            </div>
-        </div>
-    </div>
-    <div class="bg-secondary-subtle">
-        <div class="container-lg py-4 py-md-5 bg-light-subtle">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0" id="filters">
 
