@@ -21,7 +21,7 @@
                                 </svg></div>
                             <div class="ms-3">
                                 <h3 class="gov-green">Start here</h3>
-                                <p>Wondering where to start? These <a href="/learninghub/foundational-corporate-learning/" class="stretched-link">learning journeys</a> will guide you.</p>
+                                <p>Wondering where to start? These <a href="/learninghub/foundational-corporate-learning/">learning journeys</a> will guide you.</p>
                                 <!-- <p class="mb-1"><strong>Learning journeys</strong></p>
                                 <ul class="mb-2">
                                     <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
@@ -73,7 +73,7 @@
     </div>
 
     <div class="bg-secondary-subtle pt-4">
-        <div class="container-lg p-3 bg-light-subtle">
+        <div class="container-lg p-4 bg-light-subtle">
             <div class="row">
                 <div style="padding: 1em;">
                     <h3>How is learning organized?</h3>

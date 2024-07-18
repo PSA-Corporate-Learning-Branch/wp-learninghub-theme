@@ -33,9 +33,6 @@
     /* changed primary colours to gov-primary blue */
     --bs-primary-rgb: 35, 64, 117;
 
-    --bs-primary-text-emphasis: #0e1a2f;
-    /* text emphasis is 60% shade */
-
     --bs-primary-bg-subtle: #cfe2ff;
     /* subtle bg is 80% tint */
 
@@ -56,8 +53,9 @@
     --bs-primary: var(--gov-primary-yellow);
     /* changed primary colours to gov-primary yellow for dark mode */
     --bs-primary-rgb: 227, 168, 43;
+    --bs-primary-text: var(--bs-gray-900);
 
-    --bs-primary-text-emphasis: #f4dcaa;
+    /* --bs-primary-text-emphasis: #f4dcaa; */
     /* text emphasis is 60% tint */
 
     --bs-primary-bg-subtle: #f9eed5;
@@ -65,9 +63,9 @@
 
     --bs-primary-border-subtle: #f4dcaa;
     /* subtle border is 60% tint */
-
-    --bs-link-color: var(--gov-secondary-blue);
-    --bs-link-color-rgb: 70, 152, 203;
+    --gov-secondary-blue-50: #90c1e0;
+    --bs-link-color: var(--gov-secondary-blue-50);
+    --bs-link-color-rgb: 144, 193, 224;
     --bs-link-decoration: underline;
 
     --bs-link-hover-color: #b68622;
@@ -89,26 +87,43 @@
 
 /* Custom colours */
 .bg-gov-blue {
-    background-color: var(--gov-primary-blue);
-    color: white;
+    background-color: var(--gov-primary-blue) !important;
+    color: white !important;
 }
 
 .bg-gov-green {
-    background-color: var(--gov-secondary-green);
-    color: white;
+    background-color: var(--gov-secondary-green) !important;
+    color: white !important;
 }
 
+.gov-green {
+    color: var(--gov-secondary-green) !important;
+}
 
 [data-bs-theme=dark] .gov-green {
-    color: var(--gov-secondary-green-50);
+    color: var(--gov-secondary-green-50) !important;
 }
 
 .gov-yellow {
-    color: var(--gov-primary-yellow);
+    color: var(--gov-primary-yellow) !important;
 }
 
 .bg-gov-yellow {
-    background-color: var(--gov-primary-yellow);
+    background-color: var(--gov-primary-yellow) !important;
+}
+
+.accordion-button.text-bg-primary::after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme=dark] .accordion-button.text-bg-primary::after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme=dark] .text-bg-primary {
+    color: var(--bs-gray-900) !important;
 }
 
 /* Images and icons */
@@ -215,7 +230,6 @@ a:hover .topic-card {
     /* gov primary yellow 50% tint*/
     color: var(--bs-body-color);
     border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-
 }
 
 [data-bs-theme=dark] a:hover .topic-card {
@@ -230,6 +244,8 @@ a:hover .topic-card {
 [data-bs-theme=dark] .topic-card a {
     color: var(--bs-body-color);
 }
+
+
 
 .screen-reader-text {
     border: 0;
@@ -281,6 +297,7 @@ a:hover .topic-card {
 
 h1.title {
     font-size: calc(2rem + 1.5vw);
+    font-weight: 400;
 }
 
 h1,
@@ -289,6 +306,7 @@ h3,
 h4,
 h5 {
     color: var(--bs-primary);
+    font-weight: 400;
 }
 
 
