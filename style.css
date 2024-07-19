@@ -357,3 +357,7 @@ h5 {
 [data-bs-theme=dark] #feedback a {
     color: var(--bs-body-color);
 }
+
+[data-bs-theme=light] .form-check-input {
+    border-color: var(--bs-secondary-color);
+}
