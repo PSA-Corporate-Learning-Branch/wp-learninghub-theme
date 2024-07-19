@@ -1,6 +1,6 @@
-<details id="feedback" class="text-primary px-4">
+<details id="feedback" class="text-primary mt-4">
     <summary>Need help? </summary>
-    <div class="ms-3 text-body">
+    <div class="text-body">
         <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
         <!-- <p><a href="https://survey.alchemer-ca.com/s3/50120510/8f3f4d590f25" target="_blank" rel="noopener">Give general feedback about the Learning Hub</a>.</p> -->
     </div>
@@ -14,10 +14,10 @@
 <!-- close page background -->
 
 <div id="bcgovfoot" class="bg-gov-blue">
-    <footer class="site-footer container-lg py-4 py-md-5" role="contentinfo">
+    <footer class="site-footer container-lg py-4 py-lg-5" role="contentinfo">
         <div class="site-info d-block">
             <div class="d-flex flex-column flex-lg-row justify-content-between">
-                <div class="my-3 flex-grow-1">
+                <div class="m-3 flex-grow-1">
                     The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.
                 </div>
 
