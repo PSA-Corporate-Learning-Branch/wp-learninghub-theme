@@ -229,8 +229,8 @@ $post_my_query = new WP_Query($post_args);
                                                 );
                                                 ?> <?php foreach ($groups as $g) : ?> <?php $active = '' ?> <?php if (!empty($_GET['group']) && in_array($g->slug, $_GET['group'])) $active = 'checked' ?> 
                                                 <div class="form-check fs-6">
-                                                    <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>> <?= $g->name ?> (<?= $g->count ?>) 
-                                                    <label class="form-check-label <?php if ($active == 'checked') echo 'fw-bold' ?>">
+                                                    <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>> 
+                                                    <label for="group<?= $g->term_id ?>" class="form-check-label <?php if ($active == 'checked') echo 'fw-semibold' ?>" for="group<?= $g->term_id ?>"><?= $g->name ?> (<?= $g->count ?>) 
                                                     </label>
                                                 </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                             </form>
@@ -257,10 +257,14 @@ $post_my_query = new WP_Query($post_args);
                                                         'hide_empty' => '0'
                                                     )
                                                 );
-                                                ?> <?php foreach ($topics as $t) : ?> <?php $active = '' ?> <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> <div class="form-check fs-6">
+                                                ?> 
+                                                <?php foreach ($topics as $t) : ?> 
+                                                    <?php $active = '' ?> <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> 
+                                                <div class="form-check fs-6">
                                                     <input class="form-check-input" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
-                                                    <label class="<?php if ($active == 'checked') echo 'fw-bold' ?>"> <?= $t->name ?> (<?= $t->count ?>) </label>
-                                                </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                                                    <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> (<?= $t->count ?>) </label>
+                                                </div> <?php endforeach ?> 
+                                                <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                             </form>
                                         </div>
                                     </div>
@@ -287,7 +291,7 @@ $post_my_query = new WP_Query($post_args);
                                                 );
                                                 ?> <?php foreach ($audiences as $a) : ?> <?php $active = '' ?> <?php if (!empty($_GET['audience']) && in_array($a->slug, $_GET['audience'])) $active = 'checked' ?> <div class="form-check fs-6">
                                                     <input class="form-check-input" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
-                                                    <label class="<?php if ($active == 'checked') echo 'fw-bold' ?>"> <?= $a->name ?> (<?= $a->count ?>) </label>
+                                                    <label for="audience<?= $a->term_id ?> "class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> (<?= $a->count ?>) </label>
                                                 </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                             </form>
                                         </div>
@@ -315,7 +319,7 @@ $post_my_query = new WP_Query($post_args);
                                                 ); //,'include' => array(3,37,82,236,410)
                                                 ?> <?php foreach ($dms as $d) : ?> <?php $active = '' ?> <?php if (!empty($_GET['delivery_method']) && in_array($d->slug, $_GET['delivery_method'])) $active = 'checked' ?> <div class="form-check fs-6">
                                                     <input class="form-check-input" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
-                                                    <label class="<?php if ($active == 'checked') echo 'fw-bold' ?>"> <?= $d->name ?> (<?= $d->count ?>) </label>
+                                                    <label forid="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> (<?= $d->count ?>) </label>
                                                 </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                             </form>
                                         </div>
