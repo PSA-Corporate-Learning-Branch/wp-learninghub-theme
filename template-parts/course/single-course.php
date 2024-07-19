@@ -1,10 +1,10 @@
-<div class="course p-2 mb-2 bg-body-tertiary border border-secondary-subtle rounded-3">
+<div class="p-2 mb-2 bg-light-subtle border border-secondary-subtle rounded">
     <details>
-        <summary class="coursename mb-0 ms-3" style="list-style-position: outside;">
+        <summary class="coursename mb-0 ms-3">
             <div class="d-flex justify-content-between">
-                <span class="coursename fw-bold"><?= the_title(); ?></span>
+                <span class="text-primary"><?= the_title(); ?></span>
                 <span class="published d-none"><?= the_date(); ?></span>
-                <div class="text-muted text-decoration-none text-end flex-shrink-0 mt-1" style="font-size: 12px;">
+                <div class="text-muted text-decoration-none text-end flex-shrink-0 mt-1" style="font-size: 0.75rem;">
                     <div class="ms-3">
                         <div title="Delivery Method">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-inline-block" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -36,7 +36,7 @@
                                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
                             </svg></div>
                     </a>
-                    <div class="d-inline-block ms-2" style="font-size: 14px">
+                    <div class="d-inline-block ms-2" style="font-size: 0.75rem;">
                         <a title="Permanent link to this course's page" style="text-decoration: none;" href="<?= the_permalink() ?>">
                             <div class="icon-svg baseline-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
@@ -51,10 +51,8 @@
             <!-- There's no course link. What to do? -->
 
             <?php endif ?>
-            <div class="text-muted text-decoration-none" style="font-size: 14px;">
-                <p>
-                    <strong>Partner:</strong>
-                    <span class="partners"><?php the_terms($post->ID, 'learning_partner'); ?></span>
+            <div class="fw-semibold" style="font-size: 0.8rem;">
+                <p>Partner: <span class="partners"><?php the_terms($post->ID, 'learning_partner'); ?></span>
 
                     <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> <br>
                     <?php if (!empty($exsys[0]->name)) : ?>

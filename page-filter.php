@@ -150,7 +150,7 @@ $post_my_query = new WP_Query($post_args);
                 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters" style="width: 37.5%;">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">Filters</h3>
+                            <h3 class="card-title h4">Filters</h3>
                             <p class="lh-sm fs-6 card-text"><small>Select a heading to show/hide the filters from that category. Select the <strong>Apply</strong> button when you want to apply the filters.</small></p> <?php
                             if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) :
                                 // Grab the current URL
