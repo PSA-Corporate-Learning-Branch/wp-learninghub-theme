@@ -21,7 +21,7 @@ while (have_posts()) :
         </div>
         <div class="bg-secondary-subtle">
             <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-                <div class="row">
+                <div class="row mx-0">
                     <div class="col-lg-8">
                         <h2><?php the_title(); ?></h2>
                         <?php the_content(); ?>
