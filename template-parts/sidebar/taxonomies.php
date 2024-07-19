@@ -1,3 +1,4 @@
+<!-- put me in a card class on the page where I'm being loaded, please -->
 <p class="lh-sm fs-6 card-text"><small>Select a heading to show/hide the filters from that category. Select the <strong>Apply</strong> button when you want to apply the filters.</small></p> <?php
                                                                                                                                                                                                 if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) :
                                                                                                                                                                                                     // Grab the current URL
@@ -55,7 +56,7 @@
     </div> <?php endif ?> <div class="accordion" id="filterCategories">
     <div class="accordion-item">
         <h4 class="accordion-header" id="groupsHeading">
-            <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
+            <button class="accordion-button py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
                 <div class="d-flex flex-column align-items-start">
                     <span class="fw-semibold">Group</span>
                     <span class="fs-6"><small>What type of learning is it?</small></span>
@@ -84,7 +85,7 @@
     </div>
     <div class="accordion-item">
         <h4 class="accordion-header" id="topicsHeading">
-            <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
+            <button class="accordion-button py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
                 <div class="d-flex flex-column align-items-start">
                     <span class="fw-semibold">Topic</span>
                     <span class="fs-6"><small>What is the learning about?</small></span>
@@ -112,7 +113,7 @@
     </div>
     <div class="accordion-item">
         <h4 class="accordion-header" id="audienceHeading">
-            <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudience" aria-expanded="false" aria-controls="collapseAudience">
+            <button class="accordion-button py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudience" aria-expanded="false" aria-controls="collapseAudience">
                 <div class="d-flex flex-column align-items-start">
                     <span class="fw-semibold">Audience</span>
                     <span class="fs-6"><small>Who is the learning for?</small></span>
@@ -140,7 +141,7 @@
     </div>
     <div class="accordion-item">
         <h4 class="accordion-header" id="deliveryHeading">
-            <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelivery" aria-expanded="false" aria-controls="collapseDelivery">
+            <button class="accordion-button py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelivery" aria-expanded="false" aria-controls="collapseDelivery">
                 <div class="d-flex flex-column align-items-start">
                     <span class="fw-semibold">Delivery Method </span>
                     <span class="fs-6"><small>How is the learning offered?</small></span>
