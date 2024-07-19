@@ -113,25 +113,7 @@ while (have_posts()) :
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card topic-card mt-lg-3 mt-0">
-                            <div class="card-body">
-                                <h4 class="card-title">Looking for something else?</h4>
-                                <h5>Search using keywords</h5>
-                                <form method="get" action="/learninghub/" class="row g-2 mb-3" role="search">
-                                    <label for="s" class="visually-hidden">Search</label>
-                                    <div class="col-auto flex-grow-1"><input type="search" id="s" class="s w-100 form-control" name="s" placeholder="Search catalogue" required value="<?= esc_html(get_search_query()) ?>"></div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary" aria-label="Submit Search">
-                                            Search
-                                        </button>
-                                    </div>
-                                </form>
-                                <h5>Search using filters</h5>
-                                <?php get_template_part('template-parts/sidebar/taxonomies') ?>
-                            </div>
-                        </div>
-
-
+                        <?php get_template_part('template-parts/sidebar/taxonomies') ?>
                     </div>
 
 

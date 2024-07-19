@@ -366,7 +366,11 @@ a[rel=tag] {
     text-decoration: none;
 }
 
+[data-bs-theme=dark] .accordion-button:not(.collapsed) {
+    color: var(--bs-gray-900);
+}
 
+/* hack summary details so that it works on Safari */
 summary::-webkit-details-marker {
     display: none;
 }
