@@ -365,3 +365,36 @@ h5 {
 a[rel=tag] {
     text-decoration: none;
 }
+
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary {
+    list-style: none;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-top: 0.5rem solid transparent;
+        border-left: 0.85rem solid var(--bs-primary);
+        border-bottom: 0.5rem solid transparent;
+        left: -1.25rem;
+        top: 0.3rem;
+    }
+}
+
+details[open]>summary::before {
+    transform: rotate(90deg);
+}
+
+/* slight adjustment to columns for 4.5/7.5 width on filters page only */
+#filters .col-lg-5 {
+    width: 37.5%;
+}
+
+#results .col-lg-7 {
+    width: 62.5%;
+}
