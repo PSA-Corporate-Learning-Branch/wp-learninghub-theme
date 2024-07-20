@@ -3,10 +3,10 @@
         <h4 class="card-title">Looking for something else?</h4>
         <h5>Search using keywords</h5>
         <form method="get" action="/learninghub/" class="row g-2 mb-3" role="search">
-            <label for="s" class="visually-hidden">Search</label>
-            <div class="col-auto flex-grow-1"><input type="search" id="s" class="s w-100 form-control" name="s" placeholder="Search catalogue" required value="<?= esc_html(get_search_query()) ?>"></div>
+            <label for="sSide" class="visually-hidden">Search</label>
+            <div class="col-auto flex-grow-1"><input type="search" id="sSide" class="form-control" name="s" placeholder="Search catalogue" required></div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary" aria-label="Submit Search">
+                <button type="submit" class="btn btn-primary btn-sm" aria-label="Submit Search">
                     Search
                 </button>
             </div>

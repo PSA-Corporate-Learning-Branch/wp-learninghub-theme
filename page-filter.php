@@ -137,14 +137,14 @@ $post_my_query = new WP_Query($post_args);
     </style>
 </noscript>
 <div id="content">
-    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green" style="height: 14vh; min-height: 100px;">
+    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg py-4 py-md-5">
             <h1 class="text-white title">Course Catalogue</h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2 class="fs-1">Find learning using filters</h2>
+            <h2>Find learning using filters</h2>
             <p class="mb-4">Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
             <div class="row">
                 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
@@ -326,8 +326,13 @@ $post_my_query = new WP_Query($post_args);
                 <div id="results" class="col-lg-7">
                     <div id="courselist">
                         <div class="mb-3 p-3 card topic-card rounded">
+                            <?php
+                            $resultcount = (int) $post_my_query->found_posts;
+                            $plural = 'course';
+                            if ($resultcount > 1) $plural = 'courses';
+                            ?>
                             <div class="fw-bold mb-2" id="coursecount">
-                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> courses found</h3>
+                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
                             </div>
                             <div class="mb-3 d-flex">
                                 <input class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
