@@ -138,4 +138,5 @@ get_header();
                     </ul>
                 </div>
             </details>
+            <!-- leave divs unclosed for footer formatting -->
             <?php get_footer() ?>
