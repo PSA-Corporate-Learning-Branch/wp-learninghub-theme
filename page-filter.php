@@ -137,14 +137,14 @@ $post_my_query = new WP_Query($post_args);
     </style>
 </noscript>
 <div id="content">
-    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green" style="height: 14vh; min-height: 100px;">
+    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg py-4 py-md-5">
             <h1 class="text-white title">Course Catalogue</h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2 class="fs-1">Find learning using filters</h2>
+            <h2>Find learning using filters</h2>
             <p class="mb-4">Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
             <div class="row">
                 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">

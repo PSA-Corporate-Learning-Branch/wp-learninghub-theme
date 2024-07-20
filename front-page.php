@@ -11,7 +11,7 @@
         <div class="container-lg py-4 py-md-5">
             <div class="row">
                 <div class="col-lg-8 mb-4 mb-lg-0">
-                    <h2 class="fs-1">What is corporate learning?</h2>
+                    <h2>What is corporate learning?</h2>
                     <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
                     <a href="/learninghub/filter/" class="btn btn-lg btn-primary">Course catalogue</a>
                     <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
-                        <div class="bg-gov-green rounded-top"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:14vh;"></div>
+                        <div class="bg-gov-green rounded-top"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
                         <div class="card-body fs-6">
                             <h3 class=" card-title fs-4">What's new?</h3>
                             <h4 class="fs-4"><a href="/learninghub/2024/06/13/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
@@ -77,9 +77,14 @@
 
             <h3>How is learning organized?</h3>
             <p>Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery. </p>
-            <p>
-                <strong>Tip:</strong> Click on any category link for search results filtered by that term.
+            <p class="fs-6">
+                <span class="icon-svg baseline-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                    </svg>
+                </span> Click on any category link for search results filtered by that term.
             </p>
+
             <div class="row mb-lg-3 mb-0">
                 <div class="col-lg-6 mb-3 mb-lg-0 h-100">
                     <div class="card shadow-sm">
