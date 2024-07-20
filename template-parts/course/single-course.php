@@ -2,7 +2,7 @@
     <details>
         <summary class="coursename mb-0 ms-3">
             <div class="d-flex justify-content-between">
-                <h4 class="text-primary h5 mb-1"><?= the_title(); ?></h4>
+                <h4 class="text-primary h5 mb-0"><?= the_title(); ?></h4>
                 <h5 class="published d-none"><?= the_date(); ?></h5>
                 <div class="text-secondary-emphasis flex-shrink-0 mt-1" style="font-size: 0.75rem;">
                     <div class="ms-3">

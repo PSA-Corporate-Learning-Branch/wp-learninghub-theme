@@ -326,8 +326,13 @@ $post_my_query = new WP_Query($post_args);
                 <div id="results" class="col-lg-7">
                     <div id="courselist">
                         <div class="mb-3 p-3 card topic-card rounded">
+                            <?php
+                            $resultcount = (int) $post_my_query->found_posts;
+                            $plural = 'course';
+                            if ($resultcount > 1) $plural = 'courses';
+                            ?>
                             <div class="fw-bold mb-2" id="coursecount">
-                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> courses found</h3>
+                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
                             </div>
                             <div class="mb-3 d-flex">
                                 <input class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
