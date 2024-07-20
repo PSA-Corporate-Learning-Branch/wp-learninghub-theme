@@ -237,11 +237,11 @@ a:hover .topic-card {
     color: var(--bs-body-color);
 }
 
-[data-bs-theme=dark] .topic-card a:hover {
+[data-bs-theme=dark] .topic-card a:hover:not(.btn) {
     color: var(--bs-primary);
 }
 
-[data-bs-theme=dark] .topic-card a {
+[data-bs-theme=dark] .topic-card a:not(.btn) {
     color: var(--bs-body-color);
 }
 
