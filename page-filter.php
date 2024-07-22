@@ -367,7 +367,7 @@ $post_my_query = new WP_Query($post_args);
                     </div>
                 </div>
                 <!-- leave row div unclosed for footer formatting -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
 <script type="module">
     var options = {
         valueNames: ['published', 'coursename', 'group', 'audience', 'topic', 'dm']

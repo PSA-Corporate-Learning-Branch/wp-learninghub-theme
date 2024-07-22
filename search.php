@@ -26,7 +26,7 @@ get_header();
                 <div class="col-md-8">
                     <?php if (have_posts()) : ?>
                     <div id="courselist"> 
-                    <div class="mb-3 p-3 card rounded">
+                    <div class="mb-3 p-3 card topic-card rounded">
                         <?php
                         $resultcount = (int) $wp_query->found_posts;
                         $plural = 'course';
@@ -83,7 +83,7 @@ get_header();
 
                 </div>
             </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
 <script type="module">
     var options = {
         valueNames: ['published', 'coursename', 'group', 'audience', 'topic', 'dm']
