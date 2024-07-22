@@ -383,6 +383,9 @@ $post_my_query = new WP_Query($post_args);
     });
 </script>
 <script type="module">
+    // const queryString = window.location.search;
+    // const urlParams = new URLSearchParams(queryString);
+    // console.log(urlParams.getAll('group'));
     // 
     // Details/Summary niceties
     //
