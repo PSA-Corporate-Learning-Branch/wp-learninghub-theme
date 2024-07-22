@@ -120,10 +120,12 @@ get_header();
 
                 </div>
             </div>
-             <!-- leave divs unclosed for footer formatting -->
+        </div>
+    </div>
+</div>
 
-            <!-- / -->
-            <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<!-- / -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 <script>
 var courseoptions = {
     valueNames: [ 'partnername', 'partnerdesc' ]
@@ -136,4 +138,4 @@ partners.on('searchComplete', function(){
     document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
 });
 </script> -->
-            <?php get_footer() ?>
+<?php get_footer() ?>

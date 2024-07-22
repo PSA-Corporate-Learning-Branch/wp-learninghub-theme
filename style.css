@@ -386,7 +386,7 @@ summary {
         border-left: 0.85rem solid var(--bs-primary);
         border-bottom: 0.5rem solid transparent;
         left: -1.25rem;
-        top: 0.3rem;
+        top: 8px;
     }
 }
 

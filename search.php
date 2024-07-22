@@ -25,57 +25,57 @@ get_header();
             <div class="row mt-4">
                 <div class="col-md-8">
                     <?php if (have_posts()) : ?>
-                    <div id="courselist"> 
-                    <div class="mb-3 p-3 card topic-card rounded">
-                        <?php
-                        $resultcount = (int) $wp_query->found_posts;
-                        $plural = 'course';
-                        if ($resultcount > 1) $plural = 'courses';
-                        ?>
-                        <div class="fw-bold mb-2" id="coursecount">
-                            <h3 class="h4 fw-semibold">Your search for 
+                        <div id="courselist">
+                            <div class="mb-3 p-3 card topic-card rounded">
                                 <?php
-                                printf(
-                                    /* translators: %s: Search term. */
-                                    esc_html__('"%s"', 'twentytwentyone'),
-                                    '<span class="fw-semibold">' . esc_html(get_search_query()) . '</span>'
-                                );
-                                ?> 
-                                matched <span class="badge fs-5 bg-gov-blue mx-1"><?= $resultcount ?></span> 
-                                <?= $plural ?>
-                                </h3>
-                        </div>
-                        <div class="mb-3 d-flex">
-                            <input class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
-                        </div>
-                        <div class="d-flex">
-                            <div class="dropdown">
-                                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Sort by </button>
-                                <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
-                                    <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
-                                    <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
-                                    <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
-                                    <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
-                                    <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
-                                    <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
+                                $resultcount = (int) $wp_query->found_posts;
+                                $plural = 'course';
+                                if ($resultcount > 1) $plural = 'courses';
+                                ?>
+                                <div class="fw-bold mb-2" id="coursecount">
+                                    <h3 class="h4 fw-semibold">Your search for
+                                        <?php
+                                        printf(
+                                            /* translators: %s: Search term. */
+                                            esc_html__('"%s"', 'twentytwentyone'),
+                                            '<span class="fw-semibold">' . esc_html(get_search_query()) . '</span>'
+                                        );
+                                        ?>
+                                        matched <span class="badge fs-5 bg-gov-blue mx-1"><?= $resultcount ?></span>
+                                        <?= $plural ?>
+                                    </h3>
+                                </div>
+                                <div class="mb-3 d-flex">
+                                    <input class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
+                                </div>
+                                <div class="d-flex">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Sort by </button>
+                                        <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
+                                            <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
+                                            <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
+                                            <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
+                                            <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
+                                            <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
+                                            <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
+                                        </div>
+                                    </div>
+                                    <div class="mx-2">
+                                        <button id="expall" class="btn btn-sm btn-primary px-2 d-inline-block">Expand All</button>
+                                        <button id="collapseall" class="btn btn-sm btn-primary px-2 d-inline-block">Collapse All</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mx-2">
-                                <button id="expall" class="btn btn-sm btn-primary px-2 d-inline-block">Expand All</button>
-                                <button id="collapseall" class="btn btn-sm btn-primary px-2 d-inline-block">Collapse All</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="list">
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php get_template_part('template-parts/course/single-course') ?>
-                    <?php endwhile; ?>
-                    <?php else : ?>
-                        <p>Oh no! There are no courses that match your search. Please try another keyword.</p>
-                    <?php endif; ?>
-                    </div> <!-- /.list -->
-                </div> <!-- /#courselist -->
+                            <div class="list">
+                                <?php while (have_posts()) : the_post(); ?>
+                                    <?php get_template_part('template-parts/course/single-course') ?>
+                                <?php endwhile; ?>
+                            <?php else : ?>
+                                <p>Oh no! There are no courses that match your search. Please try another keyword.</p>
+                            <?php endif; ?>
+                            </div> <!-- /.list -->
+                        </div> <!-- /#courselist -->
                 </div>
                 <div class="col-md-4" id="filters">
 
@@ -83,6 +83,9 @@ get_header();
 
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
 <script type="module">
     var options = {
@@ -124,5 +127,5 @@ get_header();
             element.removeAttribute('open');
         });
     });
-</script> 
+</script>
 <?php get_footer(); ?>
