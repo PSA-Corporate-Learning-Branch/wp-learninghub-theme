@@ -172,6 +172,7 @@
                     </ul>
                 </div>
                 <form method="get" action="/learninghub/" data-bs-theme="light" class="collapse navbar-collapse row g-1" role="search" id="navbarSearch">
+                    <input type="hidden" name="post_type" value="course">
                     <label for="s" class="visually-hidden">Search</label>
                     <div class="col-auto flex-grow-1"><input type="search" id="s" class="s w-100 form-control" name="s" placeholder="Search catalogue" required value="<?= esc_html(get_search_query()) ?>"></div>
                     <div class="col-auto">

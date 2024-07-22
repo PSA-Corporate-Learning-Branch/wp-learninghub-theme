@@ -355,49 +355,61 @@ $post_my_query = new WP_Query($post_args);
                                 </div>
                             </div>
                         </div>
-                        <div class="list"> <?php if ($post_my_query->have_posts()) : ?> <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?> <?php get_template_part('template-parts/course/single-course') ?> <?php endwhile; ?> <?php else : ?> <p>Sorry, but there are no courses that match your filters.</p> <?php endif; ?> </div>
+                        <div class="list"> 
+                        <?php if ($post_my_query->have_posts()) : ?> 
+                        <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?> 
+                        <?php get_template_part('template-parts/course/single-course') ?> 
+                        <?php endwhile; ?> 
+                        <?php else : ?>
+                            <p>Sorry, but there are no courses that match your filters.</p> 
+                        <?php endif; ?> 
+                        </div>
                     </div>
                 </div>
                 <!-- leave row div unclosed for footer formatting -->
-                <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-                <script type="module">
-                    var options = {
-                        valueNames: ['published', 'coursename', 'group', 'audience', 'topic', 'dm']
-                    };
-                    var courseList = new List('courselist', options);
-                    courseList.on('searchComplete', function() {
-                        let ccount = document.getElementById('coursecount');
-                        let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' courses found';
-                        ccount.innerHTML = update;
-                    });
-                    document.addEventListener("DOMContentLoaded", function() {
-                        courseList.update;
-                    });
-                </script>
-                <script type="module">
-                    // 
-                    // Details/Summary niceties
-                    //
-                    // By default, all the courses are hidden behind a details/summary
-                    // and subsequently the description/launch links are as well.
-                    // This supports allowing the learner to choose to "expand all" and 
-                    // show everything on the page all at once, or "collapse all" and 
-                    // hide everything. 
-                    //
-                    // Show everything all in once fell swoop.
-                    let expall = document.getElementById('expall');
-                    let steplist = document.getElementById('courselist');
-                    let deets = steplist.querySelectorAll('details');
-                    expall.addEventListener('click', (e) => {
-                        Array.from(deets).forEach(function(element) {
-                            element.setAttribute('open', 'open');
-                        });
-                    });
-                    // Conversley, "collapse all" hides everyting open in one fell swoop.
-                    let collapseall = document.getElementById('collapseall');
-                    collapseall.addEventListener('click', (e) => {
-                        Array.from(deets).forEach(function(element) {
-                            element.removeAttribute('open');
-                        });
-                    });
-                </script> <?php get_footer(); ?>
+<script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
+<script type="module">
+    var options = {
+        valueNames: ['published', 'coursename', 'group', 'audience', 'topic', 'dm']
+    };
+    var courseList = new List('courselist', options);
+    courseList.on('searchComplete', function() {
+        let ccount = document.getElementById('coursecount');
+        let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' courses found';
+        ccount.innerHTML = update;
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        courseList.update;
+    });
+</script>
+<script type="module">
+    // const queryString = window.location.search;
+    // const urlParams = new URLSearchParams(queryString);
+    // console.log(urlParams.getAll('group'));
+    // 
+    // Details/Summary niceties
+    //
+    // By default, all the courses are hidden behind a details/summary
+    // and subsequently the description/launch links are as well.
+    // This supports allowing the learner to choose to "expand all" and 
+    // show everything on the page all at once, or "collapse all" and 
+    // hide everything. 
+    //
+    // Show everything all in once fell swoop.
+    let expall = document.getElementById('expall');
+    let steplist = document.getElementById('courselist');
+    let deets = steplist.querySelectorAll('details');
+    expall.addEventListener('click', (e) => {
+        Array.from(deets).forEach(function(element) {
+            element.setAttribute('open', 'open');
+        });
+    });
+    // Conversley, "collapse all" hides everyting open in one fell swoop.
+    let collapseall = document.getElementById('collapseall');
+    collapseall.addEventListener('click', (e) => {
+        Array.from(deets).forEach(function(element) {
+            element.removeAttribute('open');
+        });
+    });
+</script> 
+<?php get_footer(); ?>

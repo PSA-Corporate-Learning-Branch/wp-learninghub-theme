@@ -33,10 +33,10 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
-                        <div class="bg-gov-green rounded-top"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
+                        <div class="bg-gov-green rounded-top"><img src="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
                         <div class="card-body fs-6">
                             <h3 class=" card-title fs-4">What's new?</h3>
-                            <h4 class="fs-4"><a href="/learninghub/2024/06/13/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
+                            <h4 class="fs-4"><a href="/learninghub/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
                             <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
                             <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
                         </div>
