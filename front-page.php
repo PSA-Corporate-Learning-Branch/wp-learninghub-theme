@@ -202,8 +202,7 @@
                                     'taxonomy' => 'delivery_method',
                                     'hide_empty' => false,
                                     'orderby'    => 'count',
-                                    'order'   => 'DESC',
-                                    'include'   => array(65, 83, 119, 163, 567)
+                                    'order'   => 'DESC'
                                 ));
                                 //'include'   => array(65, 83, 119, 163, 567)
                                 ?>
