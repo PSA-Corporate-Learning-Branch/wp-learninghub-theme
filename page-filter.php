@@ -355,18 +355,21 @@ $post_my_query = new WP_Query($post_args);
                                 </div>
                             </div>
                         </div>
-                        <div class="list"> 
-                        <?php if ($post_my_query->have_posts()) : ?> 
-                        <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?> 
-                        <?php get_template_part('template-parts/course/single-course') ?> 
-                        <?php endwhile; ?> 
-                        <?php else : ?>
-                            <p>Sorry, but there are no courses that match your filters.</p> 
-                        <?php endif; ?> 
+                        <div class="list">
+                            <?php if ($post_my_query->have_posts()) : ?>
+                                <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
+                                    <?php get_template_part('template-parts/course/single-course') ?>
+                                <?php endwhile; ?>
+                            <?php else : ?>
+                                <p>Sorry, but there are no courses that match your filters.</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-                <!-- leave row div unclosed for footer formatting -->
+            </div>
+        </div>
+    </div>
+</div>
 <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
 <script type="module">
     var options = {
@@ -411,5 +414,5 @@ $post_my_query = new WP_Query($post_args);
             element.removeAttribute('open');
         });
     });
-</script> 
+</script>
 <?php get_footer(); ?>
