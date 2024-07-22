@@ -116,10 +116,10 @@ while (have_posts()) :
                         <?php get_template_part('template-parts/sidebar/taxonomies') ?>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
 
-
-
-                    <!-- leave row div unclosed as it's in the footer -->
-                    <?php
-
-                    get_footer();
+    get_footer();

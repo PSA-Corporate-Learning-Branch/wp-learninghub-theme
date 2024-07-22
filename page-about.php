@@ -59,5 +59,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <!-- leave container div unclosed for footer elements -->
-            <?php get_footer() ?>
+        </div>
+    </div>
+</div>
+<?php get_footer() ?>

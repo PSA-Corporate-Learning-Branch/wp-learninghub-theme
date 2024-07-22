@@ -73,5 +73,7 @@ get_header();
                     </ul>
                 </div>
             </div>
-            <!-- leave container div unclosed for footer -->
-            <?php get_footer() ?>
+        </div>
+    </div>
+</div>
+ <?php get_footer() ?>
