@@ -1,43 +1,51 @@
 
 <?php get_header() ?>
 
-<div class="bg-gov-green">
-<div class="container">
-<div class="row py-5 mb-3">
-<div class="col-12">
-
-    <h1 class="">What is the Corporate Learning Framework?</h1>
-
-</div>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row justify-content-md-center">
-<div class="col-md-8">
-
-<h3 class=" "><strong>What is Corporate Learning?</strong></h3>
+<div id="content">
+    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
+        <div class="container-lg py-4 py-md-5">
+            <h1 class="text-white title">What is the Corporate Learning Framework? </h1>
+        </div>
+    </div>
+    <div class="bg-light-subtle">
+        <div class="container-lg py-4 py-md-5">
+        <h2 class=" ">What is Corporate Learning?</h2>
  
-<p class="availtoall"><strong>Corporate Learning is learning that is available to ALL BCPS Employees.</strong></p>
- 
-<p class="ministrylearning"><strong>It does not include training that is offered by Ministries to Ministry employees.</strong></p>
+        <p class="p-3 rounded border border-secondary-subtle"><i class="bi bi-check-circle"></i> <strong>Corporate Learning is learning that is available to ALL BCPS Employees.</strong></p>
+        <p class="p-3 rounded border border-secondary-subtle mb-4"><i class="bi bi-ban"></i> <strong>It does not include training that is offered by Ministries to Ministry employees.</strong></p>
 
-<h3><strong>Who are the Corporate Learning Partners?</strong></h3>
-<p class="has-text-align-left has-normal-font-size"><strong><a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/learning-centre/" data-type="learning_partner" data-id="59">Learning Centre</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/conflict-management-office/">Conflict Management Office</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/lean-bc/" data-type="learning_partner" data-id="192">Lean BC</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/coaching-services/" data-type="learning_partner" data-id="378">Coaching Services</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/gender-equity-office/" data-type="learning_partner" data-id="351">Gender Equity Office</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/devexchange/" data-type="learning_partner" data-id="374">Exchange Lab</a>, <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/house-of-indigenous-learning/">House of Indigenous Learning</a> ...</strong> </p>
+        <h3>Who are the Corporate Learning Partners?</h3>
+        <p class="p-3 rounded border border-secondary-subtle">
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/learning-centre/" data-type="learning_partner" data-id="59">Learning Centre</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/conflict-management-office/">Conflict Management Office</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/lean-bc/" data-type="learning_partner" data-id="192">Lean BC</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/coaching-services/" data-type="learning_partner" data-id="378">Coaching Services</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/gender-equity-office/" data-type="learning_partner" data-id="351">Gender Equity Office</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/devexchange/" data-type="learning_partner" data-id="374">Exchange Lab</a>, 
+            <a href="https://learningcentre.gww.gov.bc.ca/learninghub/learning_partner/house-of-indigenous-learning/">House of Indigenous Learning</a> ...
+        </p>
 
 <div class="">
-    <a class="" 
+    <a class="btn btn-lg btn-primary" 
         href="https://learningcentre.gww.gov.bc.ca/learninghub/corporate-learning-partners/">
             View all Corporate Learning Partners
     </a>
 </div>
+        </div>
+    </div>
+    <div class="bg-secondary-subtle pt-4">
+        <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+            
+
+
+
  
 
 <h3 class=" "><strong>BCPS Learning Vision</strong></h3>
 
 <p class=" ">The vision statement for Corporate Learning in the BCPS provides a compelling North Star for learning. The vision&nbsp;is built upon&nbsp;eight&nbsp;key themes&nbsp;that&nbsp;&nbsp;inform the entire corporate learning framework and&nbsp;are woven throughout all&nbsp;its components.&nbsp;</p>
 
-<figure class="wp-block-image size-large is-style-rounded"><a href="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2023/02/bcps-corp-learning0framework-vision.png"><img src="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2023/02/bcps-corp-learning0framework-vision-1024x377.png" alt="Diagram showing the 8 key themes of the vision statement of the BCPS" class="wp-image-5284"/></a><figcaption class="wp-element-caption">Diagram showing the 8 key themes of the vision statement of the BCPS: <br><em>Learner-centric, enduring capabilities, relationship building, career paths, accessible, future ready, just-in-time, and skill building</em></figcaption></figure>
+<figure class=""><a href="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/07/bcps-corp-learning0framework-vision.png"><img src="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/07/bcps-corp-learning0framework-vision.png" alt="Diagram showing the 8 key themes of the vision statement of the BCPS" class="wp-image-5284"/></a><figcaption class="wp-element-caption">Diagram showing the 8 key themes of the vision statement of the BCPS: <br><em>Learner-centric, enduring capabilities, relationship building, career paths, accessible, future ready, just-in-time, and skill building</em></figcaption></figure>
  
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 
@@ -49,7 +57,7 @@
 
 <h3 class=" "><strong>BCPS Corporate Learning Framework</strong></h3>
  
-<figure class="wp-block-image size-large"><a href="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2023/02/bcps-corp-learning0framework-org-strategy.png"><img src="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2023/02/bcps-corp-learning0framework-org-strategy-1024x487.png" alt="Diagram showing the CLF Organizational Strategy" class="wp-image-5285"/></a><figcaption class="wp-element-caption">Diagram showing the CLF Organizational Strategy</figcaption></figure>
+<figure class="wp-block-image size-large"><a href="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/07/bcps-corp-learning0framework-org-strategy.png"><img src="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/07/bcps-corp-learning0framework-org-strategy.png" alt="Diagram showing the CLF Organizational Strategy" class="wp-image-5285"/></a><figcaption class="wp-element-caption">Diagram showing the CLF Organizational Strategy</figcaption></figure>
  
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 
