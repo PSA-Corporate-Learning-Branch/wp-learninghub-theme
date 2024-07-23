@@ -196,7 +196,7 @@ $post_my_query = new WP_Query($post_args);
                                 </div> <?php endif ?> <div class="accordion" id="filterCategories">
                                 <div class="accordion-item">
                                     <h4 class="accordion-header" id="groupsHeading">
-                                        <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="true" aria-controls="collapseGroups">
+                                        <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
                                             <div class="d-flex flex-column align-items-start">
                                                 <span class="fw-semibold">Group</span>
                                                 <span class="fs-6"><small>What type of learning is it?</small></span>
@@ -387,15 +387,27 @@ $post_my_query = new WP_Query($post_args);
     Array.from(taxes).forEach(function(element) {
         if(element.id == 'collapseGroups' && g.length > 0) { 
             element.classList.add('show');
+            let butt = element.parentNode.querySelectorAll('.accordion-button');
+            butt[0].setAttribute('aria-expanded', 'true');
+            butt[0].classList.remove('collapsed');
         }
         if(element.id == 'collapseTopics' && t.length > 0) { 
             element.classList.add('show');
+            let butt = element.parentNode.querySelectorAll('.accordion-button');
+            butt[0].setAttribute('aria-expanded', 'true');
+            butt[0].classList.remove('collapsed');
         }
         if(element.id == 'collapseAudience' && a.length > 0) { 
             element.classList.add('show');
+            let butt = element.parentNode.querySelectorAll('.accordion-button');
+            butt[0].setAttribute('aria-expanded', 'true');
+            butt[0].classList.remove('collapsed');
         }
         if(element.id == 'collapseDelivery' && d.length > 0) { 
             element.classList.add('show');
+            let butt = element.parentNode.querySelectorAll('.accordion-button');
+            butt[0].setAttribute('aria-expanded', 'true');
+            butt[0].classList.remove('collapsed');
         }
     });
     // If there aren't any filters at all, open the groups filter accordion
@@ -404,6 +416,9 @@ $post_my_query = new WP_Query($post_args);
     if(g.length == 0 && t.length == 0 && a.length == 0 && d.length == 0) {
         let opengroup = document.getElementById('collapseGroups');
         opengroup.classList.add('show');
+        let butt = opengroup.parentNode.querySelectorAll('.accordion-button');
+        butt[0].setAttribute('aria-expanded', 'true');
+        butt[0].classList.remove('collapsed');
     }
     
     // 
