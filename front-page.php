@@ -110,7 +110,7 @@
                                 ));
                                 ?>
                                 <?php foreach ($groups as $g) : ?><li>
-                                        <a href="/learninghub/filter/?group[]=<?= $g->slug ?>"><?= $g->name ?>:</a> <?= $g->description ?>
+                                        <a href="/learninghub/filter/?group%5B%5D=<?= $g->slug ?>"><?= $g->name ?>:</a> <?= $g->description ?>
                                     </li>
                                 <?php endforeach ?>
                             </ul>
@@ -142,7 +142,7 @@
                                 ?>
                                 <?php foreach ($audiences as $a) : ?>
                                     <li>
-                                        <a href="/learninghub/filter/?audience[]=<?= $a->slug ?>"><?= $a->name ?></a>:
+                                        <a href="/learninghub/filter/?audience%5B%5D=<?= $a->slug ?>"><?= $a->name ?></a>:
                                         <?= $a->description ?>
                                     </li>
                                 <?php endforeach ?>
@@ -174,7 +174,7 @@
                     ?>
                     <?php foreach ($topics as $t) : ?>
                         <div class="col-lg-6 col-12 p-0">
-                            <a href="/learninghub/filter/?topic[]=<?= $t->slug ?>" class="text-decoration-none">
+                            <a href="/learninghub/filter/?topic%5B%5D=<?= $t->slug ?>" class="text-decoration-none">
                                 <div class="rounded shadow-sm px-3 py-2 m-1 topic-card"><?= $t->name ?></div>
                             </a>
                         </div>
@@ -208,7 +208,7 @@
                                 ?>
                                 <?php foreach ($delivery as $d) : ?>
                                     <li>
-                                        <a href="/learninghub/filter/?delivery_method[]=<?= $d->slug ?>"><?= $d->name ?></a>:
+                                        <a href="/learninghub/filter/?delivery_method%5B%5D=<?= $d->slug ?>"><?= $d->name ?></a>:
                                         <?= $d->description ?>
                                     </li>
                                 <?php endforeach ?>
