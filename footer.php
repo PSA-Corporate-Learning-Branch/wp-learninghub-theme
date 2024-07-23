@@ -14,14 +14,14 @@
 
 
 <div id="bcgovfoot" class="bg-gov-blue">
-    <footer class="site-footer container-lg py-4 py-lg-5" role="contentinfo">
+    <footer class="site-footer container-lg py-4 py-lg-5">
         <div class="site-info d-block">
             <div class="d-flex flex-column flex-lg-row justify-content-between">
                 <div class="m-3 flex-grow-1">
                     The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.
                 </div>
 
-                <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100px" width="380px" alt="Where Ideas Work logo">
+                <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100" width="380" alt="Where Ideas Work logo">
             </div>
             <div class="fs-6 d-block text-end border-top border-warning pt-1">
                 Proudly powered by <a href="https://wordpress.org/" class="text-white">WordPress</a>. </div>
