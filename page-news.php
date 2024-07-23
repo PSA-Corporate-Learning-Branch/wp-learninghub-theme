@@ -11,20 +11,19 @@
 
 get_header();
 ?>
+<div id="content">
+    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
+        <div class="container-lg py-4 py-md-5">
+            <h1 class="text-white title">Learning News </h1>
+        </div>
+    </div>
 
-<div class="bg-gov-green">
-<div class="container">
-<div class="row py-5 mb-3">
-<div class="col-md-12">
-    <h1>Learning News</h1>
-</div>
-</div>
-</div>
-</div>
+    <div class="bg-secondary-subtle pt-4">
+        <div class="container-lg p-lg-5 p-4 bg-light-subtle">
 
-<div class="container">
+
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-7">
 
 
 
@@ -78,7 +77,7 @@ $args = array(
 
 
 </div>
-<div class="col-md-4">
+<div class="col-md-5">
 
 
 <?php get_template_part('template-parts/sidebar/taxonomies') ?>
