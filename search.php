@@ -10,6 +10,126 @@
  * @since Twenty Twenty-One 1.0
  */
 
+
+
+// WP_Query takes a "taxquery" an array argument that allows you to query by 
+// taxonomy. Let's start building that array.
+$taxquery = [];
+// We go through each of the 4 taxonomies that we want to filter on:
+// group, topic, audience, and delivery method
+// If the array exists...
+if (!empty($_GET['group'])) {
+    $groupterm = $_GET['group'];
+    // Wordpress automatically processes arrays passed to it
+    $g = array(
+        'taxonomy' => 'groups',
+        'field' => 'slug',
+        'terms' => $groupterm,
+    );
+    // Add the term(s) array to the query array
+    array_push($taxquery, $g);
+    // Now we need to look up the names of the terms from the slugs
+    // so that we can show them back to the user in the "remove filter"
+    // area.
+    $gterms = [];
+    // Loop through each of the slugs
+    foreach ($_GET['group'] as $g) {
+        // Look up the term object for the slug
+        $gterm = get_term_by('slug', $g, 'groups');
+        // add the result to the array that we can now loop through below.
+        array_push($gterms, $gterm);
+    }
+}
+
+if (!empty($_GET['topic'])) {
+    $topicterm = $_GET['topic'];
+    $t = array(
+        'taxonomy' => 'topics',
+        'field' => 'slug',
+        'terms' => $topicterm,
+    );
+    array_push($taxquery, $t);
+    // Now we need to look up the names of the terms from the slugs
+    // so that we can show them back to the user in the "remove filter"
+    // area.
+    $tterms = [];
+    // Loop through each of the slugs
+    foreach ($_GET['topic'] as $t) {
+        // Look up the term object for the slug
+        $tterm = get_term_by('slug', $t, 'topics');
+        // add the result to the array that we can now loop through below.
+        array_push($tterms, $tterm);
+    }
+}
+
+
+if (!empty($_GET['audience'])) {
+    $audienceterm = $_GET['audience'];
+    $a = array(
+        'taxonomy' => 'audience',
+        'field' => 'slug',
+        'terms' => $audienceterm,
+    );
+    array_push($taxquery, $a);
+    // Now we need to look up the names of the terms from the slugs
+    // so that we can show them back to the user in the "remove filter"
+    // area.
+    $aterms = [];
+    // Loop through each of the slugs
+    foreach ($_GET['audience'] as $a) {
+        // Look up the term object for the slug
+        $aterm = get_term_by('slug', $a, 'audience');
+        // add the result to the array that we can now loop through below.
+        array_push($aterms, $aterm);
+    }
+}
+
+if (!empty($_GET['delivery_method'])) {
+    $dmterm = $_GET['delivery_method'];
+
+    $dm = array(
+        'taxonomy' => 'delivery_method',
+        'field' => 'slug',
+        'terms' => $dmterm,
+    );
+    array_push($taxquery, $dm);
+    // Now we need to look up the names of the terms from the slugs
+    // so that we can show them back to the user in the "remove filter"
+    // area.
+    $dterms = [];
+    // Loop through each of the slugs
+    foreach ($_GET['delivery_method'] as $d) {
+        // Look up the term object for the slug
+        $dterm = get_term_by('slug', $d, 'delivery_method');
+        // add the result to the array that we can now loop through below.
+        array_push($dterms, $dterm);
+    }
+}
+
+// This is the main Wordpress query that we pass our $taxquery to.
+$post_args = array(
+    'post_type'                => 'course',
+    'post_status'              => 'publish',
+    'posts_per_page'           => -1,
+    'ignore_sticky_posts'      => 0,
+    'tax_query'                => $taxquery,
+    'orderby'                  => array(
+        'date' => 'DESC',
+        'menu_order' => 'ASC'
+    ),
+    'order'                    => 'ASC',
+    'hide_empty'               => 0,
+    'hierarchical'             => 1,
+    'exclude'                  => '',
+    'include'                  => '',
+    'number'                   => '',
+    'pad_counts'               => true
+    // 's'                        => $_GET['s']
+);
+$post_my_query = null;
+$post_my_query = new WP_Query($post_args);
+
+
 get_header();
 ?>
 <div id="content">
@@ -24,7 +144,7 @@ get_header();
             <p>If you already know what you're looking for, search by a keyword to quickly narrow down your search. </p>
             <div class="row mt-4">
                 <div class="col-md-8">
-                    <?php if (have_posts()) : ?>
+                    <?php if ($post_my_query->have_posts()) : ?>
                         <div id="courselist">
                             <div class="mb-3 p-3 card topic-card rounded">
                                 <?php
@@ -68,7 +188,7 @@ get_header();
                             </div>
 
                             <div class="list">
-                                <?php while (have_posts()) : the_post(); ?>
+                            <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
                                     <?php get_template_part('template-parts/course/single-course') ?>
                                 <?php endwhile; ?>
                             <?php else : ?>

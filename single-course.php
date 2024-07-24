@@ -103,8 +103,8 @@ while (have_posts()) :
                                 </span>
                             </div>
                             </div>
-                            <div class="coursecats mt-1" style="display:none;">
-                                <?php the_terms($post->ID, 'course_category', 'Categories: ', ', ', ' '); ?>
+                            <div class="coursecats mt-1" style="display:none">
+                                <?php the_terms($post->ID, 'keywords', 'Keywords: ', ', ', ' '); ?>
                             </div>
 
                         <?php endwhile; // End of the loop. 

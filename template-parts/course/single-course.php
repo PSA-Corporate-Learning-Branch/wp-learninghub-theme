@@ -20,7 +20,7 @@
             </div>
         </summary>
         <div class="mt-2 ms-3 fs-6">
-            <?php the_content(); ?>
+            <div class="coursedesc"><?php the_content(); ?></div>
             <?php if (!empty($post->mandatory_notes)) : ?>
                 <div class="mandonotes" style="background-color: #fffede; border-radius: 5px; margin: 1em 0 0 0; padding: 1em;">
                     <?= $post->mandatory_notes ?>
@@ -95,8 +95,8 @@
                 </div>
             </div>
             </div>
-            <div class="coursecats mt-1" style="display:none;">
-                <?php the_terms($post->ID, 'course_category', 'Categories: ', ', ', ' '); ?>
+            <div class="coursekeywords mt-1" style="display:none">
+                <?php the_terms($post->ID, 'keywords', 'Keywords: ', ', ', ' '); ?>
             </div>
         </div>
 
