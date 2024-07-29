@@ -42,6 +42,7 @@ if (!empty($_GET['group'])) {
 }
 
 if (!empty($_GET['topic'])) {
+
     $topicterm = $_GET['topic'];
     $t = array(
         'taxonomy' => 'topics',
@@ -123,8 +124,8 @@ $post_args = array(
     'exclude'                  => '',
     'include'                  => '',
     'number'                   => '',
-    'pad_counts'               => true
-    // 's'                        => $_GET['s']
+    'pad_counts'               => true,
+    's'                        => $_GET['s']
 );
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
@@ -199,7 +200,7 @@ get_header();
                 </div>
                 <div class="col-md-4" id="filters">
 
-                    <?php get_template_part('template-parts/sidebar/taxonomies') ?>
+                    <?php //get_template_part('template-parts/sidebar/taxonomies') ?>
 
                 </div>
             </div>
