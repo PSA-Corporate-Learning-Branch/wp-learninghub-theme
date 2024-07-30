@@ -558,8 +558,8 @@ get_header();
 </div>
 </div>
 </div>
-<!-- <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
 
 <script type="module">
     var options = {
@@ -589,10 +589,7 @@ get_header();
             let removekw = removefilter.firstElementChild;
             removekw.textContent = searchValue;
         }
-        let hiddenkeywords = document.querySelectorAll('.hiddenkeywords');
-        Array.from(hiddenkeywords).forEach(function(element) {
-            element.setAttribute('value', searchValue);
-        });
+        updateHiddenKeywords(searchValue);
         let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' courses found';
         ccount.innerHTML = update;
 
@@ -611,6 +608,13 @@ get_header();
 
         // Update the URL in the browser without reloading the page
         window.history.replaceState({}, '', url);
+    }
+
+    function updateHiddenKeywords (searchValue) {
+        let hiddenkeywords = document.querySelectorAll('.hiddenkeywords');
+        Array.from(hiddenkeywords).forEach(function(element) {
+            element.setAttribute('value', searchValue);
+        });
     }
 </script>
 <script type="module">
@@ -687,4 +691,5 @@ get_header();
         });
     });
 </script>
+
 <?php get_footer(); ?>
