@@ -63,6 +63,63 @@ get_header();
                     <ul class="mb-4">
                         <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                     </ul>
+
+
+                    <?php
+                    $termID = 638;
+                    $taxonomyname = "journey";
+                    $custom_terms = get_term_children( $termID, $taxonomyname ); 
+                    $children = array();
+                    foreach ($custom_terms as $child) {
+                        $term = get_term_by( 'id', $child, $taxonomyname );
+                        $children[$term->term_order] = $term;
+                    }
+                    ksort($children);
+                    foreach($children as $custom_term) :
+                        $count = 0;
+                        //echo $custom_term->slug;
+                        $term = get_term_by( 'id', $custom_term, $taxonomyname );
+                        wp_reset_query();
+                        $args = array(
+                            'post_type' => 'course',
+                            'orderby'   => 'menu_order',
+                            'order' => 'ASC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'journey',
+                                    'field' => 'slug',
+                                    'terms' => $custom_term->slug,
+                                ),
+                            ),
+                        );
+
+                        $loop = new WP_Query($args);
+                        if($loop->have_posts()): ?>
+                        <h5><?= $custom_term->name ?></h5>
+                        <ul>
+                        <?php while($loop->have_posts()) : $loop->the_post(); ?>
+                        <?php $count++ ?>
+                        <?php $c = 'two' ?>
+                        <?php if($count % 2 > 0) $c = 'one' ?>
+                        <li class="course<?= $count ?> <?= $c ?> journeycourse">
+                            <a href="<?= get_permalink() ?>"> <?= get_the_title() ?></a>
+                            <span class="badge text-bg-warning fw-medium ms-2">
+                                <?php echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); ?>
+                            </span>
+                        </li>
+                        <?php endwhile; // endof course loop ?>
+                        </ul>
+                        <?php endif; // are there posts? ?>
+
+
+                    <?php endforeach; // endof term loop ?>
+
+
+
+
+
+
+
                 </div>
             </details>
             <details class="border border-secondary px-3 py-2 my-3 rounded">
