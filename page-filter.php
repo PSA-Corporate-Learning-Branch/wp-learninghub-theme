@@ -142,16 +142,16 @@ $post_my_query = new WP_Query($post_args);
                         <div class="card-body">
                             <h3 class="card-title h4 fw-semibold">Filters</h3>
                             <p class="lh-sm fs-6 card-text"><small>Select a heading to show/hide the filters from that category. Select the <strong>Apply</strong> button when you want to apply the filters.</small></p> 
-                            <?php
-                                if (!empty($kw) || !empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) :
-                                    // Grab the current URL
-                                    $url = $_SERVER['REQUEST_URI'];
-                                    $currenturl = urldecode($url);
-                            ?> 
+                            
                                 <div class="mb-3">
                                     <div class="row"> 
+                                        <?php 
+                                        // Grab the current URL
+                                        $url = $_SERVER['REQUEST_URI'];
+                                        $currenturl = urldecode($url);
+                                        ?>
                                         <?php if (!empty($kw)) : ?> 
-                                        <div class="col-md-auto mb-2">
+                                        <div id="nokey" class="col-md-auto mb-2">
                                         <div>Keyword</div>
                                         <?php
                                         $kwurl = $currenturl;
@@ -160,13 +160,24 @@ $post_my_query = new WP_Query($post_args);
                                         $keyurl = str_replace('&&', '&', $keyurl);
                                         ?>
                                         <div aria-label="remove filter: <?= $kw ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a href="<?= $keyurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $kw ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                            <a id="keywordfilter" href="<?= $keyurl ?>" class="text-secondary-emphasis text-decoration-none"> <span><?= $kw ?></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                                </svg></a>
+                                        </div> 
+                                        </div> 
+                                        <?php else: ?>
+                                        <div id="nokey" class="col-md-auto mb-2 d-none">
+                                        <div>Keyword</div>
+                                        <div aria-label="remove filter: " class="badge bg-dark-subtle border-0 fw-normal">
+                                            <a id="keywordfilter" href="<?= $currenturl ?>" class="text-secondary-emphasis text-decoration-none"> <span></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
                                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                 </svg></a>
                                         </div> 
                                         </div> 
                                         <?php endif ?>
-                                        
+
+
+                                    <?php if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
                                         <?php if (!empty($gterms)) : ?> 
                                         <div class="col-md-auto mb-2">
                                         <div>Group</div> 
@@ -185,7 +196,8 @@ $post_my_query = new WP_Query($post_args);
                                         <?php endforeach ?>
                                         </div> 
                                         <?php endif ?> 
-                                        <?php if (!empty($tterms)) : ?> <div class="col-md-auto mb-2">
+                                        <?php if (!empty($tterms)) : ?> 
+                                        <div class="col-md-auto mb-2">
                                         <div>Topic</div> 
                                         <?php foreach ($tterms as $t) : ?> 
                                         <?php
@@ -198,21 +210,30 @@ $post_my_query = new WP_Query($post_args);
                                                         <a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $t->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
                                                                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                             </svg></a>
-                                                    </div> <?php endforeach ?>
-                                            </div> <?php endif ?> <?php if (!empty($aterms)) : ?> <div class="col-md-auto mb-2">
-                                                <div>Audience</div> <?php foreach ($aterms as $a) : ?> 
-                                                <?php
-                                                $audurl = $currenturl;
-                                                $replace = 'audience[]=' . $a->slug . '';
-                                                $aurl = str_replace($replace, '', $audurl);
-                                                $aurl = str_replace('&&', '&', $aurl);
-                                                ?> 
-                                                <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                        <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                            </svg></a>
-                                                    </div> <?php endforeach ?>
-                                            </div> <?php endif ?> <?php if (!empty($dterms)) : ?> <div class="col-md-auto">
+                                                    </div> 
+                                        <?php endforeach ?>
+                                        </div> 
+                                        <?php endif ?> 
+                                        <?php if (!empty($aterms)) : ?> 
+                                        <div class="col-md-auto mb-2">
+                                            <div>Audience</div> 
+                                            <?php foreach ($aterms as $a) : ?> 
+                                            <?php
+                                            $audurl = $currenturl;
+                                            $replace = 'audience[]=' . $a->slug . '';
+                                            $aurl = str_replace($replace, '', $audurl);
+                                            $aurl = str_replace('&&', '&', $aurl);
+                                            ?> 
+                                            <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                                                    <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                                        </svg></a>
+                                                </div> 
+                                            <?php endforeach ?>
+                                            </div> 
+                                            <?php endif ?> 
+                                            <?php if (!empty($dterms)) : ?> 
+                                            <div class="col-md-auto">
                                                 <div>Delivery Method</div> 
                                                 <?php foreach ($dterms as $d) : ?> 
                                                 <?php
@@ -225,12 +246,24 @@ $post_my_query = new WP_Query($post_args);
                                                         <a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $d->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
                                                                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                             </svg></a>
-                                                    </div> <?php endforeach ?>
-                                            </div> <?php endif ?> </div>
-                                    <div class="mt-3">
+                                                    </div> 
+                                                <?php endforeach ?>
+                                            </div> 
+                                            <?php endif ?> 
+
+                                    <div class="mt-1">
                                         <a class="btn btn-sm btn-primary" href="/learninghub/filter/">Clear All</a>
                                     </div>
-                                </div> <?php endif ?> <div class="accordion" id="filterCategories">
+                                
+
+                                    <?php endif ?> 
+
+                                </div> 
+                                </div> 
+
+
+                                
+                                <div class="accordion" id="filterCategories">
                                 <div class="accordion-item">
                                     <h4 class="accordion-header" id="groupsHeading">
                                         <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
@@ -245,9 +278,7 @@ $post_my_query = new WP_Query($post_args);
                                         <div class="accordion-body bg-light-subtle">
                                             
                                             <form action="/learninghub/filter" method="GET"> 
-                                            <?php if (!empty($kw)) : ?> 
-                                            <input type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php endif ?> 
+                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
                                             <?php if (!empty($_GET['topic'])) : ?> 
                                             <?php foreach ($_GET['topic'] as $tid) : ?> 
                                             <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
@@ -298,9 +329,7 @@ $post_my_query = new WP_Query($post_args);
                                     <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="topicsHeading">
                                         <div class="accordion-body bg-light-subtle">
                                             <form action="/learninghub/filter" method="GET"> 
-                                            <?php if (!empty($kw)) : ?> 
-                                            <input type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php endif ?> 
+                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
                                             <?php if (!empty($_GET['group'])) : ?> 
                                             <?php foreach ($_GET['group'] as $gid) : ?> 
                                             <input type="hidden" name="group[]" value="<?= sanitize_text_field($gid) ?>">
@@ -351,9 +380,7 @@ $post_my_query = new WP_Query($post_args);
                                     <div id="collapseAudience" class="accordion-collapse collapse" aria-labelledby="audienceHeading">
                                         <div class="accordion-body bg-light-subtle">
                                             <form action="/learninghub/filter" method="GET"> 
-                                            <?php if (!empty($kw)) : ?> 
-                                            <input type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php endif ?> 
+                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
                                             <?php if (!empty($_GET['group'])) : ?> 
                                             <?php foreach ($_GET['group'] as $gid) : ?> 
                                             <input type="hidden" name="group[]" value="<?= $gid ?>"> 
@@ -402,9 +429,7 @@ $post_my_query = new WP_Query($post_args);
                                     <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="deliveryHeading">
                                         <div class="accordion-body bg-light-subtle">
                                             <form action="/learninghub/filter" method="GET"> 
-                                            <?php if (!empty($kw)) : ?> 
-                                            <input type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php endif ?> 
+                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
                                             <?php if (!empty($_GET['group'])) : ?> 
                                             <?php foreach ($_GET['group'] as $gid) : ?> 
                                             <input type="hidden" name="group[]" value="<?= $gid ?>"> 
@@ -445,8 +470,23 @@ $post_my_query = new WP_Query($post_args);
                     </div>
                 </div>
                 <div id="results" class="col-lg-7">
+                    <?php if (!empty($_GET['group']) && in_array('mandatory', $_GET['group']) || $_GET['keyword'] == 'mandatory' || $_GET['keyword'] == 'Mandatory') : ?> 
+                        <div class="alert alert-primary">
+                            <p><a class="alert-link" href="/learninghub/foundational-corporate-learning/">Check out Foundational Learning</a> 
+                            for more guidance on what's mandatory for whom and when.</p>
+                        </div>
+                    <?php endif ?>
                     <div id="courselist">
                         <div class="mb-3 p-3 card topic-card rounded">
+                            <?php if(!empty($kw)): ?>
+                            <noscript>
+                                <div class="alert alert-primary">
+                                    <div><a href="/learninghub/?s=<?= $kw ?>">Try again please.</a></div>
+                                </div>
+                            </noscript>
+                            <?php endif ?>
+
+
                             <?php
                             $resultcount = (int) $post_my_query->found_posts;
                             $plural = 'course';
@@ -456,7 +496,7 @@ $post_my_query = new WP_Query($post_args);
                                 <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
                             </div>
                             <div class="mb-3 d-flex">
-                                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="<?php echo $_GET['keyword'] ?>">
+                                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter by keyword" value="<?php echo $_GET['keyword'] ?>">
                             </div>
                             <div class="d-flex">
                                 <div class="dropdown">
@@ -491,22 +531,60 @@ $post_my_query = new WP_Query($post_args);
         </div>
     </div>
 </div>
-<script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
 <script type="module">
     var options = {
-        valueNames: ['published', 'coursename', 'coursedesc', 'group', 'audience', 'topic', 'dm', 'coursekeywords']
+        valueNames: ['published', 'coursename', 'coursedesc', 'group', 'audience', 'topic', 'dm', 'coursekeywords'],
+        fuzzySearch: true
     };
     var courseList = new List('courselist', options);
+
+    // As soon as the search updates we also update the UI in several places
     courseList.on('searchComplete', function() {
+
         let ccount = document.getElementById('coursecount');
+        let hidekeyfil = document.getElementById('nokey');
+        let removefilter = document.getElementById('keywordfilter');
+        let searchValue = document.querySelector('.search').value;
+        let sl = document.querySelector('.search').value;
+        if(sl.length > 1) {
+            hidekeyfil.classList.remove('d-none');
+        }
+        if(sl.length < 1) {
+            updateURLParameter('keyword', '');
+            hidekeyfil.classList.add('d-none');
+        } else {
+            updateURLParameter('keyword', searchValue);
+        }
+        if (removefilter) {
+            let removekw = removefilter.firstElementChild;
+            removekw.textContent = searchValue;
+        }
+        let hiddenkeywords = document.querySelectorAll('.hiddenkeywords');
+        Array.from(hiddenkeywords).forEach(function(element) {
+            element.setAttribute('value', searchValue);
+        });
         let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' courses found';
         ccount.innerHTML = update;
+
     });
     document.addEventListener("DOMContentLoaded", function() {
         let searchkey = document.getElementById('searchfilter').getAttribute('value');
         courseList.search(searchkey);
     });
-    
+
+    function updateURLParameter(param, value) {
+        // Get the current URL
+        let url = new URL(window.location.href);
+
+        // Update the query parameter
+        url.searchParams.set(param, value);
+
+        // Update the URL in the browser without reloading the page
+        window.history.replaceState({}, '', url);
+    }
 </script>
 <script type="module">
 
