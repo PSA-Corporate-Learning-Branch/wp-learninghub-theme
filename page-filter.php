@@ -2,8 +2,6 @@
 //
 // This is the main filter interface for the LearningHUB.
 //
-get_header();
-
 // WP_Query takes a "taxquery" an array argument that allows you to query by 
 // taxonomy. Let's start building that array.
 $taxquery = [];
@@ -98,11 +96,35 @@ if (!empty($_GET['delivery_method'])) {
     }
 }
 
+$kw = '';
 if (!empty($_GET['keyword'])) {
     $kw = sanitize_text_field($_GET['keyword']);
 }
 
-// This is the main Wordpress query that we pass our $taxquery to.
+/**
+ * This is the main Wordpress query that we pass our $taxquery to.
+ * 
+ * Note that we're not passing the keyword term to the 's' search variable
+ * for WP_Query because this makes the query bypass the modifications
+ * we've made altering the search query so that it includes taxonomies in the
+ * search results. For example, a default search for "ethics" will only return
+ * 3 courses that mention "ethics" in the title or the description, but with 
+ * the modification, it returns 5 *more* courses that don't mention "ethics"
+ * anywhere but in the topic. 
+ * 
+ * Because I consider this feature basically indispensible we're going to 
+ * ignore keyword search in the database query entirely; instead, we load all 
+ * of the courses onto the page regardless of the search term and use list.js 
+ * to filter the list on the page after the page loads. 
+ * 
+ * List.js results match or exceed the results from doing a query
+ * at the database level. Until I can figure out how to make WP_Query search 
+ * into taxonomies, it's going to have to stay like this. I've written a bunch
+ * of javascript to make the UI nicer but that also further increases the 
+ * dependence of the UI on Javascript. I've included some prototype <noscript>
+ * support to add a fallback link to the default Wordpress search $_GET['s'].
+ */
+
 $post_args = array(
     'post_type'                => 'course',
     'post_status'              => 'publish',
@@ -120,416 +142,421 @@ $post_args = array(
     'include'                  => '',
     'number'                   => '',
     'pad_counts'               => true,
-    // 's'						   => $_GET['search']
+    // 's'						   => $_GET['search'] // wish that we could!
 );
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
+
+get_header();
 ?> 
 
 <div id="content">
-    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white title">Course Catalogue</h1>
-        </div>
-    </div>
-    <div class="bg-secondary-subtle">
-        <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Find learning using filters</h2>
-            <p class="mb-4">Four types of categorization help you find exactly what you're looking for: group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
-            <div class="row">
-                <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title h4 fw-semibold">Filters</h3>
-                            <p class="lh-sm fs-6 card-text"><small>Select a heading to show/hide the filters from that category. Select the <strong>Apply</strong> button when you want to apply the filters.</small></p> 
-                            
-                                <div class="mb-3">
-                                    <div class="row"> 
-                                        <?php 
-                                        // Grab the current URL
-                                        $url = $_SERVER['REQUEST_URI'];
-                                        $currenturl = urldecode($url);
-                                        ?>
-                                        <?php if (!empty($kw)) : ?> 
-                                        <div id="nokey" class="col-md-auto mb-2">
-                                        <div>Keyword</div>
-                                        <?php
-                                        $kwurl = $currenturl;
-                                        $replace = 'keyword=' . $kw . '';
-                                        $keyurl = str_replace($replace, '', $kwurl);
-                                        $keyurl = str_replace('&&', '&', $keyurl);
-                                        ?>
-                                        <div aria-label="remove filter: <?= $kw ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a id="keywordfilter" href="<?= $keyurl ?>" class="text-secondary-emphasis text-decoration-none"> <span><?= $kw ?></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                </svg></a>
-                                        </div> 
-                                        </div> 
-                                        <?php else: ?>
-                                        <div id="nokey" class="col-md-auto mb-2 d-none">
-                                        <div>Keyword</div>
-                                        <div aria-label="remove filter: " class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a id="keywordfilter" href="<?= $currenturl ?>" class="text-secondary-emphasis text-decoration-none"> <span></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                </svg></a>
-                                        </div> 
-                                        </div> 
-                                        <?php endif ?>
+<div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
+<div class="container-lg py-4 py-md-5">
+<h1 class="text-white title">Course Catalogue</h1>
+</div>
+</div>
+<div class="bg-secondary-subtle">
+<div class="container-lg p-lg-5 p-4 bg-light-subtle">
+<h2>Find learning using filters</h2>
+<p class="mb-4">Four types of categorization help you find exactly what you're looking for: 
+    group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
+<div class="row">
+<div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title h4 fw-semibold">Filters</h3>
+            <p class="lh-sm fs-6 card-text">
+                <small>Select a heading to show/hide the filters from that category. 
+                Select the <strong>Apply</strong> button when you want to apply the filters.</small>
+            </p> 
+            <div class="mb-3">
+                <div class="row"> 
+                    <?php 
+                    // Grab the current URL
+                    $url = $_SERVER['REQUEST_URI'];
+                    $currenturl = urldecode($url);
+                    ?>
+                    <?php if (!empty($kw)) : ?> 
+                    <div id="nokey" class="col-md-auto mb-2">
+                    <div>Keyword</div>
+                    <?php
+                    $kwurl = $currenturl;
+                    $replace = 'keyword=' . $kw . '';
+                    $keyurl = str_replace($replace, '', $kwurl);
+                    $keyurl = str_replace('&&', '&', $keyurl);
+                    ?>
+                    <div aria-label="remove filter: <?= $kw ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                        <a id="keywordfilter" href="<?= $keyurl ?>" class="text-secondary-emphasis text-decoration-none"> <span><?= $kw ?></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg></a>
+                    </div> 
+                    </div> 
+                    <?php else: ?>
+                    <div id="nokey" class="col-md-auto mb-2 d-none">
+                    <div>Keyword</div>
+                    <div aria-label="remove filter: " class="badge bg-dark-subtle border-0 fw-normal">
+                        <a id="keywordfilter" href="<?= $currenturl ?>" class="text-secondary-emphasis text-decoration-none"> <span></span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg></a>
+                    </div> 
+                    </div> 
+                    <?php endif ?>
 
 
-                                    <?php if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
-                                        <?php if (!empty($gterms)) : ?> 
-                                        <div class="col-md-auto mb-2">
-                                        <div>Group</div> 
-                                        <?php foreach ($gterms as $g) : ?> 
-                                        <?php
-                                        $grpurl = $currenturl;
-                                        $replace = 'group[]=' . $g->slug . '';
-                                        $gurl = str_replace($replace, '', $grpurl);
-                                        $gurl = str_replace('&&', '&', $gurl);
-                                        ?> 
-                                        <div aria-label="remove filter: <?= $g->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a href="<?= $gurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $g->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                </svg></a>
-                                        </div> 
-                                        <?php endforeach ?>
-                                        </div> 
-                                        <?php endif ?> 
-                                        <?php if (!empty($tterms)) : ?> 
-                                        <div class="col-md-auto mb-2">
-                                        <div>Topic</div> 
-                                        <?php foreach ($tterms as $t) : ?> 
-                                        <?php
-                                        $topurl = $currenturl;
-                                        $replace = 'topic[]=' . $t->slug . '';
-                                        $turl = str_replace($replace, '', $topurl);
-                                        $turl = str_replace('&&', '&', $turl);
-                                        ?> 
-                                        <div aria-label="remove filter: <?= $t->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                        <a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $t->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                            </svg></a>
-                                                    </div> 
-                                        <?php endforeach ?>
-                                        </div> 
-                                        <?php endif ?> 
-                                        <?php if (!empty($aterms)) : ?> 
-                                        <div class="col-md-auto mb-2">
-                                            <div>Audience</div> 
-                                            <?php foreach ($aterms as $a) : ?> 
-                                            <?php
-                                            $audurl = $currenturl;
-                                            $replace = 'audience[]=' . $a->slug . '';
-                                            $aurl = str_replace($replace, '', $audurl);
-                                            $aurl = str_replace('&&', '&', $aurl);
-                                            ?> 
-                                            <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                    <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                        </svg></a>
-                                                </div> 
-                                            <?php endforeach ?>
-                                            </div> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($dterms)) : ?> 
-                                            <div class="col-md-auto">
-                                                <div>Delivery Method</div> 
-                                                <?php foreach ($dterms as $d) : ?> 
-                                                <?php
-                                                $dmurl = $currenturl;
-                                                $replace = 'delivery_method[]=' . $d->slug . '';
-                                                $durl = str_replace($replace, '', $dmurl);
-                                                $durl = str_replace('&&', '&', $durl);
-                                                ?> 
-                                                <div aria-label="remove filter: <?= $d->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                        <a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $d->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                                                            </svg></a>
-                                                    </div> 
-                                                <?php endforeach ?>
-                                            </div> 
-                                            <?php endif ?> 
+                <?php if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
+                    <?php if (!empty($gterms)) : ?> 
+                    <div class="col-md-auto mb-2">
+                    <div>Group</div> 
+                    <?php foreach ($gterms as $g) : ?> 
+                    <?php
+                    $grpurl = $currenturl;
+                    $replace = 'group[]=' . $g->slug . '';
+                    $gurl = str_replace($replace, '', $grpurl);
+                    $gurl = str_replace('&&', '&', $gurl);
+                    ?> 
+                    <div aria-label="remove filter: <?= $g->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                        <a href="<?= $gurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $g->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg></a>
+                    </div> 
+                    <?php endforeach ?>
+                    </div> 
+                    <?php endif ?> 
+                    <?php if (!empty($tterms)) : ?> 
+                    <div class="col-md-auto mb-2">
+                    <div>Topic</div> 
+                    <?php foreach ($tterms as $t) : ?> 
+                    <?php
+                    $topurl = $currenturl;
+                    $replace = 'topic[]=' . $t->slug . '';
+                    $turl = str_replace($replace, '', $topurl);
+                    $turl = str_replace('&&', '&', $turl);
+                    ?> 
+                    <div aria-label="remove filter: <?= $t->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                        <a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $t->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg></a>
+                    </div> 
+                    <?php endforeach ?>
+                    </div> 
+                    <?php endif ?> 
+                    <?php if (!empty($aterms)) : ?> 
+                    <div class="col-md-auto mb-2">
+                        <div>Audience</div> 
+                        <?php foreach ($aterms as $a) : ?> 
+                        <?php
+                        $audurl = $currenturl;
+                        $replace = 'audience[]=' . $a->slug . '';
+                        $aurl = str_replace($replace, '', $audurl);
+                        $aurl = str_replace('&&', '&', $aurl);
+                        ?> 
+                        <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                            <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg></a>
+                        </div> 
+                        <?php endforeach ?>
+                        </div> 
+                        <?php endif ?> 
+                        <?php if (!empty($dterms)) : ?> 
+                        <div class="col-md-auto">
+                            <div>Delivery Method</div> 
+                            <?php foreach ($dterms as $d) : ?> 
+                            <?php
+                            $dmurl = $currenturl;
+                            $replace = 'delivery_method[]=' . $d->slug . '';
+                            $durl = str_replace($replace, '', $dmurl);
+                            $durl = str_replace('&&', '&', $durl);
+                            ?> 
+                            <div aria-label="remove filter: <?= $d->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
+                                <a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $d->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                    </svg></a>
+                            </div> 
+                            <?php endforeach ?>
+                        </div> 
+                        <?php endif ?> 
 
-                                    <div class="mt-1">
-                                        <a class="btn btn-sm btn-primary" href="/learninghub/filter/">Clear All</a>
-                                    </div>
-                                
+                <div class="mt-1">
+                    <a class="btn btn-sm btn-primary" href="/learninghub/filter/">Clear All</a>
+                </div>
+            
 
-                                    <?php endif ?> 
+                <?php endif ?> 
 
-                                </div> 
-                                </div> 
+                </div> 
+                </div> 
 
 
-                                
-                                <div class="accordion" id="filterCategories">
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="groupsHeading">
-                                        <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
-                                            <div class="d-flex flex-column align-items-start">
-                                                <span class="fw-semibold">Group</span>
-                                                <span class="fs-6"><small>What type of learning is it?</small></span>
-                                                </span>
-                                            </div>
-                                        </button>
-                                    </h4>
-                                    <div id="collapseGroups" class="accordion-collapse collapse" aria-labelledby="groupsHeading">
-                                        <div class="accordion-body bg-light-subtle">
-                                            
-                                            <form action="/learninghub/filter" method="GET"> 
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php if (!empty($_GET['topic'])) : ?> 
-                                            <?php foreach ($_GET['topic'] as $tid) : ?> 
-                                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['audience'])) : ?> 
-                                            <?php foreach ($_GET['audience'] as $aid) : ?> 
-                                            <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
-                                            <?php endforeach ?>
-                                            <?php endif ?>
-                                            <?php if (!empty($_GET['delivery_method'])) : ?>
-                                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
-                                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php
-                                            $groups = get_categories(
-                                                array(
-                                                    'taxonomy' => 'groups',
-                                                    'orderby' => 'id',
-                                                    'order' => 'DESC',
-                                                    'hide_empty' => '0'
-                                                )
-                                            );
-                                            ?> 
-                                            <?php foreach ($groups as $g) : ?> 
-                                            <?php $active = '' ?> 
-                                            <?php if (!empty($_GET['group']) && in_array($g->slug, $_GET['group'])) $active = 'checked' ?> 
-                                            <div class="form-check fs-6">
-                                                <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>>
-                                                <label for="group<?= $g->term_id ?>" class="form-check-label <?php if ($active == 'checked') echo 'fw-semibold' ?>" for="group<?= $g->term_id ?>"><?= $g->name ?> <!--(<?= $g->count ?>)--> </label>
-                                            </div> 
-                                            <?php endforeach ?>
-                                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="topicsHeading">
-                                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
-                                            <div class="d-flex flex-column align-items-start">
-                                                <span class="fw-semibold">Topic</span>
-                                                <span class="fs-6"><small>What is the learning about?</small></span>
-                                            </div>
-                                        </button>
-                                    </h4>
-                                    <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="topicsHeading">
-                                        <div class="accordion-body bg-light-subtle">
-                                            <form action="/learninghub/filter" method="GET"> 
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php if (!empty($_GET['group'])) : ?> 
-                                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                                            <input type="hidden" name="group[]" value="<?= sanitize_text_field($gid) ?>">
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['audience'])) : ?> 
-                                            <?php foreach ($_GET['audience'] as $aid) : ?> 
-                                            <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['delivery_method'])) : ?> 
-                                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
-                                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php
-                                            $topics = get_categories(
-                                                array(
-                                                    'taxonomy' => 'topics',
-                                                    'orderby' => 'name',
-                                                    'order' => 'ASC',
-                                                    'hide_empty' => '0'
-                                                )
-                                            );
-                                            ?> 
-                                            <?php foreach ($topics as $t) : ?> 
-                                            <?php $active = '' ?> 
-                                            <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> 
-                                            <div class="form-check fs-6">
-                                                    <input class="form-check-input" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
-                                                    <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
-                                                </div> 
-                                            <?php endforeach ?> 
-                                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="audienceHeading">
-                                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudience" aria-expanded="false" aria-controls="collapseAudience">
-                                            <div class="d-flex flex-column align-items-start">
-                                                <span class="fw-semibold">Audience</span>
-                                                <span class="fs-6"><small>Who is the learning for?</small></span>
-                                            </div>
-                                        </button>
-                                    </h4>
-                                    <div id="collapseAudience" class="accordion-collapse collapse" aria-labelledby="audienceHeading">
-                                        <div class="accordion-body bg-light-subtle">
-                                            <form action="/learninghub/filter" method="GET"> 
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php if (!empty($_GET['group'])) : ?> 
-                                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['topic'])) : ?> 
-                                            <?php foreach ($_GET['topic'] as $tid) : ?> 
-                                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['delivery_method'])) : ?> 
-                                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
-                                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php
-                                            $audiences = get_categories(
-                                                array(
-                                                    'taxonomy' => 'audience',
-                                                    'orderby' => 'id',
-                                                    'order' => 'DESC',
-                                                    'hide_empty' => '0'
-                                                )
-                                            );
-                                            ?> 
-                                            <?php foreach ($audiences as $a) : ?> 
-                                            <?php $active = '' ?> 
-                                            <?php if (!empty($_GET['audience']) && in_array($a->slug, $_GET['audience'])) $active = 'checked' ?> 
-                                            <div class="form-check fs-6">
-                                                    <input class="form-check-input" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
-                                                    <label for="audience<?= $a->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> <!--(<?= $a->count ?>)--> </label>
-                                                </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="deliveryHeading">
-                                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelivery" aria-expanded="false" aria-controls="collapseDelivery">
-                                            <div class="d-flex flex-column align-items-start">
-                                                <span class="fw-semibold">Delivery Method </span>
-                                                <span class="fs-6"><small>How is the learning offered?</small></span>
-                                            </div>
-                                        </button>
-                                    </h4>
-                                    <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="deliveryHeading">
-                                        <div class="accordion-body bg-light-subtle">
-                                            <form action="/learninghub/filter" method="GET"> 
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                                            <?php if (!empty($_GET['group'])) : ?> 
-                                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
-                                            <?php endforeach ?> <?php endif ?> 
-                                            <?php if (!empty($_GET['topic'])) : ?> 
-                                            <?php foreach ($_GET['topic'] as $tid) : ?> 
-                                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php if (!empty($_GET['audience'])) : ?> 
-                                            <?php foreach ($_GET['audience'] as $auid) : ?> 
-                                            <input type="hidden" name="audience[]" value="<?= $auid ?>"> 
-                                            <?php endforeach ?> 
-                                            <?php endif ?> 
-                                            <?php
-                                            $dms = get_categories(
-                                                array(
-                                                    'taxonomy' => 'delivery_method',
-                                                    'orderby' => 'id',
-                                                    'order' => 'DESC',
-                                                    'hide_empty' => '0'
-                                                )
-                                            ); //,'include' => array(3,37,82,236,410)
-                                            ?> 
-                                            <?php foreach ($dms as $d) : ?> 
-                                            <?php $active = '' ?> 
-                                            <?php if (!empty($_GET['delivery_method']) && in_array($d->slug, $_GET['delivery_method'])) $active = 'checked' ?> 
-                                            <div class="form-check fs-6">
-                                                <input class="form-check-input" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
-                                                <label for="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> <!--(<?= $d->count ?>)--> </label>
-                                            </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                
+                <div class="accordion" id="filterCategories">
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="groupsHeading">
+                        <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
+                            <div class="d-flex flex-column align-items-start">
+                                <span class="fw-semibold">Group</span>
+                                <span class="fs-6"><small>What type of learning is it?</small></span>
+                                </span>
                             </div>
+                        </button>
+                    </h4>
+                    <div id="collapseGroups" class="accordion-collapse collapse" aria-labelledby="groupsHeading">
+                        <div class="accordion-body bg-light-subtle">
+                            
+                            <form action="/learninghub/filter" method="GET"> 
+                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
+                            <?php if (!empty($_GET['topic'])) : ?> 
+                            <?php foreach ($_GET['topic'] as $tid) : ?> 
+                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['audience'])) : ?> 
+                            <?php foreach ($_GET['audience'] as $aid) : ?> 
+                            <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
+                            <?php endforeach ?>
+                            <?php endif ?>
+                            <?php if (!empty($_GET['delivery_method'])) : ?>
+                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
+                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php
+                            $groups = get_categories(
+                                array(
+                                    'taxonomy' => 'groups',
+                                    'orderby' => 'id',
+                                    'order' => 'DESC',
+                                    'hide_empty' => '0'
+                                )
+                            );
+                            ?> 
+                            <?php foreach ($groups as $g) : ?> 
+                            <?php $active = '' ?> 
+                            <?php if (!empty($_GET['group']) && in_array($g->slug, $_GET['group'])) $active = 'checked' ?> 
+                            <div class="form-check fs-6">
+                                <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>>
+                                <label for="group<?= $g->term_id ?>" class="form-check-label <?php if ($active == 'checked') echo 'fw-semibold' ?>" for="group<?= $g->term_id ?>"><?= $g->name ?> <!--(<?= $g->count ?>)--> </label>
+                            </div> 
+                            <?php endforeach ?>
+                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div id="results" class="col-lg-7">
-                    <?php if (!empty($_GET['group']) && in_array('mandatory', $_GET['group']) || $_GET['keyword'] == 'mandatory' || $_GET['keyword'] == 'Mandatory') : ?> 
-                        <div class="alert alert-primary">
-                            <p><a class="alert-link" href="/learninghub/foundational-corporate-learning/">Check out Foundational Learning</a> 
-                            for more guidance on what's mandatory for whom and when.</p>
-                        </div>
-                    <?php endif ?>
-                    <div id="courselist">
-                        <div class="mb-3 p-3 card topic-card rounded">
-                            <?php if(!empty($kw)): ?>
-                            <noscript>
-                                <div class="alert alert-primary">
-                                    <div><a href="/learninghub/?s=<?= $kw ?>">Try again please.</a></div>
-                                </div>
-                            </noscript>
-                            <?php endif ?>
-
-
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="topicsHeading">
+                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
+                            <div class="d-flex flex-column align-items-start">
+                                <span class="fw-semibold">Topic</span>
+                                <span class="fs-6"><small>What is the learning about?</small></span>
+                            </div>
+                        </button>
+                    </h4>
+                    <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="topicsHeading">
+                        <div class="accordion-body bg-light-subtle">
+                            <form action="/learninghub/filter" method="GET"> 
+                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
+                            <?php if (!empty($_GET['group'])) : ?> 
+                            <?php foreach ($_GET['group'] as $gid) : ?> 
+                            <input type="hidden" name="group[]" value="<?= sanitize_text_field($gid) ?>">
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['audience'])) : ?> 
+                            <?php foreach ($_GET['audience'] as $aid) : ?> 
+                            <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['delivery_method'])) : ?> 
+                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
+                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
                             <?php
-                            $resultcount = (int) $post_my_query->found_posts;
-                            $plural = 'course';
-                            if ($resultcount > 1) $plural = 'courses';
-                            ?>
-                            <div class="fw-bold mb-2" id="coursecount">
-                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
-                            </div>
-                            <div class="mb-3 d-flex">
-                                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter by keyword" value="<?php echo $_GET['keyword'] ?>">
-                            </div>
-                            <div class="d-flex">
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Sort by </button>
-                                    <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
-                                        <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
-                                        <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
-                                        <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
-                                        <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
-                                        <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
-                                        <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
-                                    </div>
-                                </div>
-                                <div class="mx-2">
-                                    <button id="expall" class="btn btn-sm btn-primary px-2 d-inline-block">Expand All</button>
-                                    <button id="collapseall" class="btn btn-sm btn-primary px-2 d-inline-block">Collapse All</button>
-                                </div>
-                            </div>
+                            $topics = get_categories(
+                                array(
+                                    'taxonomy' => 'topics',
+                                    'orderby' => 'name',
+                                    'order' => 'ASC',
+                                    'hide_empty' => '0'
+                                )
+                            );
+                            ?> 
+                            <?php foreach ($topics as $t) : ?> 
+                            <?php $active = '' ?> 
+                            <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> 
+                            <div class="form-check fs-6">
+                                    <input class="form-check-input" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
+                                    <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
+                                </div> 
+                            <?php endforeach ?> 
+                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                            </form>
                         </div>
-                        <div class="list">
-                            <?php if ($post_my_query->have_posts()) : ?>
-                                <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
-                                    <?php get_template_part('template-parts/course/single-course') ?>
-                                <?php endwhile; ?>
-                            <?php else : ?>
-                                <p>Sorry, but there are no courses that match your filters.</p>
-                            <?php endif; ?>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="audienceHeading">
+                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudience" aria-expanded="false" aria-controls="collapseAudience">
+                            <div class="d-flex flex-column align-items-start">
+                                <span class="fw-semibold">Audience</span>
+                                <span class="fs-6"><small>Who is the learning for?</small></span>
+                            </div>
+                        </button>
+                    </h4>
+                    <div id="collapseAudience" class="accordion-collapse collapse" aria-labelledby="audienceHeading">
+                        <div class="accordion-body bg-light-subtle">
+                            <form action="/learninghub/filter" method="GET"> 
+                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
+                            <?php if (!empty($_GET['group'])) : ?> 
+                            <?php foreach ($_GET['group'] as $gid) : ?> 
+                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['topic'])) : ?> 
+                            <?php foreach ($_GET['topic'] as $tid) : ?> 
+                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['delivery_method'])) : ?> 
+                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
+                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php
+                            $audiences = get_categories(
+                                array(
+                                    'taxonomy' => 'audience',
+                                    'orderby' => 'id',
+                                    'order' => 'DESC',
+                                    'hide_empty' => '0'
+                                )
+                            );
+                            ?> 
+                            <?php foreach ($audiences as $a) : ?> 
+                            <?php $active = '' ?> 
+                            <?php if (!empty($_GET['audience']) && in_array($a->slug, $_GET['audience'])) $active = 'checked' ?> 
+                            <div class="form-check fs-6">
+                                    <input class="form-check-input" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
+                                    <label for="audience<?= $a->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> <!--(<?= $a->count ?>)--> </label>
+                                </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="deliveryHeading">
+                        <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelivery" aria-expanded="false" aria-controls="collapseDelivery">
+                            <div class="d-flex flex-column align-items-start">
+                                <span class="fw-semibold">Delivery Method </span>
+                                <span class="fs-6"><small>How is the learning offered?</small></span>
+                            </div>
+                        </button>
+                    </h4>
+                    <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="deliveryHeading">
+                        <div class="accordion-body bg-light-subtle">
+                            <form action="/learninghub/filter" method="GET"> 
+                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
+                            <?php if (!empty($_GET['group'])) : ?> 
+                            <?php foreach ($_GET['group'] as $gid) : ?> 
+                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
+                            <?php endforeach ?> <?php endif ?> 
+                            <?php if (!empty($_GET['topic'])) : ?> 
+                            <?php foreach ($_GET['topic'] as $tid) : ?> 
+                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php if (!empty($_GET['audience'])) : ?> 
+                            <?php foreach ($_GET['audience'] as $auid) : ?> 
+                            <input type="hidden" name="audience[]" value="<?= $auid ?>"> 
+                            <?php endforeach ?> 
+                            <?php endif ?> 
+                            <?php
+                            $dms = get_categories(
+                                array(
+                                    'taxonomy' => 'delivery_method',
+                                    'orderby' => 'id',
+                                    'order' => 'DESC',
+                                    'hide_empty' => '0'
+                                )
+                            ); //,'include' => array(3,37,82,236,410)
+                            ?> 
+                            <?php foreach ($dms as $d) : ?> 
+                            <?php $active = '' ?> 
+                            <?php if (!empty($_GET['delivery_method']) && in_array($d->slug, $_GET['delivery_method'])) $active = 'checked' ?> 
+                            <div class="form-check fs-6">
+                                <input class="form-check-input" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
+                                <label for="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> <!--(<?= $d->count ?>)--> </label>
+                            </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div id="results" class="col-lg-7">
+    <?php if (!empty($_GET['group']) && in_array('mandatory', $_GET['group']) || $_GET['keyword'] == 'mandatory' || $_GET['keyword'] == 'Mandatory') : ?> 
+        <div class="alert alert-primary">
+            <p><a class="alert-link" href="/learninghub/foundational-corporate-learning/">Check out Foundational Learning</a> 
+            for more guidance on what's mandatory for whom and when.</p>
+        </div>
+    <?php endif ?>
+    <div id="courselist">
+        <div class="mb-3 p-3 card topic-card rounded">
+            <?php if(!empty($kw)): ?>
+            <noscript>
+                <div class="alert alert-primary">
+                    <div><a href="/learninghub/?s=<?= $kw ?>">Try again please.</a></div>
+                </div>
+            </noscript>
+            <?php endif ?>
+
+
+            <?php
+            $resultcount = (int) $post_my_query->found_posts;
+            $plural = 'course';
+            if ($resultcount > 1) $plural = 'courses';
+            ?>
+            <div class="fw-bold mb-2" id="coursecount">
+                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
+            </div>
+            <div class="mb-3 d-flex">
+                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter by keyword" value="<?php echo $_GET['keyword'] ?>">
+            </div>
+            <div class="d-flex">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Sort by </button>
+                    <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
+                        <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
+                        <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
+                        <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
+                        <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
+                        <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
+                        <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
+                    </div>
+                </div>
+                <div class="mx-2">
+                    <button id="expall" class="btn btn-sm btn-primary px-2 d-inline-block">Expand All</button>
+                    <button id="collapseall" class="btn btn-sm btn-primary px-2 d-inline-block">Collapse All</button>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <?php if ($post_my_query->have_posts()) : ?>
+                <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
+                    <?php get_template_part('template-parts/course/single-course') ?>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <p>Sorry, but there are no courses that match your filters.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <!-- <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
