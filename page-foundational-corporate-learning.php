@@ -64,7 +64,8 @@ get_header();
                         <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                     </ul>
 
-
+                    <hr>
+                    
                     <?php
                     $termID = 638;
                     $taxonomyname = "journey";
@@ -98,10 +99,7 @@ get_header();
                         <h5><?= $custom_term->name ?></h5>
                         <ul>
                         <?php while($loop->have_posts()) : $loop->the_post(); ?>
-                        <?php $count++ ?>
-                        <?php $c = 'two' ?>
-                        <?php if($count % 2 > 0) $c = 'one' ?>
-                        <li class="course<?= $count ?> <?= $c ?> journeycourse">
+                        <li class="journeycourse">
                             <a href="<?= get_permalink() ?>"> <?= get_the_title() ?></a>
                             <span class="badge text-bg-warning fw-medium ms-2">
                                 <?php echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); ?>
