@@ -337,6 +337,13 @@ get_header();
                             <div class="form-check fs-6">
                                 <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>>
                                 <label for="group<?= $g->term_id ?>" class="form-check-label <?php if ($active == 'checked') echo 'fw-semibold' ?>" for="group<?= $g->term_id ?>"><?= $g->name ?> <!--(<?= $g->count ?>)--> </label>
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $g->description ?>">
+                                    <span class="icon-svg baseline-svg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                            <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                        </svg>
+                                    </span>
+                                </a>
                             </div> 
                             <?php endforeach ?>
                             <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
@@ -385,9 +392,17 @@ get_header();
                             <?php foreach ($topics as $t) : ?> 
                             <?php $active = '' ?> 
                             <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> 
+                            <?php $desc = 'No description set'; if(!empty($t->description)) $desc = $t->description; ?>
                             <div class="form-check fs-6">
                                     <input class="form-check-input" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
                                     <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
+                                    <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $desc ?>">
+                                        <span class="icon-svg baseline-svg">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                            </svg>
+                                        </span>
+                                    </a>
                                 </div> 
                             <?php endforeach ?> 
                             <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
@@ -562,6 +577,10 @@ get_header();
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
 
 <script type="module">
+    
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
     var options = {
         valueNames: ['published', 'coursename', 'coursedesc', 'group', 'audience', 'topic', 'dm', 'coursekeywords'],
         fuzzySearch: true
@@ -635,7 +654,7 @@ get_header();
             butt[0].setAttribute('aria-expanded', 'true');
             butt[0].classList.remove('collapsed');
         }
-        if(element.id == 'collapseTopics' && t.length > 0) { 
+        if(element.id == 'collapseTopics' && t.length > 0) {
             element.classList.add('show');
             let butt = element.parentNode.querySelectorAll('.accordion-button');
             butt[0].setAttribute('aria-expanded', 'true');
