@@ -5,31 +5,9 @@
 // WP_Query takes a "taxquery" an array argument that allows you to query by 
 // taxonomy. Let's start building that array.
 $taxquery = [];
-// We go through each of the 4 taxonomies that we want to filter on:
-// group, topic, audience, and delivery method
+// We go through each of the 3 taxonomies that we want to filter on:
+// topic, audience, and delivery method
 // If the array exists...
-if (!empty($_GET['group'])) {
-    $groupterm = $_GET['group'];
-    // Wordpress automatically processes arrays passed to it
-    $g = array(
-        'taxonomy' => 'groups',
-        'field' => 'slug',
-        'terms' => $groupterm,
-    );
-    // Add the term(s) array to the query array
-    array_push($taxquery, $g);
-    // Now we need to look up the names of the terms from the slugs
-    // so that we can show them back to the user in the "remove filter"
-    // area.
-    $gterms = [];
-    // Loop through each of the slugs
-    foreach ($_GET['group'] as $g) {
-        // Look up the term object for the slug
-        $gterm = get_term_by('slug', $g, 'groups');
-        // add the result to the array that we can now loop through below.
-        array_push($gterms, $gterm);
-    }
-}
 
 if (!empty($_GET['topic'])) {
     $topicterm = $_GET['topic'];
@@ -159,8 +137,8 @@ get_header();
 <div class="bg-secondary-subtle">
 <div class="container-lg p-lg-5 p-4 bg-light-subtle">
 <h2>Find learning using filters</h2>
-<p class="mb-4">Four types of categorization help you find exactly what you're looking for: 
-    group, audience, topic and delivery. You can also search your filtered results by keyword.</p>
+<p class="mb-4">Three types of categorization help you find exactly what you're looking for: 
+    audience, topic and delivery. You can also search by keyword.</p>
 <div class="row">
 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
     <div class="card">
@@ -204,25 +182,8 @@ get_header();
                     <?php endif ?>
 
 
-                <?php if (!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
-                    <?php if (!empty($gterms)) : ?> 
-                    <div class="col-md-auto mb-2">
-                    <div>Group</div> 
-                    <?php foreach ($gterms as $g) : ?> 
-                    <?php
-                    $grpurl = $currenturl;
-                    $replace = 'group[]=' . $g->slug . '';
-                    $gurl = str_replace($replace, '', $grpurl);
-                    $gurl = str_replace('&&', '&', $gurl);
-                    ?> 
-                    <div aria-label="remove filter: <?= $g->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                        <a href="<?= $gurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $g->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
-                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                            </svg></a>
-                    </div> 
-                    <?php endforeach ?>
-                    </div> 
-                    <?php endif ?> 
+                <?php if (!empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
+                    
                     <?php if (!empty($tterms)) : ?> 
                     <div class="col-md-auto mb-2">
                     <div>Topic</div> 
@@ -291,66 +252,7 @@ get_header();
 
                 
                 <div class="accordion" id="filterCategories">
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="groupsHeading">
-                        <button class="accordion-button text-bg-primary py-2 px-3 py-lg-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
-                            <div class="d-flex flex-column align-items-start">
-                                <span class="fw-semibold">Group</span>
-                                <span class="fs-6"><small>What type of learning is it?</small></span>
-                                </span>
-                            </div>
-                        </button>
-                    </h4>
-                    <div id="collapseGroups" class="accordion-collapse collapse" aria-labelledby="groupsHeading">
-                        <div class="accordion-body bg-light-subtle">
-                            
-                            <form action="/learninghub/filter" method="GET"> 
-                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                            <?php if (!empty($_GET['topic'])) : ?> 
-                            <?php foreach ($_GET['topic'] as $tid) : ?> 
-                            <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
-                            <?php endforeach ?> 
-                            <?php endif ?> 
-                            <?php if (!empty($_GET['audience'])) : ?> 
-                            <?php foreach ($_GET['audience'] as $aid) : ?> 
-                            <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
-                            <?php endforeach ?>
-                            <?php endif ?>
-                            <?php if (!empty($_GET['delivery_method'])) : ?>
-                            <?php foreach ($_GET['delivery_method'] as $did) : ?> 
-                            <input type="hidden" name="delivery_method[]" value="<?= $did ?>"> 
-                            <?php endforeach ?> 
-                            <?php endif ?> 
-                            <?php
-                            $groups = get_categories(
-                                array(
-                                    'taxonomy' => 'groups',
-                                    'orderby' => 'id',
-                                    'order' => 'DESC',
-                                    'hide_empty' => '0'
-                                )
-                            );
-                            ?> 
-                            <?php foreach ($groups as $g) : ?> 
-                            <?php $active = '' ?> 
-                            <?php if (!empty($_GET['group']) && in_array($g->slug, $_GET['group'])) $active = 'checked' ?> 
-                            <div class="form-check fs-6">
-                                <input class="form-check-input" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->term_id ?>" <?= $active ?>>
-                                <label for="group<?= $g->term_id ?>" class="form-check-label <?php if ($active == 'checked') echo 'fw-semibold' ?>" for="group<?= $g->term_id ?>"><?= $g->name ?> <!--(<?= $g->count ?>)--> </label>
-                                <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $g->description ?>">
-                                    <span class="icon-svg baseline-svg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                            <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div> 
-                            <?php endforeach ?>
-                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="accordion-item">
                     <h4 class="accordion-header" id="topicsHeading">
                         <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
@@ -364,11 +266,6 @@ get_header();
                         <div class="accordion-body bg-light-subtle">
                             <form action="/learninghub/filter" method="GET"> 
                             <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                            <?php if (!empty($_GET['group'])) : ?> 
-                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                            <input type="hidden" name="group[]" value="<?= sanitize_text_field($gid) ?>">
-                            <?php endforeach ?> 
-                            <?php endif ?> 
                             <?php if (!empty($_GET['audience'])) : ?> 
                             <?php foreach ($_GET['audience'] as $aid) : ?> 
                             <input type="hidden" name="audience[]" value="<?= $aid ?>"> 
@@ -423,11 +320,6 @@ get_header();
                         <div class="accordion-body bg-light-subtle">
                             <form action="/learninghub/filter" method="GET"> 
                             <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                            <?php if (!empty($_GET['group'])) : ?> 
-                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
-                            <?php endforeach ?> 
-                            <?php endif ?> 
                             <?php if (!empty($_GET['topic'])) : ?> 
                             <?php foreach ($_GET['topic'] as $tid) : ?> 
                             <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
@@ -472,10 +364,6 @@ get_header();
                         <div class="accordion-body bg-light-subtle">
                             <form action="/learninghub/filter" method="GET"> 
                             <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>"> 
-                            <?php if (!empty($_GET['group'])) : ?> 
-                            <?php foreach ($_GET['group'] as $gid) : ?> 
-                            <input type="hidden" name="group[]" value="<?= $gid ?>"> 
-                            <?php endforeach ?> <?php endif ?> 
                             <?php if (!empty($_GET['topic'])) : ?> 
                             <?php foreach ($_GET['topic'] as $tid) : ?> 
                             <input type="hidden" name="topic[]" value="<?= $tid ?>"> 
@@ -512,12 +400,6 @@ get_header();
     </div>
 </div>
 <div id="results" class="col-lg-7">
-    <?php if (!empty($_GET['group']) && in_array('mandatory', $_GET['group']) || $_GET['keyword'] == 'mandatory' || $_GET['keyword'] == 'Mandatory') : ?> 
-        <div class="alert alert-primary">
-            <p><a class="alert-link" href="/learninghub/foundational-corporate-learning/">Check out Foundational Learning</a> 
-            for more guidance on what's mandatory for whom and when.</p>
-        </div>
-    <?php endif ?>
     <div id="courselist">
         <div class="mb-3 p-3 card topic-card rounded">
             <?php if(!empty($kw)): ?>
@@ -547,7 +429,6 @@ get_header();
                         <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
                         <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
                         <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
-                        <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
                         <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
                         <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
                     </div>
@@ -582,7 +463,7 @@ get_header();
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
     var options = {
-        valueNames: ['published', 'coursename', 'coursedesc', 'group', 'audience', 'topic', 'dm', 'coursekeywords'],
+        valueNames: ['published', 'coursename', 'coursedesc', 'audience', 'topic', 'dm', 'coursekeywords'],
         fuzzySearch: true
     };
     var courseList = new List('courselist', options);
@@ -642,18 +523,12 @@ get_header();
     // its accordion and show the term selection form.
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    let g = urlParams.getAll('group[]');
+
     let t = urlParams.getAll('topic[]');
     let a = urlParams.getAll('audience[]');
     let d = urlParams.getAll('delivery_method[]');
     let taxes = document.querySelectorAll('.accordion-collapse');
     Array.from(taxes).forEach(function(element) {
-        if(element.id == 'collapseGroups' && g.length > 0) { 
-            element.classList.add('show');
-            let butt = element.parentNode.querySelectorAll('.accordion-button');
-            butt[0].setAttribute('aria-expanded', 'true');
-            butt[0].classList.remove('collapsed');
-        }
         if(element.id == 'collapseTopics' && t.length > 0) {
             element.classList.add('show');
             let butt = element.parentNode.querySelectorAll('.accordion-button');
@@ -673,13 +548,13 @@ get_header();
             butt[0].classList.remove('collapsed');
         }
     });
-    // If there aren't any filters at all, open the groups filter accordion
+    // If there aren't any filters at all, open the topics filter accordion
     // so that it's obvious to the learner that you can open/close the terms
     // for each.
-    if(g.length == 0 && t.length == 0 && a.length == 0 && d.length == 0) {
-        let opengroup = document.getElementById('collapseGroups');
-        opengroup.classList.add('show');
-        let butt = opengroup.parentNode.querySelectorAll('.accordion-button');
+    if(t.length == 0 && a.length == 0 && d.length == 0) {
+        let opentops = document.getElementById('collapseTopics');
+        opentops.classList.add('show');
+        let butt = opentops.parentNode.querySelectorAll('.accordion-button');
         butt[0].setAttribute('aria-expanded', 'true');
         butt[0].classList.remove('collapsed');
     }

@@ -15,31 +15,10 @@
 // WP_Query takes a "taxquery" an array argument that allows you to query by 
 // taxonomy. Let's start building that array.
 $taxquery = [];
-// We go through each of the 4 taxonomies that we want to filter on:
-// group, topic, audience, and delivery method
+// We go through each of the 3 taxonomies that we want to filter on:
+// topic, audience, and delivery method
 // If the array exists...
-if (!empty($_GET['group'])) {
-    $groupterm = $_GET['group'];
-    // Wordpress automatically processes arrays passed to it
-    $g = array(
-        'taxonomy' => 'groups',
-        'field' => 'slug',
-        'terms' => $groupterm,
-    );
-    // Add the term(s) array to the query array
-    array_push($taxquery, $g);
-    // Now we need to look up the names of the terms from the slugs
-    // so that we can show them back to the user in the "remove filter"
-    // area.
-    $gterms = [];
-    // Loop through each of the slugs
-    foreach ($_GET['group'] as $g) {
-        // Look up the term object for the slug
-        $gterm = get_term_by('slug', $g, 'groups');
-        // add the result to the array that we can now loop through below.
-        array_push($gterms, $gterm);
-    }
-}
+
 
 if (!empty($_GET['topic'])) {
 
@@ -176,7 +155,6 @@ get_header();
                                             <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
                                             <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
                                             <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
-                                            <li><a class="sort dropdown-item" data-sort="group" href="#">Group</a></li>
                                             <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
                                             <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
                                         </div>
@@ -210,7 +188,7 @@ get_header();
 <script src="<?php echo get_template_directory_uri() ?>/js/list.min.js"></script>
 <script type="module">
     var options = {
-        valueNames: ['published', 'coursename', 'group', 'audience', 'topic', 'dm']
+        valueNames: ['published', 'coursename', 'audience', 'topic', 'dm']
     };
     var courseList = new List('courselist', options);
     courseList.on('searchComplete', function() {
