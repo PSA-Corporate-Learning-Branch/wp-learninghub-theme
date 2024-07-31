@@ -119,12 +119,12 @@ $post_args = array(
         'menu_order' => 'ASC'
     ),
     'order'                    => 'ASC',
-    'hide_empty'               => 0,
-    'hierarchical'             => 1,
+    'hide_empty'               => 1,
+    'hierarchical'             => 0,
     'exclude'                  => '',
     'include'                  => '',
     'number'                   => '',
-    'pad_counts'               => true,
+    'pad_counts'               => false,
     's'                        => $_GET['s']
 );
 $post_my_query = null;
@@ -149,7 +149,7 @@ get_header();
                         <div id="courselist">
                             <div class="mb-3 p-3 card topic-card rounded">
                                 <?php
-                                $resultcount = (int) $wp_query->found_posts;
+                                $resultcount = (int) $post_my_query->found_posts;
                                 $plural = 'course';
                                 if ($resultcount > 1) $plural = 'courses';
                                 ?>
