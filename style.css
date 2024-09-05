@@ -369,7 +369,7 @@ a[rel=tag] {
 }
 
 /* hack summary details so that it works on Safari */
-summary::-webkit-details-marker {
+ summary::-webkit-details-marker {
     display: none;
 }
 
@@ -380,24 +380,16 @@ summary {
     &::before {
         content: '';
         position: absolute;
-        border-top: 0.5rem solid transparent;
-        border-left: 0.85rem solid var(--bs-primary);
-        border-bottom: 0.5rem solid transparent;
-        left: -1.25rem;
-        top: 8px;
+        border-top: 8px solid transparent;
+        border-left: 12px solid var(--bs-primary);
+        border-bottom: 8px solid transparent;
+        top: 0.3em;
+        left: -1rem;
     }
-}
+} 
 
 details[open]>summary::before {
     transform: rotate(90deg);
-}
-
-/* slight adjustment to columns for 4.5/7.5 width on filters page only */
-#filters .col-lg-5 {
-    width: 37.5%;
-}
-
-#results .col-lg-7 {
-    width: 62.5%;
+    left: -1.1rem;
 }
 
