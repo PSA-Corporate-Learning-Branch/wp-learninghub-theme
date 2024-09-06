@@ -136,7 +136,8 @@
                                 Courses</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/filter/">All Courses</a></li>
-                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning//">Foundational Corporate Learning</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning/">Foundational Corporate Learning</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/categories/">Course Categorization</a></li>
                             </ul>
                         </li>
 

@@ -142,10 +142,11 @@ get_header();
 <div class="row">
 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
     <h3 class="h4 fw-semibold">Filters</h3>
-    <p class="lh-sm fs-6 mb-0">
+    <p class="lh-sm fs-6">
         <small>Select a heading to show/hide the filters from that category. 
         Select the <strong>Apply</strong> button when you want to apply the filters.</small>
     </p> 
+    <p class="lh-sm fs-6 mb-0"><a href="/learninghub/categories/">Learn how courses are categorized.</a><p>
     <div class="mb-3">
         <div class="row"> 
             <?php 

@@ -34,18 +34,13 @@ get_header();
                     <h4>What type of courses will I find?</h4>
                     <p>The courses in this catalogue are open to BC Public Service (BCPS) employees from any ministry. </p>
                     <p>You will find skills-based learning in a particular field (Finance, Procurement or Lean, for example) and courses designed to support competency development (Indigenous Learning, Innovation, Supervisory and Leadership learning, for example).</p>
-                    <p>You will also find event-style sessions like those offered during Learn@Work Week.</p>
+                    <p>You will also find event-style sessions like those offered during <a href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/" target="_blank" rel="noopener noreferrer">Learn @ Work Week</a>.</p>
+
                     <p>Many partners offer courses, programs and workshops that help us learn, develop skills and grow our careers. From foundational learning for everyone to role-specific learning<a>, the catalogue guides you to opportunities to fulfill your curiosity and meet your learning needs</a>.</p>
+                    <p><a href="/learninghub/categories/">Learn how courses are categorized on the LearningHUB.</a>
+                    <p>
                     <p>Check with your supervisor about other learning available to you in your ministry.</p>
-                    <h3>Who are the partners?</h3>
-                    <p>Many teams work in partnership with the Learning Centre to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
-                    <p>Learn more about who offers what and <a href="/learninghub/corporate-learning-partners/" rel="noreferrer noopener">meet the partners</a>.</p>
-                    <h3>What is the Corporate Learning Framework?</h3>
-                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
-                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
-                    <h3>Intake for corporate learning</h3>
-                    <p>We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
-                    <p>Access the <a href="/learninghub/intake-process" rel="noreferrer noopener">Intake for Corporate Learning</a> page to learn more.</p>
+
                 </div>
                 <div class="col-md-4">
                     <div class="card bg-secondary-subtle">
@@ -57,6 +52,25 @@ get_header();
                             <p class="card-text fs-6">Ministry-specific learning records may not be available. If you are seeking ministry-specific training records, please check with your organization.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <hr class="mb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Who are the partners?</h3>
+                    <p>Many teams work in partnership with the Learning Centre to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
+                    <p>Learn more about who offers what and <a href="/learninghub/corporate-learning-partners/" rel="noreferrer noopener">meet the partners</a>.</p>
+
+                </div>
+                <div class="col-md-4">
+                    <h3>What is the Corporate Learning Framework?</h3>
+                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
+                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Intake for corporate learning</h3>
+                    <p>We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
+                    <p>Access the <a href="/learninghub/intake-process" rel="noreferrer noopener">Intake for Corporate Learning</a> page to learn more.</p>
                 </div>
             </div>
         </div>
