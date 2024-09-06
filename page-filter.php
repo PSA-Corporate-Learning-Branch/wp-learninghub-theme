@@ -146,7 +146,7 @@ get_header();
         <small>Select a heading to show/hide the filters from that category. 
         Select the <strong>Apply</strong> button when you want to apply the filters.</small>
     </p> 
-    <p class="lh-sm fs-6 mb-0"><a href="http://" target="_blank" rel="noopener noreferrer">Learn how courses are categorized.</a><p>
+    <p class="lh-sm fs-6 mb-0"><a href="/learninghub/categories/">Learn how courses are categorized.</a><p>
     <div class="mb-3">
         <div class="row"> 
             <?php 
