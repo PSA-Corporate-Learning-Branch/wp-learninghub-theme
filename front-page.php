@@ -18,15 +18,15 @@
                                     <path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z" />
                                 </svg></div>
                             <a href="/learninghub/foundational-corporate-learning/" class="text-decoration-none">
-                            <div class="ms-3">
-                                <h3 class="gov-green">Start here</h3>
-                                <p><span class="text-decoration-underline">Foundational learning</span> for all employees and people leaders in their first year and beyond.</p>
-                                <!-- <p class="mb-1"><strong>Learning journeys</strong></p>
+                                <div class="ms-3">
+                                    <h3 class="gov-green">Start here</h3>
+                                    <p><span class="text-decoration-underline">Foundational learning</span> for all employees and people leaders in their first year and beyond.</p>
+                                    <!-- <p class="mb-1"><strong>Learning journeys</strong></p>
                                 <ul class="mb-2">
                                     <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
                                     <li><a href="/learninghub/foundational-corporate-learning/">People Leaders</a></li>
                                 </ul> -->
-                            </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -70,6 +70,45 @@
 
             </div>
         </div>
+    </div>
+
+</div>
+<div class="bg-secondary-subtle pt-4">
+    <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+        <h3>Where the learning happens</h3>
+        <p>The LearningHUB includes courses from more than a dozen learning platforms. <a href="/learninghub/learning-systems/">Check out the full list of learning platforms</a>.</p>
+        <h4>Featured Platforms</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="bg-gov-green card-header pt-3">
+                        <h4 class="text-white mb-1">PSA Learning System</h4>
+                        <p class="lh-sm fs-6 mb-1">Formal, registered learning</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
+                        <p class="card-text"><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html">Visit the PSA Learning System</a></p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="bg-gov-green card-header pt-3">
+                        <h4 class="text-white mb-1">Learning Curator</h4>
+                        <p class="lh-sm fs-6 mb-1">Informal, self-directed learning</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
+                        <p class="card-text"> <a href="https://learningcurator.gww.gov.bc.ca/">Visit the Learning Curator</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 </div>
 <?php get_footer() ?>

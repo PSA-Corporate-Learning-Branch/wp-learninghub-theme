@@ -22,7 +22,7 @@ get_header();
 
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Where learning happens</h2>
+            <h2>Where the learning happens</h2>
             <p class="mb-5">The LearningHUB is a directory of courses available to all BC Public Service employees. It includes courses from more than a dozen platforms.</p>
             <div class="row">
                 <div class="col-md-6">
