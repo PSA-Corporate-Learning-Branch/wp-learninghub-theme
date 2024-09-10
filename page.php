@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single posts
  *
@@ -12,33 +13,30 @@
 get_header();
 
 /* Start the Loop */
-while ( have_posts() ) :
-	the_post();
+while (have_posts()) :
+    the_post();
 
 ?>
-<div class="bg-gov-green">
-<div class="container">
-<div class="row py-5 mb-3">
-<div class="col-md-12">
-	<h1><?php the_title() ?></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row justify-content-md-center">
-<div class="col-md-8">
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div id="content">
+        <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
+            <div class="container-lg py-4 py-md-5">
+                <h1 class="text-white title"><?php the_title() ?></h1>
+            </div>
+        </div>
 
-	<div class="entry-content">
-		<?php the_content() ?>
-	</div><!-- .entry-content -->
+        <div class="bg-secondary-subtle">
+            <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-</article><!-- #post-<?php the_ID(); ?> -->
-</div>
-</div>
-</div>
-<?php 	
+                    <div class="entry-content">
+                        <?php the_content() ?>
+                    </div><!-- .entry-content -->
+
+                </article><!-- #post-<?php the_ID(); ?> -->
+            </div>
+        </div>
+    </div>
+<?php
 endwhile; // End of the loop.
 
 get_footer();

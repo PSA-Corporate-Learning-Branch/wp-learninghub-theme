@@ -13,7 +13,7 @@
 
 
 
-<div id="bcgovfoot" class="bg-gov-blue">
+<div id="bcgovfoot" class="bg-gov-blue flex-grow-1">
     <footer class="site-footer container-lg py-4 py-lg-5">
         <div class="site-info d-block">
             <div class="d-flex flex-column flex-lg-row justify-content-between">

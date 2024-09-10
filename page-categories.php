@@ -17,15 +17,10 @@ get_header();
             <h1 class="text-white title">Course Categorization</h1>
         </div>
     </div>
-    <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
-            <h2>How is learning organized?</h2>
-            <p class="mb-0">Three types of categorization help you find exactly what you're looking for: topic, audience, and delivery.</p>
-        </div>
-    </div>
-
-    <div class="bg-secondary-subtle pt-4">
+    <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+            <h2>How is learning organized?</h2>
+            <p class="mb-5">Three types of categorization help you find exactly what you're looking for: topic, audience, and delivery.</p>
             <p>
                 <span class="icon-svg baseline-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

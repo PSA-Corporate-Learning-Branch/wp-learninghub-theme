@@ -94,7 +94,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="bg-body-light">
+<body class="bg-body-light d-flex flex-column min-vh-100">
     <?php wp_body_open(); ?>
     <a class="skip-link screen-reader-text" href="#content">
         Skip to content </a>
