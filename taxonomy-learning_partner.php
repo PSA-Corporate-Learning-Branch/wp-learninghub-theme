@@ -50,7 +50,7 @@ $post_my_query = new WP_Query($post_args);
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Courses offered by the <?= str_replace('Learning Partners:', '', $termtitle) ?></h2>
+            <h2>Courses offered by <?= str_replace('Learning Partners:', '', $termtitle) ?></h2>
             <?php
             $partners = get_categories(
                 array(
