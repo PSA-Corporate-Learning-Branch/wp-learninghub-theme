@@ -117,20 +117,21 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/learninghub/">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/learninghub/about/">
+                                About</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                About</a>
+                                Corporate Learning</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/learninghub/about/">About the LearningHUB</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/intake/">Intake for Corporate Learning</a></li>
-                                <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/learninghub/learning-systems/">
-                                Platforms</a>
-                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Courses</a>
@@ -174,7 +175,8 @@
                 </div>
                 <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1" role="search" id="navbarSearch">
                     <label for="s" class="visually-hidden">Search</label>
-                    <div class="col-auto flex-grow-1"><input type="search" id="keyword" class="s w-100 form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) ?>"></div>
+                    <div class="col-auto flex-grow-1"><input type="search" id="keyword" class="s w-100 form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
+                                                                                                                                                                                    ?>"></div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
                             Search

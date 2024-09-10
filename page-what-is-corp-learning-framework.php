@@ -4,7 +4,7 @@
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white title">What is the Corporate Learning Framework? </h1>
+            <h1 class="text-white title">The Corporate Learning Framework</h1>
         </div>
     </div>
     <div class="bg-light-subtle">
