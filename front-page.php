@@ -5,8 +5,6 @@
             <h1 class="text-white title">Welcome to the LearningHUB</h1>
         </div>
     </div>
-
-
     <div class="bg-light-subtle">
         <div class="container-lg py-4 py-md-5">
             <div class="row">

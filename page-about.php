@@ -17,14 +17,10 @@ get_header();
             <h1 class="text-white title">About the LearningHUB</h1>
         </div>
     </div>
-    <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
-            <h2>Corporate learning, all in one place</h2>
-            <p class="mb-0">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
-        </div>
-    </div>
-    <div class="bg-secondary-subtle pt-4">
+    <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+            <h2>Corporate learning, all in one place</h2>
+            <p class="mb-5">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
             <div class="row">
                 <div class="col-md-8">
                     <h3>What will you find in the LearningHUB catalogue?</h3>

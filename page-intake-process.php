@@ -17,14 +17,11 @@ get_header();
             <h1 class="text-white title">Intake for Corporate Learning </h1>
         </div>
     </div>
-    <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
-            <h2>Corporate learning for all</h2>
-            <p class="mb-0">We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees. Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
-        </div>
-    </div>
-    <div class="bg-secondary-subtle pt-4">
+
+    <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+            <h2>Corporate learning for all</h2>
+            <p class="mb-5">We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees. Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
             <h3>How can the Learning Centre help?</h3>
             <p>Select the headings that apply to you to learm more about intake for corporate learning.</p>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">

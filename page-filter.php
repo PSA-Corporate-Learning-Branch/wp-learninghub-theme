@@ -137,7 +137,7 @@ get_header();
 <div class="bg-secondary-subtle">
 <div class="container-lg p-lg-5 p-4 bg-light-subtle">
 <h2>Find learning using filters</h2>
-<p class="mb-4">Three types of categorization help you find exactly what you're looking for: 
+<p class="mb-5">Three types of categorization help you find exactly what you're looking for: 
     audience, topic and delivery. You can also search by keyword.</p>
 <div class="row">
 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
