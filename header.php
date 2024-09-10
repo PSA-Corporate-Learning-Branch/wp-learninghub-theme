@@ -128,6 +128,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
+                                
                                 <li><a class="dropdown-item" href="/learninghub/intake/">Intake for Corporate Learning</a></li>
                             </ul>
                         </li>
@@ -139,6 +140,7 @@
                                 <li><a class="dropdown-item" href="/learninghub/filter/">All Courses</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning/">Foundational Corporate Learning</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/categories/">Course Categorization</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/learning-systems/">Learning Platforms</a></li>
                             </ul>
                         </li>
 
