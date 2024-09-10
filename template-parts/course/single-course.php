@@ -1,6 +1,6 @@
 <div class="card shadow-sm rounded mb-2">
     <div class="card-body">
-        <h4 class="text-primary h5 mb-0"><?= the_title(); ?></h4>
+        <h4 class="coursename text-primary h5 mb-0"><?= the_title(); ?></h4>
         <h5 class="published d-none"><?= the_date(); ?></h5>
         <div class="d-flex flex-wrap align-items-center gap-3 mb-2 mt-2 fw-normal text-body-secondary" style="font-size: 0.75rem;">
             <div title="Topic">

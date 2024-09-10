@@ -109,10 +109,7 @@ $post_args = array(
     'posts_per_page'           => -1,
     'ignore_sticky_posts'      => 0,
     'tax_query'                => $taxquery,
-    'orderby'                  => array(
-        'date' => 'DESC',
-        'menu_order' => 'ASC'
-    ),
+    'orderby'                  => 'name',
     'order'                    => 'ASC',
     'hide_empty'               => 0,
     'hierarchical'             => 1,
