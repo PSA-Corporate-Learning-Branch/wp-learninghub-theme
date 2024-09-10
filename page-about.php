@@ -44,7 +44,7 @@ get_header();
                             <div class="card-title">
                                 <h3 class="h4 text-primary">Learning Records</h3>
                             </div>
-                            <p class="card-text fs-6">The PSA Learning System continues to maintain your learning profile and records. However, it is <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">not the only learning system</a> in the BCPS (BC Public Service).</p>
+                            <p class="card-text fs-6">The PSA Learning System continues to maintain your learning profile and records. However, it is <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">not the only learning system</a> in the BC Public Service.</p>
                             <p class="card-text fs-6">Ministry-specific learning records may not be available. If you are seeking ministry-specific training records, please check with your organization.</p>
                         </div>
                     </div>
