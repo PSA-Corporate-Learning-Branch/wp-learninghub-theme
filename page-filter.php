@@ -140,8 +140,7 @@ get_header();
 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
     <h3 class="h4 fw-semibold">Filters</h3>
     <p class="lh-sm fs-6">
-        <small>Select a heading to show/hide the filters from that category. 
-        Select the <strong>Apply</strong> button when you want to apply the filters.</small>
+        <small>Select a heading to show/hide the filters from that category.</small>
     </p> 
     <p class="lh-sm fs-6 mb-0"><a href="/learninghub/categories/">Learn how courses are categorized.</a><p>
     <div class="mb-3">
@@ -245,7 +244,21 @@ get_header();
         </div> 
         </div> 
 
-
+        <style>
+            /* We hide the form submit button for taxonomy filters by default, 
+            but the noscript below will show it if there's no JS. 
+            #gracefuldegradation */
+            .applybutton {
+                display: none;
+            }
+        </style>
+        <noscript>
+            <style>
+                .applybutton {
+                    display: block;
+                }
+            </style>
+        </noscript>
                 
         <div class="accordion" id="filterCategories">
                 
@@ -287,7 +300,7 @@ get_header();
                     <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?> 
                     <?php $desc = 'No description set'; if(!empty($t->description)) $desc = $t->description; ?>
                     <div class="form-check fs-6">
-                            <input class="form-check-input" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
+                            <input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
                             <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
                             <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $desc ?>">
                                 <span class="icon-svg baseline-svg">
@@ -339,9 +352,17 @@ get_header();
                     <?php foreach ($audiences as $a) : ?> 
                     <?php $active = '' ?> 
                     <?php if (!empty($_GET['audience']) && in_array($a->slug, $_GET['audience'])) $active = 'checked' ?> 
+                    <?php $desc = 'No description set'; if(!empty($a->description)) $desc = $a->description; ?>
                     <div class="form-check fs-6">
-                            <input class="form-check-input" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
+                            <input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
                             <label for="audience<?= $a->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> <!--(<?= $a->count ?>)--> </label>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $desc ?>">
+                                <span class="icon-svg baseline-svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                        <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                    </svg>
+                                </span>
+                            </a>
                         </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                     </form>
                 </div>
@@ -381,11 +402,19 @@ get_header();
                     ); //,'include' => array(3,37,82,236,410)
                     ?> 
                     <?php foreach ($dms as $d) : ?> 
+                    <?php $desc = 'No description set'; if(!empty($d->description)) $desc = $d->description; ?>
                     <?php $active = '' ?> 
                     <?php if (!empty($_GET['delivery_method']) && in_array($d->slug, $_GET['delivery_method'])) $active = 'checked' ?> 
                     <div class="form-check fs-6">
-                        <input class="form-check-input" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
+                        <input class="form-check-input" onChange="this.form.submit()" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
                         <label for="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> <!--(<?= $d->count ?>)--> </label>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-title="<?= $desc ?>">
+                            <span class="icon-svg baseline-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                </svg>
+                            </span>
+                        </a>
                     </div> <?php endforeach ?> <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                     </form>
                 </div>
