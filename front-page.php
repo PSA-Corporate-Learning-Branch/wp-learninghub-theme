@@ -58,7 +58,8 @@
                     <?php while (have_posts()) : ?>
                         <?php the_post() ?>
                         <?php if (has_post_thumbnail($post->ID)) : ?>
-                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
+                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
+
                             <a href="<?= the_permalink() ?>" class="text-decoration-none"><img class="mt-4 border border-2 border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
                             <?php endif; ?>
                             <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
