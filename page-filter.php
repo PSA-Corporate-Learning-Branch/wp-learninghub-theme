@@ -177,7 +177,7 @@ get_header();
             <?php endif ?>
 
 
-        <?php if (!empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
+        <?php if (!empty($kw) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])) : ?>
                     
             <?php if (!empty($tterms)) : ?> 
             <div class="col-md-auto mb-2">
