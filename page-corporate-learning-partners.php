@@ -109,7 +109,7 @@ get_header();
                                             <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
                                         <?php else : ?>
                                             <div class="bg-warning-subtle mt-2 p-2">
-                                                This partner does not currently have any courses listed in the Hub.
+                                                This partner does not currently have any courses listed in the LearningHUB.
                                             </div>
 
                                         <?php endif ?>

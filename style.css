@@ -347,9 +347,10 @@ h5 {
 }
 
 
-.site-footer>.site-info,
-.site-footer>.site-info a {
-    font-size: 1.125rem;
+.site-footer,
+.site-footer a {
+    font-size: 1rem;
+    color: #fff !important;
 }
 
 [data-bs-theme=dark] #feedback a:hover {

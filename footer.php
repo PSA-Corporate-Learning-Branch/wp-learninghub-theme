@@ -1,24 +1,36 @@
-<div class="bg-secondary-subtle">
-    <div class="container-lg px-lg-5 px-4 pt-0 pb-lg-4 pb-3 bg-light-subtle">
-        <details id="feedback" class="text-primary">
-            <summary>Need help? </summary>
-            <div class="text-body">
-                <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
-                <!-- <p><a href="https://survey.alchemer-ca.com/s3/50120510/8f3f4d590f25" target="_blank" rel="noopener">Give general feedback about the Learning Hub</a>.</p> -->
-            </div>
-        </details>
-    </div>
-</div>
-
-
-
-
 <div id="bcgovfoot" class="bg-gov-blue flex-grow-1">
     <footer class="site-footer container-lg py-4 py-lg-5">
-        <div class="site-info d-block">
-            <div class="d-flex flex-column flex-lg-row justify-content-between">
-                <div class="m-3 flex-grow-1">
-                    The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="gov-yellow">The LearningHUB</h5>
+                <ul style="line-height: 1.75;">
+                    <li><a aria-current="page" href="/learninghub/">Home</a></li>
+                    <li>
+                        <a href="/learninghub/about/">
+                            About</a>
+                    </li>
+                    <li><a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
+                    <li><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
+                    <li><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
+                    <li><a href="/learninghub/filter/">All Courses</a></li>
+                    <li><a href="/learninghub/foundational-corporate-learning/">Foundational Corporate Learning</a></li>
+                    <li><a href="/learninghub/categories/">Course Categorization</a></li>
+                    <li><a href="/learninghub/learning-systems/">Learning Platforms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8"><h5 class="gov-yellow">Contact</h5>
+            <p>Have a question about the corporate learning? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
+            <p>Want to add a course on the LearningHUB? Visit the <a href="/learninghub/intake/">Intake for Corporate Learning</a> page for more information.</p>
+        
+            <h5 class="gov-yellow">Accommodations</h5>
+            <p>Please let us know if you require course materials in alternate formats or if you require other accommodation to successfully attend a course.</p>
+            <p><a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre". The Learning Centre will work to accommodate your request.</p></div>
+
+        </div>
+        <div class="site-info d-block mt-4">
+            <div class="d-flex flex-column flex-lg-row justify-content-between border-top border-warning pt-1">
+                <div class="me-3 my-3 flex-grow-1">
+                    <p>The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.</p>
                 </div>
 
                 <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100" width="380" alt="Where Ideas Work logo">
