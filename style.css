@@ -48,13 +48,6 @@
     /* 50% tint */
 }
 
-@media (max-width: 767.98px)  {
-    :root {
-        --bs-body-font-size: 1rem;
-        /* font-size base is returned to WP default 16px/1rem for smaller screens*/
-    }
-}
-
 [data-bs-theme=dark] {
     --bs-primary: var(--gov-primary-yellow);
     /* changed primary colours to gov-primary yellow for dark mode */
@@ -472,4 +465,26 @@ p.circle-text {
 
 [data-bs-theme=dark] p.circle-text {
     color: black !important;
+}
+
+@media (max-width: 767.98px)  {
+    :root {
+        --bs-body-font-size: 1rem;
+        /* font-size base is returned to WP default 16px/1rem for smaller screens*/
+    }
+    p.circle-text {
+        overflow: hidden;
+        padding: 18px 9px 16px 4px;
+        /* set width and height for diameter */
+        width: 18em;
+        height: 18em;
+        border-radius: 50%;
+        background: lightblue;
+        text-align: center;
+        font-size: 18px;
+    }
+    #CLFstructure {
+        font-size: .75em !important;
+        font-weight: normal !important;
+    }
 }

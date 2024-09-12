@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
+        <div class="container-lg p-lg-5 p-4">
             <h2>What is Corporate Learning?</h2>
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-check-circle-fill flex-shrink-0 me-3 align-self-start text-success"></i>
@@ -26,7 +26,7 @@
                     Corporate Learning doesn't include training that is offered by Ministries to Ministry employees.
                 </div>
             </div>
-            <h3 class="mt-5">Who are the Corporate Learning Partners?</h3>
+            <h3 class="mt-md-4">Who are the Corporate Learning Partners?</h3>
             <p>In the BC Public Service, Corporate Learning is a shared space. Corporate Learning Partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
             <p class="mb-0">Curious about our existing partners and which courses they offer? <a href="/learninghub/corporate-learning-partners/">Meet the partners</a>.</p>
         </div>
@@ -35,7 +35,7 @@
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h3>BC Public Service Learning Vision</h3>
             <p>The vision statement for Corporate Learning in the BC Public Service provides a compelling North Star for learning. The vision is built upon eight key themes that inform the entire corporate learning framework and are woven throughout all its components. </p>
-            <div class="d-flex justify-content-center align-items-center gap-5 my-4">
+            <div class="d-lg-flex justify-content-center align-items-center gap-5 my-4">
                 <p class="circle-text">
                     <span aria-hidden="true"></span>
                     The BC Public Service is committed to providing aligned, relevant and flexible learning that <strong>empowers our people</strong> to grow and thrive, ultimately <strong>enhancing</strong> the <strong>employee experience</strong> so they can best serve the diverse people of British Columbia.
@@ -56,28 +56,28 @@
             <h3>The Corporate Learning Framework</h3>
             <p>The framework is a modern solution to guide and unify the design, development and delivery of corporate learning for the entire BC Public Service. The BC Public Service is committed to providing aligned, relevant and flexible learning.</p>
             <p>It was drafted in consultation with numerous representatives of the BC Public Service, including our Strategic Human Resources (SHR) partners and corporate learning partners.</p>
-            <div class="vstack gap-1 text-center fw-bold m-5">
+            <div class="vstack gap-1 text-center m-lg-5 my-4" id="CLFstructure">
                 <div class="text-white bg-secondary px-3 py-2 rounded">Organizational Strategy</div>
                 <div class="fs-2"><i class="bi bi-arrow-down"></i></div>
-                <div class="hstack gap-3">
-                    <div class="border border-3 border-primary rounded px-2 py-3 rounded align-self-stretch" style="writing-mode: vertical-lr; rotate: 180deg;">Enabling Technology</div>
-                    <div class="vstack gap-3">
-                        <div class="text-white bg-gov-green px-3 py-2 rounded">Learning Vision</div>
-                        <div class="text-white bg-gov-blue px-3 py-2 rounded">Learning Principles</div>
-                        <div class="d-flex flex-row gap-3 justify-content-evenly align-content-stretch">
-                            <div class="text-white bg-gov-purple px-3 py-2 rounded flex-grow-1">Learner Segmentation</div>
-                            <div class="text-white bg-gov-purple px-3 py-2 rounded flex-grow-1">Learning Categorization</div>
+                <div class="hstack gap-lg-3 gap-2">
+                    <div class="border border-primary rounded p-1 px-lg-2 py-lg-3 rounded align-self-stretch" style="writing-mode: vertical-lr; rotate: 180deg;">Enabling Technology</div>
+                    <div class="vstack gap-lg-3 gap-2">
+                        <div class="text-white bg-gov-green p-1 px-lg-2 py-lg-3 rounded">Learning Vision</div>
+                        <div class="text-white bg-gov-blue p-1 px-lg-2 py-lg-3 rounded">Learning Principles</div>
+                        <div class="d-flex flex-row gap-lg-3 gap-1 justify-content-evenly align-content-stretch">
+                            <div class="text-white bg-gov-purple p-1 px-lg-2 py-lg-3 rounded flex-grow-1">Learner Segmentation</div>
+                            <div class="text-white bg-gov-purple p-1 px-lg-2 py-lg-3 rounded flex-grow-1">Learning Categorization</div>
                         </div>
-                        <div class="text-white bg-gov-blue px-3 py-2 rounded">Learning Experience</div>
-                        <div class="text-white bg-gov-green px-3 py-2 rounded">Learning Evaluation</div>
+                        <div class="text-white bg-gov-blue p-1 px-lg-2 py-lg-3 rounded">Learning Experience</div>
+                        <div class="text-white bg-gov-green p-1 px-lg-2 py-lg-3 rounded">Learning Evaluation</div>
                     </div>
-                    <div class="border border-3 border-primary rounded px-2 py-3 rounded align-self-stretch" style="writing-mode: vertical-rl;">Governance</div>
+                    <div class="border border-primary rounded p-1 px-lg-2 py-lg-3 rounded align-self-stretch" style="writing-mode: vertical-rl;">Governance</div>
                 </div>
             </div>
             <h3>BC Public Service Learning Principles</h3>
             <p>All corporate learning will be designed and developed with these principles in mind.</p>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-green p-3"><i class="bi bi-person fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -90,8 +90,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-blue p-3"><i class="bi bi-people fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -103,8 +103,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-purple p-3"><i class="bi bi-clock fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -116,8 +116,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-green p-3"><i class="bi bi-person-arms-up fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -128,8 +128,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-blue p-3"><i class="bi bi-puzzle fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -141,8 +141,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-purple p-3"><i class="bi bi-pie-chart fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -154,8 +154,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex mt-4 align-content-center">
-                <div class="flex-shrink-0 ps-3">
+            <div class="d-flex mt-lg-4 align-content-center">
+                <div class="d-md-block d-none flex-shrink-0 ps-3">
                     <span class="badge rounded-pill bg-gov-green p-3"><i class="bi bi-lightbulb fs-2"></i></span>
                 </div>
                 <div class="flex-grow-1 ms-3">
@@ -166,14 +166,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="card topic-card mx-3 mt-5">
+            <div class="card topic-card mx-lg-3 mt-lg-5">
                 <div class="card-body">
                     <h3>Corporate Learning Framework Outcomes</h3>
-                    <ul class="list-unstyled lh-lg ms-3">
-                        <li><i class="bi bi-check2-circle me-2"></i>Corporate learning effectively advances organizational priorities</li>
-                        <li><i class="bi bi-check2-circle  me-2"></i>Aligned and coordinated corporate learning</li>
-                        <li><i class="bi bi-check2-circle me-2"></i>Increased adoption, application and improved overall learning experience</li>
-                        <li><i class="bi bi-check2-circle me-2"></i>Learning is prioritized and leveraged across the organization, reducing duplication</li>
+                    <ul class="list-unstyled ms-md-3">
+                        <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Corporate learning effectively advances organizational priorities</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Aligned and coordinated corporate learning</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Increased adoption, application and improved overall learning experience</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Learning is prioritized and leveraged across the organization, reducing duplication</li>
                     </ul>
                 </div>
             </div>
