@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
-                        <div class="bg-gov-green rounded-top"><img src="https://wordpress.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
+                        <div class="bg-gov-green rounded-top"><img src="https://learn.bcpublicservice.gov.bc.ca/learning-hub/TLC-0611224-100_1200x1800.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
                         <div class="card-body fs-6">
                             <h3 class=" card-title fs-4">What's new?</h3>
                             <h4 class="fs-4"><a href="/learninghub/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
@@ -54,7 +54,7 @@
                         <?php the_post() ?>
                         <?php if (has_post_thumbnail($post->ID)) : ?>
                             <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
-                            <a href="<?= the_permalink() ?>" class="text-decoration-none"><img class="mt-4 border border-2 border-dark border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
+                            <a href="<?= the_permalink() ?>" class="text-decoration-none"><img class="mt-4 border border-2 border-dark border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>" alt="">
                             <?php endif; ?>
                             <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
                                 <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
@@ -62,7 +62,6 @@
                             </a>
                         <?php endwhile ?>
                     <?php endif ?>
-
             </div>
         </div>
     </div>
@@ -82,7 +81,10 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
-                        <p class="card-text"><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html">Visit the PSA Learning System</a></p>
+                        <ul>
+                            <li><a href="/learninghub/external_system/psa-learning-system">PSA Learning System course list</a></li>
+                            <li><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -96,7 +98,12 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
-                        <p class="card-text"> <a href="https://learningcurator.gww.gov.bc.ca/">Visit the Learning Curator</a></p>
+                        <ul>
+                            <li><a href="/learninghub/external_system/psa-learning-curator">Learning Curator pathway list</a></li>
+                            <li>
+                                <a href="https://learningcurator.gww.gov.bc.ca/" target="_blank" rel="noopener noreferrer">Visit the Learning Curator<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

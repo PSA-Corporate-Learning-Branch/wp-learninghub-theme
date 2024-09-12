@@ -128,7 +128,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
-                                
                                 <li><a class="dropdown-item" href="/learninghub/intake/">Intake for Corporate Learning</a></li>
                             </ul>
                         </li>
@@ -138,7 +137,7 @@
                                 Courses</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/filter/">All Courses</a></li>
-                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning/">Foundational Corporate Learning</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/categories/">Course Categorization</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/learning-systems/">Learning Platforms</a></li>
                             </ul>
@@ -176,7 +175,7 @@
                     </ul>
                 </div>
                 <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1" role="search" id="navbarSearch">
-                    <label for="s" class="visually-hidden">Search</label>
+                    <label for="keyword" class="visually-hidden">Search</label>
                     <div class="col-auto flex-grow-1"><input type="search" id="keyword" class="s w-100 form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
                                                                                                                                                                                     ?>"></div>
                     <div class="col-auto">

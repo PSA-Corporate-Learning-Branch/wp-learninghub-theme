@@ -1,7 +1,7 @@
 <div id="bcgovfoot" class="bg-gov-blue flex-grow-1">
-    <footer class="site-footer container-lg py-4 py-lg-5">
+    <footer class="site-footer container-lg p-4">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <h5 class="gov-yellow">The LearningHUB</h5>
                 <ul style="line-height: 1.75;">
                     <li><a aria-current="page" href="/learninghub/">Home</a></li>
@@ -13,12 +13,12 @@
                     <li><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
                     <li><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
                     <li><a href="/learninghub/filter/">All Courses</a></li>
-                    <li><a href="/learninghub/foundational-corporate-learning/">Foundational Corporate Learning</a></li>
+                    <li><a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
                     <li><a href="/learninghub/categories/">Course Categorization</a></li>
                     <li><a href="/learninghub/learning-systems/">Learning Platforms</a></li>
                 </ul>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <h5 class="gov-yellow">Contact</h5>
                 <p>Have a question about the corporate learning? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                 <p>Want to add a course to the LearningHUB catalogue? Visit the <a href="/learninghub/intake/">Intake for Corporate Learning</a> page for more information.</p>
