@@ -22,7 +22,7 @@ while (have_posts()) :
         <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
             <div class="container-lg py-4 py-md-5">
                 <h1 class="text-white title"><?php the_title() ?></h1>
-                <h2 class="text-white title">Recent News</h2>
+                <h2 class="text-white">Recent News</h2>
             </div>
         </div>
 
