@@ -467,15 +467,9 @@ get_header();
                                     </div>
                                 </noscript>
                             <?php endif ?>
-
-
-                            <?php
-                            $resultcount = (int) $post_my_query->found_posts;
-                            $plural = 'course';
-                            if ($resultcount > 1) $plural = 'courses';
-                            ?>
+                    
                             <div class="fw-bold mb-2" id="coursecount">
-                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> <?= $plural ?> found</h3>
+                                <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> found</h3>
                             </div>
                             <div class="mb-3 d-flex">
                                 <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter results by keyword" value="<?php echo $_GET['keyword'] ?>">
@@ -548,7 +542,7 @@ get_header();
             removekw.textContent = searchValue;
         }
         updateHiddenKeywords(searchValue);
-        let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' courses found';
+        let update = '<span class=\"badge fs-5 bg-gov-blue me-1\">' + courseList.update().matchingItems.length + '<\/span>' + ' found';
         ccount.innerHTML = update;
 
     });

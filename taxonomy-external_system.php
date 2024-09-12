@@ -52,7 +52,7 @@ $post_my_query = new WP_Query($post_args);
 
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Courses offered on the <?= str_replace('System:', '', $termtitle) ?> platform</h2>
+            <h2>Offered on the <?= str_replace('System:', '', $termtitle) ?> platform</h2>
             <?php
             $platforms = get_categories(
                 array(
@@ -85,13 +85,13 @@ $post_my_query = new WP_Query($post_args);
 
 
                     <?php if ($post_my_query->have_posts()) : ?>
-                        <div class="my-3 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> courses on this platform</div>
+                        <div class="my-3 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> found</div>
 
                         <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
                             <?php get_template_part('template-parts/course/single-course') ?>
                         <?php endwhile; ?>
                     <?php else : ?>
-                        <p>Oh no! There are no courses that match your filters.</p>
+                        <p>Oh no! There are no offerings that match your filters.</p>
                         <?php //get_template_part( 'template-parts/content/content-none' ); 
                         ?>
                     <?php endif; ?>

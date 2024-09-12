@@ -50,7 +50,7 @@ $post_my_query = new WP_Query($post_args);
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Courses offered by <?= str_replace('Learning Partners:', '', $termtitle) ?></h2>
+            <h2>Offered by <?= str_replace('Learning Partners:', '', $termtitle) ?></h2>
             <?php
             $partners = get_categories(
                 array(
@@ -81,7 +81,7 @@ $post_my_query = new WP_Query($post_args);
                 <div class="col-md-8">
 
                     <?php if ($post_my_query->have_posts()) : ?>
-                        <div class="my-3 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> courses from this partner</div>
+                        <div class="my-3 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> found</div>
                         <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
                             <?php get_template_part('template-parts/course/single-course') ?>
                         <?php endwhile; ?>
