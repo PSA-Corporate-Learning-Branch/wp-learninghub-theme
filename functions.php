@@ -10,3 +10,6 @@ function change_default_jquery( ){
     wp_dequeue_script( 'jquery');
     wp_deregister_script( 'jquery');   
 }
+
+function my_excerpt_length($length){ return 25; } 
+add_filter('excerpt_length', 'my_excerpt_length');
