@@ -8,7 +8,7 @@
     <div class="bg-light-subtle">
         <div class="container-lg py-4 py-md-5">
             <div class="row">
-                <div class="col-lg-8 mb-4 mb-lg-0">
+                <div class="col-lg-8 mb-4 mb-lg-0 ps-0">
                     <h2>What is corporate learning?</h2>
                     <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
                     <a href="/learninghub/filter/" class="btn btn-lg btn-primary">Course catalogue</a>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 pe-0">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
 
                         <?php
@@ -112,12 +112,10 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
-
-                        <ul>
+                        <ul style="line-height: 1.75;">
                             <li><a href="/learninghub/external_system/psa-learning-system">PSA Learning System course list</a></li>
                             <li><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a></li>
                         </ul>
-
                     </div>
                 </div>
 
@@ -131,7 +129,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
-                        <ul>
+                        <ul style="line-height: 1.75;">
                             <li><a href="/learninghub/external_system/psa-learning-curator">Learning Curator pathway list</a></li>
                             <li>
                                 <a href="https://learningcurator.gww.gov.bc.ca/" target="_blank" rel="noopener noreferrer">Visit the Learning Curator<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
@@ -141,9 +139,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 <?php get_footer() ?>
