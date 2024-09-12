@@ -31,25 +31,22 @@ get_header();
                     <div class="mb-3 p-2 card topic-card rounded">
                         <div class="card-body">
                             <h4>PSA Learning System</h4>
-                            <p>The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
-                            <a class="btn btn-primary" href="https://learning.gov.bc.ca/CHIPSPLM/signon.html">Visit PSALS</a>
+                            <p>The PSA Learning System has the largest selection of courses available for registration for BC Public Service employees. It acts as a primary training record for current and completed learning.</p>
+                            <a class="btn btn-primary" href="https://learning.gov.bc.ca/CHIPSPLM/signon.html">Visit the PSA Learning System</a>
                         </div>
                     </div>
                     <div class="mb-3 p-2 card topic-card rounded">
                         <div class="card-body">
                             <h4>Learning Curator</h4>
-
                             <p>The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
 
-                            <a class="btn btn-primary" href="https://learningcurator.gww.gov.bc.ca/">Visit the Curator</a>
+                            <a class="btn btn-primary" href="https://learningcurator.gww.gov.bc.ca/">Visit the Learning Curator</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h3>All Systems</h3>
-
                     <p>Select a learning system below to show a list of courses hosted on that platform.</p>
-
                     <?php
                     $topics = get_categories(
                         array(
@@ -76,4 +73,4 @@ get_header();
         </div>
     </div>
 </div>
- <?php get_footer() ?>
+<?php get_footer() ?>
