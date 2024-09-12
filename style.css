@@ -305,10 +305,18 @@ h1.title {
 h1,
 h2,
 h3,
-h4,
-h5 {
+h4 {
     color: var(--bs-primary);
     font-weight: 400;
+}
+
+h5 {
+    color: var(--gov-secondary-green);
+    font-weight: 600;
+}
+
+[data-bs-theme=dark] h5 {
+    color: var(--bs-primary);
 }
 
 
