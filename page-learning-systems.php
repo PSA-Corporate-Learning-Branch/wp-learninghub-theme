@@ -32,7 +32,7 @@ get_header();
                         <div class="card-body">
                             <h4>PSA Learning System</h4>
                             <p>The PSA Learning System has the largest selection of courses available for registration for BC Public Service employees. It acts as a primary training record for current and completed learning.</p>
-                            <a class="btn btn-primary" href="https://learning.gov.bc.ca/CHIPSPLM/signon.html">Visit the PSA Learning System</a>
+                            <a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
                         </div>
                     </div>
                     <div class="mb-3 p-2 card topic-card rounded">
@@ -40,7 +40,7 @@ get_header();
                             <h4>Learning Curator</h4>
                             <p>The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
 
-                            <a class="btn btn-primary" href="https://learningcurator.gww.gov.bc.ca/">Visit the Learning Curator</a>
+                            <a href="https://learningcurator.gww.gov.bc.ca/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit the Learning Curator<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
                         </div>
                     </div>
                 </div>
