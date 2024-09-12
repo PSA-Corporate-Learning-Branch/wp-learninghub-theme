@@ -104,7 +104,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"></span>
                 </button>
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="wordmark navbar-brand order-lg-first me-lg-3">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="wordmark navbar-brand order-lg-first mx-1 me-lg-3">
                     <?php //the_custom_logo(); 
                     ?>
                     Learning<span class="gov-yellow fw-bold">HUB</span>

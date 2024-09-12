@@ -14,13 +14,13 @@ get_header();
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white title">About the LearningHUB</h1>
+            <h1 class="text-white">About the LearningHUB</h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Corporate learning, all in one place</h2>
-            <p class="mb-4">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
+            <p class="mb-md-4">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
             <div class="row">
                 <div class="col-md-8">
                     <h3>What will you find in the LearningHUB catalogue?</h3>
@@ -59,9 +59,8 @@ get_header();
                     </div>
                 </div>
             </div>
-            <hr class="d-none d-lg-block">
-            <div class="row mt-5">
-
+            <hr class="d-none d-md-block">
+            <div class="row mt-md-5 mt-3">
                 <div class="col-md-4">
                     <h3>What is the Corporate Learning Framework?</h3>
                     <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>

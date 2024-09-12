@@ -16,7 +16,7 @@ get_header();
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white title">Learning Platforms</h1>
+            <h1 class="text-white">Learning Platforms</h1>
         </div>
     </div>
 

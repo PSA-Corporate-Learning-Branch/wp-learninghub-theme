@@ -25,7 +25,7 @@
     /* Customized bootstrap root variables */
     --bs-font-sans-serif: "BCSans", "Noto Sans", Verdana, Arial, sans-serif;
     --bs-body-font-size: 1.25rem;
-    /* font-size base is now 20px instead of 16px/1rem */
+    /* font-size base is now 20px instead of 16px/1rem (WP default) */
 
     --bs-primary: var(--gov-primary-blue);
     /* changed primary colours to gov-primary blue */
@@ -46,6 +46,13 @@
     --bs-link-hover-color-rgb: 79, 102, 145;
     --gov-secondary-green-50: #80bcb2;
     /* 50% tint */
+}
+
+@media (max-width: 767.98px)  {
+    :root {
+        --bs-body-font-size: 1rem;
+        /* font-size base is returned to WP default 16px/1rem for smaller screens*/
+    }
 }
 
 [data-bs-theme=dark] {
@@ -87,7 +94,9 @@
     background-color: var(--gov-primary-blue) !important;
     color: white !important;
 }
-.border-gov-blue, [data-bs-theme=dark] .border-gov-blue {
+
+.border-gov-blue,
+[data-bs-theme=dark] .border-gov-blue {
     border-color: var(--gov-primary-blue) !important;
 }
 

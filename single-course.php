@@ -15,7 +15,7 @@ while (have_posts()) :
     <div id="content">
         <div class="d-flex p-4 p-lg-5 align-items-center bg-gov-green" style="height: 12vh; min-height: 100px;">
             <div class="container-lg py-4 py-lg-5">
-                <h1 class="text-white title">Course Details</h1>
+                <h1 class="text-white">Course Details</h1>
 
             </div>
         </div>

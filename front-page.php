@@ -6,29 +6,27 @@
         </div>
     </div>
     <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
+        <div class="container-lg p-lg-5 p-4 ">
             <div class="row">
-                <div class="col-lg-8 mb-4 mb-lg-0 ps-0">
+                <div class="col-lg-8 mb-4 mb-lg-0 ps-lg-0">
                     <h2>What is corporate learning?</h2>
                     <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
                     <a href="/learninghub/filter/" class="btn btn-lg btn-primary">Course catalogue</a>
                     <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4 position-relative">
                         <div class="d-flex">
-                            <div class="icon-square flex-shrink-0 mt-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="green-flag"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <div class="d-md-block d-none flex-shrink-0 icon-square mt-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="green-flag"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                     <path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z" />
                                 </svg>
                             </div>
-
-                            <div class="ms-3">
+                            <div class="ms-md-3">
                                 <h3 class="gov-green">Start here</h3>
                                 <p><a href="/learninghub/foundational-corporate-learning/" class="stretched-link">Mandatory and Foundational learning</a> for all employees and people leaders in their first year and beyond.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 pe-0">
+                <div class="col-lg-4 pe-lg-0">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
-
                         <?php
                         $sticky_posts = get_option('sticky_posts');
                         $newsargs = array(
@@ -50,7 +48,6 @@
                                         </a>
                                     <?php endif; ?>
                                 </div>
-
                                 <div class="card-body fs-6">
                                     <h3 class=" card-title fs-4">What's new?</h3>
 
@@ -64,36 +61,33 @@
                                 </div>
                     </div>
                 </div>
-                <?php
-                $sticky = get_option('sticky_posts');
-                // check if there are any
-                if (!empty($sticky)) :
-                    // optional: sort the newest IDs first
-                    rsort($sticky);
-                    // override the query
-                    $args = array(
-                        'post__in' => $sticky
-                    );
-                    query_posts($args);
-                ?>
-
-                    <?php while (have_posts()) : ?>
-                        <?php the_post() ?>
-
-                        <?php if (has_post_thumbnail($post->ID)) : ?>
-                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
-                            <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
-                                <img class="mt-4 border border-2 border-gov-blue border-bottom-0 rounded-top w-100 object-fit-contain" src="<?php echo $image[0]; ?>">
-                            </a>
-
-                        <?php endif; ?>
-                        <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
-                            <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
-                        </div>
-                        </a>
-                    <?php endwhile ?>
-                <?php endif ?>
             </div>
+            <?php
+            $sticky = get_option('sticky_posts');
+            // check if there are any
+            if (!empty($sticky)) :
+                // optional: sort the newest IDs first
+                rsort($sticky);
+                // override the query
+                $args = array(
+                    'post__in' => $sticky
+                );
+                query_posts($args);
+            ?>
+                <?php while (have_posts()) : ?>
+                    <?php the_post() ?>
+                    <?php if (has_post_thumbnail($post->ID)) : ?>
+                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
+                        <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
+                            <img class="mt-4 border border-2 border-gov-blue border-bottom-0 rounded-top w-100 object-fit-contain" src="<?php echo $image[0]; ?>">
+                        </a>
+                    <?php endif; ?>
+                    <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
+                        <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
+                    </div>
+                    </a>
+                <?php endwhile ?>
+            <?php endif ?>
         </div>
     </div>
 
@@ -119,10 +113,9 @@
                     </div>
                 </div>
 
-
             </div>
             <div class="col-md-6">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-3 mt-md-0">
                     <div class="bg-gov-green card-header pt-3">
                         <h4 class="text-white mb-1">Learning Curator</h4>
                         <p class="lh-sm fs-6 mb-1">Informal, self-directed learning</p>
