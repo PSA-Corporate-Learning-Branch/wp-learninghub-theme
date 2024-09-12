@@ -28,11 +28,38 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
-                        <div class="bg-gov-green rounded-top"><img src="https://learn.bcpublicservice.gov.bc.ca/learning-hub/TLC-0611224-100_1200x1800.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
+
+                        <?php 
+                        $sticky_posts = get_option('sticky_posts'); 
+                        $newsargs = array(
+                            'posts_per_page' => 1, // Only get one post
+                            'post_status'    => 'publish', // Ensure the post is published
+                            'post__not_in' => $sticky_posts, // Ignore stickied posts
+                            'orderby'        => 'date', // Order by date
+                            'order'          => 'DESC', // Get the most recent post
+                        );
+                        $recent_post = new WP_Query($newsargs);
+                        if ($recent_post->have_posts()) :
+                            while ($recent_post->have_posts()) : $recent_post->the_post();
+                            ?>
+                            <div class="bg-gov-green rounded-top">
+                            <?php if (has_post_thumbnail($recent_post->ID)) : ?>
+                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
+                            <a href="<?= the_permalink() ?>" class="text-decoration-none">
+                                <img style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
+                            </a>
+                            <?php endif; ?>
+                            </div>
+
                         <div class="card-body fs-6">
                             <h3 class=" card-title fs-4">What's new?</h3>
-                            <h4 class="fs-4"><a href="/learninghub/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
-                            <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
+                            
+                                    <h4 class="fs-5"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h4>
+                                    <p class="card-text"><?= the_excerpt() ?></p>
+                                <?php endwhile; 
+                                wp_reset_postdata(); // Reset query
+                            endif;
+                            ?>
                             <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
                         </div>
                     </div>
@@ -52,9 +79,13 @@
 
                     <?php while (have_posts()) : ?>
                         <?php the_post() ?>
-                        <?php if (has_post_thumbnail($post->ID)) : ?>
-                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
-                            <a href="<?= the_permalink() ?>" class="text-decoration-none"><img class="mt-4 border border-2 border-dark border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>" alt="">
+
+                            <?php if (has_post_thumbnail($post->ID)) : ?>
+                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
+                            <a href="<?= the_permalink() ?>" class="text-decoration-none">
+                                <img class="mt-4 border border-2 border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
+                            </a>
+
                             <?php endif; ?>
                             <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
                                 <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
@@ -81,10 +112,12 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
+
                         <ul>
                             <li><a href="/learninghub/external_system/psa-learning-system">PSA Learning System course list</a></li>
                             <li><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a></li>
                         </ul>
+
                     </div>
                 </div>
 
