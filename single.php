@@ -29,14 +29,24 @@ while (have_posts()) :
 
         <div class="bg-secondary-subtle">
             <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="row mx-0">
+                    <div class="col-lg-8">
+                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                    <div class="entry-content">
-                        <?php //the_post_thumbnail('large') ?>
-                        <?php the_content() ?>
-                    </div><!-- .entry-content -->
+                            <div class="entry-content">
+                                <?php //the_post_thumbnail('large') 
+                                ?>
+                                <?php the_content() ?>
+                            </div><!-- .entry-content -->
 
-                </article><!-- #post-<?php the_ID(); ?> -->
+                        </article><!-- #post-<?php the_ID(); ?> -->
+                    </div>
+                    <div class="col-lg-4">
+                        <?php get_template_part('template-parts/sidebar/taxonomies') ?>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
