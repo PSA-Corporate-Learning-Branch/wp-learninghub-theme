@@ -21,21 +21,26 @@ get_header();
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Corporate learning for all</h2>
-            <p class="mb-5">We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees. Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
+            <p>We welcome sponsored learning that aligns with the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a> and benefits all BCPS employees. </p>
+            <p class="mb-4">Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
             <h3>How can the Learning Centre help?</h3>
-            <p>Select the headings that apply to you to learm more about intake for corporate learning.</p>
+            <p>Select the headings to expand more information about intake for corporate learning.</p>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I'm developing or updating learning for a corporate audience </h4>
                     </summary>
-                    <p class="mt-3">If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/" target="_blank" rel="noopener noreferrer">Learning Development Tips</a> on the Learning Centre site. </p>
-                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628" target="_blank" rel="noopener noreferrer">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
-                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Take a peek at our <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">Platforms page</a> to learn more. </p>
+                    <h5 class="mt-3">Best practices</h5>
+                    <p>If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/">Learning Development Tips</a> on the Learning Centre site. </p>
+                    <h5>Development of online learning</h5>
+                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
+                    <h5>Hosting existing learning</h5>
+                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Check out our <a href="/learninghub/learning-systems/">Platforms page</a> to learn more. </p>
                     <p><strong>Note:</strong> If you are a business area within the Public Service Agency, you also have access to the PSA Moodle to host online courses. </p>
-                    <p>If your learning is for a corporate audience, submit your request so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/" target="_blank" rel="noopener noreferrer">Corporate Learning Framework</a>.
+                    <h5>Corporate learning request</h5>
+                    <p>If your learning is for a corporate audience, submit your request so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a>.
                     </p>
-                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary">Intake form</a>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
                 </details>
             </div>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
@@ -43,12 +48,14 @@ get_header();
                     <summary>
                         <h4 class="mb-0">I want to host learning for employees to register on the Learning System (ELM)</h4>
                     </summary>
-                    <p class="mt-3">If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/" target="_blank" rel="noopener noreferrer">Learning Development Tips</a> on the Learning Centre site. </p>
-                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628" target="_blank" rel="noopener noreferrer">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
-                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Take a peek at our <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">Platforms page</a> to learn more. </p>
-                    <p><strong>Note:</strong> If you are a business area within the Public Service Agency, you also have access to the PSA Moodle to host online courses. </p>
-                    <p>If your learning is for a corporate audience, submit your request below so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/" target="_blank" rel="noopener noreferrer">Corporate Learning Framework</a>.
-                    </p>
+                    <h5 class="mt-3">Ministry audience</h5>
+                    <p>We can host learning on the PSA Learning System (ELM). This system continues to maintain your profile and records. It is not the only learning system in the BC Public Service. Visit the <a href="/learninghub/learning-systems/">Learning Platforms page</a> to find out more.</p>
+                    <p>If you wish to host learning for your ministry, the Learning Centre can onboard an administrator from your area to bring your course into the Learning System (ELM).</p>
+                    <!-- Button to new form to go here when ready -->
+                    <h5>Corporate audience</h5>
+                    <p>If you wish to host learning for a corporate audience, the Learning Centre will work with you to ensure your learning aligns with the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a>. We will also include the course or other learning item here in the LearningHUB Course Catalogue. </p>
+                    <p>Complete the Intake form now to tell us about your project.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
                 </details>
             </div>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
@@ -56,12 +63,14 @@ get_header();
                     <summary>
                         <h4 class="mb-0">I want to learn about Learning Centre facilitation</h4>
                     </summary>
-                    <p class="mt-3">If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/" target="_blank" rel="noopener noreferrer">Learning Development Tips</a> on the Learning Centre site. </p>
-                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628" target="_blank" rel="noopener noreferrer">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
-                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Take a peek at our <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">Platforms page</a> to learn more. </p>
-                    <p><strong>Note:</strong> If you are a business area within the Public Service Agency, you also have access to the PSA Moodle to host online courses. </p>
-                    <p>If your learning is for a corporate audience, submit your request below so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/" target="_blank" rel="noopener noreferrer">Corporate Learning Framework</a>.
-                    </p>
+                    <h5 class="mt-3">Learning Centre Facilitation</h5>
+                    <p>Learning Centre facilitator staff are fully booked for delivery of Learning Centre course offerings. Please <a href="/learninghub/filter/">visit the LearningHUB Catalogue</a> as all our corporate learning opportunities are included there.</p>
+                    <h5>Group learning</h5>
+                    <p>If you are a ministry looking for a corporate learning experience for your organization, consider having everyone register for a single offering. That way your team has the experience of learning together. We have large class capacity that will allow whole groups to learn together in our live online sessions.</p>
+                    <h5>External facilitation</h5>
+                    <p>If you would like to hire a facilitator, please visit the <a href="https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/facilitation-services">BC Procurement Resources for Facilitation Services</a>.</p>
+                    <h5>Other questions?</h5>
+                    <p>If you still have questions about facilitation, please direct your inquiry to the Corporate Learning intake team at <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
                 </details>
             </div>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
@@ -69,25 +78,18 @@ get_header();
                     <summary>
                         <h4 class="mb-0">I want to promote my learning opportunity</h4>
                     </summary>
-                    <p class="mt-3">If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/" target="_blank" rel="noopener noreferrer">Learning Development Tips</a> on the Learning Centre site. </p>
-                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628" target="_blank" rel="noopener noreferrer">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
-                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Take a peek at our <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">Platforms page</a> to learn more. </p>
-                    <p><strong>Note:</strong> If you are a business area within the Public Service Agency, you also have access to the PSA Moodle to host online courses. </p>
-                    <p>If your learning is for a corporate audience, submit your request below so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/" target="_blank" rel="noopener noreferrer">Corporate Learning Framework</a>.
-                    </p>
+                    <p class="mt-3">The Learning Centre recommends contacting your Ministry's communications team for a strategy to promote your learning offering. </p>
+                    <p>If you are interested in an article on the LearningHUB about an opportunity for a corporate audience, please contact the Corporate Learning intake team at <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>. </p>
+                    <p>For more information about the definition of a corporate audience and corporate learning in general, check out the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a> page.</p>
                 </details>
             </div>
             <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
-                        <h4 class="mb-0">I am unsure if my request is corporate learning, or I need more information. </h4>
+                        <h4 class="mb-0">I am unsure if my request is corporate learning, or I need more information</h4>
                     </summary>
-                    <p class="mt-3">If you are developing learning for your ministry and are interested in best practices, visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-development-tips/" target="_blank" rel="noopener noreferrer">Learning Development Tips</a> on the Learning Centre site. </p>
-                    <p>If you are looking to develop online learning and do not have resources or an online course creation tool, we recommend visiting the <a href="https://www2.gov.bc.ca/gov/content?id=6D57CEBA7FA64B5AAF70938A89DB5628" target="_blank" rel="noopener noreferrer">CSA approved vendor list</a>. These vendors can help you in creating your course. Once you have connected with a vendor, please share the developer guidelines. If you wish to host the learning with us after it's developed, please reach back out to the Learning Centre.</p>
-                    <p>You may host learning on the Learning System that are created in online development tools like Storyline, Articulate Rise, PowerPoint, Podcasts, Videos and live sessions. There are other learning platforms available to you if you wish to host learning outside of the PSA Learning System (ELM). Take a peek at our <a href="/learninghub/learning-systems/" target="_blank" rel="noopener noreferrer">Platforms page</a> to learn more. </p>
-                    <p><strong>Note:</strong> If you are a business area within the Public Service Agency, you also have access to the PSA Moodle to host online courses. </p>
-                    <p>If your learning is for a corporate audience, submit your request below so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/" target="_blank" rel="noopener noreferrer">Corporate Learning Framework</a>.
-                    </p>
+                    <p class="mt-3">If you aren't sure if your request falls into corporate learning or have other questions, please submit an Intake Form.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
                 </details>
             </div>
 

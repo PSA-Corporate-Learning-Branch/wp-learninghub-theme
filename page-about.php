@@ -20,7 +20,7 @@ get_header();
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Corporate learning, all in one place</h2>
-            <p class="mb-5">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
+            <p class="mb-4">The LearningHUB is a 'one-stop-shop' to find corporate learning opportunities. Corporate learning is available and beneficial to all BC Public Service employees regardless of what ministry or organization you work in.</p>
             <div class="row">
                 <div class="col-md-8">
                     <h3>What will you find in the LearningHUB catalogue?</h3>
@@ -48,10 +48,25 @@ get_header();
                             <p class="card-text fs-6">Ministry-specific learning records may not be available. If you are seeking ministry-specific training records, please check with your organization.</p>
                         </div>
                     </div>
+                    <div class="mt-3 card shadow-sm rounded">
+                        <div class="bg-gov-green rounded-top"><img src="https://learn.bcpublicservice.gov.bc.ca/learning-hub/TLC-0611224-100_1200x1800.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
+                        <div class="card-body fs-6">
+                            <h3 class=" card-title fs-4">What's new?</h3>
+                            <h4 class="fs-4"><a href="/learninghub/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
+                            <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
+                            <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <hr class="mb-5">
-            <div class="row">
+            <hr class="d-none d-lg-block">
+            <div class="row mt-5">
+
+                <div class="col-md-4">
+                    <h3>What is the Corporate Learning Framework?</h3>
+                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
+                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
+                </div>
                 <div class="col-md-4">
                     <h3>Who are the partners?</h3>
                     <p>Many teams work in partnership with the Learning Centre to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
@@ -59,13 +74,8 @@ get_header();
 
                 </div>
                 <div class="col-md-4">
-                    <h3>What is the Corporate Learning Framework?</h3>
-                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
-                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
-                </div>
-                <div class="col-md-4">
                     <h3>Intake for corporate learning</h3>
-                    <p>We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
+                    <p>We welcome sponsored learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
                     <p>Access the <a href="/learninghub/intake-process" rel="noreferrer noopener">Intake for Corporate Learning</a> page to learn more.</p>
                 </div>
             </div>

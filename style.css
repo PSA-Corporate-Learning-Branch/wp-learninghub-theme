@@ -44,7 +44,8 @@
     --bs-link-hover-color: #4f6691;
     /* link hover is 20% tint (original was 20% shade) */
     --bs-link-hover-color-rgb: 79, 102, 145;
-
+    --gov-secondary-green-50: #80bcb2;
+    /* 50% tint */
 }
 
 [data-bs-theme=dark] {
@@ -69,8 +70,6 @@
     --bs-link-hover-color: #b68622;
     /* link hover is  20% shade */
     --bs-link-hover-color-rgb: 182, 134, 34;
-    --gov-secondary-green-50: #80bcb2;
-    /* 50% tint for dark mode version */
 }
 
 @font-face {
@@ -94,6 +93,16 @@
     color: white !important;
 }
 
+.bg-gov-purple {
+    background-color: var(--gov-secondary-purple) !important;
+    color: white !important;
+}
+
+.bg-gov-ltblue {
+    background-color: var(--gov-secondary-blue) !important;
+    color: black !important;
+}
+
 .gov-green {
     color: var(--gov-secondary-green) !important;
 }
@@ -110,13 +119,20 @@
     background-color: var(--gov-primary-yellow) !important;
 }
 
-/* Preserve blue backgrounds for accordion headers rather than doing yellow */
+/* Preserve dark backgrounds for accordion headers rather than doing yellow */
 [data-bs-theme=dark] .accordion .text-bg-primary {
     background-color: var(--gov-primary-blue) !important;
     color: #fff !important;
 }
 
-.accordion-button.text-bg-primary::after, [data-bs-theme=dark] .accordion-button.text-bg-primary::after {
+[data-bs-theme=dark] .accordion .bg-gov-green {
+    background-color: var(--gov-secondary-green) !important;
+    color: #fff !important;
+}
+
+.accordion-button.text-bg-primary::after,
+.accordion-button.bg-gov-green::after,
+[data-bs-theme=dark] .accordion-button.bg-gov-green::after {
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
@@ -305,10 +321,18 @@ h1.title {
 h1,
 h2,
 h3,
-h4,
-h5 {
+h4 {
     color: var(--bs-primary);
     font-weight: 400;
+}
+
+h5 {
+    color: var(--gov-secondary-green);
+    font-weight: 600;
+}
+
+[data-bs-theme=dark] h5 {
+    color: var(--bs-primary);
 }
 
 
@@ -396,4 +420,44 @@ summary {
 details[open]>summary::before {
     transform: rotate(90deg);
     left: -1.1rem;
+}
+
+/* Text in a circle code from https://codepen.io/thebabydino/pen/vPddeq */
+
+
+p.circle-text>[aria-hidden='true'] {
+    display: contents;
+
+    &:before,
+    &:after {
+        float: left;
+        width: 50%;
+        height: 100%;
+        --bite: radial-gradient(farthest-side at var(--pos-x, 100%),
+                transparent 100%, red);
+        -webkit-shape-outside: var(--bite);
+        shape-outside: var(--bite);
+        content: '';
+    }
+
+    &:after {
+        float: right;
+        --pos-x: 0
+    }
+}
+
+p.circle-text {
+    overflow: hidden;
+    padding: 40px 20px;
+    /* set width and height for diameter */
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    background: lightblue;
+    text-align: center;
+    font-size: 20px;
+}
+
+[data-bs-theme=dark] p.circle-text {
+    color: black !important;
 }
