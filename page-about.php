@@ -48,10 +48,17 @@ get_header();
                             <p class="card-text fs-6">Ministry-specific learning records may not be available. If you are seeking ministry-specific training records, please check with your organization.</p>
                         </div>
                     </div>
+                    <img src="https://learn.bcpublicservice.gov.bc.ca/learning-hub/TLC-0611224-100_1200x1800.jpg" alt="" class="border rounded shadow-sm mt-4">
                 </div>
             </div>
             <hr class="mb-5">
             <div class="row">
+
+                <div class="col-md-4">
+                    <h3>What is the Corporate Learning Framework?</h3>
+                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
+                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
+                </div>
                 <div class="col-md-4">
                     <h3>Who are the partners?</h3>
                     <p>Many teams work in partnership with the Learning Centre to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
@@ -59,13 +66,8 @@ get_header();
 
                 </div>
                 <div class="col-md-4">
-                    <h3>What is the Corporate Learning Framework?</h3>
-                    <p>The Corporate Learning Framework (CLF) guides and unifies the design, development, and delivery of corporate learning for the entire BC Public Service.</p>
-                    <p>Read about the <a href="/learninghub/what-is-corp-learning-framework/" rel="noreferrer noopener">Corporate Learning Framework</a>.</p>
-                </div>
-                <div class="col-md-4">
                     <h3>Intake for corporate learning</h3>
-                    <p>We welcome learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
+                    <p>We welcome sponsored learning that aligns with the corporate learning framework and benefits all BCPS employees.</p>
                     <p>Access the <a href="/learninghub/intake-process" rel="noreferrer noopener">Intake for Corporate Learning</a> page to learn more.</p>
                 </div>
             </div>
