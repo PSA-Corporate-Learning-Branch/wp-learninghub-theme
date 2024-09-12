@@ -87,6 +87,9 @@
     background-color: var(--gov-primary-blue) !important;
     color: white !important;
 }
+.border-gov-blue, [data-bs-theme=dark] .border-gov-blue {
+    border-color: var(--gov-primary-blue) !important;
+}
 
 .bg-gov-green {
     background-color: var(--gov-secondary-green) !important;

@@ -29,8 +29,8 @@
                 <div class="col-lg-4">
                     <div class="mt-4 mt-lg-0 card shadow-sm rounded">
 
-                        <?php 
-                        $sticky_posts = get_option('sticky_posts'); 
+                        <?php
+                        $sticky_posts = get_option('sticky_posts');
                         $newsargs = array(
                             'posts_per_page' => 1, // Only get one post
                             'post_status'    => 'publish', // Ensure the post is published
@@ -41,27 +41,27 @@
                         $recent_post = new WP_Query($newsargs);
                         if ($recent_post->have_posts()) :
                             while ($recent_post->have_posts()) : $recent_post->the_post();
-                            ?>
-                            <div class="bg-gov-green rounded-top">
-                            <?php if (has_post_thumbnail($recent_post->ID)) : ?>
-                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
-                            <a href="<?= the_permalink() ?>" class="text-decoration-none">
-                                <img style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
-                            </a>
-                            <?php endif; ?>
-                            </div>
+                        ?>
+                                <div class="bg-gov-green rounded-top">
+                                    <?php if (has_post_thumbnail($recent_post->ID)) : ?>
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
+                                        <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
+                                            <img style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
 
-                        <div class="card-body fs-6">
-                            <h3 class=" card-title fs-4">What's new?</h3>
-                            
+                                <div class="card-body fs-6">
+                                    <h3 class=" card-title fs-4">What's new?</h3>
+
                                     <h4 class="fs-5"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h4>
                                     <p class="card-text"><?= the_excerpt() ?></p>
-                                <?php endwhile; 
-                                wp_reset_postdata(); // Reset query
-                            endif;
+                            <?php endwhile;
+                            wp_reset_postdata(); // Reset query
+                        endif;
                             ?>
                             <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
-                        </div>
+                                </div>
                     </div>
                 </div>
                 <?php
@@ -80,19 +80,19 @@
                     <?php while (have_posts()) : ?>
                         <?php the_post() ?>
 
-                            <?php if (has_post_thumbnail($post->ID)) : ?>
+                        <?php if (has_post_thumbnail($post->ID)) : ?>
                             <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
-                            <a href="<?= the_permalink() ?>" class="text-decoration-none">
-                                <img class="mt-4 border border-2 border-bottom-0 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
+                            <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
+                                <img class="mt-4 border border-2 border-gov-blue border-bottom-0 rounded-top w-100 object-fit-contain" src="<?php echo $image[0]; ?>">
                             </a>
 
-                            <?php endif; ?>
-                            <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
-                                <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
-                            </div>
-                            </a>
-                        <?php endwhile ?>
-                    <?php endif ?>
+                        <?php endif; ?>
+                        <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
+                            <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
+                        </div>
+                        </a>
+                    <?php endwhile ?>
+                <?php endif ?>
             </div>
         </div>
     </div>
