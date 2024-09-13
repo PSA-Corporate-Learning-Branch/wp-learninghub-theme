@@ -100,7 +100,7 @@
         Skip to content </a>
     <header id="mainheader" role="banner" class="sticky-top">
         <nav class="navbar navbar-expand-lg px-3 bg-gov-blue" data-bs-theme="dark" aria-label="<?php esc_attr_e('Primary menu', 'wp-learninghub'); ?>">
-            <div class="container-fluid">
+            <div class="container-fluid px-0 px-lg-3">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"></span>
                 </button>

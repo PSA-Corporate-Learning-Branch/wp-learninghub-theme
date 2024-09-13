@@ -127,25 +127,23 @@ get_header();
 
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white">Course Catalogue</h1>
+        <div class="container-lg px-0 px-md-3 py-4 py-md-5">
+            <h1 class="mb-0 text-white">Course Catalogue</h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Find learning using filters</h2>
-            <p>Three types of categorization help you find exactly what you're looking for: audience, topic and delivery. You can also filter the results by keyword.</p>
-            <p class="mb-5"><strong>Not sure where to start?</strong> Check out <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders.</p>
+            <p>Three <a href="/learninghub/categories/">types of categorization</a> help you find exactly what you're looking for: audience, topic and delivery. You can also filter the results by keyword.</p>
+            <p class="mb-lg-4"><strong>Not sure where to start?</strong> Check out <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders.</p>
 
             <div class="row">
                 <div class="col-lg-5 mb-4 mb-lg-0 h-100" id="filters">
                     <h3 class="h4 fw-semibold">Filters</h3>
-                    <p class="lh-sm fs-6">
-                        <small>Select a heading to show/hide the filters from that category.
-                            Select the <strong>Apply</strong> button when you want to apply the filters.</small>
+                    <p class="fs-6">
+                        <small>Select a category heading to expand or collapse the list of filters.</small>
                     </p>
-                    <p class="lh-sm fs-6 mb-0"><a href="/learninghub/categories/">Learn how courses are categorized.</a>
-                    <p>
+
                     <div class="mb-3">
                         <div class="row">
                             <?php
@@ -192,8 +190,8 @@ get_header();
                                             $turl = str_replace($replace, '', $topurl);
                                             $turl = str_replace('&&', '&', $turl);
                                             ?>
-                                            <div aria-label="remove filter: <?= $t->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                <a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $t->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                            <div aria-label="remove filter: <?= $t->name ?>" class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
+                                                <a href="<?= $turl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $t->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                     </svg></a>
                                             </div>
@@ -210,8 +208,8 @@ get_header();
                                             $aurl = str_replace($replace, '', $audurl);
                                             $aurl = str_replace('&&', '&', $aurl);
                                             ?>
-                                            <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                            <div aria-label="remove filter: <?= $a->name ?>" class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
+                                                <a href="<?= $aurl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $a->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                     </svg></a>
                                             </div>
@@ -228,8 +226,8 @@ get_header();
                                             $durl = str_replace($replace, '', $dmurl);
                                             $durl = str_replace('&&', '&', $durl);
                                             ?>
-                                            <div aria-label="remove filter: <?= $d->name ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                                <a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $d->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                            <div aria-label="remove filter: <?= $d->name ?>" class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
+                                                <a href="<?= $durl ?>" class="text-secondary-emphasis text-decoration-none"> <?= $d->name ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                     </svg></a>
                                             </div>
@@ -246,8 +244,6 @@ get_header();
 
                         </div>
                     </div>
-
-
                     <style>
                         /* We hide the form submit button for taxonomy filters by default, 
                         but the noscript below will show it if there's no JS. 
@@ -264,7 +260,6 @@ get_header();
                         </style>
                     </noscript>
                     <div class="accordion" id="filterCategories">
-
                         <div class="accordion-item">
                             <h4 class="accordion-header" id="topicsHeading">
                                 <button class="accordion-button text-bg-primary  py-2 px-3 py-lg-3 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopics" aria-expanded="false" aria-controls="collapseTopics">
@@ -275,7 +270,7 @@ get_header();
                                 </button>
                             </h4>
                             <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="topicsHeading">
-                                <div class="accordion-body bg-light-subtle">
+                                <div class="accordion-body bg-light-subtle p-3">
                                     <form action="/learninghub/filter" method="GET">
                                         <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
                                         <?php if (!empty($_GET['audience'])) : ?>
@@ -301,27 +296,28 @@ get_header();
                                         <?php foreach ($topics as $t) : ?>
                                             <?php $active = '' ?>
                                             <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?>
-                                            <?php $desc = 'No description set'; if (!empty($t->description)) $desc = $t->description; ?>
+                                            <?php $desc = 'No description set';
+                                            if (!empty($t->description)) $desc = $t->description; ?>
                                             <div class="form-check fs-6">
                                                 <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
                                                 <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
-                                                <a 
-                                                    tabindex="0" 
-                                                    class="" 
-                                                    role="button" 
-                                                    data-bs-toggle="popover" 
-                                                    data-bs-trigger="focus" 
-                                                    data-bs-title="Topic Description" 
+                                                <a
+                                                    tabindex="0"
+                                                    class=""
+                                                    role="button"
+                                                    data-bs-toggle="popover"
+                                                    data-bs-trigger="focus"
+                                                    data-bs-title="Topic Description"
                                                     data-bs-content="<?= $desc ?>">
 
-                                                        <span class="icon-svg baseline-svg">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                                <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                                            </svg>
-                                                        </span>
+                                                    <span class="icon-svg baseline-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                            <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                                        </svg>
+                                                    </span>
 
                                                 </a>
-                                                
+
                                             </div>
                                         <?php endforeach ?>
                                         <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
@@ -339,7 +335,7 @@ get_header();
                                 </button>
                             </h4>
                             <div id="collapseAudience" class="accordion-collapse collapse" aria-labelledby="audienceHeading">
-                                <div class="accordion-body bg-light-subtle">
+                                <div class="accordion-body bg-light-subtle p-3">
                                     <form action="/learninghub/filter" method="GET">
                                         <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
                                         <?php if (!empty($_GET['topic'])) : ?>
@@ -364,30 +360,31 @@ get_header();
                                         ?>
                                         <?php foreach ($audiences as $a) : ?>
                                             <?php $active = '' ?>
-                                            <?php $desc = 'No description set'; if (!empty($a->description)) $desc = $a->description; ?>
+                                            <?php $desc = 'No description set';
+                                            if (!empty($a->description)) $desc = $a->description; ?>
                                             <?php if (!empty($_GET['audience']) && in_array($a->slug, $_GET['audience'])) $active = 'checked' ?>
                                             <div class="form-check fs-6">
                                                 <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
                                                 <label for="audience<?= $a->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> <!--(<?= $a->count ?>)--> </label>
-                                                <a 
-                                                    tabindex="0" 
-                                                    class="" 
-                                                    role="button" 
-                                                    data-bs-toggle="popover" 
-                                                    data-bs-trigger="focus" 
-                                                    data-bs-title="Topic Description" 
+                                                <a
+                                                    tabindex="0"
+                                                    class=""
+                                                    role="button"
+                                                    data-bs-toggle="popover"
+                                                    data-bs-trigger="focus"
+                                                    data-bs-title="Topic Description"
                                                     data-bs-content="<?= $desc ?>">
 
-                                                        <span class="icon-svg baseline-svg">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                                <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                                            </svg>
-                                                        </span>
+                                                    <span class="icon-svg baseline-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                            <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                                        </svg>
+                                                    </span>
 
                                                 </a>
-                                            </div> 
-                                            <?php endforeach ?> 
-                                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                                            </div>
+                                        <?php endforeach ?>
+                                        <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                     </form>
                                 </div>
                             </div>
@@ -402,7 +399,7 @@ get_header();
                                 </button>
                             </h4>
                             <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="deliveryHeading">
-                                <div class="accordion-body bg-light-subtle">
+                                <div class="accordion-body bg-light-subtle p-3">
                                     <form action="/learninghub/filter" method="GET">
                                         <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
                                         <?php if (!empty($_GET['topic'])) : ?>
@@ -427,30 +424,31 @@ get_header();
                                         ?>
                                         <?php foreach ($dms as $d) : ?>
                                             <?php $active = '' ?>
-                                            <?php $desc = 'No description set'; if (!empty($d->description)) $desc = $d->description; ?>
+                                            <?php $desc = 'No description set';
+                                            if (!empty($d->description)) $desc = $d->description; ?>
                                             <?php if (!empty($_GET['delivery_method']) && in_array($d->slug, $_GET['delivery_method'])) $active = 'checked' ?>
                                             <div class="form-check fs-6">
                                                 <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
                                                 <label for="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> <!--(<?= $d->count ?>)--> </label>
-                                                <a 
-                                                    tabindex="0" 
-                                                    class="" 
-                                                    role="button" 
-                                                    data-bs-toggle="popover" 
-                                                    data-bs-trigger="focus" 
-                                                    data-bs-title="Topic Description" 
+                                                <a
+                                                    tabindex="0"
+                                                    class=""
+                                                    role="button"
+                                                    data-bs-toggle="popover"
+                                                    data-bs-trigger="focus"
+                                                    data-bs-title="Topic Description"
                                                     data-bs-content="<?= $desc ?>">
 
-                                                        <span class="icon-svg baseline-svg">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                                <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                                            </svg>
-                                                        </span>
+                                                    <span class="icon-svg baseline-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                            <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                                        </svg>
+                                                    </span>
 
                                                 </a>
-                                            </div> 
-                                            <?php endforeach ?> 
-                                            <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
+                                            </div>
+                                        <?php endforeach ?>
+                                        <button class="btn btn-sm bg-gov-green mt-2 applybutton">Apply</button>
                                     </form>
                                 </div>
                             </div>
@@ -467,7 +465,7 @@ get_header();
                                     </div>
                                 </noscript>
                             <?php endif ?>
-                    
+
                             <div class="fw-bold mb-2" id="coursecount">
                                 <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> found</h3>
                             </div>
@@ -512,8 +510,8 @@ get_header();
 <script type="module">
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-    
-    
+
+
     var options = {
         valueNames: ['published', 'coursename', 'coursedesc', 'audience', 'topic', 'dm', 'coursekeywords'],
         fuzzySearch: true

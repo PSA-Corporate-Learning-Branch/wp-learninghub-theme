@@ -13,8 +13,8 @@ get_header();
 ?>
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white">Intake for Corporate Learning </h1>
+        <div class="container-lg px-0 px-md-3 py-4 py-md-5">
+            <h1 class="mb-0 text-white">Intake for Corporate Learning </h1>
         </div>
     </div>
 
@@ -22,10 +22,10 @@ get_header();
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Corporate learning for all</h2>
             <p>We welcome sponsored learning that aligns with the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a> and benefits all BCPS employees. </p>
-            <p class="mb-4">Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
+            <p class="mb-3 mb-lg-4">Our Intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team at the Learning Centre.</p>
             <h3>How can the Learning Centre help?</h3>
             <p>Select the headings to expand more information about intake for corporate learning.</p>
-            <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
+            <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I'm developing or updating learning for a corporate audience </h4>
@@ -43,7 +43,7 @@ get_header();
                     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
                 </details>
             </div>
-            <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
+            <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I want to host learning for employees to register on the Learning System (ELM)</h4>
@@ -58,7 +58,7 @@ get_header();
                     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
                 </details>
             </div>
-            <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
+            <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I want to learn about Learning Centre facilitation</h4>
@@ -73,7 +73,7 @@ get_header();
                     <p>If you still have questions about facilitation, please direct your inquiry to the Corporate Learning intake team at <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
                 </details>
             </div>
-            <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
+            <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I want to promote my learning opportunity</h4>
@@ -83,7 +83,7 @@ get_header();
                     <p>For more information about the definition of a corporate audience and corporate learning in general, check out the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a> page.</p>
                 </details>
             </div>
-            <div class="ps-4 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
+            <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
                         <h4 class="mb-0">I am unsure if my request is corporate learning, or I need more information</h4>

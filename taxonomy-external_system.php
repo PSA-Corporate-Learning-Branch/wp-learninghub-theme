@@ -43,8 +43,8 @@ $post_my_query = new WP_Query($post_args);
 ?>
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white"><?= str_replace('System:', 'Platform:', $termtitle) ?></h1>
+        <div class="container-lg px-0 px-md-3 py-4 py-md-5">
+            <h1 class="mb-0 text-white"><?= str_replace('System:', 'Platform:', $termtitle) ?></h1>
 
 
         </div>

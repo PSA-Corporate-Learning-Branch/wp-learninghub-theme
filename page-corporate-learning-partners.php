@@ -13,17 +13,16 @@ get_header();
 ?>
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white">Corporate Learning Partners</h1>
+        <div class="container-lg px-0 px-md-3 py-4 py-md-5">
+            <h1 class="mb-0 text-white">Corporate Learning Partners</h1>
         </div>
     </div>
     <div class="bg-light-subtle">
-        <div class="container-lg py-4 py-md-5">
+        <div class="container-lg p-lg-5 p-4">
             <h2>Learning together</h2>
             <p>In the BC Public Service, Corporate Learning is a shared space. Corporate Learning Partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
             <div class="card topic-card"><div class="card-body">
-                
-                    <h3 class="card-title">Are you interested in becoming a partner?</h3>
+                                    <h3 class="card-title">Are you interested in becoming a partner?</h3>
                     <p>To be a Corporate Learning partner, you must have developed or designed a course that is aligned with the Corporate Learning Framework and beneficial to all BC Public Service employees regardless of their ministry.</p>
                     <details>
                         <summary class="fs-6 text-primary ms-3">

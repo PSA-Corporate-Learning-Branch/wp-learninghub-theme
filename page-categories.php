@@ -13,8 +13,8 @@ get_header();
 ?>
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
-        <div class="container-lg py-4 py-md-5">
-            <h1 class="text-white">Course Categorization</h1>
+        <div class="container-lg px-0 px-md-3 py-4 py-md-5">
+            <h1 class="mb-0 text-white">Course Categorization</h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">

@@ -3,19 +3,16 @@
         <div class="row">
             <div class="col-md-5">
                 <h5 class="gov-yellow">The LearningHUB</h5>
-                <ul style="line-height: 1.75;">
-                    <li><a aria-current="page" href="/learninghub/">Home</a></li>
-                    <li>
-                        <a href="/learninghub/about/">
-                            About</a>
-                    </li>
-                    <li><a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
-                    <li><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
-                    <li><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
-                    <li><a href="/learninghub/filter/">All Courses</a></li>
-                    <li><a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
-                    <li><a href="/learninghub/categories/">Course Categorization</a></li>
-                    <li><a href="/learninghub/learning-systems/">Learning Platforms</a></li>
+                <ul>
+                    <li class="mb-1"><a aria-current="page" href="/learninghub/">Home</a></li>
+                    <li class="mb-1"><a href="/learninghub/about/">About</a> </li>
+                    <li class="mb-1"><a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
+                    <li class="mb-1"><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
+                    <li class="mb-1"><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
+                    <li class="mb-1"><a href="/learninghub/filter/">All Courses</a></li>
+                    <li class="mb-1"><a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
+                    <li class="mb-1"><a href="/learninghub/categories/">Course Categorization</a></li>
+                    <li class="mb-1"><a href="/learninghub/learning-systems/">Learning Platforms</a></li>
                 </ul>
             </div>
             <div class="col-md-7">
@@ -30,7 +27,7 @@
         <div class="site-info d-block mt-4">
             <div class="d-flex flex-column flex-lg-row justify-content-between border-top border-warning pt-1">
                 <div class="me-3 my-3 flex-grow-1">
-                    <p>The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.</p>
+                    <p class="mb-0">The BC Public Service acknowledges the territories of First Nations around B.C. and is grateful to carry out our work on these lands. We acknowledge the rights, interests, priorities and concerns of all Indigenous Peoples (First Nations, Métis and Inuit), respecting and acknowledging their distinct cultures, histories, rights, laws and governments.</p>
                 </div>
 
                 <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100" width="380" alt="Where Ideas Work logo">
