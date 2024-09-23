@@ -402,7 +402,7 @@ a[rel=tag] {
     color: var(--bs-gray-900);
 }
 
-/* in search input adds ellipsis on longer placeholder */
+/* adds ellipsis on long text */
 
 .ellipsis {
     overflow: hidden;
