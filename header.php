@@ -174,10 +174,11 @@
                         </li>
                     </ul>
                 </div>
+                <!-- <a href="/learninghub/filter/" class="btn btn-primary">Search the catalogue</a> -->
                 <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
                     <label for="keyword" class="visually-hidden">Search</label>
-                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control" name="keyword" placeholder="Search by keyword" required value="<?php //esc_html($_GET['keyword']) 
-                                                                                                                                                                                    ?>"></div>
+                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
+                                                                                                                                                                                            ?>"></div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
                             Search
