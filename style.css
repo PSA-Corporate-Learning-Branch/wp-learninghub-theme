@@ -407,7 +407,7 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-summary {
+summary:not(.unstyled) {
     list-style: none;
     position: relative;
 
@@ -422,7 +422,32 @@ summary {
     }
 }
 
-details[open]>summary::before {
+details[open]>summary:not(.unstyled):before {
+    transform: rotate(90deg);
+    left: -1.1rem;
+}
+
+/* single course listing version for stretched link */
+summary.unstyled {
+    list-style: none;
+    position: relative;
+}
+span.summary {
+    list-style: none;
+    position: relative;
+    margin-left: 1rem;
+    &::before {
+        content: '';
+        position: absolute;
+        border-top: 8px solid transparent;
+        border-left: 12px solid var(--bs-primary);
+        border-bottom: 8px solid transparent;
+        top: 0.3em;
+        left: -1rem;
+    }
+}
+
+details[open] span.summary::before {
     transform: rotate(90deg);
     left: -1.1rem;
 }
