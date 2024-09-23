@@ -470,7 +470,7 @@ get_header();
                                 <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> found</h3>
                             </div>
                             <div class="mb-3 d-flex">
-                                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter results by keyword" value="<?php echo $_GET['keyword'] ?>">
+                                <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Search results by keyword" value="<?php echo $_GET['keyword'] ?>">
                             </div>
                             <div class="d-flex">
                                 <div class="dropdown">

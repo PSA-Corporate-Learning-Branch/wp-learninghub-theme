@@ -174,9 +174,9 @@
                         </li>
                     </ul>
                 </div>
-                <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1" role="search" id="navbarSearch">
+                <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
                     <label for="keyword" class="visually-hidden">Search</label>
-                    <div class="col-auto flex-grow-1"><input type="search" id="keyword" class="s w-100 form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
+                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control ellipsis" name="keyword" placeholder="Search catalogue records by keyword" required value="<?php //esc_html($_GET['keyword']) 
                                                                                                                                                                                     ?>"></div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-secondary" aria-label="Submit Search">

@@ -402,6 +402,14 @@ a[rel=tag] {
     color: var(--bs-gray-900);
 }
 
+/* in search input adds ellipsis on longer placeholder */
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* hack summary details so that it works on Safari */
 summary::-webkit-details-marker {
     display: none;
@@ -432,10 +440,12 @@ summary.unstyled {
     list-style: none;
     position: relative;
 }
+
 span.summary {
     list-style: none;
     position: relative;
     margin-left: 1rem;
+
     &::before {
         content: '';
         position: absolute;
@@ -492,11 +502,12 @@ p.circle-text {
     color: black !important;
 }
 
-@media (max-width: 767.98px)  {
+@media (max-width: 767.98px) {
     :root {
         --bs-body-font-size: 1rem;
         /* font-size base is returned to WP default 16px/1rem for smaller screens*/
     }
+
     p.circle-text {
         overflow: hidden;
         padding: 18px 9px 16px 4px;
@@ -508,6 +519,7 @@ p.circle-text {
         text-align: center;
         font-size: 18px;
     }
+
     #CLFstructure {
         font-size: .75em !important;
         font-weight: normal !important;
