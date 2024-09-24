@@ -19,11 +19,62 @@ get_header();
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Introduction</h2>
+            <h2>Mandatory Learning</h2>
+            <p>Mandatory learning is learning that is required by policy or legislation. All mandatory learning is self-paced eLearning so you can take it when it fits your schedule. Mandatory learning must be renewed according to a fixed schedule.</p>
+            <table class="table table-bordered table-sm fs-6 mb-4">
+                <thead class="table-light">
+                    <tr>
+                        <th>Mandatory course</th>
+                        <th>Renewal cycle</th>
+                        <th>Audience</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/" target="_blank" rel="noopener">Annual Review of the Oath of Employment and Standards of Conduct<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Every year</td>
+                        <td>All employees</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Every 2 years</td>
+                        <td>All employees</td>
+                    </tr>
+                    <tr>
+                        <td>Indigenous Crown Relations Essentials (Coming soon)</td>
+                        <td>Every 2 years</td>
+                        <td>All employees</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Every 3 years</td>
+                        <td>All employees</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Take once, no renewal</td>
+                        <td>All employees</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Enrol in course as resource</td>
+                        <td>People Leaders <br><small>(in first year supervising others)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a></td>
+                        <td>Take once</td>
+                        <td>People Leaders <br><small>(in first year supervising others)</small></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Foundational Learning</h2>
             <p class="mb-4">Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that
-                all employees should have regardless of role. It includes mandatory courses.
-                All BC Public Service employees at all levels take the mandatory courses for all employees.
-                If you have direct reports, you'll also take the courses that are mandatory for People Leaders.</p>
+                all employees should have regardless of role.</p>
+            <hr>
+            <h2>Suggested Timelines</h2>
+            <p>Check out your suggested timeline for completing your mandatory and foundational learning.</p>
             <p class="fs-6 mb-4">
                 <span class="icon-svg baseline-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -157,8 +208,8 @@ get_header();
                     <p>This is the <strong>suggested time frame</strong> for completing your foundational learning, in addition to the All Employees learning above. </p>
                     <h5>Month 1 to 3</h5>
                     <ul class="mb-4">
-                        <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                        <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                        <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                        <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                         <li>Leading People in the BCPS (Coming soon)</li>
                     </ul>
                     <h5>Month 6</h5>
@@ -179,10 +230,10 @@ get_header();
                     <h4 class="d-inline text-body-emphasis" id="existing-people-leaders">Existing People Leaders</h4>
                 </summary>
                 <div class="mt-2">
-                    <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning. </p>
+                    <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning.</p>
                     <h5>At your own pace</h5>
                     <ul class="mb-4">
-                        <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
+                        <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                         <li>Intro to Change Leadership (Coming soon)</li>
                         <li>Leading People in the BCPS (Coming soon)</li>
                         <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
