@@ -473,13 +473,13 @@ get_header();
                         <div class="d-flex mb-4">
                             <div class="dropdown">
                                 <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Sort results by </button>
-                                <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
+                                <ul class="dropdown-menu bg-dark-subtle text-dark-emphasis">
                                     <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
                                     <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
                                     <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
                                     <li><a class="sort dropdown-item" data-sort="audience" href="#">Audience</a></li>
                                     <li><a class="sort dropdown-item" data-sort="topic" href="#">Topic</a></li>
-                                </div>
+                                </ul>
                             </div>
                             <div class="mx-2">
                                 <button id="expall" class="btn btn-sm btn-secondary px-2 d-inline-block">Expand All</button>

@@ -21,8 +21,9 @@ get_header();
         <div class="container-lg p-lg-5 p-4">
             <h2>Learning together</h2>
             <p>In the BC Public Service, Corporate Learning is a shared space. Corporate Learning Partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
-            <div class="card topic-card"><div class="card-body">
-                                    <h3 class="card-title">Are you interested in becoming a partner?</h3>
+            <div class="card topic-card">
+                <div class="card-body">
+                    <h3 class="card-title">Are you interested in becoming a partner?</h3>
                     <p>To be a Corporate Learning partner, you must have developed or designed a course that is aligned with the Corporate Learning Framework and beneficial to all BC Public Service employees regardless of their ministry.</p>
                     <details>
                         <summary class="fs-6 text-primary ms-3">
@@ -34,8 +35,8 @@ get_header();
                         <p>We highly value the time and effort that goes into developing corporate learning. We would love to include you and your amazing courses in the LearningHUB.</p>
                         <p><a href="/learninghub/new-partner-request/" target="_blank" rel="noreferrer noopener">Request Partnership</a></p>
                     </details>
-                
-            </div></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="bg-secondary-subtle pt-4">
