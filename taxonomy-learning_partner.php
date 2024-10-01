@@ -99,7 +99,7 @@ $post_my_query = new WP_Query($post_args);
                 </div>
             </div>
 
-
+        </div>
 
             <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
             <script>
