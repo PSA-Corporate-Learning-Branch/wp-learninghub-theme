@@ -83,12 +83,6 @@ get_header();
                         ?>
                         <div class="col">
                             <div class="card bg-body-tertiary">
-                                <?php if (!empty($partnerlogo)) : ?>
-                                    <?php $image_attributes = wp_get_attachment_image_src($attachment_id = $partnerlogo, $size = 'medium') ?>
-                                    <?php if ($image_attributes) : ?>
-                                        <img src="<?php echo $image_attributes[0]; ?>" width="<?php echo $image_attributes[1]; ?>" height="<?php echo $image_attributes[2]; ?>" alt="<?= esc_html($category->name) ?> logo">
-                                    <?php endif; ?>
-                                <?php endif; ?>
                                 <div class="card-body" style="font-size: 1.125rem;">
                                     <div class="card-title">
                                         <h3 class="h4 text-primary fw-semibold"><?= esc_html($category->name) ?> </h3>
