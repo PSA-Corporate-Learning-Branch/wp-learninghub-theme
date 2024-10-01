@@ -616,8 +616,9 @@ get_header();
     //
     // Show everything all in once fell swoop.
     // Expand all courses
+    // Expand all courses inside the "results" div
     document.getElementById('expall').addEventListener('click', function() {
-        const collapses = document.querySelectorAll('.collapse');
+        const collapses = document.querySelectorAll('#results .collapse');
         collapses.forEach(function(collapse) {
             const bsCollapse = new bootstrap.Collapse(collapse, {
                 show: true
@@ -626,9 +627,9 @@ get_header();
         });
     });
 
-    // Collapse all courses
+    // Collapse all courses inside the "results" div
     document.getElementById('collapseall').addEventListener('click', function() {
-        const collapses = document.querySelectorAll('.collapse');
+        const collapses = document.querySelectorAll('#results .collapse');
         collapses.forEach(function(collapse) {
             const bsCollapse = new bootstrap.Collapse(collapse, {
                 hide: true
