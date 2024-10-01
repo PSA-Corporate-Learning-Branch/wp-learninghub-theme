@@ -96,7 +96,7 @@
 
 <body class="bg-body-light d-flex flex-column min-vh-100">
     <?php wp_body_open(); ?>
-    <a class="skip-link screen-reader-text" href="#content">
+    <a class="skip-link screen-reader-text" href="#results">
         Skip to content </a>
     <header id="mainheader" role="banner" class="sticky-top">
         <nav class="navbar navbar-expand-lg px-3 bg-gov-blue" data-bs-theme="dark" aria-label="<?php esc_attr_e('Primary menu', 'wp-learninghub'); ?>">

@@ -312,6 +312,7 @@ get_header();
                                                     <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
                                                     <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
                                                     <a
+                                                        aria-label="<?= $t->name ?>"
                                                         tabindex="0"
                                                         class=""
                                                         role="button"
@@ -377,6 +378,7 @@ get_header();
                                                     <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $a->slug ?>" name="audience[]" id="audience<?= $a->term_id ?>" <?= $active ?>>
                                                     <label for="audience<?= $a->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $a->name ?> <!--(<?= $a->count ?>)--> </label>
                                                     <a
+                                                        aria-label="<?= $a->name ?>"
                                                         tabindex="0"
                                                         class=""
                                                         role="button"
@@ -441,6 +443,7 @@ get_header();
                                                     <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $d->slug ?>" name="delivery_method[]" id="delivery_method<?= $d->term_id ?>" <?= $active ?>>
                                                     <label for="delivery_method<?= $d->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $d->name ?> <!--(<?= $d->count ?>)--> </label>
                                                     <a
+                                                        aria-label="<?= $d->name ?>"
                                                         tabindex="0"
                                                         class=""
                                                         role="button"

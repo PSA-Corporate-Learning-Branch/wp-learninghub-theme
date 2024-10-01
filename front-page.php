@@ -34,7 +34,7 @@
                                     <?php if (has_post_thumbnail($recent_post->ID)) : ?>
                                         <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
                                         <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
-                                            <img style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
+                                            <img alt="" aria-label="<?= the_title() ?>" style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
                                         </a>
                                     <?php endif; ?>
                                 </div>
@@ -69,7 +69,7 @@
                     <?php if (has_post_thumbnail($post->ID)) : ?>
                         <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
                         <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
-                            <img class="mt-4 border border-2 border-gov-blue border-bottom-0 rounded-top w-100 object-fit-contain" src="<?php echo $image[0]; ?>">
+                            <img alt="" aria-label="<?php the_title() ?>" class="mt-4 border border-2 border-gov-blue border-bottom-0 rounded-top w-100 object-fit-contain" src="<?php echo $image[0]; ?>">
                         </a>
                     <?php endif; ?>
                     <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
