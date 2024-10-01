@@ -615,19 +615,25 @@ get_header();
     // hide everything. 
     //
     // Show everything all in once fell swoop.
-    let expall = document.getElementById('expall');
-    let steplist = document.getElementById('courselist');
-    let deets = steplist.querySelectorAll('details');
-    expall.addEventListener('click', (e) => {
-        Array.from(deets).forEach(function(element) {
-            element.setAttribute('open', 'open');
+    // Expand all courses
+    document.getElementById('expall').addEventListener('click', function() {
+        const collapses = document.querySelectorAll('.collapse');
+        collapses.forEach(function(collapse) {
+            const bsCollapse = new bootstrap.Collapse(collapse, {
+                show: true
+            });
+            bsCollapse.show();
         });
     });
-    // Conversley, "collapse all" hides everyting open in one fell swoop.
-    let collapseall = document.getElementById('collapseall');
-    collapseall.addEventListener('click', (e) => {
-        Array.from(deets).forEach(function(element) {
-            element.removeAttribute('open');
+
+    // Collapse all courses
+    document.getElementById('collapseall').addEventListener('click', function() {
+        const collapses = document.querySelectorAll('.collapse');
+        collapses.forEach(function(collapse) {
+            const bsCollapse = new bootstrap.Collapse(collapse, {
+                hide: true
+            });
+            bsCollapse.hide();
         });
     });
 </script>
