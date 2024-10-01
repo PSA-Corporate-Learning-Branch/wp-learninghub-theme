@@ -75,7 +75,6 @@
                     <div class="bg-gov-blue px-3 py-2 rounded-bottom shadow-sm">
                         <h3 class="text-white mb-0 p-2"><?php the_title() ?></h3>
                     </div>
-                    </a>
                 <?php endwhile ?>
             <?php endif ?>
         </div>
