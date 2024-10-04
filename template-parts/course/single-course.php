@@ -84,6 +84,7 @@
             <div class="coursekeywords mt-1 d-none">
                 <?php the_terms($post->ID, 'keywords', 'Keywords: ', ', ', ' '); ?>
             </div>
+            
         </div>
 
     </div>

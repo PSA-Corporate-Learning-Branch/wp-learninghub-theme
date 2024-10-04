@@ -175,10 +175,31 @@
                     </ul>
                 </div>
                 <!-- <a href="/learninghub/filter/" class="btn btn-primary">Search the catalogue</a> -->
-                <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
+                <form method="get" action="/learninghub/filter" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
                     <label for="keyword" class="visually-hidden">Search</label>
-                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
-                                                                                                                                                                                            ?>"></div>
+                    <div class="col-auto flex-grow-1 flex-shrink-1">
+                        <input type="search" id="search" class="s form-control" name="keyword" placeholder="Search catalogue" required value="<?php echo esc_html($_GET['search'] ?? ''); ?>">
+                    </div>
+
+                    <?php
+                    // Loop through all GET parameters
+                    foreach ($_GET as $key => $value) {
+                        // Exclude the 'keyword' parameter since it's already in the form
+                        if ($key !== 'keyword') {
+                            if (is_array($value)) {
+                                // If the parameter is an array (e.g., topic[], audience[])
+                                foreach ($value as $item) {
+                                    // Output a hidden input for each value in the array
+                                    echo '<input type="hidden" name="' . htmlspecialchars($key) . '[]" value="' . htmlspecialchars($item) . '">';
+                                }
+                            } else {
+                                // If the parameter is a single value
+                                echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
+                            }
+                        }
+                    }
+                    ?>
+
                     <div class="col-auto">
                         <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
                             Search

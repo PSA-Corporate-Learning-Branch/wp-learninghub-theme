@@ -79,13 +79,32 @@ if (!empty($_GET['delivery_method'])) {
 }
 
 $kw = '';
-if (!empty($_GET['keyword'])) {
-    $kw = sanitize_text_field($_GET['keyword']);
+if (!empty($_GET['s'])) {
+    $kw = sanitize_text_field($_GET['s']);
 }
 
 /**
  * This is the main Wordpress query that we pass our $taxquery to.
  * 
+ * Note that we're not passing the keyword term to the 's' search variable
+ * for WP_Query because this makes the query bypass the modifications
+ * we've made altering the search query so that it includes taxonomies in the
+ * search results. For example, a default search for "ethics" will only return
+ * 3 courses that mention "ethics" in the title or the description, but with 
+ * the modification, it returns 5 *more* courses that don't mention "ethics"
+ * anywhere but in the topic. 
+ * 
+ * Because I consider this feature basically indispensible we're going to 
+ * ignore keyword search in the database query entirely; instead, we load all 
+ * of the courses onto the page regardless of the search term and use list.js 
+ * to filter the list on the page after the page loads. 
+ * 
+ * List.js results match or exceed the results from doing a query
+ * at the database level. Until I can figure out how to make WP_Query search 
+ * into taxonomies, it's going to have to stay like this. I've written a bunch
+ * of javascript to make the UI nicer but that also further increases the 
+ * dependence of the UI on Javascript. I've included some prototype <noscript>
+ * support to add a fallback link to the default Wordpress search $_GET['s'].
  */
 
 $post_args = array(
@@ -102,13 +121,11 @@ $post_args = array(
     'include'                  => '',
     'number'                   => '',
     'pad_counts'               => true,
-    's'						   => $kw,
+    's'						   => $_GET['s'],
     'custom_search'            => true
 );
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
-
-$post_ids = wp_list_pluck($post_my_query->posts, 'ID');
 
 if (!$is_ajax) {
     get_header();
@@ -126,9 +143,9 @@ if (!$is_ajax) {
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <!-- <h2>Find exactly what you're looking for</h2>
-            <p>The LearningHUB offers two main ways to find corporate learning. You can use filters or search (or both!) to get as specific as you like.</p> -->
-            <!-- <p class="mb-lg-4"><strong>Not sure where to start?</strong> Check out <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders.</p> -->
+            <h2>Find exactly what you're looking for</h2>
+            <p>The LearningHUB offers two main ways to find corporate learning. You can use filters or search (or both!) to get as specific as you like.</p>
+            <p class="mb-lg-4"><strong>Not sure where to start?</strong> Check out <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders.</p>
 
             <div id="filter-results">
             <div id="courselist">
@@ -144,9 +161,9 @@ if (!$is_ajax) {
                                     </div>
                                 </noscript>
                             <?php endif ?>
-                            <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="row g-1 flex-nowrap" role="search" id="navbarSearch">
+                            <form method="get" action="/learninghub/" data-bs-theme="light" class="row g-1 flex-nowrap" role="search" id="navbarSearch">
                                 <label for="keyword" class="visually-hidden">Search</label>
-                                <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="search" class="s form-control" name="keyword" placeholder="Search catalogue" required value="<?= esc_html($kw) ?>"></div>
+                                <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="innersearch" class="s form-control" name="s" placeholder="Search catalogue" required value="<?php esc_html($kw) ?>"></div>
                                 <div class="col-auto">
                                     <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
                                         Search
@@ -154,9 +171,9 @@ if (!$is_ajax) {
                                 </div>
                             </form>
                         </div>
-                        <!-- <h3 class="h4">Find learning using filters</h3>
-                        <p class="fs-6 mb-0">Three <a href="/learninghub/categories/">types of categorization</a> help you find exactly what you're looking for: audience, topic and delivery.</p> -->
-                        <div class="">
+                        <h3 class="h4 mt-4">Find learning using filters</h3>
+                        <p class="fs-6 mb-0">Three <a href="/learninghub/categories/">types of categorization</a> help you find exactly what you're looking for: audience, topic and delivery.</p>
+                        <div class="mb-3">
                             <div class="row">
                                 <?php
                                 // Grab the current URL
@@ -168,7 +185,7 @@ if (!$is_ajax) {
                                         <div>Keyword</div>
                                         <?php
                                         $kwurl = $currenturl;
-                                        $replace = 'keyword=' . $kw . '';
+                                        $replace = 's=' . $kw . '';
                                         $keyurl = str_replace($replace, '', $kwurl);
                                         $keyurl = str_replace('&&', '&', $keyurl);
                                         ?>
@@ -246,7 +263,7 @@ if (!$is_ajax) {
                                     <?php endif ?>
 
                                     <div class="mt-1">
-                                        <a class="btn btn-sm btn-secondary" href="/learninghub/filter/">Clear All</a>
+                                        <a class="btn btn-sm btn-secondary" href="/learninghub/">Clear All</a>
                                     </div>
 
 
@@ -282,8 +299,8 @@ if (!$is_ajax) {
                                 </h4>
                                 <div id="collapseTopics" class="accordion-collapse collapse" aria-labelledby="topicsHeading">
                                     <div class="accordion-body bg-light-subtle p-3">
-                                        <form action="/learninghub/filter/" method="GET" class="filter-form">
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
+                                        <form action="/learninghub/" method="GET" class="filter-form">
+                                            <input class="hiddenkeywords" type="hidden" name="s" value="<?= $kw ?>">
                                             <?php if (!empty($_GET['audience'])) : ?>
                                                 <?php foreach ($_GET['audience'] as $aid) : ?>
                                                     <input type="hidden" name="audience[]" value="<?= $aid ?>">
@@ -295,39 +312,23 @@ if (!$is_ajax) {
                                                 <?php endforeach ?>
                                             <?php endif ?>
                                             <?php
-                                            $all_topics = get_terms(array(
-                                                'taxonomy'   => 'topics',
-                                                'orderby'    => 'name',
-                                                'order'      => 'ASC',
-                                                'hide_empty' => false,
-                                            ));
-                                            // Initialize counts for all topics to zero
-                                            $topic_counts = array();
-                                            foreach ($all_topics as $topic) {
-                                                $topic_counts[$topic->term_id] = 0;
-                                            }
-
-                                            // Get the topics associated with the filtered posts
-                                            if (!empty($post_ids)) {
-                                                $terms_in_posts = wp_get_object_terms($post_ids, 'topics', array('fields' => 'ids'));
-                                                
-                                                // Count occurrences of each term
-                                                foreach ($terms_in_posts as $term_id) {
-                                                    if (isset($topic_counts[$term_id])) {
-                                                        $topic_counts[$term_id]++;
-                                                    }
-                                                }
-                                            }
+                                            $topics = get_categories(
+                                                array(
+                                                    'taxonomy' => 'topics',
+                                                    'orderby' => 'name',
+                                                    'order' => 'ASC',
+                                                    'hide_empty' => '0'
+                                                )
+                                            );
                                             ?>
-                                            <?php foreach ($all_topics as $t) : ?>
+                                            <?php foreach ($topics as $t) : ?>
                                                 <?php $active = '' ?>
                                                 <?php if (!empty($_GET['topic']) && in_array($t->slug, $_GET['topic'])) $active = 'checked' ?>
                                                 <?php $desc = 'No description set';
                                                 if (!empty($t->description)) $desc = $t->description; ?>
                                                 <div class="form-check fs-6">
-                                                <?php $count = $topic_counts[$t->term_id] ?? 0 ?>
                                                     <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?= $t->slug ?>" name="topic[]" id="topic<?= $t->term_id ?>" <?= $active ?>>
-                                                    <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $count ?>)--> </label>
+                                                    <label for="topic<?= $t->term_id ?>" class="<?php if ($active == 'checked') echo 'fw-semibold' ?>"> <?= $t->name ?> <!--(<?= $t->count ?>)--> </label>
                                                     <a
                                                         aria-label="<?= $t->name ?>"
                                                         tabindex="0"
@@ -364,8 +365,8 @@ if (!$is_ajax) {
                                 </h4>
                                 <div id="collapseAudience" class="accordion-collapse collapse" aria-labelledby="audienceHeading">
                                     <div class="accordion-body bg-light-subtle p-3">
-                                        <form action="/learninghub/filter/" method="GET" class="filter-form">
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
+                                        <form action="/learninghub/" method="GET" class="filter-form">
+                                            <input class="hiddenkeywords" type="hidden" name="s" value="<?= $kw ?>">
                                             <?php if (!empty($_GET['topic'])) : ?>
                                                 <?php foreach ($_GET['topic'] as $tid) : ?>
                                                     <input type="hidden" name="topic[]" value="<?= $tid ?>">
@@ -429,8 +430,8 @@ if (!$is_ajax) {
                                 </h4>
                                 <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="deliveryHeading">
                                     <div class="accordion-body bg-light-subtle p-3">
-                                        <form action="/learninghub/filter/" method="GET" class="filter-form">
-                                            <input class="hiddenkeywords" type="hidden" name="keyword" value="<?= $kw ?>">
+                                        <form action="/learninghub/" method="GET" class="filter-form">
+                                            <input class="hiddenkeywords" type="hidden" name="s" value="<?= $kw ?>">
                                             <?php if (!empty($_GET['topic'])) : ?>
                                                 <?php foreach ($_GET['topic'] as $tid) : ?>
                                                     <input type="hidden" name="topic[]" value="<?= $tid ?>">
@@ -486,9 +487,9 @@ if (!$is_ajax) {
                         </div>
                     </div>
                     <div id="results" class="col-lg-7">
-                        <!-- <h3 class="h4">Search results</h3> -->
+                        <h3 class="h4">Search results</h3>
                         <div class="fw-bold mb-2" id="coursecount">
-                            <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-secondary me-1"><?= $post_my_query->found_posts ?></span> items found</h3>
+                            <h3 class="h4 fw-semibold"><span class="badge fs-5 bg-gov-blue me-1"><?= $post_my_query->found_posts ?></span> items found</h3>
                         </div>
                         <div class="d-flex mb-4">
                             <div class="dropdown">
@@ -506,7 +507,7 @@ if (!$is_ajax) {
                                 <button id="collapseall" class="btn btn-sm btn-secondary px-2 d-inline-block">Collapse All</button>
                             </div>
                         </div>
-                        <!-- <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value=""> -->
+                        <input id="searchfilter" class="form-control search" aria-label="Search" placeholder="Filter these results by keyword" value="">
                         <div class="list">
                             <?php if ($post_my_query->have_posts()) : ?>
                                 <?php while ($post_my_query->have_posts()) : $post_my_query->the_post(); ?>
