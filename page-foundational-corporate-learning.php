@@ -236,13 +236,14 @@ get_header();
                     <h5>Month 6</h5>
                     <ul class="mb-4">
                         <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
+						<li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                     </ul>
                     <h5>Month 12</h5>
                     <ul class="mb-4">
-                        <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                         <li>Conflict Competence (Coming soon)</li>
-                        <li>Intro to Change Leadership (Coming soon)</li>
+						<li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                         <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
+                        <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                     </ul>
                 </div>
             </details>
@@ -255,10 +256,10 @@ get_header();
                     <h5>At your own pace</h5>
                     <ul class="mb-4">
                         <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
-                        <li>Intro to Change Leadership (Coming soon)</li>
+						<li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                         <li>Leading People in the BCPS (Coming soon)</li>
                         <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
-                        <li>Introduction to Communications (Coming soon)</li>
+						<li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication</a></li>
                         <li>Conflict Competence (Coming soon)</li>
                         <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
                     </ul>
