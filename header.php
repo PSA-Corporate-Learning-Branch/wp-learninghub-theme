@@ -143,7 +143,7 @@
                                 <li>
                                     <a class="dropdown-item" href="https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/LM_OD_EMPLOYEE_FL.LM_MYCOURSES_FL.GBL"
                                         target="_blank" rel="noopener">
-                                            My PSA Learning Record
+                                            My PSA Learning Record <i class="bi bi-box-arrow-up-right"></i>
                                     </a>
                                 </li>
                             </ul>
