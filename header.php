@@ -141,8 +141,9 @@
                                 <li><a class="dropdown-item" href="/learninghub/categories/">Course Categorization</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/learning-systems/">Learning Platforms</a></li>
                                 <li>
-                                    <a class="dropdown-item" href="https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/LM_OD_EMPLOYEE_FL.LM_MYCOURSES_FL.GBL">
-                                        My PSA Learning Record
+                                    <a class="dropdown-item" href="https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/LM_OD_EMPLOYEE_FL.LM_MYCOURSES_FL.GBL"
+                                        target="_blank" rel="noopener">
+                                            My PSA Learning Record
                                     </a>
                                 </li>
                             </ul>
