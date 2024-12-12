@@ -38,6 +38,73 @@
     </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const OFFSET_DEFAULT = 165; // Height of the sticky top navigation for screens md and larger
+        const OFFSET_SMALL = 365; // Height adjustment for smaller screens where tabs are stacked, depends on how many tabs to adjust offset
+
+        // Determine the current offset based on the screen size
+        function getOffset() {
+            return window.innerWidth >= 768 ? OFFSET_DEFAULT : OFFSET_SMALL; // Bootstrap md breakpoint is 768px
+        }
+
+        // Scroll to the target element with an offset
+        function scrollToWithOffset(element) {
+            const offset = getOffset();
+            const rect = element.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetPosition = rect.top + scrollTop - offset;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        }
+
+        // Check if there is a hash in the URL
+        const hash = window.location.hash;
+        if (hash) {
+            const targetTab = document.querySelector(`[href="${hash}"]`);
+            const targetPane = document.querySelector(hash);
+
+            // If the target tab exists, activate it and scroll to it with an offset
+            if (targetTab && targetPane) {
+                const tabInstance = new bootstrap.Tab(targetTab);
+                tabInstance.show();
+
+                // Scroll to the tabbed section with an offset
+                scrollToWithOffset(targetPane);
+            }
+        }
+
+        // Add event listener to update the URL hash when switching tabs
+        const tabLinks = document.querySelectorAll('[data-bs-toggle="tab"]');
+        tabLinks.forEach(tab => {
+            tab.addEventListener("shown.bs.tab", function(event) {
+                const targetId = event.target.getAttribute("href");
+                history.pushState(null, "", targetId);
+
+                // Scroll to the newly activated tab's content with an offset
+                const targetPane = document.querySelector(targetId);
+                if (targetPane) {
+                    scrollToWithOffset(targetPane);
+                }
+            });
+        });
+
+        // Adjust scrolling behavior on window resize
+        window.addEventListener("resize", function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetPane = document.querySelector(hash);
+                if (targetPane) {
+                    scrollToWithOffset(targetPane);
+                }
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
