@@ -189,6 +189,7 @@ get_header();
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="pl-existing" role="tabpanel" aria-labelledby="pl-existing-tab">
+                            <h3>People Leaders</h3>
                             <h4 class="text-body-emphasis">Existing People Leaders</h4>
                             <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning.</p>
                             <h5>At your own pace</h5>
