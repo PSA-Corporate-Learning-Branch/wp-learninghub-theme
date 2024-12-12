@@ -571,7 +571,7 @@ p.circle-text {
 }
 
 /* Add indicator arrow for the active tab */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .nav-pills .nav-link::before {
         content: '';
         display: block;
