@@ -177,7 +177,7 @@ get_header();
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communications <span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                             <h5>Month 12</h5>
