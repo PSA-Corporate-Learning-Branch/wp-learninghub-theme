@@ -61,12 +61,11 @@ get_header();
             <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
-                        <h4 class="mb-0">I want to learn about Learning Centre facilitation</h4>
+                        <h4 class="mb-0">I want to learn about PSA Corporate Learning Branch facilitation</h4>
                     </summary>
-                    <h5 class="mt-3">Learning Centre Facilitation</h5>
-                    <p>Learning Centre facilitator staff are fully booked for delivery of Learning Centre course offerings. Please <a href="/learninghub/filter/">visit the LearningHUB Catalogue</a> as all our corporate learning opportunities are included there.</p>
-                    <h5>Group learning</h5>
-                    <p>If you are a ministry looking for a corporate learning experience for your organization, consider having everyone register for a single offering. That way your team has the experience of learning together. We have large class capacity that will allow whole groups to learn together in our live online sessions.</p>
+                    <h5 class="mt-3">PSA Corporate Learning Branch Facilitation</h5>
+                    <p>Our facilitator staff are fully booked for delivery of our live course offerings.</p>
+                    <p>If you are looking for a corporate learning experience for your team/branch/organization, please <a href="/learninghub/filter/">visit the LearningHUB Catalogue</a> as all our corporate learning opportunities are included there. Consider having everyone register for a single offering. That way your team has the experience of learning together. We have large class capacity that will allow whole groups to learn together in our live online sessions. Feel free to notify the Corporate Learning intake team by email that your group is joining a particular session, so the facilitators is aware. Time permitting, they may reach out to you to learn of your goals in having the group attend together.</p>
                     <h5>External facilitation</h5>
                     <p>If you would like to hire a facilitator, please visit the <a href="https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/facilitation-services">BC Procurement Resources for Facilitation Services</a>.</p>
                     <h5>Other questions?</h5>
