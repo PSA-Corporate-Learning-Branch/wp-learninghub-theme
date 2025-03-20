@@ -87,8 +87,9 @@ get_header();
                     <summary>
                         <h4 class="mb-0">I am unsure if my request is corporate learning, or I need more information</h4>
                     </summary>
-                    <p class="mt-3">If you aren't sure if your request falls into corporate learning or have other questions, please submit an Intake Form.</p>
-                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Learning Centre Intake form</a>
+                    <p class="mt-3">If you aren't sure if your request falls into corporate learning, please submit an Intake Form.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary">Learning Centre Intake form</a>
+                    <p>If you have other questions, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                 </details>
             </div>
 
