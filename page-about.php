@@ -68,7 +68,7 @@ get_header();
                 </div>
                 <div class="col-md-4">
                     <h3>Who are the partners?</h3>
-                    <p>Many teams work in partnership with the Learning Centre to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
+                    <p>Many teams work in partnership with the Corporate Learning Branch to offer BC Public Service learning. Learning is developed and designed in alignment with the Corporate Learning Framework.</p>
                     <p>Learn more about who offers what and <a href="/learninghub/corporate-learning-partners/" rel="noreferrer noopener">meet the partners</a>.</p>
 
                 </div>

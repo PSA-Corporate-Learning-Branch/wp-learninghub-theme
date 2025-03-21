@@ -17,7 +17,7 @@
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-check-circle-fill flex-shrink-0 me-3 text-success"></i>
                 <div>
-                    Corporate Learning is sponsored by The Learning Centre or a learning partner. The learning's sponsor is accountable for its alignment with the Corporate Learning Framework.
+                    Corporate Learning is sponsored by the PSA's Corporate Learning Branch or a learning partner. The learning sponsor is accountable for its alignment with the Corporate Learning Framework.
                 </div>
             </div>
             <div class="alert border border-danger border-2 d-flex align-items-center mt-3" role="alert">
