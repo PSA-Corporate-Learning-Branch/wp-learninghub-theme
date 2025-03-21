@@ -11,6 +11,10 @@
  * License:           Apache
  */
 
+ html {
+    scroll-padding-top: 10vh !important;
+ }
+
 :root {
     --gov-primary-blue: #234075;
     --gov-primary-yellow: #e3a82b;
