@@ -159,6 +159,11 @@ iframe {
     height: 100%;
     margin: 0;
 }
+.icon-lg {
+    width: 3rem;
+    height: 100%;
+    margin: 0;
+}
 
 .icon-square {
     width: 2.75rem;
@@ -182,12 +187,19 @@ iframe {
     margin-right: 0.5rem;
 }
 
-.green-flag {
+.green-fill {
     fill: var(--gov-secondary-green);
 }
 
-[data-bs-theme=dark] .green-flag {
+[data-bs-theme=dark] .green-fill {
     fill: var(--gov-secondary-green-50);
+}
+.blue-fill {
+    fill: var(--gov-primary-blue);
+}
+
+[data-bs-theme=dark] .blue-fill {
+    fill: var(--gov-secondary-blue-50);
 }
 
 .search-toggler-icon {
