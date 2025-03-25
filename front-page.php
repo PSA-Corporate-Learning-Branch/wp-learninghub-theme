@@ -85,7 +85,7 @@
     <div class="container-lg p-lg-5 p-4 bg-light-subtle">
         <h3>Where the learning happens</h3>
         <p>The LearningHUB includes courses from more than a dozen learning platforms. <a href="/learninghub/learning-systems/">Check out the full list of learning platforms</a>.</p>
-        <h4>Featured Platforms</h4>
+        <h4>Featured platforms</h4>
         <div class="row">
             <div class="col-md-6">
                 <div class="card shadow-sm">

@@ -11,7 +11,7 @@
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-check-circle-fill flex-shrink-0 me-3 align-self-start text-success"></i>
                 <div>
-                    Corporate learning is learning that is available to ALL BC Public Service Employees.
+                    Corporate learning is learning that is available to all BC Public Service employees.
                 </div>
             </div>
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
@@ -23,7 +23,7 @@
             <div class="alert border border-danger border-2 d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-x-circle-fill flex-shrink-0 me-3 align-self-start text-danger"></i>
                 <div>
-                    Corporate learning doesn't include training that is offered by Ministries to Ministry employees.
+                    Corporate learning doesn't include training that is offered by ministries to ministry employees.
                 </div>
             </div>
             <h3 class="mt-md-4">Who are the corporate learning partners?</h3>
@@ -33,7 +33,7 @@
     </div>
     <div class="bg-secondary-subtle pt-4">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h3>BC Public Service Learning Vision</h3>
+            <h3>BC Public Service learning vision</h3>
             <p>The vision statement for corporate learning in the BC Public Service provides a compelling North Star for learning. The vision is built upon eight key themes that inform the entire Corporate Learning Framework and are woven throughout all its components. </p>
             <div class="d-lg-flex justify-content-center align-items-center gap-5 my-4">
                 <p class="circle-text">
@@ -74,7 +74,7 @@
                     <div class="border border-primary rounded p-1 px-lg-2 py-lg-3 rounded align-self-stretch" style="writing-mode: vertical-rl;">Governance</div>
                 </div>
             </div>
-            <h3>BC Public Service Learning Principles</h3>
+            <h3>BC Public Service learning principles</h3>
             <p>All corporate learning will be designed and developed with these principles in mind.</p>
             <div class="d-flex mt-lg-4 align-content-center">
                 <div class="d-md-block d-none flex-shrink-0 ps-3">

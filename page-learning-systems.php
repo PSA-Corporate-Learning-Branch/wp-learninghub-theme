@@ -27,7 +27,7 @@ get_header();
             <div class="row">
                 <div class="col-md-6">
 
-                    <h3>Featured Platforms</h3>
+                    <h3>Featured platforms</h3>
                     <div class="mb-3 p-2 card topic-card rounded">
                         <div class="card-body">
                             <h4>PSA Learning System</h4>
@@ -45,7 +45,7 @@ get_header();
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3>All Systems</h3>
+                    <h3>All systems</h3>
                     <p>Select a learning system below to show a list of courses hosted on that platform.</p>
                     <?php
                     $topics = get_categories(
