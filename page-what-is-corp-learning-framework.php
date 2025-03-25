@@ -7,34 +7,34 @@
     </div>
     <div class="bg-light-subtle">
         <div class="container-lg p-lg-5 p-4">
-            <h2>What is Corporate Learning?</h2>
+            <h2>What is corporate learning?</h2>
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-check-circle-fill flex-shrink-0 me-3 align-self-start text-success"></i>
                 <div>
-                    Corporate Learning is learning that is available to ALL BC Public Service Employees.
+                    Corporate learning is learning that is available to ALL BC Public Service Employees.
                 </div>
             </div>
             <div class="alert border border-2 border-success d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-check-circle-fill flex-shrink-0 me-3 text-success"></i>
                 <div>
-                    Corporate Learning is sponsored by the PSA's Corporate Learning Branch or a learning partner. The learning sponsor is accountable for its alignment with the Corporate Learning Framework.
+                    Corporate learning is sponsored by the PSA Corporate Learning Branch or a learning partner. The learning sponsor is accountable for its alignment with the Corporate Learning Framework.
                 </div>
             </div>
             <div class="alert border border-danger border-2 d-flex align-items-center mt-3" role="alert">
                 <i class="bi bi-x-circle-fill flex-shrink-0 me-3 align-self-start text-danger"></i>
                 <div>
-                    Corporate Learning doesn't include training that is offered by Ministries to Ministry employees.
+                    Corporate learning doesn't include training that is offered by Ministries to Ministry employees.
                 </div>
             </div>
-            <h3 class="mt-md-4">Who are the Corporate Learning Partners?</h3>
-            <p>In the BC Public Service, Corporate Learning is a shared space. Corporate Learning Partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
+            <h3 class="mt-md-4">Who are the corporate learning partners?</h3>
+            <p>In the BC Public Service, corporate learning is a shared space. Corporate learning partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
             <p class="mb-0">Curious about our existing partners and which courses they offer? <a href="/learninghub/corporate-learning-partners/">Meet the partners</a>.</p>
         </div>
     </div>
     <div class="bg-secondary-subtle pt-4">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h3>BC Public Service Learning Vision</h3>
-            <p>The vision statement for Corporate Learning in the BC Public Service provides a compelling North Star for learning. The vision is built upon eight key themes that inform the entire corporate learning framework and are woven throughout all its components. </p>
+            <p>The vision statement for corporate learning in the BC Public Service provides a compelling North Star for learning. The vision is built upon eight key themes that inform the entire Corporate Learning Framework and are woven throughout all its components. </p>
             <div class="d-lg-flex justify-content-center align-items-center gap-5 my-4">
                 <p class="circle-text">
                     <span aria-hidden="true"></span>
@@ -168,7 +168,7 @@
             </div>
             <div class="card topic-card mx-lg-3 mt-lg-5">
                 <div class="card-body">
-                    <h3>Corporate Learning Framework Outcomes</h3>
+                    <h3>Corporate Learning Framework outcomes</h3>
                     <ul class="list-unstyled ms-md-3">
                         <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Corporate learning effectively advances organizational priorities</li>
                         <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Aligned and coordinated corporate learning</li>
