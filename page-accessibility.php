@@ -35,7 +35,7 @@ get_header();
                     <div class="card bg-secondary-subtle">
                         <div class="card-body">
                             <div class="card-title">
-                                <h3 class="h4 text-primary">Need Help?</h3>
+                                <h3 class="h4 text-primary">Need help?</h3>
                             </div>
                             <p class="card-text fs-6">If you have any questions about accessibility services or need assistance making your request, please log in to the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> to submit a service request using the category "Learning Centre >&nbsp;Course Information".</p>
                         </div>
@@ -162,7 +162,7 @@ get_header();
                 </div>
             </div>
 
-            <h4>Important Timelines for Requests</h4>
+            <h4>Important timelines for requests</h4>
             <p>To ensure we meet your needs, we kindly ask that you submit your requests well in advance of your course start date. The following timelines apply:</p>
             <div class="row">
                 <div class="col-lg-6 col-xl-7 mb-3 mb-lg-0">
@@ -197,7 +197,7 @@ get_header();
                 </div>
             </div>
             <p class="mt-3">Requests made later than these recommended timelines<strong> may result in limited accommodations or delays</strong> in preparation. We encourage you to plan ahead to ensure a smooth experience.</p>
-            <h4>Examples of How to Make a Request</h4>
+            <h4>Examples of how to make a request</h4>
             <p>Here are some examples to help you understand how to submit your requests:</p>
             <ul>
                 <li class="mb-2"><strong>Example 1:</strong> "I have enrolled in (Course Name), which starts on (Date), and I would like to request an ASL interpreter and captioning during the session." </li>

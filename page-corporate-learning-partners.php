@@ -20,20 +20,20 @@ get_header();
     <div class="bg-light-subtle">
         <div class="container-lg p-lg-5 p-4">
             <h2>Learning together</h2>
-            <p>In the BC Public Service, Corporate Learning is a shared space. Corporate Learning Partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
+            <p>In the BC Public Service, corporate learning is a shared space. Corporate learning partners are all committed to offering learning, development and growth opportunities for all our employees.</p>
             <div class="card topic-card">
                 <div class="card-body">
                     <h3 class="card-title">Are you interested in becoming a partner?</h3>
-                    <p>To be a Corporate Learning partner, you must have developed or designed a course that is aligned with the Corporate Learning Framework and beneficial to all BC Public Service employees regardless of their ministry.</p>
+                    <p>To be a corporate learning partner, you must have developed or designed a course that is aligned with the Corporate Learning Framework and beneficial to all BC Public Service employees regardless of their ministry.</p>
                     <details>
                         <summary class="fs-6 text-primary ms-3">
                             More info</summary>
-                        <h4 class="mt-3">What Corporate Learning partners do</h4>
+                        <h4 class="mt-3">What corporate learning partners do</h4>
                         <p>We meet virtually bi-monthly to identify, prioritize, track, and improve alignment of corporate learning priorities for the BC Public Service. They also collaborate asynchronously through a Microsoft TEAMS page.</p>
                         <h4>What's in it for you</h4>
                         <p>As a partner, you will gain access to a wealth of shared resources, including best practices and innovative ideas for developing corporate learning. Your involvement will not only provide you with timely updates and materials but also offer a voice in shaping the strategic direction of corporate learning within the BC Public Service Agency.</p>
                         <p>We highly value the time and effort that goes into developing corporate learning. We would love to include you and your amazing courses in the LearningHUB.</p>
-                        <p><a href="/learninghub/new-partner-request/" target="_blank" rel="noreferrer noopener">Request Partnership</a></p>
+                        <p><a href="/learninghub/new-partner-request/" target="_blank" rel="noreferrer noopener">Request partnership</a></p>
                     </details>
                 </div>
             </div>

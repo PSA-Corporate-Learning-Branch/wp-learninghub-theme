@@ -19,10 +19,10 @@ get_header();
     </div>
     <div class="bg-light-subtle">
         <div class="container-lg p-lg-5 p-4">
-            <h2>Start Here</h2>
+            <h2>Start here</h2>
             <p>Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that
                 all employees should have regardless of role. It includes mandatory courses.</p>
-            <h3>Mandatory Learning Checklist</h3>
+            <h3>Mandatory learning checklist</h3>
             <div class="row">
                 <div class="col-lg-8 col-xxl-9">
                     <table class="table table-bordered border-primary table-sm fs-6">
@@ -90,7 +90,7 @@ get_header();
     </div>
     <div class="bg-secondary-subtle pt-4">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Suggested Timelines</h2>
+            <h2>Suggested timelines</h2>
             <p>Check out your suggested timeline for completing your mandatory and foundational learning.</p>
             <p class="fs-6 mb-4">
                 <span class="icon-svg baseline-svg">
@@ -105,18 +105,18 @@ get_header();
                 <div class="col-md-4">
                     <nav>
                         <ul class="nav nav-pills flex-column mb-2 mb-md-0" id="timelines" role="tablist" aria-orientation="vertical">
-                            <li class="nav-item"><a class="nav-link active" id="ae-first-tab" data-bs-toggle="tab" href="#ae-first" role="tab" aria-controls="ae-first" aria-selected="true">All Employees - First Year</a></li>
-                            <li class="nav-item"><a class="nav-link" id="ae-existing-tab" data-bs-toggle="tab" href="#ae-existing" role="tab" aria-controls="ae-existing" aria-selected="false">All Employees - Existing</a></li>
-                            <li class="nav-item"><a class="nav-link" id="pl-first-tab" data-bs-toggle="tab" href="#pl-first" role="tab" aria-controls="pl-first" aria-selected="false">People Leaders - First Year</a></li>
-                            <li class="nav-item"><a class="nav-link" id="pl-existing-tab" data-bs-toggle="tab" href="#pl-existing" role="tab" aria-controls="pl-existing" aria-selected="false">People Leaders - Existing</a></li>
+                            <li class="nav-item"><a class="nav-link active" id="ae-first-tab" data-bs-toggle="tab" href="#ae-first" role="tab" aria-controls="ae-first" aria-selected="true">All employees - First year</a></li>
+                            <li class="nav-item"><a class="nav-link" id="ae-existing-tab" data-bs-toggle="tab" href="#ae-existing" role="tab" aria-controls="ae-existing" aria-selected="false">All employees - Existing</a></li>
+                            <li class="nav-item"><a class="nav-link" id="pl-first-tab" data-bs-toggle="tab" href="#pl-first" role="tab" aria-controls="pl-first" aria-selected="false">People leaders - First year</a></li>
+                            <li class="nav-item"><a class="nav-link" id="pl-existing-tab" data-bs-toggle="tab" href="#pl-existing" role="tab" aria-controls="pl-existing" aria-selected="false">People leaders - Existing</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-md-8 pl-md-0">
                     <div class="nav-pills tab-content" id="timelinesContent">
                         <div class="tab-pane fade show active" id="ae-first" role="tabpanel" aria-labelledby="ae-first-tab">
-                            <h3>All Employees</h3>
-                            <h4 class="text-body-emphasis">In Your First Year of Employment</h4>
+                            <h3>All employees</h3>
+                            <h4 class="text-body-emphasis">In your first year of employment</h4>
                             <p>This is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
                             <h5>Month 1</h5>
                             <ul class="mb-4">
@@ -132,7 +132,7 @@ get_header();
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
+                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety learning resource<span class="visually-hidden"> (opens in new window)</span></a> </li>
                             </ul>
                             <h5>Month 12</h5>
                             <ul class="mb-4">
@@ -140,8 +140,8 @@ get_header();
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="ae-existing" role="tabpanel" aria-labelledby="ae-existing-tab">
-                            <h3>All Employees</h3>
-                            <h4 class="text-body-emphasis">Existing Employees</h4>
+                            <h3>All employees</h3>
+                            <h4 class="text-body-emphasis">Existing employees</h4>
                             <p>After your first year, this is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
                             <h5>Every year</h5>
                             <ul class="mb-4">
@@ -161,18 +161,18 @@ get_header();
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>B.C. Provincial Government Essentials (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
+                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety learning resource <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="pl-first" role="tabpanel" aria-labelledby="pl-first-tab">
-                            <h3>People Leaders</h3>
-                            <h4 class="text-body-emphasis">In Your First Year as a People Leader</h4>
+                            <h3>People leaders</h3>
+                            <h4 class="text-body-emphasis">In your first year as a people leader</h4>
                             <p>This is the <strong>suggested time frame</strong> for completing your foundational learning, in addition to the All Employees learning above. </p>
                             <h5>Month 1 to 3</h5>
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
                             </ul>
                             <h5>Month 6</h5>
@@ -184,13 +184,13 @@ get_header();
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Intro to Conflict Competence (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
+                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders learning resource<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="pl-existing" role="tabpanel" aria-labelledby="pl-existing-tab">
-                            <h3>People Leaders</h3>
-                            <h4 class="text-body-emphasis">Existing People Leaders</h4>
+                            <h3>People leaders</h3>
+                            <h4 class="text-body-emphasis">Existing people leaders</h4>
                             <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning.</p>
                             <h5>At your own pace</h5>
                             <ul class="mb-4">
@@ -200,7 +200,7 @@ get_header();
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Intro to Conflict Competence (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders<span class="visually-hidden"> (opens in new window)</span></a> learning resource</li>
+                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders learning resource<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                     </div>
