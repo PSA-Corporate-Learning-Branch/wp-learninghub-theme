@@ -149,20 +149,10 @@ get_header();
 
             <hr>
             <h3 id="request">Request accommodations</h3>
-            <p>To ensure your accessibility needs are met, we ask that you submit your requests in advance through the following methods:</p>
-            <div class="hstack gap-3 mb-4 align-items-start">
-                <div class="p-2">
-                    <h4>Email (ASL services only)</h4>
-                    <p>For ASL service requests, please email the Ministry of Children and Family Development at <a href="mailto:MCF.Interpreting@gov.bc.ca">MCF.Interpreting@gov.bc.ca</a>.</p>
-                </div>
-                <div class="vr"></div>
-                <div class="p-2">
-                    <h4>AskMyHR Portal (all other requests)</h4>
-                    <p>Log in to the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> to submit a service request using the category "Learning Centre >&nbsp;Course Information".</p>
-                </div>
-            </div>
+            <p>To ensure your accessibility needs are met, we ask that you submit your requests in advance through the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> using the category "Learning Centre >&nbsp;Course Information".</p>
+            <p><a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable btn btn-primary btn-lg">Submit an accommodation request</a> </p>
 
-            <h4>Important timelines for requests</h4>
+            <h4 class="mt-4">Important timelines for requests</h4>
             <p>To ensure we meet your needs, we kindly ask that you submit your requests well in advance of your course start date. The following timelines apply:</p>
             <div class="row">
                 <div class="col-lg-6 col-xl-7 mb-3 mb-lg-0">
