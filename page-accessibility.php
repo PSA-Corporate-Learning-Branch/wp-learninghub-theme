@@ -37,7 +37,7 @@ get_header();
                             <div class="card-title">
                                 <h3 class="h4 text-primary">Need help?</h3>
                             </div>
-                            <p class="card-text fs-6">If you have any questions about accessibility services or need assistance making your request, please log in to the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> to submit a service request using the category "Learning Centre >&nbsp;Course Information".</p>
+                            <p class="card-text fs-6">If you have any questions about accessibility services or need assistance making your request, please log in to the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> to submit a service request using the category "Corporate Learning >&nbsp;Course Information".</p>
                         </div>
                     </div>
 
@@ -149,7 +149,7 @@ get_header();
 
             <hr>
             <h3 id="request">Request accommodations</h3>
-            <p>To ensure your accessibility needs are met, we ask that you submit your requests in advance through the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> using the category "Learning Centre >&nbsp;Course Information".</p>
+            <p>To ensure your accessibility needs are met, we ask that you submit your requests in advance through the <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">AskMyHR portal</a> using the category "Corporate Learning >&nbsp;Course Information".</p>
             <p><a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable btn btn-primary btn-lg">Submit an accommodation request</a> </p>
 
             <h4 class="mt-4">Important timelines for requests</h4>

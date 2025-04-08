@@ -18,10 +18,10 @@
             </div>
             <div class="col-md-7">
                 <h5 class="gov-yellow">Contact</h5>
-                <p>Have a question about corporate learning? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
+                <p>Have a question about corporate learning? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Corporate Learning".</p>
                 <p>Want to add a course to the LearningHUB catalogue or request new learning? Visit the <a href="/learninghub/intake/">Intake for Corporate Learning</a> page for more information.</p>
                 <h5 class="gov-yellow">Accessibility and accommodations</h5>
-                <p>We are committed to meeting your learning needs. Learn more about <a href="/learninghub/accessibility/">our approach to accessibility and accommodations</a>.</p> <p class="mb-0">To request an accommodation, <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Learning Centre >&nbsp;Course Information".</p>
+                <p>We are committed to meeting your learning needs. Learn more about <a href="/learninghub/accessibility/">our approach to accessibility and accommodations</a>.</p> <p class="mb-0">To request an accommodation, <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Corporate Learning >&nbsp;Course Information".</p>
             </div>
 
         </div>
