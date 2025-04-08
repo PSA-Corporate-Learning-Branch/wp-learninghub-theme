@@ -132,7 +132,7 @@ get_header();
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety learning resource<span class="visually-hidden"> (opens in new window)</span></a> </li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a> </li>
                             </ul>
                             <h5>Month 12</h5>
                             <ul class="mb-4">
@@ -161,7 +161,7 @@ get_header();
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>B.C. Provincial Government Essentials (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html" target="_blank" rel="noopener">Workplace Health and Safety learning resource <span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
@@ -184,7 +184,7 @@ get_header();
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Intro to Conflict Competence (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders learning resource<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                         </div>
@@ -200,7 +200,7 @@ get_header();
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Intro to Conflict Competence (Coming soon)</li>
-                                <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html" target="_blank" rel="noopener">Workplace Health and Safety for People Leaders learning resource<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                     </div>
