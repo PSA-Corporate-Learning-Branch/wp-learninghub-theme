@@ -183,7 +183,7 @@ get_header();
                             <h5>Month 12</h5>
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li>Intro to Conflict Competence (Coming soon)</li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
@@ -199,7 +199,7 @@ get_header();
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication</a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li>Intro to Conflict Competence (Coming soon)</li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
