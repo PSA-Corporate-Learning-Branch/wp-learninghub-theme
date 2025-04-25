@@ -128,7 +128,7 @@ get_header();
                             <h5>Month 3</h5>
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li>B.C. Provincial Government Essentials (Coming soon)</li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
@@ -160,7 +160,7 @@ get_header();
                             <ul class="mb-4">
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li>B.C. Provincial Government Essentials (Coming soon)</li>
+                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
