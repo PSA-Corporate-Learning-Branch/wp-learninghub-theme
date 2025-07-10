@@ -33,7 +33,7 @@ get_header();
                         <h4>What's in it for you</h4>
                         <p>As a partner, you will gain access to a wealth of shared resources, including best practices and innovative ideas for developing corporate learning. Your involvement will not only provide you with timely updates and materials but also offer a voice in shaping the strategic direction of corporate learning within the BC Public Service Agency.</p>
                         <p>We highly value the time and effort that goes into developing corporate learning. We would love to include you and your amazing courses in the LearningHUB.</p>
-                        <p><a href="/learninghub/new-partner-request/" target="_blank" rel="noreferrer noopener">Request partnership</a></p>
+                        <p><a href="https://gww.bcpublicservice.gov.bc.ca/learning/hub/partners/new-partner-form.php" target="_blank">Request partnership</a></p>
                     </details>
                 </div>
             </div>
