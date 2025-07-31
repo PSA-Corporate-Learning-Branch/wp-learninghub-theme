@@ -62,12 +62,22 @@
             </div>
 
             <?php if (!empty($post->course_link)) : ?>
+            <?php if (!empty($post->persist_state != 'inactive')) : ?>
+
                 <div class="mt-3">
                     <a class="btn btn-primary" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
                         Launch<span class="visually-hidden"> (opens in new window)</span>
                     </a>
                 </div>
 
+            <?php else : ?>
+                <div class="alert alert-warning mt-3">
+                    <?= $post->persist_message ?>
+                </div>
+                <a class="" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
+                    View the registration page<span class="visually-hidden"> (opens in new window)</span>
+                </a>
+            <?php endif ?>
             <?php else : ?>
 
                 <!-- There's no course link. What to do? -->

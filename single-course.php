@@ -32,13 +32,22 @@ while (have_posts()) :
                         <?php endif ?>
 
                         <?php if (!empty($post->course_link)) : ?>
-                            <div class="mb-2">
-                                <a class="btn btn-primary" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
-                                    Launch<span class="visually-hidden"> (opens in new window)</span>
+                            <?php if (!empty($post->persist_state != 'inactive')) : ?>
 
-                                </a>
+                                <div class="mt-3">
+                                    <a class="btn btn-primary" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
+                                        Launch<span class="visually-hidden"> (opens in new window)</span>
+                                    </a>
+                                </div>
 
-                            </div>
+                            <?php else : ?>
+                                <div class="alert alert-warning mt-3">
+                                    <?= $post->persist_message ?>
+                                </div>
+                                <a class="" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
+                                        View the registration page<span class="visually-hidden"> (opens in new window)</span>
+                                    </a>
+                            <?php endif ?>
 
                         <?php else : ?>
 
