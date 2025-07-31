@@ -70,19 +70,13 @@
                     </a>
                 </div>
 
-            <?php else : ?>
-                <div class="alert alert-warning mt-3">
-                    <?= $post->persist_message ?>
-                </div>
-                <a class="" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
-                    View the registration page<span class="visually-hidden"> (opens in new window)</span>
-                </a>
             <?php endif ?>
             <?php else : ?>
 
                 <!-- There's no course link. What to do? -->
 
             <?php endif ?>
+            
             <div class="mt-0 text-end" style="font-size: 0.75rem;">
                 <a class="fw-normal text-decoration-none" href="<?= the_permalink() ?>">
                     <div class="icon-svg baseline-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -94,7 +88,12 @@
             <div class="coursekeywords mt-1 d-none">
                 <?php the_terms($post->ID, 'keywords', 'Keywords: ', ', ', ' '); ?>
             </div>
-        </div>
+        </div> <!-- /.collapse -->
+        <?php if (!empty($post->persist_state == 'inactive')) : ?>
+            <div class="alert alert-warning fs-6 mt-2 mb-0" role="alert">
+                <?= $post->persist_message ?>
+            </div>
+        <?php endif ?>
 
     </div>
 </div> <!-- /.course -->

@@ -621,3 +621,7 @@ p.circle-text {
 #content li.nav-item+li.nav-item {
     margin-top: 0;
 }
+
+.alert p {
+    margin-bottom: 0;
+}
