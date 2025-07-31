@@ -45,8 +45,8 @@ while (have_posts()) :
                                     <?= $post->persist_message ?>
                                 </div>
                                 <a class="" href="<?= $post->course_link ?>" target="_blank" rel="noopener">
-                                        View the registration page<span class="visually-hidden"> (opens in new window)</span>
-                                    </a>
+                                    View the registration page<span class="visually-hidden"> (opens in new window)</span>
+                                </a>
                             <?php endif ?>
 
                         <?php else : ?>
