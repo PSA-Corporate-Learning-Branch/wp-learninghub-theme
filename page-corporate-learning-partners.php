@@ -43,79 +43,137 @@ get_header();
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Meet the partners</h2>
             <p class="mb-4">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
-            <?php
-            $terms = get_terms(array(
-                'taxonomy' => 'learning_partner',
-                'hide_empty' => false,
-                'orderby'    => 'count',
-                'order'   => 'DESC',
-                'exclude' => [121, 372, 144]
-            )); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
-            ?>
-            <div id="partnerlist">
-                <div class="row row-cols-1 row-cols-md-2 g-4">
-                    <!-- <div class="entry-content searchbox" style="text-align: center">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="partners" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="sponsor-tab" data-bs-toggle="tab" data-bs-target="#sponsor" type="button" role="tab" aria-controls="sponsor" aria-selected="true"> Partner Sponsors </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#dev" type="button" role="tab" aria-controls="dev" aria-selected="false"> Development Partners </button>
+                </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="border border-2 border-primary p-3 rounded rounded-start-0 tab-content">
+
+                <div class="tab-pane active" id="sponsor" role="tabpanel" aria-labelledby="sponsor-tab">
+                    <?php
+                    $terms = get_terms(array(
+                        'taxonomy' => 'learning_partner',
+                        'hide_empty' => false,
+                        'orderby'    => 'count',
+                        'order'   => 'DESC',
+                        'exclude' => [121, 372, 144]
+                    )); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+                    ?>
+                    <p>A Corporate Learning Partner Sponsor holds corporate accountabilities over the subject matter of the learning and has accepted governance over the learning.</p>
+                    <div id="partnerlist">
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <!-- <div class="entry-content searchbox" style="text-align: center">
         <input class="search form-control mb-3" placeholder="Type here to filter partners">
     </div> -->
-                    <?php $count = 1 ?>
-                    <?php foreach ($terms as $category) : ?>
-                        <?php
-                        $pcount = $category->count . ' course';
-                        if ($category->count > 1) $pcount = $category->count . ' courses';
-                        $category_link = sprintf(
-                            '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s from this partner</a>',
-                            esc_url(get_category_link($category->term_id)),
-                            esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
-                            esc_html($pcount)
-                        );
-                        $partnerurl = '';
-                        $partnerlogo = '';
-                        $term_vals = get_term_meta($category->term_id);
-                        foreach ($term_vals as $key => $val) {
-                            //echo $val[0] . '<br>';
-                            if ($key == 'partner-url') {
-                                $partnerurl = $val[0];
-                            }
-                            if ($key == 'category-image-id') {
-                                $partnerlogo = $val[0];
-                            }
-                        }
-                        ?>
+                            <?php $count = 1 ?>
+                            <?php foreach ($terms as $category) : ?>
+                                <?php
+                                $pcount = $category->count . ' course';
+                                if ($category->count > 1) $pcount = $category->count . ' courses';
+                                $category_link = sprintf(
+                                    '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s from this partner</a>',
+                                    esc_url(get_category_link($category->term_id)),
+                                    esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+                                    esc_html($pcount)
+                                );
+                                $partnerurl = '';
+                                $partnerlogo = '';
+                                $term_vals = get_term_meta($category->term_id);
+                                foreach ($term_vals as $key => $val) {
+                                    //echo $val[0] . '<br>';
+                                    if ($key == 'partner-url') {
+                                        $partnerurl = $val[0];
+                                    }
+                                    if ($key == 'category-image-id') {
+                                        $partnerlogo = $val[0];
+                                    }
+                                }
+                                ?>
+                                <div class="col">
+                                    <div class="card bg-body-tertiary">
+                                        <div class="card-body" style="font-size: 1.125rem;">
+                                            <div class="card-title">
+                                                <h3 class="h4 text-primary fw-semibold"><?= esc_html($category->name) ?> </h3>
+                                            </div>
+                                            <div class="card-text">
+                                                <?= sprintf(esc_html__('%s', 'textdomain'), $category->description) ?>
+                                            </div>
+
+                                            <?php if (!empty($partnerurl)) : ?>
+                                                <div class="partner-url mt-2">
+                                                    <a target="_blank" rel="noopener" href="<?= $partnerurl ?>">
+                                                        View partner website<span class="visually-hidden"> (Opens in a new tab)</span>
+                                                    </a>
+                                                </div>
+                                            <?php endif ?>
+                                            <div class="hublink">
+                                                <?php if ($category->count > 0) : ?>
+                                                    <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
+                                                <?php else : ?>
+                                                    <div class="bg-warning-subtle mt-2 p-2">
+                                                        This partner does not currently have any courses listed in the LearningHUB.
+                                                    </div>
+
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="tab-pane" id="dev" role="tabpanel" aria-labelledby="dev-tab">
+                    <p>A Corporate Learning Development Partner designs and develops courses and learning resources (curated pathways, webinars, panel discussions, or other) that is sponsored into the corporate learning catalogue by a Partner Sponsor. A Development Partner may or may not hold corporate accountabilities over the subject matter of the learning, and works in partnership with a Partner Sponsor.</p>
+
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card bg-body-tertiary">
                                 <div class="card-body" style="font-size: 1.125rem;">
                                     <div class="card-title">
-                                        <h3 class="h4 text-primary fw-semibold"><?= esc_html($category->name) ?> </h3>
+                                        <h3 class="h4 text-primary fw-semibold">Toastmasters </h3>
                                     </div>
                                     <div class="card-text">
-                                        <?= sprintf(esc_html__('%s', 'textdomain'), $category->description) ?>
-                                    </div>
+                                        Toastmasters International is a nonprofit educational organization that builds confidence and teaches public speaking skills through a worldwide network of clubs that meet online and in person. In a supportive community or corporate environment, members prepare and deliver speeches, respond to impromptu questions, and give and receive constructive feedback. It is through this regular practice that members are empowered to meet personal and professional communication goals. There are several Toastmasters Clubs in the BC Public Service meeting at a variety of times and with both virtual and in-person formats. Guests are always welcome at all clubs. </div>
 
-                                    <?php if (!empty($partnerurl)) : ?>
-                                        <div class="partner-url mt-2">
-                                            <a target="_blank" rel="noopener" href="<?= $partnerurl ?>">
-                                                View partner website<span class="visually-hidden"> (Opens in a new tab)</span>
-                                            </a>
-                                        </div>
-                                    <?php endif ?>
                                     <div class="hublink">
-                                        <?php if ($category->count > 0) : ?>
-                                            <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
-                                        <?php else : ?>
-                                            <div class="bg-warning-subtle mt-2 p-2">
-                                                This partner does not currently have any courses listed in the LearningHUB.
-                                            </div>
-
-                                        <?php endif ?>
+                                        <a href="http://yourproject.local:8080/learning_partner/toastmasters/" title="View all posts in Toastmasters" class="partnerofferings">View 4 courses from this development partner</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach ?>
+                        <div class="col">
+                            <div class="card bg-body-tertiary">
+                                <div class="card-body" style="font-size: 1.125rem;">
+                                    <div class="card-title">
+                                        <h3 class="h4 text-primary fw-semibold">Equity and Belonging </h3>
+                                    </div>
+                                    <div class="card-text">
+                                        The Equity and Belonging team develops learning for SDPR employees as well as continuous learning on equity for employees within the ministry and across the BC Public Service. </div>
 
-
+                                    <div class="hublink">
+                                        <a href="http://yourproject.local:8080/learning_partner/equity-and-belonging/" title="View all posts in Equity and Belonging" class="partnerofferings">View 1 course from this development partner</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
         </div>
     </div>
 </div>
