@@ -35,7 +35,7 @@ get_header();
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/" target="_blank" rel="noopener">Annual Review of the Oath of Employment and Standards of Conduct<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/annual-review/" target="_blank" rel="noopener">Annual Review<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Every year</td>
                                 <td>All employees</td>
                             </tr>
@@ -145,7 +145,7 @@ get_header();
                             <p>After your first year, this is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
                             <h5>Every year</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/" target="_blank" rel="noopener">Annual Review of the Oath of Employment and Standards of Conduct<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/annual-review/" target="_blank" rel="noopener">Annual Review<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                             <h5>Every 2 years</h5>
                             <ul class="mb-4">
