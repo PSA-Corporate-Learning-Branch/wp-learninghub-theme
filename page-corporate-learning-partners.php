@@ -41,21 +41,21 @@ get_header();
     </div>
     <div class="bg-secondary-subtle pt-4">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Meet the partners</h2>
+            <h2>Meet the Corporate Learning partners</h2>
             <p class="mb-4">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" id="partners" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="sponsor-tab" data-bs-toggle="tab" data-bs-target="#sponsor" type="button" role="tab" aria-controls="sponsor" aria-selected="true"> Partner Sponsors </button>
+                    <button class="nav-link active" id="sponsor-tab" data-bs-toggle="tab" data-bs-target="#sponsor" type="button" role="tab" aria-controls="sponsor" aria-selected="true"> Corporate Learning Partners </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#dev" type="button" role="tab" aria-controls="dev" aria-selected="false"> Development Partners </button>
+                    <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#dev" type="button" role="tab" aria-controls="dev" aria-selected="false"> Corporate Learning Development Partners </button>
                 </li>
 
             </ul>
 
             <!-- Tab panes -->
-            <div class="border border-2 border-primary p-3 rounded rounded-start-0 tab-content">
+            <div class="border border-3 border-primary p-3 rounded rounded-start-0 tab-content">
 
                 <div class="tab-pane active" id="sponsor" role="tabpanel" aria-labelledby="sponsor-tab">
                     <?php
@@ -67,7 +67,7 @@ get_header();
                         'exclude' => [121, 372, 144]
                     )); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
                     ?>
-                    <p>A Corporate Learning Partner Sponsor holds corporate accountabilities over the subject matter of the learning and has accepted governance over the learning.</p>
+                    <p>A Corporate Learning Partner holds corporate accountabilities over the subject matter of the learning and has accepted governance over the learning.</p>
                     <div id="partnerlist">
                         <div class="row row-cols-1 row-cols-md-2 g-4">
                             <!-- <div class="entry-content searchbox" style="text-align: center">
@@ -135,7 +135,7 @@ get_header();
                 </div>
                 <div
                     class="tab-pane" id="dev" role="tabpanel" aria-labelledby="dev-tab">
-                    <p>A Corporate Learning Development Partner designs and develops courses and learning resources (curated pathways, webinars, panel discussions, or other) that is sponsored into the corporate learning catalogue by a Partner Sponsor. A Development Partner may or may not hold corporate accountabilities over the subject matter of the learning, and works in partnership with a Partner Sponsor.</p>
+                    <p>A Corporate Learning Development Partner designs and develops courses and learning resources (curated pathways, webinars, panel discussions, or other) that is sponsored into the corporate learning catalogue by a Corporate Learning Partner. A Development Partner may or may not hold corporate accountabilities over the subject matter of the learning, and works in partnership with a Corporate Learning Partner.</p>
 
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
