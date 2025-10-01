@@ -80,7 +80,7 @@ get_header();
                                 <h3 class="h4 text-primary">What makes it mandatory?</h3>
                             </div>
                             <p class="card-text fs-6 d-flex align-items-center"><i class="bi bi-check-circle-fill inline-iconflex-shrink-0 me-2 align-self-start"></i>Mandatory learning is learning that is required by policy or legislation. </p>
-                            <p class="card-text fs-6 d-flex align-items-center"><i class="bi bi-check-circle-fill flex-shrink-0 me-2 align-self-start"></i>All mandatory learning is self-paced eLearning so you can take it when it fits your schedule. </p>
+                            <p class="card-text fs-6 d-flex align-items-center"><i class="bi bi-check-circle-fill flex-shrink-0 me-2 align-self-start"></i>With the exception of SBCPS, all mandatory learning is self-paced, so you can take it when it fits your schedule.</p>
                             <p class="card-text fs-6 d-flex align-items-center"><i class="bi bi-check-circle-fill flex-shrink-0 me-2 align-self-start"></i>Mandatory learning must be renewed according to a fixed schedule.</p>
                         </div>
                     </div>
