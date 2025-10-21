@@ -35,12 +35,12 @@ get_header();
                             <a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
                         </div>
                     </div>
-                    <div class="mb-3 p-2 card topic-card rounded">
+                   <div class="mb-3 p-2 card topic-card rounded">
                         <div class="card-body">
-                            <h4>Learning Curator</h4>
-                            <p>The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
+                            <h4>Your Digital Workplace</h4>
+                            <p>Your Digital Workplace is the hub for discovering the Microsoft 365 (M365) tools available to BC Public Service employees to support their daily work.</p>
 
-                            <a href="https://learningcurator.gww.gov.bc.ca/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit the Learning Curator<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
+                            <a href="https://bcgov.sharepoint.com/:u:/r/SitePages/Home.aspx?csf=1&amp;web=1&amp;e=r2fJcZ" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Your Digital Workplace<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
                         </div>
                     </div>
                 </div>
