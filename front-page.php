@@ -1,8 +1,4 @@
 <?php get_header() ?>
-<div style="height: 18vh; min-height: 80px; background: rgba(227,168,43,1);">
- <strong>   Scheduled Moodle Outage – Oct 17 </strong><br>
-Please be advised that Moodle LMS will be unavailable on Friday, October 17 starting @ 2pm for scheduled maintenance. The outage is expected to last 2–3 hours, during which time access to all our Moodle courses will be unavailable. We appreciate your patience and understanding.
-</div>
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center" style="height: 18vh; min-height: 100px; background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
         <div class="container-lg py-4 py-md-5">
