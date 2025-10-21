@@ -90,12 +90,12 @@ Please be advised that Moodle LMS will be unavailable on Friday, October 17 star
         <h3>Where the learning happens</h3>
         <p>The LearningHUB includes courses from more than a dozen learning platforms. <a href="/learninghub/learning-systems/">Check out the full list of learning platforms</a>.</p>
         <h4>Featured platforms</h4>
-        <div class="row">
+<div class="row">
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="bg-gov-green card-header pt-3">
                         <h4 class="text-white mb-1">PSA Learning System</h4>
-                        <p class="lh-sm fs-6 mb-1">Formal, registered learning</p>
+                        
                     </div>
                     <div class="card-body">
                         <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
@@ -110,15 +110,15 @@ Please be advised that Moodle LMS will be unavailable on Friday, October 17 star
             <div class="col-md-6">
                 <div class="card shadow-sm mt-3 mt-md-0">
                     <div class="bg-gov-green card-header pt-3">
-                        <h4 class="text-white mb-1">Learning Curator</h4>
-                        <p class="lh-sm fs-6 mb-1">Informal, self-directed learning</p>
+                        <h4 class="text-white mb-1">Your Digital Workplace</h4>
+                        
                     </div>
                     <div class="card-body">
-                        <p class="card-text">The Learning Curator hosts pathways and activities curated by BC Public Service experts. Choose a pathway and work towards your learning goals at your own pace.</p>
+                        <p class="card-text">Your Digital Workplace is the hub for discovering the Microsoft 365 (M365) tools available to BC Public Service employees to support their daily work.</p>
                         <ul style="line-height: 1.75;">
-                            <li><a href="/learninghub/external_system/psa-learning-curator">Learning Curator pathway list</a></li>
+                            <li><a href="/learninghub/external_system/your-digital-workplace">Your Digital Workplace course list</a></li>
                             <li>
-                                <a href="https://learningcurator.gww.gov.bc.ca/" target="_blank" rel="noopener noreferrer">Visit the Learning Curator<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
+                                <a href="https://bcgov.sharepoint.com/:u:/r/SitePages/Home.aspx?csf=1&amp;web=1&amp;e=r2fJcZ" target="_blank" rel="noopener noreferrer">Visit Your Digital Workplace<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
                             </li>
                         </ul>
                     </div>
