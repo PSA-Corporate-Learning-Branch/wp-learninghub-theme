@@ -40,7 +40,7 @@ get_header();
                                 <td>All employees</td>
                             </tr>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Every 2 years</td>
                                 <td>All employees</td>
                             </tr>
@@ -50,23 +50,23 @@ get_header();
                                 <td>All employees</td>
                             </tr>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Every 3 years</td>
                                 <td>All employees</td>
                             </tr>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Take once, no renewal</td>
                                 <td>All employees</td>
                             </tr>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Enrol in course as resource</td>
                                 <td>People Leaders <br><small>(in first year supervising others)</small>
                                 </td>
                             </tr>
                             <tr>
-                                <td><a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Take once</td>
                                 <td>People Leaders <br><small>(in first year supervising others)</small></td>
                             </tr>
@@ -120,23 +120,23 @@ get_header();
                             <p>This is the <strong>suggested time frame</strong> for completing your foundational learning.</p>
                             <h5>Month 1</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li>Indigenous Crown Relations Essentials (Coming soon)<span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                             <h5>Month 3</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a> </li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/workplace-health-safety-learning-resource-page-all-employees/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a> </li>
                             </ul>
                             <h5>Month 12</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="ae-existing" role="tabpanel" aria-labelledby="ae-existing-tab">
@@ -149,20 +149,20 @@ get_header();
                             </ul>
                             <h5>Every 2 years</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/" target="_blank" rel="noopener">Information Management (IM) 117<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li>Indigenous Crown Relations Essentials (Coming soon)<span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                             <h5>Every 3 years</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/" target="_blank" rel="noopener">Fraud Awareness and Prevention<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                             <h5>At least once</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/" target="_blank" rel="noopener">Diversity and Inclusion (D&I) Essentials<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/respectful-workplace/" target="_blank" rel="noopener">Respectful Workplaces curated pathway<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/b-c-provincial-government-essentials/" target="_blank" rel="noopener">B.C. Provincial Government Essentials<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/workplace-health-safety-learning-resource-page-all-employees/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for All Employees<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/finance-foundations/" target="_blank" rel="noopener">Finance Foundations<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="pl-first" role="tabpanel" aria-labelledby="pl-first-tab">
@@ -171,21 +171,21 @@ get_header();
                             <p>This is the <strong>suggested time frame</strong> for completing your foundational learning, in addition to the All Employees learning above. </p>
                             <h5>Month 1 to 3</h5>
                             <ul class="mb-4">
-                                <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
+                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
                             </ul>
                             <h5>Month 6</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication <span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication <span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                             <h5>Month 12</h5>
                             <ul class="mb-4">
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li>Complete <a href="https://corporatelearning.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="pl-existing" role="tabpanel" aria-labelledby="pl-existing-tab">
@@ -194,13 +194,13 @@ get_header();
                             <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning.</p>
                             <h5>At your own pace</h5>
                             <ul class="mb-4">
-                                <li>Enrol in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication</a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
-                                <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication</a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/" target="_blank" rel="noopener">Intro to Change Leadership <span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-conflict-competence/" target="_blank">Intro to Conflict Competence</a></li>
+                                <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/workplace-health-and-safety-learning-resource-page-for-people-leaders/" target="_blank" rel="noopener">Workplace Health and Safety Learning Resource Page for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                             </ul>
                         </div>
                     </div>
