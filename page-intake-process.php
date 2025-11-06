@@ -20,6 +20,12 @@ get_header();
 
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
+            <div class="bg-secondary-subtle card my-3 rounded shadow-sm">
+                    <div class="card-body fs-6">
+                        <h3 class="card-title fs-4">Corporate Learning Intake form temporarily down for repair</h3>
+                        <p class="card-text">While the form is unavailable, please send any intake requests to <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
+                     </div>
+                </div>
             <h2>Corporate learning for all</h2>
             <p>We welcome sponsored learning that aligns with the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a> and benefits all BCPS employees. </p>
             <p class="mb-3 mb-lg-4">Our intake process is for corporate learning and hosting items on the Learning System (ELM). Intake is managed by the Planning, Evaluation, and Governance Team in the PSA Corporate Learning Branch.</p>
