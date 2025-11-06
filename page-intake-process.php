@@ -46,7 +46,8 @@ get_header();
                     <h5>Corporate learning request</h5>
                     <p>If your learning is for a corporate audience, submit your request so we can help you align to the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a>.
                     </p>
-                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>
+                    <!-- <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a> -->
+                    <p>Send your request by email to <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
                 </details>
             </div>
             <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
@@ -60,8 +61,9 @@ get_header();
                     <!-- Button to new form to go here when ready -->
                     <h5>Corporate audience</h5>
                     <p>If you wish to host learning for a corporate audience, the PSA Corporate Learning Branch will work with you to ensure your learning aligns with the <a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a>. We will also include the course or other learning item here in the LearningHUB Course Catalogue. </p>
-                    <p>Complete the Intake form now to tell us about your project.</p>
-                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>
+                     <!-- <p>Complete the Intake form now to tell us about your project.</p>
+                   <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a> -->
+                    <p>Send your request by email to <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
                 </details>
             </div>
             <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
@@ -93,9 +95,10 @@ get_header();
                     <summary>
                         <h4 class="mb-0">I am unsure if my request is corporate learning, or I need more information</h4>
                     </summary>
-                    <p class="mt-3">If you aren't sure if your request falls into corporate learning, please submit an Intake Form.</p>
-                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>
-                    <p>If you have other questions, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Corporate Learning".</p>
+                         <p>If you aren't sure if your request falls into corporate learning, please email to <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
+                   <!-- <p class="mt-3">If you aren't sure if your request falls into corporate learning, please submit an Intake Form.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>-->
+                    <p>If you have other questions, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Corporate Learning".</p> 
                 </details>
             </div>
 
