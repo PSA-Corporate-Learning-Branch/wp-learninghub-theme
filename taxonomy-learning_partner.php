@@ -95,7 +95,8 @@ $post_my_query = new WP_Query($post_args);
                 </div>
                 <div class="col-md-4">
 
-                    <?php get_template_part('template-parts/sidebar/taxonomies') ?>
+                    <?php get_template_part('template-parts/sidebar/taxonomies', null, array('termid' => $termid)); ?>
+
 
                 </div>
             </div>
