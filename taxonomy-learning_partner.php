@@ -12,6 +12,7 @@
 
 get_header();
 
+$termid = get_queried_object()->term_id;
 $termtitle = get_the_archive_title();
 $description = get_the_archive_description();
 $taxquery = array(
