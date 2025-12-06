@@ -45,6 +45,18 @@ get_header();
             <h2>Meet the partners</h2>
             <p class="mb-4">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
             <?php
+            $devpterms = get_terms(array(
+                'taxonomy' => 'development_partner',
+                'hide_empty' => false,
+                'orderby'    => 'count',
+                'order'   => 'DESC'
+            ));
+            ?>
+            <?php foreach ($devpterms as $dp) : ?>
+                <h3 class="h4 text-primary fw-semibold"><?= esc_html($dp->name) ?> </h3>
+                <div class=""><?= esc_html($dp->description) ?> </div>
+            <?php endforeach ?>
+            <?php
             $terms = get_terms(array(
                 'taxonomy' => 'learning_partner',
                 'hide_empty' => false,
@@ -113,10 +125,12 @@ get_header();
                             </div>
                         </div>
                     <?php endforeach ?>
-
-
                 </div>
             </div>
+            
+
+
+
         </div>
     </div>
 </div>
