@@ -50,9 +50,12 @@
                 <div class="mb-0">
                     Partner: <span class="partners fw-normal"><?php the_terms($post->ID, 'learning_partner'); ?></span>
                 </div>
-                <div id="devpartners" class="mb-0">
-                    Development Partner(s): <span class="fw-normal"><?php the_terms($post->ID, 'development_partner', '', ', ', ' '); ?></span>
-                </div>
+                <?php $dev_partner_list = get_the_term_list($post->ID, 'development_partner', '', ', ', ''); ?>
+                <?php if (!empty($dev_partner_list)) : ?>
+                    <div id="devpartners" class="mb-0">
+                        Development Partner(s): <span class="fw-normal"><?= $dev_partner_list ?></span>
+                    </div>
+                <?php endif ?>
 
                 <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> 
                 <?php if (!empty($exsys[0]->name)) : ?>
