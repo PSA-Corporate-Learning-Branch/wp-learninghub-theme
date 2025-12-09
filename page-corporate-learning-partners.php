@@ -46,6 +46,10 @@ get_header();
             <p class="mb-4 text-white">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
 
             <style>
+                .partner-tab-input {
+                    display: none;
+                }
+
                 .partner-tabs-wrapper {
                     display: flex;
                     gap: 0;
@@ -53,58 +57,79 @@ get_header();
                     position: relative;
                     z-index: 1;
                 }
-                .partner-tab {
+
+                .partner-tab-label {
                     background-color: #f5a623;
                     color: #333;
                     border: 3px solid #f5a623;
                     border-bottom: none;
                     padding: 0.75rem 1.5rem;
-                    font-weight: 500;
-                    text-decoration: none;
+                    font-weight: 800;
                     display: inline-block;
-                    margin-right: -3px;
-                    font-size: 1rem;
+                    margin-right: 5px;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    text-decoration: none;
                 }
-                .partner-tab:hover {
+
+                .partner-tab-label:hover {
                     background-color: #d89420;
                     color: #333;
                 }
-                .partner-tab.active {
-                    background-color: #555;
+
+                .partner-tab-input:checked + .partner-tab-label {
+                    background-color: var(--bs-secondary-bg-subtle);
                     color: #f5a623;
-                    border-bottom: 3px solid #555;
+                    border-bottom: 3px solid var(--bs-secondary-bg-subtle);
                 }
-                .partner-content {
+
+                .partner-content-wrapper {
                     border: 3px solid #f5a623;
-                    background-color: #555;
                     padding: 2rem;
                     position: relative;
                 }
-                .partner-content h3 {
+
+                .partner-tab-content {
+                    display: none;
+                }
+
+                .partner-tabs-wrapper:has(#tab-corporate:checked) ~ .partner-content-wrapper #content-corporate,
+                .partner-tabs-wrapper:has(#tab-development:checked) ~ .partner-content-wrapper #content-development {
+                    display: block;
+                }
+
+                .partner-content-wrapper h3 {
                     color: #f5a623;
                 }
-                .partner-content .card {
-                    background-color: #3a3a3a;
+
+                .partner-content-wrapper .card {
+                    background-color: var(--bs-light-bg-subtle) !important;
                     color: #fff;
                 }
-                .partner-content .card .card-title h3 {
+
+                .partner-content-wrapper .card .card-title h3 {
                     color: #f5a623;
                 }
-                .partner-content .card a {
+
+                .partner-content-wrapper .card a {
                     color: #7db9e8;
                 }
             </style>
 
             <div class="partner-tabs-wrapper">
-                <a href="/learninghub/corporate-learning-partners/" class="partner-tab active">
+                <input type="radio" name="partner-tabs" id="tab-corporate" class="partner-tab-input" checked>
+                <label for="tab-corporate" class="partner-tab-label">
                     Corporate Learning Partners
-                </a>
-                <a href="/learninghub/development-partners/" class="partner-tab">
+                </label>
+                <input type="radio" name="partner-tabs" id="tab-development" class="partner-tab-input">
+                <label for="tab-development" class="partner-tab-label">
                     Development Partners
-                </a>
+                </label>
             </div>
 
-            <div class="partner-content">
+            <div class="partner-content-wrapper">
+                <!-- Corporate Learning Partners Content -->
+                <div id="content-corporate" class="partner-tab-content">
                 <?php
                 $terms = get_terms(array(
                     'taxonomy' => 'learning_partner',
@@ -171,10 +196,88 @@ get_header();
                         <?php endforeach ?>
                     </div>
                 </div>
+                </div>
+
+                <!-- Development Partners Content -->
+                <div id="content-development" class="partner-tab-content">
+                    <?php
+                    $devpterms = get_terms(array(
+                        'taxonomy' => 'development_partner',
+                        'hide_empty' => false,
+                        'orderby'    => 'count',
+                        'order'   => 'DESC'
+                    ));
+                    ?>
+                    <?php if (!empty($devpterms) && !is_wp_error($devpterms)) : ?>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <?php foreach ($devpterms as $dp) : ?>
+                                <?php
+                                $pcount = $dp->count . ' course';
+                                if ($dp->count > 1) $pcount = $dp->count . ' courses';
+                                $category_link = sprintf(
+                                    '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s from this development partner</a>',
+                                    esc_url(get_term_link($dp->term_id)),
+                                    esc_attr(sprintf(__('View all courses from %s', 'textdomain'), $dp->name)),
+                                    esc_html($pcount)
+                                );
+                                ?>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body" style="font-size: 1.125rem;">
+                                            <div class="card-title">
+                                                <h3 class="h4 fw-semibold"><?= esc_html($dp->name) ?></h3>
+                                            </div>
+                                            <div class="card-text">
+                                                <?= esc_html($dp->description) ?>
+                                            </div>
+                                            <div class="hublink mt-2">
+                                                <?php if ($dp->count > 0) : ?>
+                                                    <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
+                                                <?php else : ?>
+                                                    <div class="bg-warning-subtle mt-2 p-2 text-dark">
+                                                        This development partner does not currently have any courses listed in the LearningHUB.
+                                                    </div>
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    <?php else : ?>
+                        <p class="text-white">No development partners found.</p>
+                    <?php endif ?>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+(function() {
+    var hash = window.location.hash;
+
+    // Check hash on page load and select appropriate tab
+    if (hash === '#content-development' || hash === '#development-partners') {
+        document.getElementById('tab-development').checked = true;
+    } else if (hash === '#content-corporate' || hash === '#corporate-learning-partners') {
+        document.getElementById('tab-corporate').checked = true;
+    }
+
+    // Update hash when tabs are clicked
+    document.getElementById('tab-corporate').addEventListener('change', function() {
+        if (this.checked) {
+            history.replaceState(null, null, '#content-corporate');
+        }
+    });
+
+    document.getElementById('tab-development').addEventListener('change', function() {
+        if (this.checked) {
+            history.replaceState(null, null, '#content-development');
+        }
+    });
+})();
+</script>
 
 <!-- / -->
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
