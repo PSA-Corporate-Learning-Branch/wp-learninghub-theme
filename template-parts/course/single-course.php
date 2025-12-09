@@ -47,9 +47,11 @@
 
 
             <div class="fw-semibold" style="font-size: 0.75rem;">
-                <div class="mb-0">Partner: <span class="partners fw-normal"><?php the_terms($post->ID, 'learning_partner'); ?></span></div>
+                <div class="mb-0">
+                    Partner: <span class="partners fw-normal"><?php the_terms($post->ID, 'learning_partner'); ?></span>
+                </div>
                 <div id="devpartners" class="mb-0">
-                    <?php the_terms($post->ID, 'development_partner', 'Development Partner(s): ', ', ', ' '); ?>
+                    Development Partner(s): <span class="fw-normal"><?php the_terms($post->ID, 'development_partner', '', ', ', ' '); ?></span>
                 </div>
 
                 <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> 

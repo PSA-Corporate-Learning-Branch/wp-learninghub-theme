@@ -40,12 +40,20 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="bg-secondary-subtle pt-4">
+    <div class="bg-secondary-subtle pt-4 partner-section">
         <div class="container-lg p-lg-5 p-4">
-            <h2 class="text-warning">Meet the partners</h2>
-            <p class="mb-4 text-white">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
+            <h2 class="text-primary">Meet the partners</h2>
+            <p class="mb-4 text-body-secondary">Curious about our existing partners and which courses they offer? You're in the right spot.</p>
 
             <style>
+                :root {
+                    --partner-accent: #f5a623;
+                }
+
+                .partner-section {
+                    color: var(--bs-body-color);
+                }
+
                 .partner-tab-input {
                     display: none;
                 }
@@ -62,7 +70,7 @@ get_header();
                     background-color: #f5a623;
                     border-radius: 5px 5px 0 0;
                     color: #333;
-                    border: 3px solid #f5a623;
+                    border: 3px solid var(--partner-accent);
                     border-bottom: none;
                     padding: 0.75rem 1.5rem;
                     font-weight: 800;
@@ -79,20 +87,24 @@ get_header();
                 }
 
                 .partner-tab-input:checked + .partner-tab-label {
-                    background-color: var(--bs-secondary-bg-subtle);
-                    color: #f5a623;
-                    border-bottom: 3px solid var(--bs-secondary-bg-subtle);
+                    background-color: #FFF;
+                    
+                    color: #333;
+                    border-color: var(--partner-accent);
+                    border-bottom: 3px solid #FFF;
                 }
 
                 .partner-content-wrapper {
-                    border: 3px solid #f5a623;
+                    border: 3px solid var(--partner-accent);
                     border-radius: 0 5px 5px 5px;
                     padding: 2rem;
                     position: relative;
+                    background-color: var(--bs-body-bg);
                 }
 
                 .partner-tab-content {
                     display: none;
+                    scroll-margin-top: 140px;
                 }
 
                 .partner-tabs-wrapper:has(#tab-corporate:checked) ~ .partner-content-wrapper #content-corporate,
@@ -101,20 +113,34 @@ get_header();
                 }
 
                 .partner-content-wrapper h3 {
-                    color: #f5a623;
+                    color: var(--partner-accent);
                 }
 
-                .partner-content-wrapper .card {
-                    background-color: var(--bs-light-bg-subtle) !important;
-                    color: #fff;
+                .partner-section .partner-content-wrapper .card {
+                    background-color: var(--bs-body-bg);
+                    color: var(--bs-body-color);
+                    border-color: var(--bs-border-color);
+                }
+
+                :root[data-bs-theme="dark"] .partner-section .partner-content-wrapper {
+                    background-color: var(--bs-dark-bg-subtle);
+                }
+
+                :root[data-bs-theme="dark"] .partner-section .partner-content-wrapper .card {
+                    background-color: var(--bs-dark-bg-subtle);
+                }
+                :root[data-bs-theme="dark"] .partner-tab-input:checked + .partner-tab-label { 
+                    background-color: var(--bs-dark-bg-subtle);
+                    border-bottom: 3px solid var(--bs-dark-bg-subtle);
+                    color: #FFF;
                 }
 
                 .partner-content-wrapper .card .card-title h3 {
-                    color: #f5a623;
+                    color: var(--partner-accent);
                 }
 
                 .partner-content-wrapper .card a {
-                    color: #7db9e8;
+                    color: var(--bs-link-color);
                 }
             </style>
 
@@ -170,7 +196,7 @@ get_header();
                                 <div class="card">
                                     <div class="card-body" style="font-size: 1.125rem;">
                                         <div class="card-title">
-                                            <h3 class="h4 fw-semibold"><?= esc_html($category->name) ?></h3>
+                                            <h3 class="h4 fw-semibold text-primary"><?= esc_html($category->name) ?></h3>
                                         </div>
                                         <div class="card-text">
                                             <?= sprintf(esc_html__('%s', 'textdomain'), $category->description) ?>
@@ -227,7 +253,7 @@ get_header();
                                     <div class="card">
                                         <div class="card-body" style="font-size: 1.125rem;">
                                             <div class="card-title">
-                                                <h3 class="h4 fw-semibold"><?= esc_html($dp->name) ?></h3>
+                                                <h3 class="h4 fw-semibold text-primary"><?= esc_html($dp->name) ?></h3>
                                             </div>
                                             <div class="card-text">
                                                 <?= esc_html($dp->description) ?>
@@ -259,23 +285,41 @@ get_header();
 (function() {
     var hash = window.location.hash;
 
-    // Check hash on page load and select appropriate tab
-    if (hash === '#content-development' || hash === '#development-partners') {
-        document.getElementById('tab-development').checked = true;
-    } else if (hash === '#content-corporate' || hash === '#corporate-learning-partners') {
+    function scrollToTarget(id, smooth) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        requestAnimationFrame(function() {
+            el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+        });
+    }
+
+    function setTabFromHash(currentHash) {
+        if (currentHash === '#content-development' || currentHash === '#development-partners') {
+            document.getElementById('tab-development').checked = true;
+            return 'content-development';
+        }
         document.getElementById('tab-corporate').checked = true;
+        return 'content-corporate';
+    }
+
+    var targetId = setTabFromHash(hash);
+
+    if (hash) {
+        scrollToTarget(targetId, false);
     }
 
     // Update hash when tabs are clicked
     document.getElementById('tab-corporate').addEventListener('change', function() {
         if (this.checked) {
-            history.replaceState(null, null, '#content-corporate');
+            history.replaceState(null, '', '#content-corporate');
+            scrollToTarget('content-corporate', true);
         }
     });
 
     document.getElementById('tab-development').addEventListener('change', function() {
         if (this.checked) {
-            history.replaceState(null, null, '#content-development');
+            history.replaceState(null, '', '#content-development');
+            scrollToTarget('content-development', true);
         }
     });
 })();
