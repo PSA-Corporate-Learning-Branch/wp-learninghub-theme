@@ -87,17 +87,22 @@ while (have_posts()) :
                                         <a href="/learninghub/filter/?delivery_method[]=<?= $dms[0]->slug ?>" class=" fw-normal"><?= $dms[0]->name ?></a>
                                     </span>
                                 </div>
-                                <p class="mb-0">Partner: <span class="partners fw-normal text-decoration-underline"><?php the_terms($post->ID, 'learning_partner'); ?></span>
-
-                                    <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> </p>
-                                <?php if (!empty($exsys[0]->name)) : ?><p class="mb-0">
-
-                                        Platform: <span class="fw-normal">
-                                            <a class="" href="/learninghub/external_system/<?= $exsys[0]->slug ?>">
-                                                <?= $exsys[0]->name ?>
-                                            </a>
-                                        </span>
-                                    </p>
+                                <div class="mb-0">Partner: <span class="partners fw-normal text-decoration-underline"><?php the_terms($post->ID, 'learning_partner'); ?></span></div>
+                                <?php $dev_partner_list = get_the_term_list($post->ID, 'development_partner', '', ', ', ''); ?>
+                                <?php if (!empty($dev_partner_list)) : ?>
+                                    <div id="devpartners" class="mb-0">
+                                        Development Partner(s): <span class="fw-normal"><?= $dev_partner_list ?></span>
+                                    </div>
+                                <?php endif ?>
+                                <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> 
+                                <?php if (!empty($exsys[0]->name)) : ?>
+                                <div class="mb-0">
+                                    Platform: <span class="fw-normal">
+                                        <a class="" href="/learninghub/external_system/<?= $exsys[0]->slug ?>">
+                                            <?= $exsys[0]->name ?>
+                                        </a>
+                                    </span>
+                                </div>
                                 <?php endif ?>
                                 
                             </div>
