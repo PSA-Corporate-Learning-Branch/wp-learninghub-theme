@@ -1,7 +1,8 @@
 <?php
 
 /**
- * The template for displaying all Learning Partners
+ * Template Name: Development Partners
+ * The template for displaying all Development Partners
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -11,7 +12,6 @@
  */
 get_header();
 ?>
-<!-- <h1>TEST</h1> -->
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg px-0 px-md-3 py-4 py-md-5">
@@ -96,72 +96,51 @@ get_header();
             </style>
 
             <div class="partner-tabs-wrapper">
-                <a href="/learninghub/corporate-learning-partners/" class="partner-tab active">
+                <a href="/learninghub/corporate-learning-partners/" class="partner-tab">
                     Corporate Learning Partners
                 </a>
-                <a href="/learninghub/development-partners/" class="partner-tab">
+                <a href="/learninghub/development-partners/" class="partner-tab active">
                     Development Partners
                 </a>
             </div>
 
             <div class="partner-content">
                 <?php
-                $terms = get_terms(array(
-                    'taxonomy' => 'learning_partner',
+                $devpterms = get_terms(array(
+                    'taxonomy' => 'development_partner',
                     'hide_empty' => false,
                     'orderby'    => 'count',
-                    'order'   => 'DESC',
-                    'exclude' => [121, 372, 144]
-                )); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations
+                    'order'   => 'DESC'
+                ));
                 ?>
-                <div id="partnerlist">
+                <?php if (!empty($devpterms) && !is_wp_error($devpterms)) : ?>
                     <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <?php $count = 1 ?>
-                        <?php foreach ($terms as $category) : ?>
+                        <?php foreach ($devpterms as $dp) : ?>
                             <?php
-                            $pcount = $category->count . ' course';
-                            if ($category->count > 1) $pcount = $category->count . ' courses';
+                            $pcount = $dp->count . ' course';
+                            if ($dp->count > 1) $pcount = $dp->count . ' courses';
                             $category_link = sprintf(
-                                '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s from this partner</a>',
-                                esc_url(get_category_link($category->term_id)),
-                                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+                                '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s from this development partner</a>',
+                                esc_url(get_term_link($dp->term_id)),
+                                esc_attr(sprintf(__('View all courses from %s', 'textdomain'), $dp->name)),
                                 esc_html($pcount)
                             );
-                            $partnerurl = '';
-                            $partnerlogo = '';
-                            $term_vals = get_term_meta($category->term_id);
-                            foreach ($term_vals as $key => $val) {
-                                if ($key == 'partner-url') {
-                                    $partnerurl = $val[0];
-                                }
-                                if ($key == 'category-image-id') {
-                                    $partnerlogo = $val[0];
-                                }
-                            }
                             ?>
                             <div class="col">
                                 <div class="card">
                                     <div class="card-body" style="font-size: 1.125rem;">
                                         <div class="card-title">
-                                            <h3 class="h4 fw-semibold"><?= esc_html($category->name) ?></h3>
+                                            <h3 class="h4 fw-semibold"><?= esc_html($dp->name) ?></h3>
                                         </div>
                                         <div class="card-text">
-                                            <?= sprintf(esc_html__('%s', 'textdomain'), $category->description) ?>
+                                            <?= esc_html($dp->description) ?>
                                         </div>
-
-                                        <?php if (!empty($partnerurl)) : ?>
-                                            <div class="partner-url mt-2">
-                                                <a target="_blank" rel="noopener" href="<?= $partnerurl ?>">
-                                                    View partner website<span class="visually-hidden"> (Opens in a new tab)</span>
-                                                </a>
-                                            </div>
-                                        <?php endif ?>
-                                        <div class="hublink">
-                                            <?php if ($category->count > 0) : ?>
+                                        <div class="hublink mt-2">
+                                            <?php if ($dp->count > 0) : ?>
                                                 <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
                                             <?php else : ?>
                                                 <div class="bg-warning-subtle mt-2 p-2 text-dark">
-                                                    This partner does not currently have any courses listed in the LearningHUB.
+                                                    This development partner does not currently have any courses listed in the LearningHUB.
                                                 </div>
                                             <?php endif ?>
                                         </div>
@@ -170,24 +149,12 @@ get_header();
                             </div>
                         <?php endforeach ?>
                     </div>
-                </div>
+                <?php else : ?>
+                    <p class="text-white">No development partners found.</p>
+                <?php endif ?>
             </div>
         </div>
     </div>
 </div>
 
-<!-- / -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-<script>
-var courseoptions = {
-    valueNames: [ 'partnername', 'partnerdesc' ]
-};
-var partners = new List('partnerlist', courseoptions);
-document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
-partners.on('searchComplete', function(){
-    //console.log(upcomingClasses.update().matchingItems.length);
-    //console.log(courses.update().matchingItems.length);
-    document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
-});
-</script> -->
 <?php get_footer() ?>
