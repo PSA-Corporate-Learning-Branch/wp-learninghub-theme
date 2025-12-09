@@ -18,10 +18,12 @@
         <p class="fs-6">Narrow down course results by using filters. Three types of categorization help you find exactly what you're looking for: audience, topic and delivery.</p>
         <a href="/learninghub/filter/" class="btn btn-primary btn-sm">Filter search</a>
 
-        <?php if (isset($args['termid'])) : ?>
+        <?php if (isset($args['termid']) && is_tax('learning_partner')) : ?>
+        <div class="mt-3">
             <h5>Are you a partner administrator?</h5>
             <p>Looking to update the courses for this Corporate Learning Partner?</p>
-            <div><a href="https://gww.bcpublicservice.gov.bc.ca/learning/hub/partners/dashboard.php?partnerid=<?= $args['termid']; ?>" class="btn btn-sm btn-primary">Administer this partner</a></div>
+            <div><a href="https://gww.bcpublicservice.gov.bc.ca/learning/hub/partners/dashboard.php?partnerid=<?= esc_attr($args['termid']) ?>" class="btn btn-sm btn-primary">Administer this partner</a></div>
+        </div>
         <?php endif; ?>
 
     </div>

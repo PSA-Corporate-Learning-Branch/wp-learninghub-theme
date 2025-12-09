@@ -60,6 +60,7 @@ get_header();
 
                 .partner-tab-label {
                     background-color: #f5a623;
+                    border-radius: 5px 5px 0 0;
                     color: #333;
                     border: 3px solid #f5a623;
                     border-bottom: none;
@@ -85,6 +86,7 @@ get_header();
 
                 .partner-content-wrapper {
                     border: 3px solid #f5a623;
+                    border-radius: 0 5px 5px 5px;
                     padding: 2rem;
                     position: relative;
                 }

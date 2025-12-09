@@ -46,12 +46,12 @@ $post_my_query = new WP_Query($post_args);
 <div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg px-0 px-md-3 py-4 py-md-5">
-            <h1 class="mb-0 text-white">Development Partner: <?= str_replace('Development Partners:', '', $termtitle) ?></h1>
+            <h1 class="mb-0 text-white"><?= $termtitle ?></h1>
         </div>
     </div>
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-            <h2>Offered by <?= str_replace('Development Partners:', '', $termtitle) ?></h2>
+            <h2>Offered by <?= str_replace('Development Partner:', '', $termtitle) ?></h2>
             <?php
             $partners = get_categories(
                 array(

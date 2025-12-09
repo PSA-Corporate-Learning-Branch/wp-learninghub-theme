@@ -47,18 +47,21 @@
 
 
             <div class="fw-semibold" style="font-size: 0.75rem;">
-                <p class="mb-0">Partner: <span class="partners fw-normal"><?php the_terms($post->ID, 'learning_partner'); ?></span>
+                <div class="mb-0">Partner: <span class="partners fw-normal"><?php the_terms($post->ID, 'learning_partner'); ?></span></div>
+                <div id="devpartners" class="mb-0">
+                    <?php the_terms($post->ID, 'development_partner', 'Development Partner(s): ', ', ', ' '); ?>
+                </div>
 
-                    <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> </p>
-                <p>
-                    <?php if (!empty($exsys[0]->name)) : ?>
+                <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> 
+                <?php if (!empty($exsys[0]->name)) : ?>
+                <div>
                         Platform: <span class="fw-normal">
                             <a class="text-decoration-none" href="/learninghub/external_system/<?= $exsys[0]->slug ?>">
                                 <?= $exsys[0]->name ?>
                             </a>
                         </span>
-                </p>
-            <?php endif ?>
+                </div>
+                <?php endif ?>
             </div>
 
             <?php if (!empty($post->course_link)) : ?>
