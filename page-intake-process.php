@@ -61,12 +61,14 @@ get_header();
             <div class="ps-md-4 ps-3 pe-3 py-2 mt-4 border border-secondary-subtle rounded">
                 <details class="ms-2">
                     <summary>
-                        <h4 class="mb-0">I want to learn about PSA Corporate Learning Branch facilitation</h4>
+                        <h4 class="mb-0">I am interested in facilitated corporate learning</h4>
                     </summary>
-                    <h5 class="mt-3">PSA Corporate Learning Branch Facilitation</h5>
-                    <p>Our facilitator staff are fully booked for delivery of our live course offerings.</p>
-                    <p>If you are looking for a corporate learning experience for your team/branch/organization, please <a href="/learninghub/filter/">visit the LearningHUB Catalogue</a> as all our corporate learning opportunities are included there. Consider having everyone register for a single offering. That way your team has the experience of learning together. We have large class capacity that will allow whole groups to learn together in our live online sessions. Feel free to notify the PSA Corporate Learning Branch intake team by email that your group is joining a particular session, so the facilitators is aware. Time permitting, they may reach out to you to learn of your goals in having the group attend together.</p>
-                    <h5>External facilitation</h5>
+                    <h5 class="mt-3">Corporate Learning Branch courses</h5>
+                    <p>Our facilitator staff deliver live learning for <a href="/learninghub/filter/?keyword=&delivery_method%5B%5D=webinar&delivery_method%5B%5D=blended-format&delivery_method%5B%5D=classroom&audience%5B%5D=all-employees">all employees</a>, <a href="/learninghub/filter/?keyword=&delivery_method%5B%5D=webinar&delivery_method%5B%5D=blended-format&delivery_method%5B%5D=classroom&audience%5B%5D=people-leaders">people leaders</a>, and <a href="/learninghub/filter/?keyword=&audience%5B%5D=senior-leaders&delivery_method%5B%5D=webinar&delivery_method%5B%5D=blended-format&delivery_method%5B%5D=classroom">senior leaders</a>. All this learning from the Corporate Learning Branch and <a href="/learninghub/corporate-learning-partners/">our partners</a> is available here in the LearningHUB catalogue.</p>
+                    <h5>Facilitation for groups</h5>
+                    <p>If you have a team looking for live, facilitated corporate learning opportunities, consider having everyone register for a single offering. That way your team has the experience of learning together. We have large class capacity that will allow whole groups to learn together in our live online sessions. Feel free to notify the <a href="mailto:Corporatelearning.admin@gov.bc.ca">PSA Corporate Learning Branch intake team by email</a> that your group is joining a particular session, so the facilitators are aware. Time permitting, they may reach out to you to learn of your goals in having the group attend together. If you have a request for a facilitation that is not a course offered in the LearningHUB, please complete the intake form.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>
+                    <h5>Other facilitation</h5>
                     <p>If you would like to hire a facilitator, please visit the <a href="https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/facilitation-services">BC Procurement Resources for Facilitation Services</a>.</p>
                     <h5>Other questions?</h5>
                     <p>If you still have questions about facilitation, please direct your inquiry to the PSA Corporate Learning Branch intake team at <a href="mailto:CLIP@gov.bc.ca">CLIP@gov.bc.ca</a>.</p>
