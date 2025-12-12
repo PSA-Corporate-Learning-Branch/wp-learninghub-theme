@@ -213,7 +213,7 @@ get_header();
                                             <?php if ($category->count > 0) : ?>
                                                 <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
                                             <?php else : ?>
-                                                <div class="bg-warning-subtle mt-2 p-2 text-dark">
+                                                <div class="bg-warning-subtle mt-2 p-2">
                                                     This partner does not currently have any courses listed in the LearningHUB.
                                                 </div>
                                             <?php endif ?>
@@ -262,7 +262,7 @@ get_header();
                                                 <?php if ($dp->count > 0) : ?>
                                                     <?= sprintf(esc_html__('%s', 'textdomain'), $category_link) ?>
                                                 <?php else : ?>
-                                                    <div class="bg-warning-subtle mt-2 p-2 text-dark">
+                                                    <div class="bg-warning-subtle mt-2 p-2">
                                                         This development partner does not currently have any courses listed in the LearningHUB.
                                                     </div>
                                                 <?php endif ?>
