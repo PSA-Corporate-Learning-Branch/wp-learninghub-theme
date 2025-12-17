@@ -168,6 +168,9 @@ get_header();
                 )); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations
                 ?>
                 <div id="partnerlist">
+					<p>
+						A Corporate Learning Partner holds corporate accountabilities over the subject matter of the learning and has accepted governance over the learning.
+					</p>
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <?php $count = 1 ?>
                         <?php foreach ($terms as $category) : ?>
@@ -228,6 +231,9 @@ get_header();
 
                 <!-- Development Partners Content -->
                 <div id="content-development" class="partner-tab-content">
+					<p>
+						A Corporate Learning Development Partner designs and develops courses and learning resources (curated pathways, webinars, panel discussions, or other) that is sponsored into the corporate learning catalogue by a Partner Sponsor. A Development Partner may or may not hold corporate accountabilities over the subject matter of the learning, and works in partnership with a Partner Sponsor.
+					</p>
                     <?php
                     $devpterms = get_terms(array(
                         'taxonomy' => 'development_partner',
@@ -325,18 +331,4 @@ get_header();
 })();
 </script>
 
-<!-- / -->
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-<script>
-var courseoptions = {
-    valueNames: [ 'partnername', 'partnerdesc' ]
-};
-var partners = new List('partnerlist', courseoptions);
-document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
-partners.on('searchComplete', function(){
-    //console.log(upcomingClasses.update().matchingItems.length);
-    //console.log(courses.update().matchingItems.length);
-    document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
-});
-</script> -->
 <?php get_footer() ?>
