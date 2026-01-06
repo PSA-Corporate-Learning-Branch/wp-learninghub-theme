@@ -55,7 +55,7 @@
             </div>
             <h3>The Corporate Learning Framework</h3>
             <p>The framework is a modern solution to guide and unify the design, development and delivery of corporate learning for the entire BC Public Service. The BC Public Service is committed to providing aligned, relevant and flexible learning.</p>
-            <p>It was drafted in consultation with numerous representatives of the BC Public Service, including our Strategic Human Resources (SHR) partners and corporate learning partners.</p>
+            <p>It was drafted in consultation with numerous representatives of the BC Public Service, including our ministry HR partners and corporate learning partners.</p>
             <div class="vstack gap-1 text-center m-lg-5 my-4" id="CLFstructure">
                 <div class="text-white bg-secondary px-3 py-2 rounded">Organizational Strategy</div>
                 <div class="fs-2"><i class="bi bi-arrow-down"></i></div>
