@@ -11,17 +11,26 @@
  */
 get_header();
 ?>
-
-<div id="content">
-    <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
+ <div class="d-flex p-4 p-md-5 align-items-center bg-gov-green bg-gradient" style="height: 12vh; min-height: 100px;">
         <div class="container-lg px-0 px-md-3 py-4 py-md-5">
-            <h1 class="mb-0 text-white">Corporate Leadership Development Framework</h1>
+            <h1 class="mb-0 text-white">The Corporate Leadership Development Framework</h1>
         </div>
     </div>
+    <div class="bg-light-subtle">
+        <div class="container-lg p-lg-5 p-4">
+			<div class="row align-items-center">
+				<div class="col-md-8">
+					<p>The Corporate Leadership Development Framework (CLDF) places the leader at the centre and highlights four primary elements of leadership development: learn, connect, do, and reflect. Competencies, values, leadership expectations and management foundations provide the context for people leader learning and guide aspiring, new and experienced leaders in their roles.</p>
+				</div>
+				<div class="col-md-4">
+		            <img alt="Corporate leadership development framework" src="https://www2.gov.bc.ca/assets/gov/careers/all-employees/career-development/learning-education/cldf-wheel-graphic.png" title="Corporate leadership development framework" />
+				</div>
+			</div>    
+        </div>
+    </div>
+    <div class="bg-secondary-subtle pt-4">
+        <div class="container-lg p-lg-5 p-4 bg-light-subtle">
   
-  <img alt="Corporate leadership development framework" src="https://www2.gov.bc.ca/assets/gov/careers/all-employees/career-development/learning-education/cldf-wheel-graphic.png" title="Corporate leadership development framework" />
-  
-  <p>The Corporate Leadership Development Framework (CLDF) places the leader at the centre and highlights four primary elements of leadership development: learn, connect, do, and reflect. Competencies, values, leadership expectations and management foundations provide the context for people leader learning and guide aspiring, new and experienced leaders in their roles.</p>
   
   <h3>Learn</h3>
   
@@ -109,9 +118,10 @@ get_header();
   <li>Commitment to collaboration and engagement with networks to share information</li>
   <li>Comfort working in complex and ambiguous situations</li>
   </ul>
-  
-  <h2>Contact information</h2>
-  
-  <p>For more information on the Corporate Leadership Development Framework, please contact the Corporate Workforce Strategies team at <a href="mailto:CorporateWorkforceStrategies@gov.bc.ca">CorporateWorkforceStrategies@gov.bc.ca</a>.</p>
+  <div class="alert alert-info mt-5">
+      <h3>Contact information</h3>
+      <p>For more information on the Corporate Leadership Development Framework, please contact the Corporate Workforce Strategies team at <a href="mailto:CorporateWorkforceStrategies@gov.bc.ca">CorporateWorkforceStrategies@gov.bc.ca</a>.</p>
+    </div>
+</div>
 </div>
 <?php get_footer() ?>
