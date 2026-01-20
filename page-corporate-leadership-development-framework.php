@@ -30,57 +30,71 @@ get_header();
     </div>
     <div class="bg-secondary-subtle pt-4">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-  
-  
-  <h3>Learn</h3>
-  
-  <p>Leaders build mastery through courses, workshops, webinars, reading, conferences and more. To understand ways to model values, deliver on expectations, and improve leadership competencies explore the following:</p>
-  
-  <ul>
-  <li>BC Public Service <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/ethics-standards-of-conduct/corporate-values">corporate values</a> shape our culture, define shared expectations, help maintain consistency in management practices, and increase organizational performance</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/job-seekers/about-competencies/behavioural-competencies">Behavioural competencies</a> and <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/diversity-inclusion/indigenous-initiatives#irbc">Indigenous relations behavioural competencies</a> are essential skills and attributes expected of BC Public Service employees and can be helpful in defining developmental goals</li>
-  <li><a href="https://www2.gov.bc.ca/assets/gov/careers/executives/executive-opportunities/leadership_expectations.pdf">Leadership expectations</a> provide clarity and direction for executive and senior leaders who are leading teams</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/employee-labour-relations/supervisor-resources">Management foundations and leadership courses and supports</a> provide a variety of topics and information on leadership</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/career-development/pacific-leaders">Pacific Leaders</a> offers scholarships to further education and advance career goals in areas that align with the B.C. government's current and future skill needs</li>
-  </ul>
-  
-  <h3>Connect</h3>
-  
-  <p>Leaders refine and deepen their learning in relationship with others, through coaching and mentoring, learning cohorts, communities of practice, and expanding their networks to name a few. Some ways to learn through connections are:</p>
-  
-  <ul>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/career-development/coaching-services">Coaching services</a> focusses on personalized development conversations to increase skills and performance for just-in-time learning</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/family-social-supports/data-monitoring-quality-assurance/information-for-service-providers/accreditation/mentor-network">Mentor networks</a> to partner with a more experienced and knowledgeable individual for skills development</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/diversity-inclusion/indigenous-initiatives#mentorship">Indigenous Mentorship and Leadership Program</a> provides monthly cohort learning opportunities</li>
-  <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/working-with-others/cmo">Conflict management services</a> to increase leaders competence and confidence to manage interpersonal workplace conflict</li>
-  <li>Ministry leadership development cohort programs and <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/employee-labour-relations/supervisor-resources">Corporate Learning courses</a> often offer social and peer learning opportunities</li>
-  </ul>
-  
-  <h3>Do</h3>
-  
-  <p>Through their day-to-day work, leaders identify skills and behaviours that will assist them in fulfilling their roles and advancing their careers. They develop their mastery by taking on new tasks and stretch opportunities that challenge a leader beyond their current capabilities and skill. Pathways to this action-based learning are often identified through ongoing development conversations with their supervisors, and may include:</p>
-  
-  <ul>
-  <li>Experiential opportunities such as temporary assignments and taking on more complex tasks and projects</li>
-  <li>Exposure opportunities for skill building such as strategic planning, resolving a conflict, launching a service, or executive briefings</li>
-  <li>Job shadowing to learn through observing someone with more experience</li>
-  <li>Using <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/succession-management-bc-public-service/knowledge-transfer/knowledge-transfer-process">knowledge transfer processes</a> in day-to-day work</li>
-  </ul>
-  
-  <h3>Reflect</h3>
-  
-  <p>Leaders employ reflections in their day-to-day interactions to deepen and personalize their learning and refine their skills and competencies in real time. They can reflect using mechanisms such as:</p>
-  
-  <ul>
-  <li><a href="https://www.performance.gov.bc.ca/login">Performance Development</a> conversations</li>
-  <li>Reflecting on one's influence and impact as a leader on Workforce Environment Survey (WES) results and identifying areas for growth</li>
-  <li>Psychometric assessments, such as Myers-Briggs, Lumina Spark and Values in Action</li>
-  <li>360 leadership reviews</li>
-  <li>Journaling allows reflections on the lessons learned regarding the capabilities and experiences being developed</li>
-  <li>Self-guided feedback and seeking feedback from others</li>
-  </ul>
-  
-  <h2>Applying the framework</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Learn</h3>
+                            <p class="card-text">Leaders build mastery through courses, workshops, webinars, reading, conferences and more. To understand ways to model values, deliver on expectations, and improve leadership competencies explore the following:</p>
+                            <ul>
+                                <li>BC Public Service <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/ethics-standards-of-conduct/corporate-values">corporate values</a> shape our culture, define shared expectations, help maintain consistency in management practices, and increase organizational performance</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/job-seekers/about-competencies/behavioural-competencies">Behavioural competencies</a> and <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/diversity-inclusion/indigenous-initiatives#irbc">Indigenous relations behavioural competencies</a> are essential skills and attributes expected of BC Public Service employees and can be helpful in defining developmental goals</li>
+                                <li><a href="https://www2.gov.bc.ca/assets/gov/careers/executives/executive-opportunities/leadership_expectations.pdf">Leadership expectations</a> provide clarity and direction for executive and senior leaders who are leading teams</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/employee-labour-relations/supervisor-resources">Management foundations and leadership courses and supports</a> provide a variety of topics and information on leadership</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/career-development/pacific-leaders">Pacific Leaders</a> offers scholarships to further education and advance career goals in areas that align with the B.C. government's current and future skill needs</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Connect</h3>
+                            <p class="card-text">Leaders refine and deepen their learning in relationship with others, through coaching and mentoring, learning cohorts, communities of practice, and expanding their networks to name a few. Some ways to learn through connections are:</p>
+                            <ul>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/career-development/coaching-services">Coaching services</a> focusses on personalized development conversations to increase skills and performance for just-in-time learning</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/family-social-supports/data-monitoring-quality-assurance/information-for-service-providers/accreditation/mentor-network">Mentor networks</a> to partner with a more experienced and knowledgeable individual for skills development</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/about-the-bc-public-service/diversity-inclusion/indigenous-initiatives#mentorship">Indigenous Mentorship and Leadership Program</a> provides monthly cohort learning opportunities</li>
+                                <li><a href="https://www2.gov.bc.ca/gov/content/careers-myhr/all-employees/working-with-others/cmo">Conflict management services</a> to increase leaders competence and confidence to manage interpersonal workplace conflict</li>
+                                <li>Ministry leadership development cohort programs and <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/employee-labour-relations/supervisor-resources">Corporate Learning courses</a> often offer social and peer learning opportunities</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Do</h3>
+                            <p class="card-text">Through their day-to-day work, leaders identify skills and behaviours that will assist them in fulfilling their roles and advancing their careers. They develop their mastery by taking on new tasks and stretch opportunities that challenge a leader beyond their current capabilities and skill. Pathways to this action-based learning are often identified through ongoing development conversations with their supervisors, and may include:</p>
+                            <ul>
+                                <li>Experiential opportunities such as temporary assignments and taking on more complex tasks and projects</li>
+                                <li>Exposure opportunities for skill building such as strategic planning, resolving a conflict, launching a service, or executive briefings</li>
+                                <li>Job shadowing to learn through observing someone with more experience</li>
+                                <li>Using <a href="https://www2.gov.bc.ca/gov/content/careers-myhr/managers-supervisors/succession-management-bc-public-service/knowledge-transfer/knowledge-transfer-process">knowledge transfer processes</a> in day-to-day work</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Reflect</h3>
+                            <p class="card-text">Leaders employ reflections in their day-to-day interactions to deepen and personalize their learning and refine their skills and competencies in real time. They can reflect using mechanisms such as:</p>
+                            <ul>
+                                <li><a href="https://www.performance.gov.bc.ca/login">Performance Development</a> conversations</li>
+                                <li>Reflecting on one's influence and impact as a leader on Workforce Environment Survey (WES) results and identifying areas for growth</li>
+                                <li>Psychometric assessments, such as Myers-Briggs, Lumina Spark and Values in Action</li>
+                                <li>360 leadership reviews</li>
+                                <li>Journaling allows reflections on the lessons learned regarding the capabilities and experiences being developed</li>
+                                <li>Self-guided feedback and seeking feedback from others</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h2>Applying the framework</h2>
   
   <p>For those building or offering people leader training and development, the corporate framework is both a baseline and a starting point for program design and delivery that will reinforce the one employer experience. It will help developers identify the tools, resources and learning supports required for effective leadership development.</p>
   
