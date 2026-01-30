@@ -134,7 +134,7 @@ get_header();
   </ul>
   <div class="alert alert-info mt-5">
       <h3>Contact information</h3>
-      <p>For more information on the Corporate Leadership Development Framework, please contact the Corporate Workforce Strategies team at <a href="mailto:CorporateWorkforceStrategies@gov.bc.ca">CorporateWorkforceStrategies@gov.bc.ca</a>.</p>
+      <p>For more information on the Corporate Leadership Development Framework, please contact the Corporate Leadership Development team at <a href="mailto:CorporateLeadership@gov.bc.ca">CorporateLeadership@gov.bc.ca</a>.</p>
     </div>
 </div>
 </div>
