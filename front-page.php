@@ -56,8 +56,7 @@
 </div>
 <div class="bg-secondary-subtle pt-4">
     <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-        <h3>What's new in corporate learning?</h3> 
-        <?php
+        <h3>What's new in corporate learning?</h3> <?php
                         $sticky_posts = get_option('sticky_posts');
                         $newsargs = array(
                             'posts_per_page' => 1, // Only get one post
@@ -69,8 +68,7 @@
                         $recent_post = new WP_Query($newsargs);
                         if ($recent_post->have_posts()) :
                             while ($recent_post->have_posts()) : $recent_post->the_post();
-                        ?> 
-                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4 gx-5">
+                        ?> <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
             <div class="d-flex col mb-3">
                 <div class="flex-shrink-0 blue-fill align-self-start pt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -79,8 +77,8 @@
                     </svg>
                 </div>
                 <div class="flex-grow-1 ms-3">
-                    <h4 class="mb-1">Blog</h4>
-                    <div class="mt-2 card shadow-sm rounded">
+                    <h4 class="pt-3 pb-2">Blog</h4>
+                    <div class="card shadow-sm rounded">
                         <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
                                 <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
                             </a> <?php endif; ?> </div>
@@ -99,11 +97,14 @@
             </div>
             <div class="d-flex col mb-3">
                 <div class="flex-shrink-0 blue-fill align-self-start pt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M320 216C368.6 216 408 176.6 408 128C408 79.4 368.6 40 320 40C271.4 40 232 79.4 232 128C232 176.6 271.4 216 320 216zM320 514.7L320 365.4C336.3 358.6 352.9 351.7 369.7 344.7C408.7 328.5 450.5 320.1 492.8 320.1L512 320.1L512 480.1L492.8 480.1C433.7 480.1 375.1 491.8 320.5 514.6L320 514.8zM320 296L294.9 285.5C248.1 266 197.9 256 147.2 256L112 256C85.5 256 64 277.5 64 304L64 496C64 522.5 85.5 544 112 544L147.2 544C197.9 544 248.1 554 294.9 573.5L307.7 578.8C315.6 582.1 324.4 582.1 332.3 578.8L345.1 573.5C391.9 554 442.1 544 492.8 544L528 544C554.5 544 576 522.5 576 496L576 304C576 277.5 554.5 256 528 256L492.8 256C442.1 256 391.9 266 345.1 285.5L320 296z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
+                        <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                        <path d="M320 216C368.6 216 408 176.6 408 128C408 79.4 368.6 40 320 40C271.4 40 232 79.4 232 128C232 176.6 271.4 216 320 216zM320 514.7L320 365.4C336.3 358.6 352.9 351.7 369.7 344.7C408.7 328.5 450.5 320.1 492.8 320.1L512 320.1L512 480.1L492.8 480.1C433.7 480.1 375.1 491.8 320.5 514.6L320 514.8zM320 296L294.9 285.5C248.1 266 197.9 256 147.2 256L112 256C85.5 256 64 277.5 64 304L64 496C64 522.5 85.5 544 112 544L147.2 544C197.9 544 248.1 554 294.9 573.5L307.7 578.8C315.6 582.1 324.4 582.1 332.3 578.8L345.1 573.5C391.9 554 442.1 544 492.8 544L528 544C554.5 544 576 522.5 576 496L576 304C576 277.5 554.5 256 528 256L492.8 256C442.1 256 391.9 266 345.1 285.5L320 296z" />
+                    </svg>
                 </div>
                 <div class="flex-grow-1 ms-3">
-                    <h4 class="mb-1">Case study</h4>
-                    <div class="mt-2 card shadow-sm rounded">
+                    <h4 class="pt-3 pb-2">Case study</h4>
+                    <div class="card shadow-sm rounded">
                         <div class="rounded-top"> <a href="http://localhost:8181/learninghub/working-and-connecting-through-change/" class="text-decoration-none p-0">
                                 <img alt="" aria-label="Working and Connecting Through Change" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="http://localhost:8181/learninghub/wp-content/uploads/2025/11/Reintegration-1.png">
                             </a> </div>
@@ -111,7 +112,6 @@
                             <h5 class="fs-5"><a href="http://localhost:8181/learninghub/working-and-connecting-through-change/">Working and Connecting Through Change</a></h5>
                             <p class="card-text"></p>
                             <p>Change is our only constant, and learning to navigate change isn’t always simple. Working together and leaning on each other for support can clear and […]</p>
-                            <p></p>
                         </div>
                     </div>
                     <ul class="mt-2">
@@ -127,7 +127,7 @@
                     </svg>
                 </div>
                 <div class="flex-grow-1 ms-3">
-                    <h4 class="mb-1">Announcements</h4>
+                    <h4 class="pt-3 pb-2">Announcements</h4>
                     <!-- Add code to bring in announcement titles from posts tagged as announcement -->
                     <ul>
                         <li class="mb-2"><a href="#">L@WW Your Time to Learn Q&A results posted</a> <span class="text-muted fs-6">Feb 20, 2026</span></li>
