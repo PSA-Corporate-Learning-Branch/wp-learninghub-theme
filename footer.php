@@ -7,8 +7,10 @@
                     <li class="mb-1"><a aria-current="page" href="/learninghub/">Home</a></li>
                     <li class="mb-1"><a href="/learninghub/about/">About</a> </li>
                     <li class="mb-1"><a href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
+                    <li class="mb-1"><a href="/learninghub/corporate-leadership-development-framework/">Corporate Leadership Development Framework</a></li>
                     <li class="mb-1"><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
                     <li class="mb-1"><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
+                    <li class="mb-1"><a href="https://corporatelearning.gww.gov.bc.ca/learn-at-work-week/">Learn @ Work Week</a></li>
                     <li class="mb-1"><a href="/learninghub/filter/">All Courses</a></li>
                     <li class="mb-1"><a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
                     <li class="mb-1"><a href="/learninghub/categories/">Course Categorization</a></li>

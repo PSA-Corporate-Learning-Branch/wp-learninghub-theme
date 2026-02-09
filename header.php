@@ -127,8 +127,10 @@
                                 Corporate Learning</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/learninghub/what-is-corp-learning-framework/">Corporate Learning Framework</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/corporate-leadership-development-framework/">Corporate Leadership Development Framework</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/corporate-learning-partners/">Learning Partners</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/intake/">Intake for Corporate Learning</a></li>
+                                <li><a class="dropdown-item" href="https://corporatelearning.gww.gov.bc.ca/learn-at-work-week/">Learn @ Work Week</a></li>
                             </ul>
                         </li>
 
