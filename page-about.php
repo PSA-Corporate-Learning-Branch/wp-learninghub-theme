@@ -48,14 +48,39 @@ get_header();
                             <p class="card-text fs-6">Ministry-specific learning records may not be available. If you are seeking ministry-specific training records, please check with your organization.</p>
                         </div>
                     </div>
-                    <div class="mt-3 card shadow-sm rounded">
-                        <div class="bg-gov-green rounded-top"><img src="https://learn.bcpublicservice.gov.bc.ca/learning-hub/TLC-0611224-100_1200x1800.jpg" class="card-img-top object-fit-cover rounded-top opacity-50" alt="" style="height:12vh;"></div>
-                        <div class="card-body fs-6">
-                            <h3 class=" card-title fs-4">What's new?</h3>
-                            <h4 class="fs-4"><a href="/learninghub/using-race-and-ethnicity-data-webinar/">Using Race and Ethnicity Data Webinar</a></h4>
-                            <p class="card-text">Learn about best practices, risks, and common pitfalls involved in the use of race and ethnicity data in research.</p>
+                    <div class="mt-4 card shadow-sm rounded">
+                        <?php
+                        $sticky_posts = get_option('sticky_posts');
+                        $newsargs = array(
+                            'posts_per_page' => 1, // Only get one post
+                            'post_status'    => 'publish', // Ensure the post is published
+                            'post__not_in' => $sticky_posts, // Ignore stickied posts
+                            'orderby'        => 'date', // Order by date
+                            'order'          => 'DESC', // Get the most recent post
+                        );
+                        $recent_post = new WP_Query($newsargs);
+                        if ($recent_post->have_posts()) :
+                            while ($recent_post->have_posts()) : $recent_post->the_post();
+                        ?>
+                                <div class="bg-gov-green rounded-top">
+                                    <?php if (has_post_thumbnail($recent_post->ID)) : ?>
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
+                                        <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
+                                            <img alt="" aria-label="<?= the_title() ?>" style="height:12vh;" class="card-img-top object-fit-cover rounded-top opacity-50" src="<?php echo $image[0]; ?>">
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="card-body fs-6">
+                                    <h3 class=" card-title fs-4">What's new?</h3>
+
+                                    <h4 class="fs-5"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h4>
+                                    <p class="card-text"><?= the_excerpt() ?></p>
+                            <?php endwhile;
+                            wp_reset_postdata(); // Reset query
+                        endif;
+                            ?>
                             <p class="card-text"><a href="/learninghub/news">Read the latest news</a></p>
-                        </div>
+                                </div>
                     </div>
                 </div>
             </div>
