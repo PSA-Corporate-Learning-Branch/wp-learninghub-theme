@@ -152,14 +152,29 @@
                         </div>
                         <h4 class="ms-2 pt-3 pb-2">Announcements</h4>
                     </div>
-                    <!-- Add code to bring in announcement titles from posts tagged as announcement -->
+                    <?php
+                    $announcement_args = array(
+                        'post_type'      => 'post',
+                        'post_status'    => 'publish',
+                        'category_name'  => 'announcement',
+                        'posts_per_page' => 3,
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                    );
+                    $announcements = new WP_Query($announcement_args);
+                    if ($announcements->have_posts()) :
+                    ?>
                     <ul class="ms-3 mb-3">
-                        <li class="mb-2"><a href="#">L@WW Your Time to Learn Q&A results posted</a> <span class="text-muted fs-6">Feb 20, 2026</span></li>
-                        <li class="mb-2"><a href="#">New SBCPS cohorts open for registration</a> <span class="text-muted fs-6">Feb 5, 2026</span> </li>
-                        <li class="mb-2"><a href="#">Scheduled Moodle outage Feb 14, 2026</a> <span class="text-muted fs-6">Jan 25, 2026</span></li>
+                        <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
+                        <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted fs-6"><?php echo get_the_date('M j, Y'); ?></span></li>
+                        <?php endwhile; ?>
                     </ul>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else : ?>
+                    <p class="ms-3 mb-3">No announcements at this time.</p>
+                    <?php endif; ?>
                     <ul class="ms-2 mt-auto">
-                        <li><a href="#">Read all announcements</a></li>
+                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
                     </ul>
                 </div>
             </div>
