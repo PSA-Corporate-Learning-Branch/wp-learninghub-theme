@@ -127,17 +127,40 @@
                         </div>
                         <h4 class="ms-2 pt-3 pb-2">Learning story</h4>
                     </div>
+                    <?php
+                    $learner_story_args = array(
+                        'post_type'      => 'post',
+                        'post_status'    => 'publish',
+                        'category_name'  => 'learning-story',
+                        'posts_per_page' => 1,
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                    );
+                    $learner_story = new WP_Query($learner_story_args);
+                    if ($learner_story->have_posts()) :
+                        while ($learner_story->have_posts()) : $learner_story->the_post();
+                    ?>
                     <div class="card mx-3 rounded mb-3">
-                        <div class="rounded-top"> <a href="http://localhost:8181/learninghub/working-and-connecting-through-change/" class="text-decoration-none p-0">
-                                <img alt="" aria-label="Working and Connecting Through Change" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="http://localhost:8181/learninghub/wp-content/uploads/2025/11/Reintegration-1.png">
+                        <?php if (has_post_thumbnail()) : ?>
+                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
+                        <div class="rounded-top"> <a href="<?php the_permalink(); ?>" class="text-decoration-none p-0">
+                                <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
                             </a> </div>
+                        <?php endif; ?>
                         <div class="card-body fs-6">
-                            <h5 class="fs-5 card-title"><a href="http://localhost:8181/learninghub/working-and-connecting-through-change/">Working and Connecting Through Change</a></h5>
-                            <p class="card-text">Change is our only constant, and learning to navigate change isn’t always simple. Working together and leaning on each other for support can clear and […]</p>
+                            <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="card-text"><?php the_excerpt(); ?></p>
                         </div>
                     </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    ?>
+                    <p class="mx-3 mb-3">No learning stories at this time.</p>
+                    <?php endif; ?>
                     <ul class="ms-2 mt-auto">
-                        <li><a href="/learninghub/news">Read the latest learning stories</a></li>
+                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read the latest learning stories</a></li>
                     </ul>
                 </div>
             </div>
