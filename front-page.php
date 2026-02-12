@@ -20,18 +20,36 @@
                             <h4 class="text-white mb-1">New and updated courses</h4>
                         </div>
                         <div class="card-body fs-6">
+                            <?php
+                            $recent_courses_args = array(
+                                'post_type' => 'course', // Change this if your course post type has a different name
+                                'posts_per_page' => 3,
+                                'orderby' => 'modified', // Orders by last modified date to show recently added/updated
+                                'order' => 'DESC',
+                                'post_status' => 'publish'
+                            );
+                            $recent_courses = new WP_Query($recent_courses_args);
+
+                            if ($recent_courses->have_posts()) :
+                            ?>
                             <ul class="card-text" style="line-height: 1.75;">
-                                <li><a href="#">2SLGBTQIA+ Learning Series</a></li>
-                                <li><a href="#">Moose Hide Campaign Day (2026) - In-person and Online Gathering and Day of Fasting on May 14, 2026</a></li>
-                                <li><a href="#">L@WW 2023 Session Recordings</a></li>
+                                <?php while ($recent_courses->have_posts()) : $recent_courses->the_post(); ?>
+                                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
                             </ul>
+                            <?php
+                                wp_reset_postdata();
+                            else :
+                            ?>
+                                <p class="card-text">No recent courses found.</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="card shadow-sm mt-3">
                         <div class="card-body fs-6">
                             <h3 class="card-title fs-4">Corporate learning newsletter</h3>
                             <p class="card-text">Stay updated about all things corporate learning with our monthly email newsletter.</p>
-                            <a href="#" class="btn btn-primary">Subscribe to the newsletter</a>
+                            <a href="https://submit.digital.gov.bc.ca/app/form/submit?f=6632e28b-b8ab-4552-a489-78f6c41bbdc8" target="_blank" class="btn btn-primary">Subscribe to the newsletter</a>
                         </div>
                     </div>
                 </div>

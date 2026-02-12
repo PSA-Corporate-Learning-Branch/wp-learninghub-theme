@@ -117,6 +117,8 @@ $post_args = array(
     'include'                  => '',
     'number'                   => '',
     'pad_counts'               => true,
+    'update_post_meta_cache'   => false,
+    'update_post_term_cache'   => false,
     // 's'						   => $_GET['search'] // wish that we could!
 );
 $post_my_query = null;
