@@ -74,19 +74,21 @@
 </div>
 <div class="bg-secondary-subtle pt-4">
     <div class="container-lg p-lg-5 p-4 bg-light-subtle">
-        <h3>What's new in corporate learning?</h3> <?php
-                        $sticky_posts = get_option('sticky_posts');
-                        $newsargs = array(
-                            'posts_per_page' => 1, // Only get one post
-                            'post_status'    => 'publish', // Ensure the post is published
-                            'post__not_in' => $sticky_posts, // Ignore stickied posts
-                            'orderby'        => 'date', // Order by date
-                            'order'          => 'DESC', // Get the most recent post
-                        );
-                        $recent_post = new WP_Query($newsargs);
-                        if ($recent_post->have_posts()) :
-                            while ($recent_post->have_posts()) : $recent_post->the_post();
-                        ?> <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
+        <h3>What's new in corporate learning?</h3> 
+        <?php
+            $sticky_posts = get_option('sticky_posts');
+            $newsargs = array(
+                'posts_per_page' => 1, // Only get one post
+                'post_status'    => 'publish', // Ensure the post is published
+                'post__not_in' => $sticky_posts, // Ignore stickied posts
+                'orderby'        => 'date', // Order by date
+                'order'          => 'DESC', // Get the most recent post
+            );
+            $recent_post = new WP_Query($newsargs);
+            if ($recent_post->have_posts()) :
+                while ($recent_post->have_posts()) : $recent_post->the_post();
+            ?> 
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
             <div class="col mb-3">
                 <div class="card border-primary shadow border-2 px-1 flex-column h-100">
                     <div class="d-flex">
