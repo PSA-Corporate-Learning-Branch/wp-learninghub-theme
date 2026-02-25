@@ -89,7 +89,7 @@
             if ($recent_post->have_posts()) :
                 while ($recent_post->have_posts()) : $recent_post->the_post();
             ?> 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
+            <div class="row row-cols-1 row-cols-md-2 mt-4">
             <div class="col mb-3">
                 <div class="card border-primary shadow border-2 px-1 flex-column h-100">
                     <div class="d-flex">
@@ -107,63 +107,15 @@
                             </a> <?php endif; ?> </div>
                         <div class="card-body fs-6">
                             <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h5>
-                            <span class="card-text"><?= the_excerpt() ?></span> <?php endwhile;
+                            <p class="card-text"><?= the_excerpt() ?></p> <?php endwhile;
                         wp_reset_postdata(); // Reset query
                     endif;
                         ?>
                         <!-- TO FIX excerpt isn't going into the card-text p tag, instead adding p below -->
                         </div>
                     </div>
-                    <ul class="ms-2 mt-auto">
+                    <ul class="mx-2 mt-auto">
                         <li><a href="/learninghub/news">Read the latest blog posts</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col mb-3">
-                <div class="card border-primary shadow border-2 px-1 flex-column h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
-                                <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                                <path d="M320 216C368.6 216 408 176.6 408 128C408 79.4 368.6 40 320 40C271.4 40 232 79.4 232 128C232 176.6 271.4 216 320 216zM320 514.7L320 365.4C336.3 358.6 352.9 351.7 369.7 344.7C408.7 328.5 450.5 320.1 492.8 320.1L512 320.1L512 480.1L492.8 480.1C433.7 480.1 375.1 491.8 320.5 514.6L320 514.8zM320 296L294.9 285.5C248.1 266 197.9 256 147.2 256L112 256C85.5 256 64 277.5 64 304L64 496C64 522.5 85.5 544 112 544L147.2 544C197.9 544 248.1 554 294.9 573.5L307.7 578.8C315.6 582.1 324.4 582.1 332.3 578.8L345.1 573.5C391.9 554 442.1 544 492.8 544L528 544C554.5 544 576 522.5 576 496L576 304C576 277.5 554.5 256 528 256L492.8 256C442.1 256 391.9 266 345.1 285.5L320 296z" />
-                            </svg>
-                        </div>
-                        <h4 class="ms-2 pt-3 pb-2">Learning story</h4>
-                    </div>
-                    <?php
-                    $learner_story_args = array(
-                        'post_type'      => 'post',
-                        'post_status'    => 'publish',
-                        'category_name'  => 'learner-story',
-                        'posts_per_page' => 1,
-                        'orderby'        => 'date',
-                        'order'          => 'DESC',
-                    );
-                    $learner_story = new WP_Query($learner_story_args);
-                    if ($learner_story->have_posts()) :
-                        while ($learner_story->have_posts()) : $learner_story->the_post();
-                    ?>
-                    <div class="card mx-3 rounded mb-3">
-                        <?php if (has_post_thumbnail()) : ?>
-                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-                        <div class="rounded-top"> <a href="<?php the_permalink(); ?>" class="text-decoration-none p-0">
-                                <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                            </a> </div>
-                        <?php endif; ?>
-                        <div class="card-body fs-6">
-                            <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                            <p class="card-text"><?php the_excerpt(); ?></p>
-                        </div>
-                    </div>
-                    <?php
-                        endwhile;
-                        wp_reset_postdata();
-                    else :
-                    ?>
-                    <p class="mx-3 mb-3">No learning stories at this time.</p>
-                    <?php endif; ?>
-                    <ul class="ms-2 mt-auto">
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read the latest learning stories</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,16 +142,16 @@
                     $announcements = new WP_Query($announcement_args);
                     if ($announcements->have_posts()) :
                     ?>
-                    <ul class="ms-3 mb-3 fs-6">
+                    <ul class="mx-3 mb-3 fs-6">
                         <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
                         <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted fs-6"><?php echo get_the_date('M j, Y'); ?></span></li>
                         <?php endwhile; ?>
                     </ul>
                     <?php wp_reset_postdata(); ?>
                     <?php else : ?>
-                    <p class="ms-3 mb-3">No announcements at this time.</p>
+                    <p class="mx-3 mb-3">No announcements at this time.</p>
                     <?php endif; ?>
-                    <ul class="ms-2 mt-auto">
+                    <ul class="mx-2 mt-auto">
                         <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
                     </ul>
                 </div>
