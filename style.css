@@ -11,9 +11,9 @@
  * License:           Apache
  */
 
- html {
+html {
     scroll-padding-top: 10vh !important;
- }
+}
 
 :root {
     --gov-primary-blue: #234075;
@@ -163,6 +163,7 @@ iframe {
     height: 100%;
     margin: 0;
 }
+
 .icon-lg {
     width: 3rem;
     height: 100%;
@@ -198,6 +199,7 @@ iframe {
 [data-bs-theme=dark] .green-fill {
     fill: var(--gov-secondary-green-50);
 }
+
 .blue-fill {
     fill: var(--gov-primary-blue);
 }
@@ -624,4 +626,24 @@ p.circle-text {
 
 .alert p {
     margin-bottom: 0;
+}
+
+ul.list-time {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.list-time>li {
+    position: relative;
+    padding-left: 1.5em;
+    /* space to preserve indentation on wrap */
+}
+
+ul.list-time>li:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f017";
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+    /* place the content at the start of the padding */
 }

@@ -1,4 +1,5 @@
-<?php get_header() ?> <div id="content">
+<?php get_header() ?>
+<div id="content">
     <div class="d-flex p-4 p-md-5 align-items-center" style="height: 18vh; min-height: 100px; background: rgb(35,64,117); background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);">
         <div class="container-lg py-4 py-md-5">
             <h1 class="text-white title">Welcome to the LearningHUB</h1>
@@ -10,18 +11,22 @@
                 <div class="col-lg-8 mb-4 mb-lg-0 ps-lg-0">
                     <h2>What is corporate learning?</h2>
                     <p>The PSA Corporate Learning Branch and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue of corporate offerings.</p>
-                    <a href="/learninghub/filter/" class="btn btn-lg btn-primary mt-2 mb-5 py-2 fs-4">Corporate learning catalogue</a>
-                    <h3>Not sure where to start?</h3>
-                    <p>Get the details on <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders in their first year and beyond.</p>
+                    <a href="/learninghub/filter/" class="btn btn-lg btn-primary mt-2 py-2 fs-4">Corporate learning catalogue</a>
                 </div>
                 <div class="col-lg-4 pe-lg-0">
                     <div class="card shadow-sm mt-3">
+                        <div class="card-body fs-6">
+                            <h3 class="card-title fs-4">Not sure where to start?</h3>
+                            <p class="card-text">Get the details on <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders in their first year and beyond.</p>
+                        </div>
+                    </div>
+                    <!-- <div class="card shadow-sm mt-3">
                         <div class="card-body fs-6">
                             <h3 class="card-title fs-4">Corporate learning newsletter</h3>
                             <p class="card-text">Stay updated about all things corporate learning with our monthly email newsletter.</p>
                             <a href="https://submit.digital.gov.bc.ca/app/form/submit?f=6632e28b-b8ab-4552-a489-78f6c41bbdc8" target="_blank" class="btn btn-primary">Subscribe to the newsletter</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div> <?php
                     $sticky = get_option('sticky_posts');
@@ -41,7 +46,7 @@
                     </div> <?php endwhile ?> <?php endif ?>
         </div>
     </div>
-</div>
+
 <div class="bg-secondary-subtle pt-4">
     <div class="container-lg p-lg-5 p-4 bg-light-subtle">
         <h3>What's new in corporate learning?</h3>
@@ -55,9 +60,8 @@
                                 <path d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM216 176L160 176C151.2 176 144 183.2 144 192L144 480C144 488.8 151.2 496 160 496L480 496C488.8 496 496 488.8 496 480L496 192C496 183.2 488.8 176 480 176L216 176zM320 240C333.3 240 344 250.7 344 264L344 312L392 312C405.3 312 416 322.7 416 336C416 349.3 405.3 360 392 360L344 360L344 408C344 421.3 333.3 432 320 432C306.7 432 296 421.3 296 408L296 360L248 360C234.7 360 224 349.3 224 336C224 322.7 234.7 312 248 312L296 312L296 264C296 250.7 306.7 240 320 240z" />
                             </svg>
                         </div>
-                        <h4 class="ms-2 pt-3 pb-2">New and updated courses</h4>
-                    </div> 
-                    <?php
+                        <h4 class="ms-2 pt-3 pb-2">New courses</h4>
+                    </div> <?php
                             $recent_courses_args = array(
                                 'post_type' => 'course',
                                 'posts_per_page' => 3,
@@ -67,14 +71,10 @@
                             );
                             $recent_courses = new WP_Query($recent_courses_args);
                             if ($recent_courses->have_posts()) :
-                            ?>
-                             <ul class="mx-3 mb-3 fs-6"> <?php while ($recent_courses->have_posts()) : $recent_courses->the_post(); ?> <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li> <?php endwhile; ?> </ul> 
-                             <?php
-                                                                                                                                                                                                                                            wp_reset_postdata();
-                                                                                                                                                                                                                                        else :
-                                                                                                                                                                                                                                            ?>
-                        <p class="card-text">No recent courses found.</p> <?php endif; ?>
-                    <ul class="mx-2 mt-auto">
+                            ?> <ul class="mx-3 mb-3 fs-6"> <?php while ($recent_courses->have_posts()) : $recent_courses->the_post(); ?> <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li> <?php endwhile; ?> </ul> <?php
+                                                                                                                                                                                                                                                wp_reset_postdata();
+                                                                                                                                                                                                                                            else :
+                                                                                                                                                                                                                                                ?> <p class="card-text">No recent courses found.</p> <?php endif; ?> <ul class="mx-2 mt-auto">
                         <li><a href="/learninghub/filter">View the course catalogue</a></li>
                     </ul>
                 </div>
@@ -86,6 +86,7 @@
                         'post__not_in' => $sticky_posts, // Ignore stickied posts
                         'orderby'        => 'date', // Order by date
                         'order'          => 'DESC', // Get the most recent post
+                        'category_name'  => 'uncategorized',
                     );
                     $recent_post = new WP_Query($newsargs);
                     if ($recent_post->have_posts()) :
@@ -107,11 +108,10 @@
                                         </a> <?php endif; ?> </div>
                                 <div class="card-body fs-6">
                                     <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h5>
-                                    <p class="card-text"><?= the_excerpt() ?></p> <?php endwhile;
-                                                                                wp_reset_postdata(); // Reset query
-                                                                            endif;
-                                                                                    ?>
-                            <!-- TO FIX excerpt isn't going into the card-text p tag, instead adding p below -->
+                                    <p class="card-text"><?= get_the_excerpt() ?></p> <?php endwhile;
+                                                                                    wp_reset_postdata(); // Reset query
+                                                                                endif;
+                                                                                        ?>
                                 </div>
                             </div>
                             <ul class="mx-2 mt-auto">
@@ -140,12 +140,7 @@
                                     );
                                     $announcements = new WP_Query($announcement_args);
                                     if ($announcements->have_posts()) :
-                                    ?>
-                                <ul class="mx-3 mb-3 fs-6"> <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
-                                        <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted fs-6"><?php echo get_the_date('M j, Y'); ?></span></li> <?php endwhile; ?>
-                                </ul>
-                                <?php wp_reset_postdata(); ?> <?php else : ?> <p class="mx-3 mb-3">No announcements at this time.</p> <?php endif; ?>
-                            <ul class="mx-2 mt-auto">
+                                    ?> <ul class="mx-3 mb-3 fs-6"> <?php while ($announcements->have_posts()) : $announcements->the_post(); ?> <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted" style="white-space: nowrap; font-size: smaller"><?php echo get_the_date('M j, Y'); ?></span></li> <?php endwhile; ?> </ul> <?php wp_reset_postdata(); ?> <?php else : ?> <p class="mx-3 mb-3">No announcements at this time.</p> <?php endif; ?> <ul class="mx-2 mt-auto">
                                 <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
                             </ul>
                         </div>
@@ -163,7 +158,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">The PSA Learning System has the largest selection of courses available for registration for BCPS employees. It acts as a primary training record for current and completed learning.</p>
-                        <ul style="line-height: 1.75;">
+                        <ul class="card-text" style="line-height: 1.75;">
                             <li><a href="/learninghub/external_system/psa-learning-system">PSA Learning System course list</a></li>
                             <li><a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" target="_blank" rel="noopener noreferrer">Visit the PSA Learning System<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a></li>
                         </ul>
@@ -177,7 +172,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">Your Digital Workplace is the hub for discovering the Microsoft 365 (M365) tools available to BC Public Service employees to support their daily work.</p>
-                        <ul style="line-height: 1.75;">
+                        <ul class="card-text" style="line-height: 1.75;">
                             <li><a href="/learninghub/external_system/your-digital-workplace">Your Digital Workplace course list</a></li>
                             <li>
                                 <a href="https://bcgov.sharepoint.com/:u:/r/SitePages/Home.aspx?csf=1&amp;web=1&amp;e=r2fJcZ" target="_blank" rel="noopener noreferrer">Visit Your Digital Workplace<i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i><span class="visually-hidden"> (opens a new window)</span></a>
