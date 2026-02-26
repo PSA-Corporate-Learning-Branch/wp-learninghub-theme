@@ -143,8 +143,8 @@
                                             <!-- <div class="card-body fs-6"> -->
                                             <div class="card-body fs-6 pb-0">
                                                 <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                                <!-- <p class="card-text"><?php get_the_excerpt(); ?></p> -->
-                                                <?php the_excerpt(); ?>
+                                                <p class="card-text"><?= get_the_excerpt() ?></p>
+                                                <!-- <?php the_excerpt(); ?> -->
                                             </div>
                                         </div>
                                     <?php
