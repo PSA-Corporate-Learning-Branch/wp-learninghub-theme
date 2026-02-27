@@ -20,7 +20,7 @@
                         <div class="bg-gov-blue card-header pt-3">
                             <h4 class="text-white mb-1">New courses</h4>
                         </div>
-                        <div class="card-body fs-6">
+                        <div class="card-body pb-2 fs-6">
                             <?php
                             $recent_courses_args = array(
                                 'post_type' => 'course',
@@ -33,7 +33,7 @@
 
                             if ($recent_courses->have_posts()) :
                             ?>
-                                <ul class="card-text">
+                                <ul class="card-text ps-3">
                                     <?php while ($recent_courses->have_posts()) : $recent_courses->the_post(); ?>
                                         <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                                     <?php endwhile; ?>
@@ -92,7 +92,7 @@
             ?>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
                         <div class="col mb-3">
-                            <div class="card shadow px-1 flex-column h-100">
+                            <div class="card shadow px-2 flex-column h-100">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -102,17 +102,17 @@
                                     </div>
                                     <h4 class="ms-2 pt-3 pb-2">Blog</h4>
                                 </div>
-                                <div class="card rounded mx-3 mb-3">
-                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
-                                                <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                            </a> <?php endif; ?> </div>
+                                <div class="card rounded mx-3 mb-3 position-relative">
+                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> 
+                                            <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
+                                             <?php endif; ?> </div>
                                     <div class="card-body fs-6">
-                                        <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h5>
+                                        <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>" class="stretched-link"><?= the_title() ?></a></h5>
                                         <p class="card-text"><?= get_the_excerpt() ?></p> <?php endwhile;
                                                                                         wp_reset_postdata(); // Reset query
                                                                                     endif;
                                                                                             ?>
-                                <!-- TO FIX excerpt isn't going into the card-text p tag, instead adding p below -->
+                                
                                     </div>
                                 </div>
                                 <ul class="ms-2 mt-auto">
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="col mb-3">
-                            <div class="card shadow px-1 flex-column h-100">
+                            <div class="card shadow px-2 flex-column h-100">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -144,18 +144,17 @@
                                 if ($learner_story->have_posts()) :
                                     while ($learner_story->have_posts()) : $learner_story->the_post();
                                 ?>
-                                        <div class="card mx-3 rounded mb-3">
+                                        <div class="card mx-3 rounded mb-3 position-relative">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-                                                <div class="rounded-top"> <a href="<?php the_permalink(); ?>" class="text-decoration-none p-0">
-                                                        <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                                    </a> </div>
+                                                <div class="rounded-top"> 
+                                                    <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
+                                                     </div>
                                             <?php endif; ?>
                                             <!-- <div class="card-body fs-6"> -->
                                             <div class="card-body fs-6 pb-0">
-                                                <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                                <!-- <p class="card-text"><?php get_the_excerpt(); ?></p> -->
-                                                <?php the_excerpt(); ?>
+                                                <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>" class="stretched-link"><?php the_title(); ?></a></h5>
+                                                <p><?= get_the_excerpt() ?></p>
                                             </div>
                                         </div>
                                     <?php
@@ -166,7 +165,7 @@
                                     <p class="mx-3 mb-3">No learning stories at this time.</p>
                                 <?php endif; ?>
                                 <ul class="ms-2 mt-auto">
-                                    <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read the latest learning stories</a></li>
+                                    <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read all learning stories</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -186,14 +185,14 @@
                                     'post_type'      => 'post',
                                     'post_status'    => 'publish',
                                     'category_name'  => 'announcement',
-                                    'posts_per_page' => 3,
+                                    'posts_per_page' => 5,
                                     'orderby'        => 'date',
                                     'order'          => 'DESC',
                                 );
                                 $announcements = new WP_Query($announcement_args);
                                 if ($announcements->have_posts()) :
                                 ?>
-                                    <ul class="ms-3 mb-3 fs-6">
+                                    <ul class="me-2 mb-3 fs-6">
                                         <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
                                             <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted" style="white-space: nowrap; font-size: smaller"><?php echo get_the_date('M j, Y'); ?></span></li>
                                         <?php endwhile; ?>

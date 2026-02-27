@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-lg-4 pe-lg-0">
                     <div class="card shadow-sm">
-                        <div class="bg-gov-blue card-header">
+                        <div class="bg-gov-green card-header">
                             <div class="d-flex align-items-center">
                                 <div class="icon-square flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -27,11 +27,11 @@
                                 <h4 class="text-white ms-2 my-0">Today's live learning</h4>
                             </div>
                         </div>
-                        <div class="card-body fs-6">
-                            <ul class="card-text list-unstyled">
-                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M464 256a208 208 0 1 1 -416 0 208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0 256 256 0 1 0 -512 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg> <strong>10a:</strong> Change Management Foundations (MS Teams)</li>
-                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M464 256a208 208 0 1 1 -416 0 208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0 256 256 0 1 0 -512 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg> <strong>Noon:</strong> Senior Leader Learning: Budgets (MS Teams)</li>
-                                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M464 256a208 208 0 1 1 -416 0 208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0 256 256 0 1 0 -512 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg> <strong>1:30p:</strong> Supervising in the BC Public Service (Zoom)</li>
+                        <div class="card-body pb-2 fs-6">
+                            <ul class="card-text list-time">
+                                <li class="mb-2"><strong>10a:</strong> Change Management Foundations (MS&nbsp;Teams)</li>
+                                <li class="mb-2"><strong>Noon:</strong> Senior Leader Learning: Budgets (MS&nbsp;Teams)</li>
+                                <li class="mb-2"><strong>1:30p:</strong> Supervising in the BC Public Service (Zoom)</li>
                             </ul>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             ?>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
                         <div class="col mb-3">
-                            <div class="card shadow px-1 flex-column h-100">
+                            <div class="card shadow px-2 flex-column">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -91,17 +91,17 @@
                                     </div>
                                     <h4 class="ms-2 pt-3 pb-2">Blog</h4>
                                 </div>
-                                <div class="card rounded mx-3 mb-3">
-                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> <a href="<?= the_permalink() ?>" class="text-decoration-none p-0">
-                                                <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                            </a> <?php endif; ?> </div>
+                                <div class="card rounded mx-3 mb-3 position-relative">
+                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> 
+                                            <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
+                                             <?php endif; ?> </div>
                                     <div class="card-body fs-6">
-                                        <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h5>
+                                        <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>" class="stretched-link"><?= the_title() ?></a></h5>
                                         <p class="card-text"><?= get_the_excerpt() ?></p> <?php endwhile;
                                                                                         wp_reset_postdata(); // Reset query
                                                                                     endif;
                                                                                             ?>
-                                <!-- TO FIX excerpt isn't going into the card-text p tag, instead adding p below -->
+
                                     </div>
                                 </div>
                                 <ul class="mx-2 mt-auto">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="col mb-3">
-                            <div class="card shadow px-1 flex-column h-100">
+                            <div class="card shadow px-2 flex-column">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -133,17 +133,17 @@
                                 if ($learner_story->have_posts()) :
                                     while ($learner_story->have_posts()) : $learner_story->the_post();
                                 ?>
-                                        <div class="card mx-3 rounded mb-3">
+                                        <div class="card mx-3 rounded mb-3 position-relative">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-                                                <div class="rounded-top"> <a href="<?php the_permalink(); ?>" class="text-decoration-none p-0">
-                                                        <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                                    </a> </div>
+                                                <div class="rounded-top"> 
+                                                    <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
+                                                     </div>
                                             <?php endif; ?>
                                             <!-- <div class="card-body fs-6"> -->
                                             <div class="card-body fs-6 pb-0">
-                                                <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                                                <p class="card-text"><?= get_the_excerpt() ?></p>
+                                                <h5 class="fs-5 card-title"><a href="<?php the_permalink(); ?>" class="stretched-link"><?php the_title(); ?></a></h5>
+                                                <p><?= get_the_excerpt() ?></p>
                                             </div>
                                         </div>
                                     <?php
@@ -154,12 +154,12 @@
                                     <p class="mx-3 mb-3">No learning stories at this time.</p>
                                 <?php endif; ?>
                                 <ul class="mx-2 mt-auto">
-                                    <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read the latest learning stories</a></li>
+                                    <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Learner Story'))); ?>">Read all learning stories</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col mb-3">
-                            <div class="card shadow px-2 flex-column h-100">
+                            <div class="card shadow px-2 flex-column">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -174,14 +174,14 @@
                                     'post_type'      => 'post',
                                     'post_status'    => 'publish',
                                     'category_name'  => 'announcement',
-                                    'posts_per_page' => 3,
+                                    'posts_per_page' => 2,
                                     'orderby'        => 'date',
                                     'order'          => 'DESC',
                                 );
                                 $announcements = new WP_Query($announcement_args);
                                 if ($announcements->have_posts()) :
                                 ?>
-                                    <ul class="ms-3 mb-3 fs-6">
+                                    <ul class="me-2 mb-2 fs-6">
                                         <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
                                             <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted" style="white-space: nowrap; font-size: smaller"><?php echo get_the_date('M j, Y'); ?></span></li>
                                         <?php endwhile; ?>
@@ -190,10 +190,45 @@
                                 <?php else : ?>
                                     <p class="ms-3 mb-3">No announcements at this time.</p>
                                 <?php endif; ?>
-                                <ul class="mx-2 mt-auto">
+                                <ul class="mx-2">
                                     <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
                                 </ul>
                             </div>
+                            <div class="col mt-3">
+                                <div class="card shadow px-2 flex-column mt-3">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
+                                                <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                                <path d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM216 176L160 176C151.2 176 144 183.2 144 192L144 480C144 488.8 151.2 496 160 496L480 496C488.8 496 496 488.8 496 480L496 192C496 183.2 488.8 176 480 176L216 176zM320 240C333.3 240 344 250.7 344 264L344 312L392 312C405.3 312 416 322.7 416 336C416 349.3 405.3 360 392 360L344 360L344 408C344 421.3 333.3 432 320 432C306.7 432 296 421.3 296 408L296 360L248 360C234.7 360 224 349.3 224 336C224 322.7 234.7 312 248 312L296 312L296 264C296 250.7 306.7 240 320 240z" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="ms-2 pt-3 pb-2">New courses</h4>
+                                    </div> <?php
+                                            $recent_courses_args = array(
+                                                'post_type' => 'course',
+                                                'posts_per_page' => 2,
+                                                'orderby' => 'modified', // Orders by last modified date to show recently added/updated
+                                                'order' => 'DESC',
+                                                'post_status' => 'publish'
+                                            );
+                                            $recent_courses = new WP_Query($recent_courses_args);
+                                            if ($recent_courses->have_posts()) :
+                                            ?>
+                                        <ul class="me-3 mb-2 fs-6">
+                                            <?php while ($recent_courses->have_posts()) : $recent_courses->the_post(); ?>
+                                                <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li> <?php endwhile; ?>
+                                        </ul> <?php
+                                                wp_reset_postdata();
+                                            else :
+                                                ?>
+                                        <p class="card-text">No recent courses found.</p> <?php endif; ?>
+                                    <ul class="mx-2 mt-auto">
+                                        <li><a href="/learninghub/filter">View the course catalogue</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <hr>
