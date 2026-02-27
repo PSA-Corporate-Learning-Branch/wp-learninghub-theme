@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-lg-4 pe-lg-0">
                     <div class="card shadow-sm">
-                        <div class="bg-gov-blue card-header pt-3">
+                        <div class="bg-gov-green card-header pt-3">
                             <h4 class="text-white mb-1">New courses</h4>
                         </div>
                         <div class="card-body pb-2 fs-6">
