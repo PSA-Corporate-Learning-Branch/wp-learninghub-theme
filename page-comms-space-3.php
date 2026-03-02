@@ -81,7 +81,7 @@
             ?>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-4">
                         <div class="col mb-3">
-                            <div class="card shadow px-2 flex-column">
+                            <div class="card shadow px-2 flex-column h-100">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -92,9 +92,10 @@
                                     <h4 class="ms-2 pt-3 pb-2">Blog</h4>
                                 </div>
                                 <div class="card rounded mx-3 mb-3 position-relative">
-                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?> 
+                                    <div class="rounded-top"> <?php if (has_post_thumbnail($recent_post->ID)) : ?> <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($recent_post->ID), 'large'); ?>
                                             <img alt="" aria-label="<?= the_title() ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                             <?php endif; ?> </div>
+                                        <?php endif; ?>
+                                    </div>
                                     <div class="card-body fs-6">
                                         <h5 class="fs-5 card-title"><a href="<?= the_permalink() ?>" class="stretched-link"><?= the_title() ?></a></h5>
                                         <p class="card-text"><?= get_the_excerpt() ?></p> <?php endwhile;
@@ -110,7 +111,7 @@
                             </div>
                         </div>
                         <div class="col mb-3">
-                            <div class="card shadow px-2 flex-column">
+                            <div class="card shadow px-2 flex-column h-100">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -136,9 +137,9 @@
                                         <div class="card mx-3 rounded mb-3 position-relative">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-                                                <div class="rounded-top"> 
+                                                <div class="rounded-top">
                                                     <img alt="" aria-label="<?php the_title_attribute(); ?>" style="height:10vh;" class="card-img-top object-fit-cover rounded-top " src="<?php echo $image[0]; ?>">
-                                                     </div>
+                                                </div>
                                             <?php endif; ?>
                                             <!-- <div class="card-body fs-6"> -->
                                             <div class="card-body fs-6 pb-0">
@@ -159,43 +160,43 @@
                             </div>
                         </div>
                         <div class="col mb-3">
-                            <div class="card shadow px-2 flex-column">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
-                                            <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                                            <path d="M525.2 82.9C536.7 88 544 99.4 544 112L544 528C544 540.6 536.7 552 525.2 557.1C513.7 562.2 500.4 560.3 490.9 552L444.3 511.3C400.7 473.2 345.6 451 287.9 448.3L287.9 544C287.9 561.7 273.6 576 255.9 576L223.9 576C206.2 576 191.9 561.7 191.9 544L191.9 448C121.3 448 64 390.7 64 320C64 249.3 121.3 192 192 192L276.5 192C338.3 191.8 397.9 169.3 444.4 128.7L491 88C500.4 79.7 513.9 77.8 525.3 82.9zM288 384L288 384.2C358.3 386.9 425.8 412.7 480 457.6L480 182.3C425.8 227.2 358.3 253 288 255.7L288 384z" />
-                                        </svg>
+                            <div class="d-flex flex-column h-100">
+                                <div class="card shadow px-2 h-100">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
+                                                <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                                <path d="M525.2 82.9C536.7 88 544 99.4 544 112L544 528C544 540.6 536.7 552 525.2 557.1C513.7 562.2 500.4 560.3 490.9 552L444.3 511.3C400.7 473.2 345.6 451 287.9 448.3L287.9 544C287.9 561.7 273.6 576 255.9 576L223.9 576C206.2 576 191.9 561.7 191.9 544L191.9 448C121.3 448 64 390.7 64 320C64 249.3 121.3 192 192 192L276.5 192C338.3 191.8 397.9 169.3 444.4 128.7L491 88C500.4 79.7 513.9 77.8 525.3 82.9zM288 384L288 384.2C358.3 386.9 425.8 412.7 480 457.6L480 182.3C425.8 227.2 358.3 253 288 255.7L288 384z" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="ms-2 pt-3 pb-2">Announcements</h4>
                                     </div>
-                                    <h4 class="ms-2 pt-3 pb-2">Announcements</h4>
-                                </div>
-                                <?php
-                                $announcement_args = array(
-                                    'post_type'      => 'post',
-                                    'post_status'    => 'publish',
-                                    'category_name'  => 'announcement',
-                                    'posts_per_page' => 2,
-                                    'orderby'        => 'date',
-                                    'order'          => 'DESC',
-                                );
-                                $announcements = new WP_Query($announcement_args);
-                                if ($announcements->have_posts()) :
-                                ?>
-                                    <ul class="me-2 mb-2 fs-6">
-                                        <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
-                                            <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted" style="white-space: nowrap; font-size: smaller"><?php echo get_the_date('M j, Y'); ?></span></li>
-                                        <?php endwhile; ?>
+                                    <?php
+                                    $announcement_args = array(
+                                        'post_type'      => 'post',
+                                        'post_status'    => 'publish',
+                                        'category_name'  => 'announcement',
+                                        'posts_per_page' => 2,
+                                        'orderby'        => 'date',
+                                        'order'          => 'DESC',
+                                    );
+                                    $announcements = new WP_Query($announcement_args);
+                                    if ($announcements->have_posts()) :
+                                    ?>
+                                        <ul class="me-2 mb-2 fs-6">
+                                            <?php while ($announcements->have_posts()) : $announcements->the_post(); ?>
+                                                <li class="mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="text-muted" style="white-space: nowrap; font-size: smaller"><?php echo get_the_date('M j, Y'); ?></span></li>
+                                            <?php endwhile; ?>
+                                        </ul>
+                                        <?php wp_reset_postdata(); ?>
+                                    <?php else : ?>
+                                        <p class="ms-3 mb-3">No announcements at this time.</p>
+                                    <?php endif; ?>
+                                    <ul class="mx-2 mt-auto">
+                                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
                                     </ul>
-                                    <?php wp_reset_postdata(); ?>
-                                <?php else : ?>
-                                    <p class="ms-3 mb-3">No announcements at this time.</p>
-                                <?php endif; ?>
-                                <ul class="mx-2">
-                                    <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('Announcement'))); ?>">Read all announcements</a></li>
-                                </ul>
-                            </div>
-                            <div class="col mt-3">
-                                <div class="card shadow px-2 flex-column mt-3">
+                                </div>
+                                <div class="card shadow px-2 h-100 mt-3">
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 blue-fill align-self-start icon-square pt-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-lg">
@@ -228,7 +229,6 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <hr>
