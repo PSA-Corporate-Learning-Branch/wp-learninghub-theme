@@ -13,6 +13,7 @@
 get_header();
 
 $termid = get_queried_object()->term_id;
+$partner_source_id = get_term_meta($termid, 'learning_partner_source_id', true) ?: $termid;
 $termtitle = get_the_archive_title();
 $description = get_the_archive_description();
 $taxquery = array(
@@ -95,7 +96,7 @@ $post_my_query = new WP_Query($post_args);
                 </div>
                 <div class="col-md-4">
 
-                    <?php get_template_part('template-parts/sidebar/taxonomies', null, array('termid' => $termid)); ?>
+                    <?php get_template_part('template-parts/sidebar/taxonomies', null, array('termid' => $partner_source_id)); ?>
 
 
                 </div>
