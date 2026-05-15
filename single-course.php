@@ -65,7 +65,7 @@ while (have_posts()) :
                                     </svg>
                                     <span class="topic">Topic:
                                         <?php $to = get_the_terms($post->ID, 'topics'); ?>
-                                        <a href="/learninghub/filter/?topic[]=<?= $to[0]->slug ?>" class=" fw-normal"><?= $to[0]->name ?></a>
+                                        <a href="/learninghub/catalog/?topic[]=<?= $to[0]->slug ?>" class=" fw-normal"><?= $to[0]->name ?></a>
                                     </span>
                                 </div>
 
@@ -75,7 +75,7 @@ while (have_posts()) :
                                     </svg>
                                     <span class="audience">Audience:
                                         <?php $au = get_the_terms($post->ID, 'audience'); ?>
-                                        <a href="/learninghub/filter/?audience[]=<?= $au[0]->slug ?>" class=" fw-normal"><?= $au[0]->name ?></a>
+                                        <a href="/learninghub/catalog/?audience[]=<?= $au[0]->slug ?>" class=" fw-normal"><?= $au[0]->name ?></a>
                                     </span>
                                 </div>
                                 <div title="Delivery Method">
@@ -84,7 +84,7 @@ while (have_posts()) :
                                     </svg>
                                     <span class="dm">Delivery Method:
                                         <?php $dms = get_the_terms($post->ID, 'delivery_method') ?>
-                                        <a href="/learninghub/filter/?delivery_method[]=<?= $dms[0]->slug ?>" class=" fw-normal"><?= $dms[0]->name ?></a>
+                                        <a href="/learninghub/catalog/?delivery_method[]=<?= $dms[0]->slug ?>" class=" fw-normal"><?= $dms[0]->name ?></a>
                                     </span>
                                 </div>
                                 <div class="mb-0">Partner: <span class="partners fw-normal text-decoration-underline"><?php the_terms($post->ID, 'learning_partner'); ?></span></div>

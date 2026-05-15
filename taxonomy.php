@@ -72,11 +72,18 @@ $post_args = array(
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
 
-// Setup URLs
-$gr = ''; if($groupterm) $gr = 'groups/' . $groupterm . '/';
-$to = ''; if($topicterm) $to = 'topics/' . $topicterm . '/';
-$aud = ''; if($audienceterm) $aud = 'audience/' . $audienceterm . '/';
-$dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
+// Build URL query-string fragments for cross-linking into the Catalog page.
+// Each fragment is either an empty string (no active term) or "&key[]=slug".
+$gr  = $groupterm    ? '&groups[]='          . rawurlencode( $groupterm )    : '';
+$to  = $topicterm    ? '&topic[]='           . rawurlencode( $topicterm )    : '';
+$aud = $audienceterm ? '&audience[]='        . rawurlencode( $audienceterm ) : '';
+$dm  = $dmterm       ? '&delivery_method[]=' . rawurlencode( $dmterm )       : '';
+
+// Helper: assemble a /catalog/ URL from a list of query-string fragments.
+$catalog_url = function ( $parts ) {
+    $qs = ltrim( implode( '', $parts ), '&' );
+    return '/learninghub/catalog/' . ( $qs !== '' ? '?' . $qs : '' );
+};
 ?>
 
 	<div class="wp-block-columns alignwide" style="padding-top: 2em;">
@@ -114,7 +121,7 @@ $dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
 	<?php foreach($topics as $t): ?>
 		<?php $active = ''; if($t->slug == $topicterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/<?= $gr ?>topics/<?= $t->slug ?>/<?= $aud ?><?= $dms ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&topic[]=' . rawurlencode( $t->slug ), $gr, $aud, $dm ) ) ) ?>">
 				<?= $t->name ?>
 			</a>
 			(<?= $t->count ?>)
@@ -134,7 +141,7 @@ $dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
 	<?php foreach($audiences as $a): ?>
 		<?php $active = ''; if($a->slug == $audienceterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/<?= $gr ?><?= $to ?>audience/<?= $a->slug ?>/<?= $dms ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&audience[]=' . rawurlencode( $a->slug ), $gr, $to, $dm ) ) ) ?>">
 				<?= $a->name ?>
 			</a>
 			(<?= $a->count ?>)
@@ -154,7 +161,7 @@ $dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
 	<?php foreach($dms as $d): ?>
 		<?php $active = ''; if($d->slug == $dmterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/filter/<?= $gr ?><?= $to ?><?= $aud ?>delivery_method/<?= $d->slug ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&delivery_method[]=' . rawurlencode( $d->slug ), $gr, $to, $aud ) ) ) ?>">
 				<?= $d->name ?>
 			</a>
 			(<?= $d->count ?>)
@@ -169,41 +176,36 @@ $dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
 		<div><strong>Filters:</strong></div>
 		<?php if($groupterm): ?>
 		<div class="">
-		<?php $home = ''; if(!$to && !$aud && !$dm) $home = 'course/'; ?>
-			<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;" 
-				href="/learninghub/filter/<?= $home ?><?= $to ?><?= $aud ?><?= $dm ?>">
-					<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span> 
+			<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
+				href="<?= esc_url( $catalog_url( array( $to, $aud, $dm ) ) ) ?>">
+					<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $gterm->name ?></strong>
-			
 		</div>
 		<?php endif ?>
 		<?php if($topicterm): ?>
 		<div class="">
-		<?php $home = ''; if(!$gr && !$aud && !$dm) $home = 'course/'; ?>
-		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;" 
-			href="/learninghub/filter/<?= $home ?><?= $gr ?><?= $aud ?><?= $dm ?>">
-				<span style="hover:background-color: #145693; background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span> 
+		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
+			href="<?= esc_url( $catalog_url( array( $gr, $aud, $dm ) ) ) ?>">
+				<span style="hover:background-color: #145693; background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $tterm->name ?></strong>
 		</div>
 		<?php endif ?>
 		<?php if($audienceterm): ?>
 		<div class="">
-		<?php $home = ''; if(!$gr && !$to && !$dm) $home = 'course/'; ?>
-		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;" 
-			href="/learninghub/filter/<?= $home ?><?= $gr ?><?= $to ?><?= $dm ?>">
-				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span> 
+		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
+			href="<?= esc_url( $catalog_url( array( $gr, $to, $dm ) ) ) ?>">
+				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $aterm->name ?></strong>
 		</div>
 		<?php endif ?>
 		<?php if($dmterm): ?>
 		<div class="">
-		<?php $home = ''; if(!$gr && !$to && !$aud) $home = 'course/'; ?>
-		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;" 
-			href="/learninghub/filter/<?= $home ?><?= $gr ?><?= $to ?><?= $aud ?>">
-				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span> 
+		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
+			href="<?= esc_url( $catalog_url( array( $gr, $to, $aud ) ) ) ?>">
+				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $dterm->name ?></strong>
 		</div>

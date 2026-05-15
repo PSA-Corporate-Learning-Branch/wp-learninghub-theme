@@ -11,7 +11,7 @@
                     <li class="mb-1"><a href="/learninghub/corporate-learning-partners/">Corporate Learning Partners</a></li>
                     <li class="mb-1"><a href="/learninghub/intake/">Intake for Corporate Learning</a></li>
                     <li class="mb-1"><a href="https://corporatelearning.gww.gov.bc.ca/learn-at-work-week/">Learn @ Work Week</a></li>
-                    <li class="mb-1"><a href="/learninghub/filter/">All Courses</a></li>
+                    <li class="mb-1"><a href="/learninghub/catalog/">All Courses</a></li>
                     <li class="mb-1"><a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
                     <li class="mb-1"><a href="/learninghub/categories/">Course Categorization</a></li>
                     <li class="mb-1"><a href="/learninghub/learning-systems/">Learning Platforms</a></li>

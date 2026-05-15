@@ -138,7 +138,7 @@
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Courses</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/learninghub/filter/">All Courses</a></li>
+                                <li><a class="dropdown-item" href="/learninghub/catalog/">All Courses</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational Learning</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/categories/">Course Categorization</a></li>
                                 <li><a class="dropdown-item" href="/learninghub/learning-systems/">Learning Platforms</a></li>
@@ -178,10 +178,9 @@
                     </ul>
                 </div>
                 <!-- <a href="/learninghub/filter/" class="btn btn-primary">Search the catalogue</a> -->
-                <form method="get" action="/learninghub/filter/" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
+                <form method="get" action="<?php echo esc_url( home_url( '/catalog/' ) ); ?>" data-bs-theme="light" class="collapse navbar-collapse row g-1 flex-nowrap" role="search" id="navbarSearch">
                     <label for="keyword" class="visually-hidden">Search</label>
-                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control" name="keyword" placeholder="Search catalogue" required value="<?php //esc_html($_GET['keyword']) 
-                                                                                                                                                                                            ?>"></div>
+                    <div class="col-auto flex-grow-1 flex-shrink-1"><input type="search" id="keyword" class="s form-control" name="s" placeholder="Search catalogue" required value="<?php echo isset( $_GET['s'] ) ? esc_attr( wp_unslash( $_GET['s'] ) ) : ''; ?>"></div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-secondary" aria-label="Submit Search">
                             Search

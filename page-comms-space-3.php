@@ -11,7 +11,7 @@
                 <div class="col-lg-8 mb-4 mb-lg-0 ps-lg-0">
                     <h2>What is corporate learning?</h2>
                     <p>The PSA Corporate Learning Branch and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue of corporate offerings.</p>
-                    <a href="/learninghub/filter/" class="btn btn-lg btn-primary mt-2 mb-5 py-2 fs-4">Corporate learning catalogue</a>
+                    <a href="/learninghub/catalog/" class="btn btn-lg btn-primary mt-2 mb-5 py-2 fs-4">Corporate learning catalogue</a>
                     <h3>Not sure where to start?</h3>
                     <p>Get the details on <a href="/learninghub/foundational-corporate-learning/">Mandatory and Foundational learning</a> for all employees and people leaders in their first year and beyond.</p>
                 </div>
@@ -225,7 +225,7 @@
                                                 ?>
                                         <p class="card-text">No recent courses found.</p> <?php endif; ?>
                                     <ul class="mx-2 mt-auto">
-                                        <li><a href="/learninghub/filter">View the course catalogue</a></li>
+                                        <li><a href="/learninghub/catalog/">View the course catalogue</a></li>
                                     </ul>
                                 </div>
                             </div>

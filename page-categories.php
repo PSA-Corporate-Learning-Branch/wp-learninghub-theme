@@ -59,7 +59,7 @@ get_header();
                                 <?php foreach ($topics as $t) : ?>
                                     <div class="col-lg-4  mb-3">
                                         <div class="card shadow-sm h-100">
-                                            <a href="/learninghub/filter/?topic%5B%5D=<?= $t->slug ?>" class="text-decoration-none stretched-link">
+                                            <a href="/learninghub/catalog/?topic%5B%5D=<?= $t->slug ?>" class="text-decoration-none stretched-link">
                                                 <div class="rounded px-3 py-2 m-0 topic-card rounded-bottom-0"><?= $t->name ?></div>
                                             </a>
                                             <?php $desc = 'No description set';
@@ -105,7 +105,7 @@ get_header();
                                     ?>
                                     <?php foreach ($audiences as $a) : ?>
                                         <li>
-                                            <a href="/learninghub/filter/?audience%5B%5D=<?= $a->slug ?>"><?= $a->name ?></a>:
+                                            <a href="/learninghub/catalog/?audience%5B%5D=<?= $a->slug ?>"><?= $a->name ?></a>:
                                             <?= $a->description ?>
                                         </li>
                                     <?php endforeach ?>
@@ -146,7 +146,7 @@ get_header();
                                     ?>
                                     <?php foreach ($delivery as $d) : ?>
                                         <li>
-                                            <a href="/learninghub/filter/?delivery_method%5B%5D=<?= $d->slug ?>"><?= $d->name ?></a>:
+                                            <a href="/learninghub/catalog/?delivery_method%5B%5D=<?= $d->slug ?>"><?= $d->name ?></a>:
                                             <?= $d->description ?>
                                         </li>
                                     <?php endforeach ?>
