@@ -53,6 +53,15 @@ $post_my_query = new WP_Query($post_args);
     <div class="bg-secondary-subtle">
         <div class="container-lg p-lg-5 p-4 bg-light-subtle">
             <h2>Offered by <?= str_replace('Learning Partners:', '', $termtitle) ?></h2>
+            <?php $partner_url = get_term_meta($termid, 'partner-url', true); ?>
+            <?php if (!empty($description)) : ?>
+                <div class="partner-description mb-2"><?= $description ?></div>
+            <?php endif; ?>
+            <?php if (!empty($partner_url)) : ?>
+                <p class="partner-url mb-3">
+                    <a href="<?= esc_url($partner_url) ?>" target="_blank" rel="noopener noreferrer">View Partner Website</a>
+                </p>
+            <?php endif; ?>
             <?php
             $partners = get_categories(
                 array(
