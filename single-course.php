@@ -50,9 +50,13 @@ while (have_posts()) :
                             <?php endif ?>
 
                         <?php else : ?>
-
                             <!-- There's no course link. What to do? -->
-
+                            <?php if (!empty($post->persist_state == 'inactive')) : ?>
+                                <div class="alert alert-warning mt-3">
+                                    <?= $post->persist_message ?>
+                                </div>
+                            <?php endif ?>
+    
                         <?php endif ?>
 
 
