@@ -60,7 +60,7 @@ get_header();
                                 <td>All employees</td>
                             </tr>
                             <tr>
-                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></td>
+                                <td><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-handbook-people-leaders/" target="_blank" rel="noopener">HR Foundations Handbook for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></td>
                                 <td>Enrol in course as resource</td>
                                 <td>People Leaders <br><small>(in first year supervising others)</small>
                                 </td>
@@ -171,7 +171,7 @@ get_header();
                             <p>This is the <strong>suggested time frame</strong> for completing your foundational learning, in addition to the All Employees learning above. </p>
                             <h5>Month 1 to 3</h5>
                             <ul class="mb-4">
-                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-handbook-people-leaders/" target="_blank" rel="noopener">HR Foundations Handbook for People Leaders<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/supervising-bcps/" target="_blank" rel="noopener">Supervising in the BC Public Service (SBCPS)<span class="visually-hidden"> (opens in new window)</span></a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                                 <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
                             </ul>
@@ -194,7 +194,7 @@ get_header();
                             <p>After your first year, this is the suggested time frame for completing your mandatory and foundational learning.</p>
                             <h5>At your own pace</h5>
                             <ul class="mb-4">
-                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/" target="_blank" rel="noopener">HR Foundations for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
+                                <li>Enrol in <a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/hr-foundations-handbook-people-leaders/" target="_blank" rel="noopener">HR Foundations Handbook for People Leaders<span class="visually-hidden"> (opens in new window)</span></a></li>
                                 <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-leading-in-the-bcps/" target="_blank" rel="noopener">Intro to Leading in the BCPS</a></li>
                                 <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-effective-communication/" target="_blank" rel="noopener">Intro to Effective Communication</a></li>
                                 <li><a href="https://corporatelearning.gww.gov.bc.ca/learninghub/course/intro-to-coaching/" target="_blank" rel="noopener">Intro to Coaching<span class="visually-hidden"> (opens in new window)</span></a></li>
@@ -206,10 +206,6 @@ get_header();
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 </div>
