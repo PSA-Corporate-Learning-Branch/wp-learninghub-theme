@@ -22,7 +22,7 @@
         <div class="mt-3">
             <h5>Are you a partner administrator?</h5>
             <p>Looking to update the courses for this Corporate Learning Partner?</p>
-            <div><a href="https://gww.bcpublicservice.gov.bc.ca/learning/hub/partners/dashboard.php?partnerid=<?= esc_attr($args['termid']) ?>" class="btn btn-sm btn-primary">Administer this partner</a></div>
+            <div><a href="https://gww.bcpublicservice.gov.bc.ca/learninghub/partners/dashboard.php?partnerid=<?= esc_attr($args['termid']) ?>" class="btn btn-sm btn-primary">Administer this partner</a></div>
         </div>
         <?php endif; ?>
 
