@@ -2,7 +2,7 @@
  * Theme Name:        LearningHUB
  * Theme URI:         https://learningcentre.gwww.gov.bc.ca/learninghub/
  * Description:       A simple classic custom theme for LearningHUB. 
- * Version:           1.4
+ * Version:           1.5
  * Author:            Nori Sinclair (primarily) & Allan Haggett
  * Author URI:        https://learningcentre.gwww.gov.bc.ca/
  * Text Domain:       learninghub
@@ -649,4 +649,79 @@ ul.list-time>li:before {
     background-repeat: no-repeat;
     background-size: 1rem 1rem;
     /* place the content at the start of the padding */
+}
+
+/* ---------------------------------------------------------------------------
+   Catalogue filter term descriptions — CSS only, no JavaScript.
+   Bootstrap's own .popover / .popover-header / .popover-body supply the look,
+   and :focus-within does the showing, which is the same trigger behaviour
+   (data-bs-trigger="focus") as the Popper-driven version this replaces.
+   Deliberately NOT the top-layer Popover API: a top-layer element positions
+   against the viewport rather than its trigger, which is why that route needs
+   either JS or CSS anchor positioning to tether. Plain absolute positioning
+   inside a relative wrapper just works, in every browser.
+   --------------------------------------------------------------------------- */
+
+.lh-info {
+    position: relative;
+    display: inline-block;
+}
+
+/* The icon was a hard-coded #999, which is only 2.85:1 on the light-mode panel
+   and fails the 3:1 WCAG 1.4.11 floor for UI components. These both clear it:
+   #767676 is 4.54:1 on white, #999 is 5.41:1 on the dark body. */
+.lh-info-btn {
+    color: #767676;
+}
+
+[data-bs-theme=dark] .lh-info-btn {
+    color: #999;
+}
+
+.lh-info-popover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    translate: 0 -50%;
+    margin-left: var(--bs-popover-arrow-height);
+    /* The wrapper is only as wide as the icon, and an absolutely positioned box
+       shrink-to-fits against its containing block — so size to content instead
+       and let Bootstrap's max-width do the clamping, as Popper would have. */
+    width: max-content;
+    max-width: min(var(--bs-popover-max-width), calc(100vw - 2rem));
+    /* The .popover class pads nothing; header and body own their spacing. */
+    padding: 0;
+    z-index: var(--bs-popover-zindex, 1070);
+}
+
+.lh-info:focus-within .lh-info-popover {
+    display: block;
+}
+
+/* Bootstrap styles the arrow but leaves it statically positioned — Popper is
+   what sets `position: absolute` and the offset inline at runtime. Without
+   Popper we do both ourselves; placement here is always "end", so the arrow
+   just centres on the popover's leading edge. */
+.lh-info-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Near the narrow end of the viewport there is no room to the right of the
+   trigger, so drop the panel below it and hide the arrow rather than let it
+   point sideways at nothing. */
+@media (max-width: 575.98px) {
+    .lh-info-popover {
+        top: 100%;
+        left: auto;
+        right: 0;
+        translate: none;
+        margin: 0.25rem 0 0;
+    }
+
+    .lh-info-arrow {
+        display: none;
+    }
 }

@@ -202,10 +202,11 @@ get_header();
                                 <?php if ( $kw !== '' ) : ?>
                                     <div class="col-md-auto mb-2">
                                         <div>Keyword</div>
-                                        <div aria-label="remove keyword: <?php echo esc_attr( $kw ); ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a href="<?php echo esc_url( lzone_catalog_url( array( 's' => null ) ) ); ?>" class="text-secondary-emphasis text-decoration-none">
+                                        <?php // The label belongs on the link: on the wrapping div it has no role to attach to and is ignored. ?>
+                                        <div class="badge bg-dark-subtle border-0 fw-normal">
+                                            <a href="<?php echo esc_url( lzone_catalog_url( array( 's' => null ) ) ); ?>" class="text-secondary-emphasis text-decoration-none" aria-label="Remove keyword: <?php echo esc_attr( $kw ); ?>">
                                                 <span><?php echo esc_html( $kw ); ?></span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                 </svg>
                                             </a>
@@ -225,10 +226,10 @@ get_header();
                                     <div class="col-md-auto mb-2">
                                         <div><?php echo esc_html( $cg['label'] ); ?></div>
                                         <?php foreach ( $cg['terms'] as $term ) : ?>
-                                            <div aria-label="remove filter: <?php echo esc_attr( $term->name ); ?>" class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
-                                                <a href="<?php echo esc_url( lzone_catalog_remove_term( $cg['param'], $term->slug ) ); ?>" class="text-secondary-emphasis text-decoration-none">
+                                            <div class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
+                                                <a href="<?php echo esc_url( lzone_catalog_remove_term( $cg['param'], $term->slug ) ); ?>" class="text-secondary-emphasis text-decoration-none" aria-label="Remove <?php echo esc_attr( $cg['label'] ); ?> filter: <?php echo esc_attr( $term->name ); ?>">
                                                     <?php echo esc_html( $term->name ); ?>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                     </svg>
                                                 </a>
@@ -245,8 +246,51 @@ get_header();
                     <?php endif; ?>
 
                     <noscript>
-                        <p class="alert alert-info fs-6 mt-2">JavaScript is disabled. Use the <em>Apply</em> button below each filter group to update the list.</p>
+                        <style>
+                            /* Everything below only applies when JavaScript is off, so the
+                               scripted layout is untouched. Three Bootstrap widgets on this
+                               page need JS to operate; without it their content is either
+                               unreachable or the control is dead. */
+
+                            /* Accordion: cannot be expanded, so show every filter group
+                               open and drop the affordances on the inert toggles. */
+                            #filterCategories .accordion-collapse { display: block !important; }
+                            #filterCategories .accordion-button { pointer-events: none; }
+                            #filterCategories .accordion-button::after { display: none; }
+
+                            /* Course details: each "More info" is a real fragment link to
+                               #course-<id>, which Bootstrap only intercepts when it is
+                               running. Unintercepted, the click still navigates, so :target
+                               reveals that one panel — the same one-at-a-time behaviour the
+                               collapse gives, with no change to the markup. */
+                            #results .collapse:target { display: block; }
+
+                            /* Expand/Collapse-all are script-only; hide rather than leave
+                               two buttons that do nothing. */
+                            #expall, #collapseall { display: none; }
+
+                            /* Sort menu: the options are ordinary links, only the disclosure
+                               needs JS. Show the list inline and leave the toggle as a label
+                               so the current sort is still named. */
+                            #results .dropdown-toggle { pointer-events: none; }
+                            #results .dropdown-toggle::after { display: none; }
+                            #results .dropdown-menu { display: block; position: static; }
+                        </style>
                     </noscript>
+
+                    <?php
+                    // A single form wraps all three filter groups, so any combination
+                    // of topic / audience / delivery checkboxes is submitted together
+                    // by the Apply button below. No JavaScript is involved.
+                    ?>
+                    <form action="<?php echo esc_url( get_permalink() ); ?>" method="get">
+                        <?php // Preserve keyword and sort across a filter submission. ?>
+                        <?php if ( $kw !== '' ) : ?>
+                            <input type="hidden" name="s" value="<?php echo esc_attr( $kw ); ?>">
+                        <?php endif; ?>
+                        <?php if ( $orderby_param !== '' ) : ?>
+                            <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby_param ); ?>">
+                        <?php endif; ?>
 
                     <div class="accordion" id="filterCategories">
                         <?php
@@ -301,50 +345,55 @@ get_header();
                                 </h4>
                                 <div id="<?php echo esc_attr( $group['collapse'] ); ?>" class="accordion-collapse collapse <?php echo $has_active ? 'show' : ''; ?>" aria-labelledby="<?php echo esc_attr( $group['heading_id'] ); ?>">
                                     <div class="accordion-body bg-light-subtle p-3">
-                                        <form action="<?php echo esc_url( get_permalink() ); ?>" method="GET">
-                                            <?php // Preserve keyword, other taxonomy selections, and sort. ?>
-                                            <?php if ( $kw !== '' ) : ?>
-                                                <input type="hidden" name="s" value="<?php echo esc_attr( $kw ); ?>">
-                                            <?php endif; ?>
-                                            <?php if ( $orderby_param !== '' ) : ?>
-                                                <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby_param ); ?>">
-                                            <?php endif; ?>
-                                            <?php foreach ( $filter_groups as $other ) : ?>
-                                                <?php if ( $other['param'] === $group['param'] ) { continue; } ?>
-                                                <?php if ( ! empty( $_GET[ $other['param'] ] ) && is_array( $_GET[ $other['param'] ] ) ) : ?>
-                                                    <?php foreach ( $_GET[ $other['param'] ] as $val ) : ?>
-                                                        <input type="hidden" name="<?php echo esc_attr( $other['param'] ); ?>[]" value="<?php echo esc_attr( $val ); ?>">
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
+                                        <fieldset>
+                                            <legend class="visually-hidden">Filter by <?php echo esc_html( $group['label'] ); ?></legend>
 
                                             <?php foreach ( $items as $item ) : ?>
                                                 <?php
                                                 $active   = in_array( $item->slug, $current, true ) ? 'checked' : '';
-                                                $desc     = ! empty( $item->description ) ? $item->description : 'No description set';
+                                                $has_desc = ! empty( $item->description );
+                                                $desc     = $item->description;
                                                 $input_id = $group['param'] . $item->term_id;
+                                                $desc_id  = $input_id . '-desc';
                                                 ?>
                                                 <div class="form-check fs-6">
-                                                    <input class="form-check-input" onchange="this.form.submit()" type="checkbox" value="<?php echo esc_attr( $item->slug ); ?>" name="<?php echo esc_attr( $group['param'] ); ?>[]" id="<?php echo esc_attr( $input_id ); ?>" <?php echo $active; ?>>
+                                                    <input class="form-check-input" type="checkbox" value="<?php echo esc_attr( $item->slug ); ?>" name="<?php echo esc_attr( $group['param'] ); ?>[]" id="<?php echo esc_attr( $input_id ); ?>" <?php echo $has_desc ? 'aria-describedby="' . esc_attr( $desc_id ) . '"' : ''; ?> <?php echo $active; ?>>
                                                     <label for="<?php echo esc_attr( $input_id ); ?>" class="<?php echo $active === 'checked' ? 'fw-semibold' : ''; ?>"><?php echo esc_html( $item->name ); ?></label>
-                                                    <a aria-label="<?php echo esc_attr( $item->name ); ?>" tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="<?php echo esc_attr( $group['label'] ); ?> description" data-bs-content="<?php echo esc_attr( $desc ); ?>">
-                                                        <span class="icon-svg baseline-svg">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                                                <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                                            </svg>
+                                                    <?php
+                                                    // Description panel: shown by :focus-within when the button takes focus,
+                                                    // so no JavaScript is involved. Bootstrap's .popover classes give it the
+                                                    // same appearance as the Popper-driven popover this replaced, and the
+                                                    // panel doubles as the checkbox's aria-describedby target.
+                                                    ?>
+                                                    <?php if ( $has_desc ) : ?>
+                                                        <span class="lh-info">
+                                                            <button type="button" class="lh-info-btn p-0 border-0 bg-transparent align-baseline" aria-label="About <?php echo esc_attr( $item->name ); ?>">
+                                                                <span class="icon-svg baseline-svg">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                                                                        <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                            <span id="<?php echo esc_attr( $desc_id ); ?>" class="popover bs-popover-end lh-info-popover" role="tooltip">
+                                                                <span class="popover-arrow lh-info-arrow"></span>
+                                                                <span class="popover-header d-block"><?php echo esc_html( $group['label'] ); ?> description</span>
+                                                                <span class="popover-body d-block"><?php echo esc_html( $desc ); ?></span>
+                                                            </span>
                                                         </span>
-                                                    </a>
+                                                    <?php endif; ?>
                                                 </div>
                                             <?php endforeach; ?>
-                                            <noscript>
-                                                <button type="submit" class="btn btn-sm bg-gov-green mt-2">Apply</button>
-                                            </noscript>
-                                        </form>
+                                        </fieldset>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
+
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-lg bg-gov-green">Apply filters</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div id="results" class="col-lg-7">
@@ -409,12 +458,9 @@ get_header();
 </div>
 <?php wp_reset_postdata(); ?>
 <script type="module">
-    // Lightweight enhancement only: bootstrap popovers for the filter info
-    // icons, and Expand/Collapse-all for the course detail panels. All
-    // searching, filtering, and sorting are server-rendered above.
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-    [...popoverTriggerList].map(el => new bootstrap.Popover(el));
-
+    // Lightweight enhancement only: Expand/Collapse-all for the course detail
+    // panels. All searching, filtering, and sorting are server-rendered above,
+    // and the filter term descriptions use the native Popover API — no JS.
     document.getElementById('expall').addEventListener('click', function () {
         document.querySelectorAll('#results .collapse').forEach(function (c) {
             new bootstrap.Collapse(c, { show: true }).show();
