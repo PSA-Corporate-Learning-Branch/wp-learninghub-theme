@@ -202,10 +202,11 @@ get_header();
                                 <?php if ( $kw !== '' ) : ?>
                                     <div class="col-md-auto mb-2">
                                         <div>Keyword</div>
-                                        <div aria-label="remove keyword: <?php echo esc_attr( $kw ); ?>" class="badge bg-dark-subtle border-0 fw-normal">
-                                            <a href="<?php echo esc_url( lzone_catalog_url( array( 's' => null ) ) ); ?>" class="text-secondary-emphasis text-decoration-none">
+                                        <?php // The label belongs on the link: on the wrapping div it has no role to attach to and is ignored. ?>
+                                        <div class="badge bg-dark-subtle border-0 fw-normal">
+                                            <a href="<?php echo esc_url( lzone_catalog_url( array( 's' => null ) ) ); ?>" class="text-secondary-emphasis text-decoration-none" aria-label="Remove keyword: <?php echo esc_attr( $kw ); ?>">
                                                 <span><?php echo esc_html( $kw ); ?></span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                 </svg>
                                             </a>
@@ -225,10 +226,10 @@ get_header();
                                     <div class="col-md-auto mb-2">
                                         <div><?php echo esc_html( $cg['label'] ); ?></div>
                                         <?php foreach ( $cg['terms'] as $term ) : ?>
-                                            <div aria-label="remove filter: <?php echo esc_attr( $term->name ); ?>" class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
-                                                <a href="<?php echo esc_url( lzone_catalog_remove_term( $cg['param'], $term->slug ) ); ?>" class="text-secondary-emphasis text-decoration-none">
+                                            <div class="badge bg-dark-subtle fw-normal d-inline-flex mb-1">
+                                                <a href="<?php echo esc_url( lzone_catalog_remove_term( $cg['param'], $term->slug ) ); ?>" class="text-secondary-emphasis text-decoration-none" aria-label="Remove <?php echo esc_attr( $cg['label'] ); ?> filter: <?php echo esc_attr( $term->name ); ?>">
                                                     <?php echo esc_html( $term->name ); ?>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-1 align-text-bottom" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                                                     </svg>
                                                 </a>
@@ -369,7 +370,7 @@ get_header();
                                                             <button type="button" class="lh-info-btn p-0 border-0 bg-transparent align-baseline" aria-label="About <?php echo esc_attr( $item->name ); ?>">
                                                                 <span class="icon-svg baseline-svg">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-                                                                        <path fill="#999" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                                                        <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
                                                                     </svg>
                                                                 </span>
                                                             </button>

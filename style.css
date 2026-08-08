@@ -667,6 +667,17 @@ ul.list-time>li:before {
     display: inline-block;
 }
 
+/* The icon was a hard-coded #999, which is only 2.85:1 on the light-mode panel
+   and fails the 3:1 WCAG 1.4.11 floor for UI components. These both clear it:
+   #767676 is 4.54:1 on white, #999 is 5.41:1 on the dark body. */
+.lh-info-btn {
+    color: #767676;
+}
+
+[data-bs-theme=dark] .lh-info-btn {
+    color: #999;
+}
+
 .lh-info-popover {
     display: none;
     position: absolute;
