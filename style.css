@@ -2,7 +2,7 @@
  * Theme Name:        LearningHUB
  * Theme URI:         https://learningcentre.gwww.gov.bc.ca/learninghub/
  * Description:       A simple classic custom theme for LearningHUB. 
- * Version:           1.5
+ * Version:           1.6
  * Author:            Nori Sinclair (primarily) & Allan Haggett
  * Author URI:        https://learningcentre.gwww.gov.bc.ca/
  * Text Domain:       learninghub
@@ -678,25 +678,32 @@ ul.list-time>li:before {
     color: #999;
 }
 
+/* Closed state comes from the `hidden` attribute in the markup, not from here,
+   so that a stale or missing copy of this file cannot reveal every description
+   at once. Nothing below may set `display` on the closed panel.
+
+   The --bs-popover-* variables are declared on .popover, which is now a child,
+   and custom properties inherit downwards only — hence the fallbacks. */
 .lh-info-popover {
-    display: none;
     position: absolute;
     top: 50%;
     left: 100%;
     translate: 0 -50%;
-    margin-left: var(--bs-popover-arrow-height);
+    margin-left: var(--bs-popover-arrow-height, 0.5rem);
     /* The wrapper is only as wide as the icon, and an absolutely positioned box
        shrink-to-fits against its containing block — so size to content instead
-       and let Bootstrap's max-width do the clamping, as Popper would have. */
+       and clamp to Bootstrap's popover width, as Popper would have. */
     width: max-content;
-    max-width: min(var(--bs-popover-max-width), calc(100vw - 2rem));
-    /* The .popover class pads nothing; header and body own their spacing. */
-    padding: 0;
+    max-width: min(var(--bs-popover-max-width, 276px), calc(100vw - 2rem));
     z-index: var(--bs-popover-zindex, 1070);
 }
 
+/* Bootstrap's Reboot enforces the attribute with `[hidden]{display:none!important}`,
+   which is what makes the closed state survive a stale style.css — that rule comes
+   from the CDN build, not this file. Overriding it to open the panel therefore has
+   to match its weight. */
 .lh-info:focus-within .lh-info-popover {
-    display: block;
+    display: block !important;
 }
 
 /* Bootstrap styles the arrow but leaves it statically positioned — Popper is
