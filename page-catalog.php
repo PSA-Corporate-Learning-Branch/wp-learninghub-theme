@@ -364,6 +364,12 @@ get_header();
                                                     // so no JavaScript is involved. Bootstrap's .popover classes give it the
                                                     // same appearance as the Popper-driven popover this replaced, and the
                                                     // panel doubles as the checkbox's aria-describedby target.
+                                                    //
+                                                    // The `hidden` attribute — not a stylesheet rule — is what keeps the panel
+                                                    // closed, so a stale or missing style.css cannot dump every description
+                                                    // onto the page. That means .popover has to sit on an inner element:
+                                                    // it carries `display: block`, and an author declaration would override
+                                                    // the [hidden] UA rule on the element it shares.
                                                     ?>
                                                     <?php if ( $has_desc ) : ?>
                                                         <span class="lh-info">
@@ -374,10 +380,12 @@ get_header();
                                                                     </svg>
                                                                 </span>
                                                             </button>
-                                                            <span id="<?php echo esc_attr( $desc_id ); ?>" class="popover bs-popover-end lh-info-popover" role="tooltip">
-                                                                <span class="popover-arrow lh-info-arrow"></span>
-                                                                <span class="popover-header d-block"><?php echo esc_html( $group['label'] ); ?> description</span>
-                                                                <span class="popover-body d-block"><?php echo esc_html( $desc ); ?></span>
+                                                            <span id="<?php echo esc_attr( $desc_id ); ?>" class="lh-info-popover" role="tooltip" hidden>
+                                                                <span class="popover bs-popover-end d-block">
+                                                                    <span class="popover-arrow lh-info-arrow"></span>
+                                                                    <span class="popover-header d-block"><?php echo esc_html( $group['label'] ); ?> description</span>
+                                                                    <span class="popover-body d-block"><?php echo esc_html( $desc ); ?></span>
+                                                                </span>
                                                             </span>
                                                         </span>
                                                     <?php endif; ?>
