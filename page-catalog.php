@@ -246,13 +246,34 @@ get_header();
 
                     <noscript>
                         <style>
-                            /* Bootstrap's accordion needs JS to open a panel. Where JS
-                               is unavailable, show every filter group expanded so the
-                               checkboxes stay reachable, and drop the affordances on
-                               the toggle buttons, which are inert without it. */
+                            /* Everything below only applies when JavaScript is off, so the
+                               scripted layout is untouched. Three Bootstrap widgets on this
+                               page need JS to operate; without it their content is either
+                               unreachable or the control is dead. */
+
+                            /* Accordion: cannot be expanded, so show every filter group
+                               open and drop the affordances on the inert toggles. */
                             #filterCategories .accordion-collapse { display: block !important; }
                             #filterCategories .accordion-button { pointer-events: none; }
                             #filterCategories .accordion-button::after { display: none; }
+
+                            /* Course details: each "More info" is a real fragment link to
+                               #course-<id>, which Bootstrap only intercepts when it is
+                               running. Unintercepted, the click still navigates, so :target
+                               reveals that one panel — the same one-at-a-time behaviour the
+                               collapse gives, with no change to the markup. */
+                            #results .collapse:target { display: block; }
+
+                            /* Expand/Collapse-all are script-only; hide rather than leave
+                               two buttons that do nothing. */
+                            #expall, #collapseall { display: none; }
+
+                            /* Sort menu: the options are ordinary links, only the disclosure
+                               needs JS. Show the list inline and leave the toggle as a label
+                               so the current sort is still named. */
+                            #results .dropdown-toggle { pointer-events: none; }
+                            #results .dropdown-toggle::after { display: none; }
+                            #results .dropdown-menu { display: block; position: static; }
                         </style>
                     </noscript>
 
