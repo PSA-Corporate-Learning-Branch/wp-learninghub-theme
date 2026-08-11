@@ -12,16 +12,6 @@
 get_header();
 
 $taxquery = [];
-if(get_query_var('groups')) {
-	$groupterm = sanitize_text_field(get_query_var('groups'));
-	$g = array (
-		'taxonomy' => 'groups',
-		'field' => 'slug',
-		'terms' => $groupterm,
-	);
-	array_push($taxquery, $g);
-	$gterm = get_term_by( 'slug', get_query_var( 'groups' ), 'groups');
-}
 if(get_query_var('topics')) {
 	$topicterm = sanitize_text_field(get_query_var('topics'));
 	$t = array (
@@ -52,8 +42,6 @@ if(get_query_var('delivery_method')) {
 	array_push($taxquery, $t);
 	$dterm = get_term_by( 'slug', get_query_var( 'delivery_method' ), 'delivery_method');
 }
-// print_r($gterm);
-
 $post_args = array(
     'post_type'                => 'course',
     'post_status'              => 'publish',
@@ -74,40 +62,21 @@ $post_my_query = new WP_Query($post_args);
 
 // Build URL query-string fragments for cross-linking into the Catalog page.
 // Each fragment is either an empty string (no active term) or "&key[]=slug".
-$gr  = $groupterm    ? '&groups[]='          . rawurlencode( $groupterm )    : '';
 $to  = $topicterm    ? '&topic[]='           . rawurlencode( $topicterm )    : '';
 $aud = $audienceterm ? '&audience[]='        . rawurlencode( $audienceterm ) : '';
 $dm  = $dmterm       ? '&delivery_method[]=' . rawurlencode( $dmterm )       : '';
 
 // Helper: assemble a /catalog/ URL from a list of query-string fragments.
+// `s=` is always included, even empty: the production cache only passes
+// ?s= requests through to PHP (see lzone_catalog_url in page-catalog.php).
 $catalog_url = function ( $parts ) {
     $qs = ltrim( implode( '', $parts ), '&' );
-    return '/learninghub/catalog/' . ( $qs !== '' ? '?' . $qs : '' );
+    return '/learninghub/catalog/?s=' . ( $qs !== '' ? '&' . $qs : '' );
 };
 ?>
 
 	<div class="wp-block-columns alignwide" style="padding-top: 2em;">
 	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
-	<div><strong>Groups</strong></div>
-	<?php 
-	$groups = get_categories(
-							array(
-								'taxonomy' => 'groups',
-								'orderby' => 'id',
-								'order' => 'DESC',
-								'hide_empty' => '0'
-							));
-	?>
-	<?php foreach($groups as $g): ?>
-		<?php $active = ''; if($g->slug == $groupterm) $active = 'active'; ?>
-		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="/learninghub/groups/<?= $g->slug ?>/<?= $to ?><?= $aud ?><?= $dms ?>">
-				<?= $g->name ?>
-			</a>
-			(<?= $g->count ?>)
-		</div>
-	<?php endforeach ?>
-
 	<div><strong>Topics</strong></div>
 	<?php 
 	$topics = get_categories(
@@ -121,7 +90,7 @@ $catalog_url = function ( $parts ) {
 	<?php foreach($topics as $t): ?>
 		<?php $active = ''; if($t->slug == $topicterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&topic[]=' . rawurlencode( $t->slug ), $gr, $aud, $dm ) ) ) ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&topic[]=' . rawurlencode( $t->slug ), $aud, $dm ) ) ) ?>">
 				<?= $t->name ?>
 			</a>
 			(<?= $t->count ?>)
@@ -141,7 +110,7 @@ $catalog_url = function ( $parts ) {
 	<?php foreach($audiences as $a): ?>
 		<?php $active = ''; if($a->slug == $audienceterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&audience[]=' . rawurlencode( $a->slug ), $gr, $to, $dm ) ) ) ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&audience[]=' . rawurlencode( $a->slug ), $to, $dm ) ) ) ?>">
 				<?= $a->name ?>
 			</a>
 			(<?= $a->count ?>)
@@ -161,7 +130,7 @@ $catalog_url = function ( $parts ) {
 	<?php foreach($dms as $d): ?>
 		<?php $active = ''; if($d->slug == $dmterm) $active = 'active'; ?>
 		<div style="margin:0;padding:0;">
-			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&delivery_method[]=' . rawurlencode( $d->slug ), $gr, $to, $aud ) ) ) ?>">
+			<a class="<?= $active ?>" href="<?= esc_url( $catalog_url( array( '&delivery_method[]=' . rawurlencode( $d->slug ), $to, $aud ) ) ) ?>">
 				<?= $d->name ?>
 			</a>
 			(<?= $d->count ?>)
@@ -174,19 +143,10 @@ $catalog_url = function ( $parts ) {
 	<div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
 	<div class="">
 		<div><strong>Filters:</strong></div>
-		<?php if($groupterm): ?>
-		<div class="">
-			<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
-				href="<?= esc_url( $catalog_url( array( $to, $aud, $dm ) ) ) ?>">
-					<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
-			</a>
-			<strong><?= $gterm->name ?></strong>
-		</div>
-		<?php endif ?>
 		<?php if($topicterm): ?>
 		<div class="">
 		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
-			href="<?= esc_url( $catalog_url( array( $gr, $aud, $dm ) ) ) ?>">
+			href="<?= esc_url( $catalog_url( array( $aud, $dm ) ) ) ?>">
 				<span style="hover:background-color: #145693; background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $tterm->name ?></strong>
@@ -195,7 +155,7 @@ $catalog_url = function ( $parts ) {
 		<?php if($audienceterm): ?>
 		<div class="">
 		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
-			href="<?= esc_url( $catalog_url( array( $gr, $to, $dm ) ) ) ?>">
+			href="<?= esc_url( $catalog_url( array( $to, $dm ) ) ) ?>">
 				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $aterm->name ?></strong>
@@ -204,7 +164,7 @@ $catalog_url = function ( $parts ) {
 		<?php if($dmterm): ?>
 		<div class="">
 		<a style="background-color: #FFF; border-radius: 5px; color: #333; display: inline-block; padding: 2px 10px; text-decoration: none;"
-			href="<?= esc_url( $catalog_url( array( $gr, $to, $aud ) ) ) ?>">
+			href="<?= esc_url( $catalog_url( array( $to, $aud ) ) ) ?>">
 				<span style="background-color: #003366; border-radius: 3px; color: #FFF; display: inline-block; font-size: 12px; padding: 0 4px;">Remove</span>
 			</a>
 			<strong><?= $dterm->name ?></strong>

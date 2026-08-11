@@ -138,11 +138,15 @@ function lzone_catalog_url( $overrides = array() ) {
             $params[ $k ] = $v;
         }
     }
-    $base = get_permalink();
-    if ( empty( $params ) ) {
-        return $base;
+    // The production front-end cache only passes a request through to PHP
+    // when `s=` appears in the query string; any other query string gets the
+    // cached copy of the bare page, so the filters silently do nothing. Until
+    // that cache keys on the full query string, every catalog URL must carry
+    // `s`, even when it is empty.
+    if ( ! isset( $params['s'] ) ) {
+        $params['s'] = '';
     }
-    return $base . '?' . http_build_query( $params );
+    return get_permalink() . '?' . http_build_query( $params );
 }
 
 /** Helper: URL with a single slug removed from a taxonomy param. */
@@ -284,10 +288,12 @@ get_header();
                     // by the Apply button below. No JavaScript is involved.
                     ?>
                     <form action="<?php echo esc_url( get_permalink() ); ?>" method="get">
-                        <?php // Preserve keyword and sort across a filter submission. ?>
-                        <?php if ( $kw !== '' ) : ?>
-                            <input type="hidden" name="s" value="<?php echo esc_attr( $kw ); ?>">
-                        <?php endif; ?>
+                        <?php
+                        // Preserve keyword and sort across a filter submission. `s` is
+                        // submitted even when empty: the production cache only lets
+                        // ?s= requests through to PHP (see lzone_catalog_url).
+                        ?>
+                        <input type="hidden" name="s" value="<?php echo esc_attr( $kw ); ?>">
                         <?php if ( $orderby_param !== '' ) : ?>
                             <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby_param ); ?>">
                         <?php endif; ?>
