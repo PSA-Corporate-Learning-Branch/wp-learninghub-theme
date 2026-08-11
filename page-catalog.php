@@ -283,6 +283,60 @@ get_header();
                     </noscript>
 
                     <?php
+                    // Duplicate of the .lh-info rules from style.css. The production
+                    // cache keys assets by path and ignores ?ver=, so a deployed
+                    // style.css can be served stale indefinitely — which once paired
+                    // a v1.5 stylesheet with v1.6 markup and left every popover
+                    // unopenable. Inlined here, the rules travel with the markup they
+                    // belong to and cannot skew against it. Keep in sync with
+                    // style.css; remove once the cache keys on the full URL.
+                    ?>
+                    <style>
+                        .lh-info {
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .lh-info-btn { color: #767676; }
+                        [data-bs-theme=dark] .lh-info-btn { color: #999; }
+
+                        .lh-info-popover {
+                            position: absolute;
+                            top: 50%;
+                            left: 100%;
+                            translate: 0 -50%;
+                            margin-left: var(--bs-popover-arrow-height, 0.5rem);
+                            width: max-content;
+                            max-width: min(var(--bs-popover-max-width, 276px), calc(100vw - 2rem));
+                            z-index: var(--bs-popover-zindex, 1070);
+                        }
+
+                        .lh-info:focus-within .lh-info-popover {
+                            display: block !important;
+                        }
+
+                        .lh-info-arrow {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+
+                        @media (max-width: 575.98px) {
+                            .lh-info-popover {
+                                top: 100%;
+                                left: auto;
+                                right: 0;
+                                translate: none;
+                                margin: 0.25rem 0 0;
+                            }
+
+                            .lh-info-arrow {
+                                display: none;
+                            }
+                        }
+                    </style>
+
+                    <?php
                     // A single form wraps all three filter groups, so any combination
                     // of topic / audience / delivery checkboxes is submitted together
                     // by the Apply button below. No JavaScript is involved.
