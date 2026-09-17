@@ -1,6 +1,6 @@
 # WP LearningHUB
 
-A Wordpress theme for the PSA LearningHUB course catalogue.
+A WordPress theme for the PSA LearningHUB course catalogue.
 
 https://learningcentre.gww.gov.bc.ca/learninghub/ (BC Gov IDIR restricted)
 
@@ -20,12 +20,12 @@ that will make courses past a certain date removed from the catalogue.
 This theme formats the content for courses and provides custom views and filtering 
 options for the various taxonomies.
 
-While the technological progress Wordpress has undergone over the past few 
+While the technological progress WordPress has undergone in recent 
 years has been good for some, most of the changes with the block editor and 
 full site editing do not meet our needs and really only serve to increase
 the amount of specialized knowledge and training needed to create content.
 
-As such, this theme eschews many new Wordpress features. Page content is 
+As such, this theme eschews most WordPress features. Page content is 
 stored in template files and is written in:
 
  - HTML.
