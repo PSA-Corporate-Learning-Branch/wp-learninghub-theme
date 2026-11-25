@@ -91,7 +91,7 @@ get_header();
                     </summary>
                      <p class="mt-3">If you aren't sure if your request falls into corporate learning, please submit an Intake Form.</p>
                     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=AFLbbw09ikqwNtNoXjWa3DjlzcLvUAxFqvKzlKXj60xUNVNJMU1KVjFWUkJDOTc0REVIRjlRR1VHNyQlQCN0PWcu" class="btn btn-lg btn-primary mb-3">Corporate Learning Intake form</a>
-                    <p>If you have other questions, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Corporate Learning".</p> 
+                    <p>If you have other questions, please <a href="https://launcher.myapps.microsoft.com/api/signin/604e0574-b937-452b-ab86-cdb084187dfc?tenantId=6fdb5200-3d0d-4a8a-b036-d3685e359adc" class="customize-unpreviewable">submit an AskMyHR service request</a> using the category "Corporate Learning".</p> 
                 </details>
             </div>
 
